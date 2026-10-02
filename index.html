@@ -553,48 +553,32 @@
     .kinetic-monolith {
       position: relative;
       background: #ffffff;
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.95);
       border-radius: 24px;
       padding: 2.25rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-      transform-style: preserve-3d;
-      perspective: 1000px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
       z-index: 2;
       box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
     }
 
     .kinetic-monolith:hover {
-      box-shadow: 0 24px 48px -12px rgba(48, 0, 100, 0.12), 0 10px 20px -6px rgba(15, 23, 42, 0.06);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 38px -10px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
     }
 
     .kinetic-monolith.monolith-violet:hover {
-      border-color: rgba(48, 0, 100, 0.4);
+      border-color: rgba(48, 0, 100, 0.35);
     }
 
     .kinetic-monolith.monolith-coral:hover {
-      border-color: rgba(243, 88, 19, 0.45);
+      border-color: rgba(243, 88, 19, 0.4);
     }
 
     .kinetic-monolith.monolith-cyan:hover {
-      border-color: rgba(42, 208, 255, 0.6);
-    }
-
-    .monolith-glare {
-      position: absolute;
-      inset: 0;
-      border-radius: 24px;
-      pointer-events: none;
-      background: radial-gradient(350px circle at var(--card-mouse-x, -100px) var(--card-mouse-y, -100px), rgba(255, 255, 255, 0.75), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 3;
-    }
-
-    .kinetic-monolith:hover .monolith-glare {
-      opacity: 1;
+      border-color: rgba(14, 165, 233, 0.45);
     }
 
     /* Micro-SVG Kinetic Engines Animations */
@@ -1251,14 +1235,12 @@
           
           <!-- Monolith 01: O Fundacji & Misja -->
           <a href="about.html" class="kinetic-monolith monolith-violet group flex flex-col justify-between" data-monolith="1">
-            <div class="monolith-glare"></div>
-            
             <div class="relative z-10">
-              <!-- Top Kinetic SVG Engine -->
+              <!-- Top SVG Icon Container -->
               <div class="mb-8">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-violet/10 to-brand-violet/5 border border-brand-violet/20 flex items-center justify-center group-hover:border-brand-violet/40 group-hover:shadow-[0_8px_20px_-4px_rgba(48,0,100,0.2)] transition-all duration-300 shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-brand-violet/10 border border-brand-violet/20 flex items-center justify-center group-hover:border-brand-violet/40 group-hover:bg-brand-violet/15 group-hover:shadow-[0_8px_20px_-4px_rgba(48,0,100,0.2)] transition-all duration-300 shadow-sm">
                   <!-- SVG Engine 01: Wisdom & Mission Compass -->
-                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110" aria-hidden="true">
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0" aria-hidden="true">
                     <circle cx="24" cy="24" r="21" stroke="#300064" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="3 3"/>
                     <circle cx="24" cy="24" r="16.5" stroke="#300064" stroke-opacity="0.25" stroke-width="1.5"/>
                     <path d="M24 6 L27.5 20.5 L42 24 L27.5 27.5 L24 42 L20.5 27.5 L6 24 L20.5 20.5 Z" fill="url(#violet-grad-idx1)" stroke="#300064" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1285,36 +1267,34 @@
               <!-- Monolith Title -->
               <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
                 <span data-i18n="card_about_title">O Fundacji</span>
-                <span class="w-8 h-8 rounded-full bg-brand-violet/5 group-hover:bg-brand-violet group-hover:text-white text-brand-violet flex items-center justify-center transition-all duration-300">
+                <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-brand-violet group-hover:text-white text-slate-700 flex items-center justify-center transition-all duration-300">
                   <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
                 </span>
               </h3>
 
               <!-- Monolith Lead & Narrative -->
-              <p class="text-xs font-semibold text-brand-violet/90 mt-2 font-mono" data-i18n="monolith_1_lead">
-                Łacińskie korzenie: racjonalna dusza, odwaga myśli i siła dialogu.
+              <p class="text-xs font-bold text-brand-violet mt-2 uppercase tracking-wide font-sans" data-i18n="monolith_1_lead">
+                Misja, wartości i 10 lat doświadczenia
               </p>
-              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_about_desc">
-                Łacińskie korzenie *animus*, 10 lat doświadczenia od 2015 roku, ewolucja w centrum edukacji pozaformalnej, misja, wartości i strategia.
+              <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed font-sans" data-i18n="card_about_desc">
+                Od 2015 roku rozwijamy edukację pozaformalną na Śląsku i w Europie. Poznaj naszą historię, statutowe wartości oraz zespół tworzący Fundację ANIMUS.
               </p>
             </div>
 
             <!-- Monolith Bottom Direct CTA -->
             <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
-              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-200" data-i18n="card_learn_more">Poznaj naszą misję</span>
+              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-200" data-i18n="card_about_cta">Poznaj naszą misję &rarr;</span>
             </div>
           </a>
 
           <!-- Monolith 02: Działania & Gry Adaptacyjne -->
           <a href="activities.html" class="kinetic-monolith monolith-coral group flex flex-col justify-between" data-monolith="2">
-            <div class="monolith-glare"></div>
-            
             <div class="relative z-10">
-              <!-- Top Kinetic SVG Engine -->
+              <!-- Top SVG Icon Container -->
               <div class="mb-8">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-coral/10 to-brand-coral/5 border border-brand-coral/20 flex items-center justify-center group-hover:border-brand-coral/40 group-hover:shadow-[0_8px_20px_-4px_rgba(243,88,19,0.2)] transition-all duration-300 shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-brand-coral/10 border border-brand-coral/20 flex items-center justify-center group-hover:border-brand-coral/40 group-hover:bg-brand-coral/15 group-hover:shadow-[0_8px_20px_-4px_rgba(243,88,19,0.2)] transition-all duration-300 shadow-sm">
                   <!-- SVG Engine 02: Modern Isometric Game Die / Simulation Block -->
-                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" aria-hidden="true">
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0" aria-hidden="true">
                     <!-- Dynamic orbital trajectory -->
                     <ellipse cx="24" cy="24" rx="21" ry="9" stroke="#F35813" stroke-opacity="0.25" stroke-width="1.5" transform="rotate(-20 24 24)"/>
                     <circle cx="41" cy="18" r="2" fill="#F35813"/>
@@ -1336,36 +1316,34 @@
               <!-- Monolith Title -->
               <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-coral transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
                 <span data-i18n="card_activities_title">Działania i Gry Adaptacyjne</span>
-                <span class="w-8 h-8 rounded-full bg-brand-coral/5 group-hover:bg-brand-coral group-hover:text-white text-brand-coral flex items-center justify-center transition-all duration-300">
+                <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-brand-coral group-hover:text-white text-slate-700 flex items-center justify-center transition-all duration-300">
                   <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
                 </span>
               </h3>
 
               <!-- Monolith Lead & Narrative -->
-              <p class="text-xs font-semibold text-brand-coral/90 mt-2 font-mono" data-i18n="monolith_2_lead">
-                Nowatorskie narzędzia: symulacje, planszówki i partycypacja.
+              <p class="text-xs font-bold text-brand-coral mt-2 uppercase tracking-wide font-sans" data-i18n="monolith_2_lead">
+                Autorskie symulacje, edukacja obywatelska i gry
               </p>
-              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_activities_desc">
-                Autorska gra symulacyjna CARE RPG, programy edukacji obywatelskiej, szkolenia dla osób pracujących z młodzieżą i warsztaty integracyjne.
+              <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed font-sans" data-i18n="card_activities_desc">
+                Tworzymy innowacyjne gry planszowe (w tym CARE RPG), prowadzimy warsztaty antydyskryminacyjne, treningi komunikacji NVC i szkolenia liderów młodzieżowych.
               </p>
             </div>
 
             <!-- Monolith Bottom Direct CTA -->
             <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
-              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-coral transition-colors duration-200" data-i18n="card_learn_more">Zobacz metody i gry</span>
+              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-coral transition-colors duration-200" data-i18n="card_activities_cta">Zobacz metody i gry &rarr;</span>
             </div>
           </a>
 
           <!-- Monolith 03: Projekty i Inicjatywy -->
           <a href="projects.html" class="kinetic-monolith monolith-cyan group flex flex-col justify-between" data-monolith="3">
-            <div class="monolith-glare"></div>
-            
             <div class="relative z-10">
-              <!-- Top Kinetic SVG Engine -->
+              <!-- Top SVG Icon Container -->
               <div class="mb-8">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-cyan/20 to-brand-cyan/5 border border-brand-cyan/30 flex items-center justify-center group-hover:border-brand-cyan/50 group-hover:shadow-[0_8px_20px_-4px_rgba(42,208,255,0.25)] transition-all duration-300 shadow-sm">
+                <div class="w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center group-hover:border-sky-500/40 group-hover:bg-sky-500/15 group-hover:shadow-[0_8px_20px_-4px_rgba(14,165,233,0.2)] transition-all duration-300 shadow-sm">
                   <!-- SVG Engine 03: European Network & Mobility Constellation -->
-                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110" aria-hidden="true">
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0" aria-hidden="true">
                     <!-- Outer orbital globe latitude / longitude grid -->
                     <circle cx="24" cy="24" r="20" stroke="#0ea5e9" stroke-opacity="0.25" stroke-width="1.5"/>
                     <ellipse cx="24" cy="24" rx="20" ry="8" stroke="#0ea5e9" stroke-opacity="0.2" stroke-width="1.2"/>
@@ -1389,23 +1367,23 @@
               <!-- Monolith Title -->
               <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
                 <span data-i18n="card_projects_title">Projekty i Inicjatywy</span>
-                <span class="w-8 h-8 rounded-full bg-brand-cyan/10 group-hover:bg-brand-violet group-hover:text-white text-slate-900 flex items-center justify-center transition-all duration-300">
+                <span class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-brand-violet group-hover:text-white text-slate-700 flex items-center justify-center transition-all duration-300">
                   <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
                 </span>
               </h3>
 
               <!-- Monolith Lead & Narrative -->
-              <p class="text-xs font-semibold text-slate-700 mt-2 font-mono" data-i18n="monolith_3_lead">
-                10 flagowych inicjatyw, wymiany Erasmus+ i sieć partnerska.
+              <p class="text-xs font-bold text-sky-600 mt-2 uppercase tracking-wide font-sans" data-i18n="monolith_3_lead">
+                Wymiany międzynarodowe Erasmus+ i partnerstwa
               </p>
-              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_projects_desc">
-                10 flagowych inicjatyw z rozwijanymi kronikami działań, fotorelacjami, toolkitami metodycznymi i partnerstwami w całej Europie.
+              <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed font-sans" data-i18n="card_projects_desc">
+                Koordynujemy międzynarodowe wymiany młodzieżowe, inicjatywy lokalne na Śląsku oraz długofalowe partnerstwa strategiczne z organizacjami z kilkunastu państw Europy.
               </p>
             </div>
 
             <!-- Monolith Bottom Direct CTA -->
             <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
-              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-200" data-i18n="card_learn_more">Przeglądaj projekty</span>
+              <span class="text-xs font-bold text-slate-900 group-hover:text-sky-600 transition-colors duration-200" data-i18n="card_projects_cta">Przeglądaj projekty &rarr;</span>
             </div>
           </a>
 
@@ -1832,24 +1810,18 @@
         hero_cta_about: "O Fundacji",
         gate_title: "Poznaj Nasze Obszary Działania",
         card_about_title: "O Fundacji",
-        card_about_desc: "Łacińskie korzenie *animus*, 10 lat doświadczenia od 2015 roku, ewolucja w centrum edukacji pozaformalnej, misja, wartości i strategia.",
+        monolith_1_lead: "Misja, wartości i 10 lat doświadczenia",
+        card_about_desc: "Od 2015 roku rozwijamy edukację pozaformalną na Śląsku i w Europie. Poznaj naszą historię, statutowe wartości oraz zespół tworzący Fundację ANIMUS.",
+        card_about_cta: "Poznaj naszą misję &rarr;",
         card_activities_title: "Działania i Gry Adaptacyjne",
-        card_activities_desc: "Autorska gra symulacyjna CARE RPG, programy edukacji obywatelskiej, szkolenia dla osób pracujących z młodzieżą i warsztaty integracyjne.",
+        monolith_2_lead: "Autorskie symulacje, edukacja obywatelska i gry",
+        card_activities_desc: "Tworzymy innowacyjne gry planszowe (w tym CARE RPG), prowadzimy warsztaty antydyskryminacyjne, treningi komunikacji NVC i szkolenia liderów młodzieżowych.",
+        card_activities_cta: "Zobacz metody i gry &rarr;",
         card_projects_title: "Projekty i Inicjatywy",
-        card_projects_desc: "10 flagowych inicjatyw z rozwijanymi kronikami działań, fotorelacjami, toolkitami metodycznymi i partnerstwami w całej Europie.",
+        monolith_3_lead: "Wymiany międzynarodowe Erasmus+ i partnerstwa",
+        card_projects_desc: "Koordynujemy międzynarodowe wymiany młodzieżowe, inicjatywy lokalne na Śląsku oraz długofalowe partnerstwa strategiczne z organizacjami z kilkunastu państw Europy.",
+        card_projects_cta: "Przeglądaj projekty &rarr;",
         card_learn_more: "Zobacz szczegóły",
-        monolith_1_lead: "Łacińskie korzenie: racjonalna dusza, odwaga myśli i siła dialogu.",
-        monolith_1_p1: "Od 2015 na Śląsku",
-        monolith_1_p2: "Statut i Wartości",
-        monolith_1_p3: "Dialog Obywatelski",
-        monolith_2_lead: "Nowatorskie narzędzia: symulacje, planszówki i partycypacja.",
-        monolith_2_p1: "CARE RPG planszówka",
-        monolith_2_p2: "Warsztaty Somatyczne",
-        monolith_2_p3: "Treningi NVC i Dialog",
-        monolith_3_lead: "10 flagowych inicjatyw, wymiany Erasmus+ i sieć partnerska.",
-        monolith_3_p1: "Erasmus+ Wymiany",
-        monolith_3_p2: "10 Flagowych Inicjatyw",
-        monolith_3_p3: "Certyfikaty Youthpass",
         news_heading: "Ostatnie Wydarzenia i Relacje",
         news_sub: "Świeże relacje z międzynarodowych wymian młodzieżowych, warsztatów edukacyjnych oraz projektów realizowanych na Śląsku i w Europie.",
         news_view_all: "Wszystkie relacje i wpisy",
@@ -1902,24 +1874,18 @@
         dice_hint: "DRAG CUBE FREELY OR CHOOSE PILLAR",
         gate_title: "Explore Our Activity Areas",
         card_about_title: "About Foundation",
-        card_about_desc: "Latin roots of animus, 10 years of experience since 2015, non-formal learning center evolution, mission, values and strategy.",
+        monolith_1_lead: "Mission, values and a decade of experience",
+        card_about_desc: "Since 2015, we have been advancing non-formal education across Silesia and Europe. Explore our history, statutory values, and the team driving ANIMUS forward.",
+        card_about_cta: "Explore our mission &rarr;",
         card_activities_title: "Activities & Adaptive Games",
-        card_activities_desc: "Proprietary simulation RPG CARE, civic participation programmes, training courses for youth workers, and local inclusion workshops.",
+        monolith_2_lead: "Proprietary simulations, civic education & games",
+        card_activities_desc: "We develop innovative educational tools (including the CARE RPG board game), host anti-discrimination workshops, NVC trainings, and youth leadership academies.",
+        card_activities_cta: "Explore methods & games &rarr;",
         card_projects_title: "Projects & Field Chronicles",
-        card_projects_desc: "10 flagship initiatives with expandable field dossiers, photo chronicles, toolkits, and European partnerships.",
+        monolith_3_lead: "Erasmus+ youth exchanges & European network",
+        card_projects_desc: "We coordinate international youth exchanges, local grassroots initiatives in Silesia, and long-term strategic partnerships across Europe.",
+        card_projects_cta: "Browse our projects &rarr;",
         card_learn_more: "Explore section",
-        monolith_1_lead: "Latin roots: rational soul, courage of mind, and the power of dialogue.",
-        monolith_1_p1: "Active since 2015",
-        monolith_1_p2: "Charter & Values",
-        monolith_1_p3: "Civic Dialogue",
-        monolith_2_lead: "Innovative tools: simulation board games, somatic coaching, and civic dialogue.",
-        monolith_2_p1: "CARE RPG Game",
-        monolith_2_p2: "Somatic Workshops",
-        monolith_2_p3: "NVC & Team Dialogues",
-        monolith_3_lead: "10 flagship initiatives, Erasmus+ youth exchanges, and European alliances.",
-        monolith_3_p1: "Erasmus+ Exchanges",
-        monolith_3_p2: "10 Flagship Projects",
-        monolith_3_p3: "Youthpass Certified",
         news_heading: "Recent Events & Field Reports",
         news_sub: "Direct dispatches from international Erasmus+ youth exchanges, educational workshops, and community initiatives in Silesia and across Europe.",
         news_view_all: "Browse all field reports",
@@ -2168,43 +2134,15 @@
     ========================================================== */
     function initMonolithsInteractions() {
       const section = document.getElementById('filary-fundacji');
-      const monoliths = document.querySelectorAll('.kinetic-monolith');
+      if (!section) return;
 
-      if (!section || !monoliths.length) return;
-
-      // Section-wide Magnetic Spotlight tracking cursor
+      // Subtle ambient spotlight tracking on the section
       section.addEventListener('mousemove', (e) => {
         const rect = section.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         section.style.setProperty('--mouse-x', `${x}px`);
         section.style.setProperty('--mouse-y', `${y}px`);
-      });
-
-      // Individual Monolith 3D Tilt & Local Glare
-      monoliths.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const cardX = e.clientX - rect.left;
-          const cardY = e.clientY - rect.top;
-          
-          card.style.setProperty('--card-mouse-x', `${cardX}px`);
-          card.style.setProperty('--card-mouse-y', `${cardY}px`);
-
-          // Calculate tilt angle (-6 to +6 degrees)
-          const normX = (cardX / rect.width) * 2 - 1;
-          const normY = (cardY / rect.height) * 2 - 1;
-          const tiltX = -normY * 6;
-          const tiltY = normX * 6;
-
-          card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-          card.style.setProperty('--card-mouse-x', '-100px');
-          card.style.setProperty('--card-mouse-y', '-100px');
-        });
       });
     }
 
