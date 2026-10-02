@@ -2009,10 +2009,10 @@
     }
 
     function openArticleModal(slug) {
-      const articles = (typeof ANIMUS_ARTICLES !== 'undefined') ? ANIMUS_ARTICLES : (window.ANIMUS_ARTICLES || []);
-      const projects = (typeof ANIMUS_PROJECTS !== 'undefined') ? ANIMUS_PROJECTS : (window.ANIMUS_PROJECTS || {});
-      const article = articles.find(a => a.slug === slug);
-      if (!article) return;
+      const isFile = window.location.protocol === 'file:';
+      const targetUrl = isFile ? `aktualnosci/${slug}.html` : `aktualnosci/${slug}/`;
+      window.location.href = targetUrl;
+      return;
 
       const modal = document.getElementById('article-modal');
       const projectBadge = document.getElementById('modal-project-badge');
