@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nasze Działania | ANIMUS Foundation — Training & Education Center</title>
-  <meta name="description" content="Poznaj metody, formaty szkoleń, wymiany młodzieżowe Erasmus+, autorskie gry planszowe i symulacje adaptacyjne Fundacji ANIMUS.">
+  <title>Nasze DziaÅ‚ania | ANIMUS Foundation â€” Training & Education Center</title>
+  <meta name="description" content="Poznaj metody, formaty szkoleÅ„, wymiany mÅ‚odzieÅ¼owe Erasmus+, autorskie gry planszowe i symulacje adaptacyjne Fundacji ANIMUS.">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -37,6 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="./material-symbols.css" />
 
   <style>
@@ -58,15 +59,15 @@
       </a>
 
       <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium text-slate-600" aria-label="Main menu">
-        <a href="index.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_home">Strona główna</a>
+        <a href="index.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_home">Strona gÅ‚Ã³wna</a>
         <a href="about.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_about">O nas</a>
         <a href="activities.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group">
-          <span data-i18n="nav_activities">Nasze działania</span>
+          <span data-i18n="nav_activities">Nasze dziaÅ‚ania</span>
           <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
         </a>
         <a href="projects.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_projects">Projekty</a>
         <a href="partners.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_partners">Partnerzy</a>
-        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">Aktualności</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">AktualnoÅ›ci</a>
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
@@ -82,7 +83,7 @@
         </a>
 
         <a href="contact.html" class="inline-flex items-center gap-2 bg-[#300064] hover:bg-[#220047] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5">
-          <span data-i18n="nav_contact_btn">Skontaktuj się</span>
+          <span data-i18n="nav_contact_btn">Skontaktuj siÄ™</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
       </div>
@@ -95,21 +96,21 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-semibold uppercase text-slate-400">Język / Language</span>
+        <span class="text-xs font-semibold uppercase text-slate-400">JÄ™zyk / Language</span>
         <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
         </div>
       </div>
       <nav class="flex flex-col space-y-3 text-base font-medium text-slate-700">
-        <a href="index.html" class="py-1 hover:text-brand-violet" data-i18n="nav_home">Strona główna</a>
+        <a href="index.html" class="py-1 hover:text-brand-violet" data-i18n="nav_home">Strona gÅ‚Ã³wna</a>
         <a href="about.html" class="py-1 hover:text-brand-violet" data-i18n="nav_about">O nas</a>
-        <a href="activities.html" class="py-1 font-bold text-brand-violet" data-i18n="nav_activities">Nasze działania</a>
+        <a href="activities.html" class="py-1 font-bold text-brand-violet" data-i18n="nav_activities">Nasze dziaÅ‚ania</a>
         <a href="projects.html" class="py-1 hover:text-brand-violet" data-i18n="nav_projects">Projekty</a>
         <a href="partners.html" class="py-1 hover:text-brand-violet" data-i18n="nav_partners">Partnerzy</a>
-        <a href="blog.html" class="py-1 hover:text-brand-violet" data-i18n="nav_news">Aktualności</a>
+        <a href="blog.html" class="py-1 hover:text-brand-violet" data-i18n="nav_news">AktualnoÅ›ci</a>
         <a href="contact.html" class="pt-2 text-brand-coral font-bold flex items-center justify-between" data-i18n="nav_contact_btn">
-          <span>Skontaktuj się</span>
+          <span>Skontaktuj siÄ™</span>
           <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </nav>
@@ -124,10 +125,10 @@
       <div class="max-w-7xl mx-auto px-6 sm:px-10">
         <div class="max-w-3xl space-y-4">
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="act_title">
-            Nasze Działania i Programy
+            Nasze DziaÅ‚ania i Programy
           </h1>
           <p class="text-lg text-slate-600 leading-relaxed font-normal" data-i18n="act_subtitle">
-            Czerpiemy z wieloletniego doświadczenia własnego i europejskich partnerów. Tworzymy autorskie metody, gry planszowe i prowadzimy angażujące szkolenia dla każdej grupy wiekowej.
+            Czerpiemy z wieloletniego doÅ›wiadczenia wÅ‚asnego i europejskich partnerÃ³w. Tworzymy autorskie metody, gry planszowe i prowadzimy angaÅ¼ujÄ…ce szkolenia dla kaÅ¼dej grupy wiekowej.
           </p>
         </div>
       </div>
@@ -142,7 +143,7 @@
             Co Realizujemy?
           </h2>
           <p class="text-sm text-slate-600" data-i18n="act_formats_subtitle">
-            Dla każdej grupy odbiorców dobieramy i projektujemy zindywidualizowane aktywności o charakterze dydaktyczno-rozwojowym.
+            Dla kaÅ¼dej grupy odbiorcÃ³w dobieramy i projektujemy zindywidualizowane aktywnoÅ›ci o charakterze dydaktyczno-rozwojowym.
           </p>
         </div>
 
@@ -152,15 +153,15 @@
             <span class="material-symbols-outlined text-3xl text-brand-violet mb-3">school</span>
             <h3 class="font-bold font-heading text-slate-900 text-lg mb-2" data-i18n="act_f1_title">Kursy Szkoleniowe</h3>
             <p class="text-xs text-slate-600 leading-relaxed" data-i18n="act_f1_desc">
-              Wielodniowe międzynarodowe i krajowe Training Courses dla młodzieży, liderów i edukatorów (np. "Rabbit on the Moon" w Segowii).
+              Wielodniowe miÄ™dzynarodowe i krajowe Training Courses dla mÅ‚odzieÅ¼y, liderÃ³w i edukatorÃ³w (np. "Rabbit on the Moon" w Segowii).
             </p>
           </div>
 
           <div class="bg-white border border-slate-200 rounded-3xl p-6 hover:border-brand-coral hover:shadow-xl transition-all shadow-xs">
             <span class="material-symbols-outlined text-3xl text-brand-coral mb-3">groups</span>
-            <h3 class="font-bold font-heading text-slate-900 text-lg mb-2" data-i18n="act_f2_title">Wymiany Młodzieży</h3>
+            <h3 class="font-bold font-heading text-slate-900 text-lg mb-2" data-i18n="act_f2_title">Wymiany MÅ‚odzieÅ¼y</h3>
             <p class="text-xs text-slate-600 leading-relaxed" data-i18n="act_f2_desc">
-              Projekty Erasmus+ Youth Exchanges (np. #PLUGTREE+ w Rumunii) łączące młodzież z całej Europy wokół dialogu, ekologii i aktywizmu.
+              Projekty Erasmus+ Youth Exchanges (np. #PLUGTREE+ w Rumunii) Å‚Ä…czÄ…ce mÅ‚odzieÅ¼ z caÅ‚ej Europy wokÃ³Å‚ dialogu, ekologii i aktywizmu.
             </p>
           </div>
 
@@ -168,7 +169,7 @@
             <span class="material-symbols-outlined text-3xl text-sky-600 mb-3">casino</span>
             <h3 class="font-bold font-heading text-slate-900 text-lg mb-2" data-i18n="act_f3_title">Autorskie Gry i RPG</h3>
             <p class="text-xs text-slate-600 leading-relaxed" data-i18n="act_f3_desc">
-              Projektowanie gier planszowych i symulacji adaptacyjnych (np. CARE Climate RPG) rozwijających kluczowe kompetencje społeczne.
+              Projektowanie gier planszowych i symulacji adaptacyjnych (np. CARE Climate RPG) rozwijajÄ…cych kluczowe kompetencje spoÅ‚eczne.
             </p>
           </div>
 
@@ -176,7 +177,7 @@
             <span class="material-symbols-outlined text-3xl text-brand-amber mb-3">co_present</span>
             <h3 class="font-bold font-heading text-slate-900 text-lg mb-2" data-i18n="act_f4_title">Warsztaty i Seminaria</h3>
             <p class="text-xs text-slate-600 leading-relaxed" data-i18n="act_f4_desc">
-              Interaktywne warsztaty stacjonarne, webinary oraz wykłady z komunikacji bez przemocy, adaptacji i przedsiębiorczości.
+              Interaktywne warsztaty stacjonarne, webinary oraz wykÅ‚ady z komunikacji bez przemocy, adaptacji i przedsiÄ™biorczoÅ›ci.
             </p>
           </div>
 
@@ -192,7 +193,7 @@
           
           <div class="lg:col-span-6 space-y-6">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold uppercase">
-              <span>🎲 Serious Games • Metodologia Autorska</span>
+              <span>ðŸŽ² Serious Games â€¢ Metodologia Autorska</span>
             </div>
             
             <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 tracking-tight" data-i18n="act_care_title">
@@ -200,20 +201,20 @@
             </h2>
 
             <p class="text-sm sm:text-base text-slate-700 leading-relaxed" data-i18n="act_care_p1">
-              Nasze gry planszowe i symulacje mają charakter edukacyjny i pomagają rozwijać zróżnicowane kompetencje: myślenie strategiczne, empatię, negocjacje i rozwiązywanie konfliktów.
+              Nasze gry planszowe i symulacje majÄ… charakter edukacyjny i pomagajÄ… rozwijaÄ‡ zrÃ³Å¼nicowane kompetencje: myÅ›lenie strategiczne, empatiÄ™, negocjacje i rozwiÄ…zywanie konfliktÃ³w.
             </p>
 
             <p class="text-sm text-slate-600 leading-relaxed" data-i18n="act_care_p2">
-              Gra <strong>CARE</strong> to autorska gra fabularna (RPG), w której uczestnicy wcielają się w różne frakcje społeczne (decydenci, ekolodzy, rolnicy, przedsiębiorcy) stające przed kryzysem klimatycznym. Gra uczy podejmowania decyzji w warunkach niepewności i budowania kompromisu.
+              Gra <strong>CARE</strong> to autorska gra fabularna (RPG), w ktÃ³rej uczestnicy wcielajÄ… siÄ™ w rÃ³Å¼ne frakcje spoÅ‚eczne (decydenci, ekolodzy, rolnicy, przedsiÄ™biorcy) stajÄ…ce przed kryzysem klimatycznym. Gra uczy podejmowania decyzji w warunkach niepewnoÅ›ci i budowania kompromisu.
             </p>
 
             <div class="grid grid-cols-2 gap-4 pt-2">
               <div class="bg-white p-4 rounded-xl border border-slate-200">
-                <span class="text-xl font-bold font-heading text-brand-violet block">4–8</span>
-                <span class="text-xs text-slate-500 font-medium" data-i18n="act_care_spec1">Uczestników / Stół</span>
+                <span class="text-xl font-bold font-heading text-brand-violet block">4â€“8</span>
+                <span class="text-xs text-slate-500 font-medium" data-i18n="act_care_spec1">UczestnikÃ³w / StÃ³Å‚</span>
               </div>
               <div class="bg-white p-4 rounded-xl border border-slate-200">
-                <span class="text-xl font-bold font-heading text-brand-coral block">90–120 min</span>
+                <span class="text-xl font-bold font-heading text-brand-coral block">90â€“120 min</span>
                 <span class="text-xs text-slate-500 font-medium" data-i18n="act_care_spec2">Czas trwania sesji</span>
               </div>
             </div>
@@ -241,7 +242,7 @@
             Z Kim Pracujemy?
           </h2>
           <p class="text-sm text-slate-600" data-i18n="act_target_subtitle">
-            Nasze programy dedykowane są szerokiemu spektrum odbiorców sektora edukacji i działań społecznych.
+            Nasze programy dedykowane sÄ… szerokiemu spektrum odbiorcÃ³w sektora edukacji i dziaÅ‚aÅ„ spoÅ‚ecznych.
           </p>
         </div>
 
@@ -249,38 +250,38 @@
           
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-brand-violet mb-2">person</span>
-            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg1">Młodzież</h4>
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg1">MÅ‚odzieÅ¼</h4>
             <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg1_desc">Wymiany, warsztaty kompetencji i inicjatywy lokalne.</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-brand-coral mb-2">badge</span>
             <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg2">Youth Workers</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg2_desc">Osoby pracujące z młodzieżą, trenerzy i animatorzy.</p>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg2_desc">Osoby pracujÄ…ce z mÅ‚odzieÅ¼Ä…, trenerzy i animatorzy.</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-sky-600 mb-2">volunteer_activism</span>
             <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg3">Pracownicy Socjalni</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg3_desc">Wsparcie w adaptacji migrantów i integracji społecznej.</p>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg3_desc">Wsparcie w adaptacji migrantÃ³w i integracji spoÅ‚ecznej.</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-amber-600 mb-2">star</span>
-            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg4">Młodzi Liderzy</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg4_desc">Inicjatorzy projektów obywatelskich i solidarnościowych.</p>
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg4">MÅ‚odzi Liderzy</h4>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg4_desc">Inicjatorzy projektÃ³w obywatelskich i solidarnoÅ›ciowych.</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-emerald-600 mb-2">store</span>
-            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg5">Przedsiębiorcy</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg5_desc">Wsparcie przedsiębiorczości społecznej i startupów młodzieżowych.</p>
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg5">PrzedsiÄ™biorcy</h4>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg5_desc">Wsparcie przedsiÄ™biorczoÅ›ci spoÅ‚ecznej i startupÃ³w mÅ‚odzieÅ¼owych.</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-purple-600 mb-2">location_city</span>
             <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg6">Przedstawiciele Gmin</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg6_desc">Samorządy i lokalne domy kultury (np. MDK 2 Piekary Śl.).</p>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg6_desc">SamorzÄ…dy i lokalne domy kultury (np. MDK 2 Piekary Åšl.).</p>
           </div>
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
@@ -291,17 +292,17 @@
 
           <div class="p-5 rounded-2xl bg-surface border border-slate-200">
             <span class="material-symbols-outlined text-3xl text-rose-600 mb-2">share</span>
-            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg8">Blogerzy i Twórcy</h4>
-            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg8_desc">Komunikacja wartości europejskich i przeciwdziałanie dezinformacji.</p>
+            <h4 class="font-bold text-sm text-slate-900" data-i18n="act_tg8">Blogerzy i TwÃ³rcy</h4>
+            <p class="text-[11px] text-slate-500 mt-1" data-i18n="act_tg8_desc">Komunikacja wartoÅ›ci europejskich i przeciwdziaÅ‚anie dezinformacji.</p>
           </div>
 
         </div>
 
         <div class="mt-12 text-center">
           <p class="text-sm text-slate-600">
-            Bieżące relacje ze wszystkich wydarzeń publikujemy również na naszym profilu 
+            BieÅ¼Ä…ce relacje ze wszystkich wydarzeÅ„ publikujemy rÃ³wnieÅ¼ na naszym profilu 
             <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener" class="text-brand-violet font-bold hover:underline">
-              Facebook ANIMUS Foundation →
+              Facebook ANIMUS Foundation â†’
             </a>
           </p>
         </div>
@@ -320,19 +321,19 @@
         <div class="space-y-4">
           <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 w-auto object-contain brightness-0 invert">
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
-            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
+            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, mÅ‚odzieÅ¼y i integracji europejskiej.
           </p>
         </div>
 
         <div>
           <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
-            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona gÅ‚Ã³wna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
-            <li><a href="activities.html" class="text-white font-bold transition-colors" data-i18n="nav_activities">Nasze działania</a></li>
+            <li><a href="activities.html" class="text-white font-bold transition-colors" data-i18n="nav_activities">Nasze dziaÅ‚ania</a></li>
             <li><a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a></li>
             <li><a href="partners.html" class="hover:text-white transition-colors" data-i18n="nav_partners">Partnerzy</a></li>
-            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">Aktualności</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">AktualnoÅ›ci</a></li>
           </ul>
         </div>
 
@@ -341,7 +342,7 @@
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
-            <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
+            <p><strong class="text-white">NIP:</strong> 6272740470 â€¢ <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
             <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
@@ -352,7 +353,7 @@
       </div>
 
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
-        <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
+        <p>Â© 2015â€“2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeÅ¼one.</p>
       </div>
 
     </div>
@@ -362,50 +363,50 @@
   <script>
     const I18N = {
       pl: {
-        nav_home: "Strona główna",
+        nav_home: "Strona gÅ‚Ã³wna",
         nav_about: "O nas",
-        nav_activities: "Nasze działania",
+        nav_activities: "Nasze dziaÅ‚ania",
         nav_projects: "Projekty",
         nav_partners: "Partnerzy",
-        nav_news: "Aktualności",
-        nav_news_label: "Aktualności",
-        nav_contact_btn: "Skontaktuj się",
-        act_title: "Nasze Działania i Programy",
-        act_subtitle: "Czerpiemy z wieloletniego doświadczenia własnego i europejskich partnerów. Tworzymy autorskie metody, gry planszowe i prowadzimy angażujące szkolenia dla każdej grupy wiekowej.",
+        nav_news: "AktualnoÅ›ci",
+        nav_news_label: "AktualnoÅ›ci",
+        nav_contact_btn: "Skontaktuj siÄ™",
+        act_title: "Nasze DziaÅ‚ania i Programy",
+        act_subtitle: "Czerpiemy z wieloletniego doÅ›wiadczenia wÅ‚asnego i europejskich partnerÃ³w. Tworzymy autorskie metody, gry planszowe i prowadzimy angaÅ¼ujÄ…ce szkolenia dla kaÅ¼dej grupy wiekowej.",
         act_formats_title: "Co Realizujemy?",
-        act_formats_subtitle: "Dla każdej grupy odbiorców dobieramy i projektujemy zindywidualizowane aktywności o charakterze dydaktyczno-rozwojowym.",
+        act_formats_subtitle: "Dla kaÅ¼dej grupy odbiorcÃ³w dobieramy i projektujemy zindywidualizowane aktywnoÅ›ci o charakterze dydaktyczno-rozwojowym.",
         act_f1_title: "Kursy Szkoleniowe",
-        act_f1_desc: "Wielodniowe międzynarodowe i krajowe Training Courses dla młodzieży, liderów i edukatorów (np. 'Rabbit on the Moon' w Segowii).",
-        act_f2_title: "Wymiany Młodzieży",
-        act_f2_desc: "Projekty Erasmus+ Youth Exchanges (np. #PLUGTREE+ w Rumunii) łączące młodzież z całej Europy wokół dialogu, ekologii i aktywizmu.",
+        act_f1_desc: "Wielodniowe miÄ™dzynarodowe i krajowe Training Courses dla mÅ‚odzieÅ¼y, liderÃ³w i edukatorÃ³w (np. 'Rabbit on the Moon' w Segowii).",
+        act_f2_title: "Wymiany MÅ‚odzieÅ¼y",
+        act_f2_desc: "Projekty Erasmus+ Youth Exchanges (np. #PLUGTREE+ w Rumunii) Å‚Ä…czÄ…ce mÅ‚odzieÅ¼ z caÅ‚ej Europy wokÃ³Å‚ dialogu, ekologii i aktywizmu.",
         act_f3_title: "Autorskie Gry i RPG",
-        act_f3_desc: "Projektowanie gier planszowych i symulacji adaptacyjnych (np. CARE Climate RPG) rozwijających kluczowe kompetencje społeczne.",
+        act_f3_desc: "Projektowanie gier planszowych i symulacji adaptacyjnych (np. CARE Climate RPG) rozwijajÄ…cych kluczowe kompetencje spoÅ‚eczne.",
         act_f4_title: "Warsztaty i Seminaria",
-        act_f4_desc: "Interaktywne warsztaty stacjonarne, webinary oraz wykłady z komunikacji bez przemocy, adaptacji i przedsiębiorczości.",
+        act_f4_desc: "Interaktywne warsztaty stacjonarne, webinary oraz wykÅ‚ady z komunikacji bez przemocy, adaptacji i przedsiÄ™biorczoÅ›ci.",
         act_care_title: "CARE: Climate Action Role-Playing Experience",
-        act_care_p1: "Nasze gry planszowe i symulacje mają charakter edukacyjny i pomagają rozwijać zróżnicowane kompetencje: myślenie strategiczne, empatię, negocjacje i rozwiązywanie konfliktów.",
-        act_care_p2: "Gra CARE to autorska gra fabularna (RPG), w której uczestnicy wcielają się w różne frakcje społeczne (decydenci, ekolodzy, rolnicy, przedsiębiorcy) stające przed kryzysem klimatycznym. Gra uczy podejmowania decyzji w warunkach niepewności i budowania kompromisu.",
-        act_care_spec1: "Uczestników / Stół",
+        act_care_p1: "Nasze gry planszowe i symulacje majÄ… charakter edukacyjny i pomagajÄ… rozwijaÄ‡ zrÃ³Å¼nicowane kompetencje: myÅ›lenie strategiczne, empatiÄ™, negocjacje i rozwiÄ…zywanie konfliktÃ³w.",
+        act_care_p2: "Gra CARE to autorska gra fabularna (RPG), w ktÃ³rej uczestnicy wcielajÄ… siÄ™ w rÃ³Å¼ne frakcje spoÅ‚eczne (decydenci, ekolodzy, rolnicy, przedsiÄ™biorcy) stajÄ…ce przed kryzysem klimatycznym. Gra uczy podejmowania decyzji w warunkach niepewnoÅ›ci i budowania kompromisu.",
+        act_care_spec1: "UczestnikÃ³w / StÃ³Å‚",
         act_care_spec2: "Czas trwania sesji",
         act_target_title: "Z Kim Pracujemy?",
-        act_target_subtitle: "Nasze programy dedykowane są szerokiemu spektrum odbiorców sektora edukacji i działań społecznych.",
-        act_tg1: "Młodzież",
+        act_target_subtitle: "Nasze programy dedykowane sÄ… szerokiemu spektrum odbiorcÃ³w sektora edukacji i dziaÅ‚aÅ„ spoÅ‚ecznych.",
+        act_tg1: "MÅ‚odzieÅ¼",
         act_tg1_desc: "Wymiany, warsztaty kompetencji i inicjatywy lokalne.",
         act_tg2: "Youth Workers",
-        act_tg2_desc: "Osoby pracujące z młodzieżą, trenerzy i animatorzy.",
+        act_tg2_desc: "Osoby pracujÄ…ce z mÅ‚odzieÅ¼Ä…, trenerzy i animatorzy.",
         act_tg3: "Pracownicy Socjalni",
-        act_tg3_desc: "Wsparcie w adaptacji migrantów i integracji społecznej.",
-        act_tg4: "Młodzi Liderzy",
-        act_tg4_desc: "Inicjatorzy projektów obywatelskich i solidarnościowych.",
-        act_tg5: "Przedsiębiorcy",
-        act_tg5_desc: "Wsparcie przedsiębiorczości społecznej i startupów młodzieżowych.",
+        act_tg3_desc: "Wsparcie w adaptacji migrantÃ³w i integracji spoÅ‚ecznej.",
+        act_tg4: "MÅ‚odzi Liderzy",
+        act_tg4_desc: "Inicjatorzy projektÃ³w obywatelskich i solidarnoÅ›ciowych.",
+        act_tg5: "PrzedsiÄ™biorcy",
+        act_tg5_desc: "Wsparcie przedsiÄ™biorczoÅ›ci spoÅ‚ecznej i startupÃ³w mÅ‚odzieÅ¼owych.",
         act_tg6: "Przedstawiciele Gmin",
-        act_tg6_desc: "Samorządy i lokalne domy kultury (np. MDK 2 Piekary Śl.).",
+        act_tg6_desc: "SamorzÄ…dy i lokalne domy kultury (np. MDK 2 Piekary Åšl.).",
         act_tg7: "Nauczyciele i Edukatorzy",
         act_tg7_desc: "Metody pozaformalne w szkolnej praktyce dydaktycznej.",
-        act_tg8: "Blogerzy i Twórcy",
-        act_tg8_desc: "Komunikacja wartości europejskich i przeciwdziałanie dezinformacji.",
-        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.",
+        act_tg8: "Blogerzy i TwÃ³rcy",
+        act_tg8_desc: "Komunikacja wartoÅ›ci europejskich i przeciwdziaÅ‚anie dezinformacji.",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, mÅ‚odzieÅ¼y i integracji europejskiej.",
         footer_nav_title: "Nawigacja",
         footer_contact_title: "Kontakt",
       },
@@ -496,3 +497,4 @@
   </script>
 </body>
 </html>
+

@@ -1,10 +1,11 @@
-/* Local Material Symbols Outlined (Optimized WOFF2 Subset - Animus Child Theme) */
+/* Material Symbols Outlined (Complete Official Google Library - Local & CDN Fallback) */
 @font-face {
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 100 700;
-  src: url('material-symbols.woff2') format('woff2');
-  font-display: swap;
+  src: url('material-symbols.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v375/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2') format('woff2');
+  font-display: block;
 }
 
 .material-symbols-outlined {
@@ -19,6 +20,7 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  font-feature-settings: 'liga' 1;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
