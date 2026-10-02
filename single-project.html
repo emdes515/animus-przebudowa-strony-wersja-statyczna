@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Karta Projektu | Fundacja ANIMUS</title>
+  <meta id="page-desc" name="description" content="Szczegółowa karta projektu Fundacji ANIMUS: konsorcjum, rezultaty, cele oraz kronika relacji terenowych.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./logo.png" type="image/png">
+
+  <!-- Typography: Space Grotesk, Inter, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link rel="stylesheet" href="./material-symbols.css" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#300064',
+              hover: '#220047',
+              container: '#4a0e8f',
+              fixed: '#eedcff',
+              dark: '#1c003b'
+            },
+            secondary: {
+              DEFAULT: '#F35813',
+              container: '#ff7738'
+            },
+            brand: {
+              'violet': '#300064',
+              'coral': '#F35813',
+              'cyan': '#2AD0FF',
+              'amber': '#EA9A05',
+              'ink': '#0F172A',
+              'paper': '#FAF9F6'
+            },
+            surface: '#fdfbf7',
+            'border-subtle': '#E2E8F0'
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
+          boxShadow: {
+            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
+            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .notebook-grid {
+      background-color: #FAF9F6;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    html, body {
+      overflow-x: clip;
+      max-width: 100vw;
+    }
+  </style>
+</head>
+<body class="bg-surface text-slate-900 antialiased flex flex-col min-h-screen overflow-x-clip selection:bg-brand-violet selection:text-white">
+
+  <!-- PRIMARY NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-20 sm:h-24 flex items-center justify-between gap-4 xl:gap-6">
+      
+      <a href="index.html" class="flex items-center shrink-0 py-1" aria-label="ANIMUS Foundation Home">
+        <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-[65px] w-auto max-w-[190px] sm:max-w-none object-contain transition-transform group-hover:scale-[1.03] drop-shadow-[0_2px_4px_rgba(48,0,100,0.06)] shrink-0">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[13px] xl:text-[14px] font-medium text-slate-600 shrink-0" aria-label="Main menu">
+        <a href="index.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group">
+          <span data-i18n="nav_projects">Projekty</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
+        </a>
+        <a href="partners.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">Aktualności</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+          <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
+          <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
+        </div>
+
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="w-8 h-8 xl:w-9 xl:h-9 rounded-xl border border-slate-200 bg-white hover:bg-[#1877F2] text-slate-600 hover:text-white flex items-center justify-center transition-all shadow-2xs hover:border-[#1877F2] hover:shadow-sm group shrink-0" title="Facebook Fundacji ANIMUS" aria-label="Facebook Fundacji ANIMUS">
+          <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <a href="contact.html" class="inline-flex items-center gap-1.5 xl:gap-2 bg-[#300064] hover:bg-[#220047] text-white px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-xl font-semibold text-xs xl:text-sm shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 shrink-0">
+          <span data-i18n="nav_contact_btn">Skontaktuj się</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-brand-violet hover:bg-slate-100 transition-colors shrink-0" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4 shadow-xl">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n="mobile_nav_lang_label">Język serwisu:</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+          <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
+          <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
+        </div>
+      </div>
+      <div class="flex flex-col space-y-3 text-sm font-semibold text-slate-700">
+        <a href="index.html" class="py-1 hover:text-brand-violet" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="py-1 hover:text-brand-violet" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="py-1 hover:text-brand-violet" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="py-1 font-bold text-brand-violet" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="py-1 hover:text-brand-violet" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="py-1 hover:text-brand-violet" data-i18n="nav_news">Aktualności</a>
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
+          <svg class="w-4 h-4 fill-current text-[#1877F2]" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          <span>Facebook ANIMUS</span>
+        </a>
+      </div>
+      <div class="pt-2 border-t border-slate-100">
+        <a href="contact.html" class="pt-2 text-brand-coral font-bold flex items-center justify-between" data-i18n="nav_contact_btn">
+          <span>Skontaktuj się</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN PROJECT DOSSIER HERO -->
+  <main class="flex-grow">
+    
+    <!-- Hero Header Section -->
+    <section class="relative bg-brand-ink text-white pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
+      <!-- Ambient Backdrop Glow -->
+      <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,#4a0e8f,transparent_60%)]"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-coral/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Breadcrumbs & Meta Badges -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+            <a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Główna</a>
+            <span>/</span>
+            <a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a>
+            <span>/</span>
+            <span id="breadcrumb-title" class="text-white font-semibold">Dossier</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span id="project-period-badge" class="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-xs font-mono text-xs font-bold text-white border border-white/15">
+              2025–2026
+            </span>
+            <span id="project-badge" class="px-3 py-1 rounded-lg bg-brand-coral text-white font-mono text-xs font-bold shadow-md">
+              Erasmus+
+            </span>
+          </div>
+        </div>
+
+        <!-- Project Title Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <h1 id="project-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+              Ładowanie projektu...
+            </h1>
+            
+            <p id="project-lead" class="text-base sm:text-lg text-slate-300 font-sans leading-relaxed">
+              ...
+            </p>
+
+            <!-- Quick Specs Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 font-mono text-xs">
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-brand-coral text-[20px] shrink-0 mt-0.5">location_on</span>
+                <div>
+                  <div class="text-slate-400 uppercase tracking-wider text-[10px]" data-i18n="spec_location_label">Zasięg / Lokalizacja</div>
+                  <div id="project-location" class="text-white font-semibold mt-0.5">...</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-brand-cyan text-[20px] shrink-0 mt-0.5">group_work</span>
+                <div>
+                  <div class="text-slate-400 uppercase tracking-wider text-[10px]" data-i18n="spec_partners_label">Konsorcjum i Partnerzy</div>
+                  <div id="project-partners" class="text-white font-semibold mt-0.5">...</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#relacje" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-violet hover:bg-primary-container text-white font-sans font-bold text-xs shadow-md transition-all">
+                <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                <span data-i18n="btn_scroll_chronicle">Zobacz kronikę relacji</span>
+              </a>
+              <button onclick="copyCurrentProjectLink()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs font-semibold border border-white/15 transition-all">
+                <span class="material-symbols-outlined text-[16px]">share</span>
+                <span data-i18n="btn_share_project">Udostępnij projekt</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Image Column -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-900 aspect-[4/3] group">
+              <img id="project-hero-img" src="./cropped-Animus-Logo-Horizontal.png" alt="Project Banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-white/90 pointer-events-none">
+                <span class="flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-md">
+                  <span class="material-symbols-outlined text-[14px] text-brand-coral">verified</span>
+                  <span>Zweryfikowana inicjatywa ANIMUS</span>
+                </span>
+                <span id="project-articles-count" class="bg-brand-violet/90 backdrop-blur-xs px-2.5 py-1 rounded-md font-bold">
+                  0 relacji
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT & PASSPORT SECTION -->
+    <section class="py-16 sm:py-20 notebook-grid border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Left Column: Detailed Description & Methodology -->
+          <div class="lg:col-span-8 space-y-10">
+            
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-warm-card space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center font-bold">
+                  <span class="material-symbols-outlined text-[22px]">description</span>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-coral" data-i18n="dossier_kicker">Paszport Merytoryczny</span>
+                  <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900" data-i18n="dossier_title">Opis i Założenia Strategiczne</h2>
+                </div>
+              </div>
+
+              <div id="project-full-desc" class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-sans space-y-4 text-base sm:text-lg">
+                <!-- Description content -->
+              </div>
+
+              <!-- Methodology / Impact Highlights -->
+              <div class="pt-6 border-t border-slate-100">
+                <h3 class="text-sm font-mono uppercase tracking-wider font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-brand-coral text-[18px]">verified</span>
+                  <span data-i18n="dossier_key_pillars">Kluczowe rezultaty i metodyka pracy</span>
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                    <span class="material-symbols-outlined text-brand-violet text-[22px] mb-2">sports_esports</span>
+                    <h4 class="font-heading font-bold text-sm text-slate-900">Edukacja Pozaformalna</h4>
+                    <p class="text-xs text-slate-600 mt-1">Aktywne warsztaty, gry adaptacyjne i uczenie przez doświadczenie (experiential learning).</p>
+                  </div>
+                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                    <span class="material-symbols-outlined text-brand-coral text-[22px] mb-2">diversity_3</span>
+                    <h4 class="font-heading font-bold text-sm text-slate-900">Włączenie Młodzieży</h4>
+                    <p class="text-xs text-slate-600 mt-1">Równe szanse, certyfikacja Youthpass i budowanie kompetencji obywatelskich.</p>
+                  </div>
+                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                    <span class="material-symbols-outlined text-brand-cyan text-[22px] mb-2">public</span>
+                    <h4 class="font-heading font-bold text-sm text-slate-900">Wymiar Europejski</h4>
+                    <p class="text-xs text-slate-600 mt-1">Konsorcja międzynarodowe, transfer dobrych praktyk i mobilność Erasmus+.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Consortium Passport Card & Fast Actions -->
+          <div class="lg:col-span-4 space-y-6">
+            
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-warm-card space-y-6">
+              <h3 class="font-heading font-extrabold text-xl text-slate-900 flex items-center gap-2">
+                <span class="material-symbols-outlined text-brand-violet text-[22px]">badge</span>
+                <span data-i18n="passport_header">Paszport Konsorcjum</span>
+              </h3>
+
+              <div class="space-y-4 text-xs font-sans">
+                <div class="pb-3 border-b border-slate-100">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_promoter">Lider / Koordynator</div>
+                  <div class="font-bold text-slate-900 text-sm mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</div>
+                  <div class="text-slate-500 font-mono text-[11px] mt-0.5">Orzesze, Polska • OID: E10189332</div>
+                </div>
+
+                <div class="pb-3 border-b border-slate-100">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_partners_list">Partnerzy Wdrożeniowi</div>
+                  <div id="passport-partners-list" class="font-medium text-slate-700 mt-1 space-y-1">
+                    <!-- Partner pills -->
+                  </div>
+                </div>
+
+                <div class="pb-3 border-b border-slate-100">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_status">Status Inicjatywy</div>
+                  <div class="flex items-center gap-2 mt-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="font-semibold text-slate-900" data-i18n="passport_status_active">Aktywny program archiwalno-wdrożeniowy</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_certificate">Certyfikacja i Uznawalność</div>
+                  <div class="font-medium text-slate-700 mt-1 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-brand-coral text-[16px]">military_tech</span>
+                    <span>Certyfikat Youthpass / Zaświadczenie MEN</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Contact CTA -->
+              <div class="pt-4 border-t border-slate-100">
+                <a href="contact.html" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white text-slate-800 font-heading font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-xs">
+                  <span class="material-symbols-outlined text-[16px]">mail</span>
+                  <span data-i18n="passport_cta_contact">Zgłoś partnerstwo lub zapytaj o projekt</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Adjacent Projects Navigation Card -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-4">
+              <div class="text-[10px] font-mono uppercase text-slate-400 tracking-wider">Nawigacja po projektach</div>
+              <div class="flex items-center justify-between gap-3 text-xs font-mono font-bold">
+                <a id="prev-project-btn" href="#" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+                  <span>Poprzedni</span>
+                </a>
+                <a href="projects.html" class="text-slate-400 hover:text-white transition-colors">Wszystkie (10)</a>
+                <a id="next-project-btn" href="#" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
+                  <span>Następny</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECT CHRONICLE & ARTICLES SECTION -->
+    <section id="relacje" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="text-xs font-mono uppercase font-bold tracking-widest text-brand-violet flex items-center gap-1.5 mb-2">
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+              <span data-i18n="chronicle_kicker">Kronika Terenowa</span>
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900" data-i18n="chronicle_title">
+              Raporty, Relacje i Działania w Ramach Tego Projektu
+            </h2>
+          </div>
+          <p id="chronicle-subtitle" class="text-xs sm:text-sm font-mono text-slate-500">
+            Wyświetlane relacje z terenu
+          </p>
+        </div>
+
+        <!-- Articles Grid -->
+        <div id="project-articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Populated dynamically -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- HARMONIZED 4-COLUMN FOOTER -->
+  <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Etymology -->
+        <div class="space-y-4">
+          <img src="./logo.png" alt="ANIMUS Foundation" class="h-10 w-auto object-contain brightness-0 invert" onerror="this.onerror=null; this.src='https://animusedu.com/wp-content/uploads/2022/08/cropped-Animus-Logo-Horizontal.png'">
+          <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
+            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400">
+            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
+            <li><a href="activities.html" class="hover:text-white transition-colors" data-i18n="nav_activities">Nasze działania</a></li>
+            <li><a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a></li>
+            <li><a href="partners.html" class="hover:text-white transition-colors" data-i18n="nav_partners">Partnerzy</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">Aktualności (117)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
+            <p><strong class="text-white">KRS:</strong> 0000535710</p>
+            <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
+            <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal Notice -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <p>&copy; 2015&ndash;2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- DATA & LOGIC SCRIPTS -->
+  <script src="./projects-data.js"></script>
+  <script>
+    const I18N = {
+      pl: {
+        nav_home: "Strona główna",
+        nav_about: "O nas",
+        nav_activities: "Nasze działania",
+        nav_projects: "Projekty",
+        nav_partners: "Partnerzy",
+        nav_news: "Aktualności",
+        nav_contact_btn: "Skontaktuj się",
+        mobile_nav_lang_label: "Język serwisu:",
+        spec_location_label: "Zasięg / Lokalizacja",
+        spec_partners_label: "Konsorcjum i Partnerzy",
+        btn_scroll_chronicle: "Zobacz kronikę relacji",
+        btn_share_project: "Udostępnij projekt",
+        dossier_kicker: "Paszport Merytoryczny",
+        dossier_title: "Opis i Założenia Strategiczne",
+        dossier_key_pillars: "Kluczowe rezultaty i metodyka pracy",
+        passport_header: "Paszport Konsorcjum",
+        passport_promoter: "Lider / Koordynator",
+        passport_partners_list: "Partnerzy Wdrożeniowi",
+        passport_status: "Status Inicjatywy",
+        passport_status_active: "Aktywny program archiwalno-wdrożeniowy",
+        passport_certificate: "Certyfikacja i Uznawalność",
+        passport_cta_contact: "Zgłoś partnerstwo lub zapytaj o projekt",
+        chronicle_kicker: "Kronika Terenowa",
+        chronicle_title: "Raporty, Relacje i Działania w Ramach Tego Projektu",
+        read_report_btn: "Czytaj pełną relację",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.",
+        footer_nav_title: "Nawigacja",
+        footer_contact_title: "Kontakt",
+      },
+      en: {
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_activities: "Our Focus",
+        nav_projects: "Projects",
+        nav_partners: "Partners",
+        nav_news: "News & Fieldwork",
+        nav_contact_btn: "Get in Touch",
+        mobile_nav_lang_label: "Interface Language:",
+        spec_location_label: "Geographic Scope",
+        spec_partners_label: "Consortium & Partners",
+        btn_scroll_chronicle: "View Field Reports",
+        btn_share_project: "Share Project Dossier",
+        dossier_kicker: "Project Passport",
+        dossier_title: "Strategic Blueprint & Objectives",
+        dossier_key_pillars: "Core outcomes and working methodology",
+        passport_header: "Consortium Passport",
+        passport_promoter: "Project Promoter / Lead",
+        passport_partners_list: "Delivery Partners",
+        passport_status: "Scheme Status",
+        passport_status_active: "Active dissemination & implementation",
+        passport_certificate: "Validation & Accreditation",
+        passport_cta_contact: "Join consortium or inquire",
+        chronicle_kicker: "Fieldwork Chronicle",
+        chronicle_title: "Reports, Dispatches and Insights in This Project",
+        read_report_btn: "Read full dispatch",
+        footer_about_text: "ANIMUS Foundation is an education and training center established in 2015, empowering youth through non-formal learning and European solidarity.",
+        footer_nav_title: "Navigation",
+        footer_contact_title: "Contact",
+      }
+    };
+
+    let currentLang = localStorage.getItem('animus_lang') || 'pl';
+    let currentProjectId = 'okulary-mlodziezowe';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('animus_lang', lang);
+
+      const btnPl = document.getElementById('lang-pl');
+      const btnEn = document.getElementById('lang-en');
+      if (btnPl && btnEn) {
+        if (lang === 'pl') {
+          btnPl.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnPl.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        }
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.innerHTML = I18N[lang][key];
+        }
+      });
+
+      renderProjectDossier();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function copyCurrentProjectLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        if (window.animusToast) {
+          window.animusToast('Skopiowano link do karty projektu!', 'success');
+        } else {
+          alert('Skopiowano link do schowka!');
+        }
+      });
+    }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
+  </script>
+</body>
+</html>

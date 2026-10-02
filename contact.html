@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt & Dane Rejestrowe | ANIMUS Foundation — Training & Education Center</title>
+  <meta name="description" content="Skontaktuj się z Fundacją ANIMUS Centrum Edukacyjno-Szkoleniowe w Orzeszu. Sprawdź dane rejestrowe KRS 0000535710, NIP 6272740470, OID E10189332 oraz telefony i formularz.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              violet: '#300064',
+              coral: '#F35813',
+              cyan: '#2AD0FF',
+              amber: '#EA9A05',
+              ink: '#0F172A',
+              paper: '#FAF9F6'
+            },
+            surface: '#fdfbf7',
+            'border-subtle': '#E2E8F0'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link rel="stylesheet" href="./material-symbols.css" />
+
+  <style>
+    .notebook-grid {
+      background-color: #FAF9F6;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-slate-900 antialiased flex flex-col min-h-screen">
+
+  <!-- PRIMARY NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 sm:h-24 flex items-center justify-between gap-6">
+      
+      <a href="index.html" class="flex items-center group py-1" aria-label="ANIMUS Foundation Home">
+        <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-12 sm:h-14 md:h-16 lg:h-[70px] w-auto object-contain transition-transform group-hover:scale-[1.03] drop-shadow-[0_2px_4px_rgba(48,0,100,0.06)]">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium text-slate-600" aria-label="Main menu">
+        <a href="index.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">Aktualności</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1">
+          <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
+          <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
+        </div>
+
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl border border-slate-200 bg-white hover:bg-[#1877F2] text-slate-600 hover:text-white flex items-center justify-center transition-all shadow-2xs hover:border-[#1877F2] hover:shadow-sm group" title="Facebook Fundacji ANIMUS" aria-label="Facebook Fundacji ANIMUS">
+          <svg class="w-4 h-4 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <a href="contact.html" class="inline-flex items-center gap-2 bg-[#300064] text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-sm ring-2 ring-brand-violet/30">
+          <span data-i18n="nav_contact_btn">Skontaktuj się</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-brand-violet hover:bg-slate-100 transition-colors" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+          <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
+          <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
+        </div>
+      </div>
+      <nav class="flex flex-col space-y-3 text-base font-medium text-slate-700">
+        <a href="index.html" class="py-1 hover:text-brand-violet" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="py-1 hover:text-brand-violet" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="py-1 hover:text-brand-violet" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="py-1 hover:text-brand-violet" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="py-1 hover:text-brand-violet" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="py-1 hover:text-brand-violet" data-i18n="nav_news">Aktualności</a>
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
+          <span class="w-5 h-5 rounded bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </span>
+          <span>Facebook ANIMUS</span>
+        </a>
+        <a href="contact.html" class="pt-2 text-brand-coral font-bold flex items-center justify-between" data-i18n="nav_contact_btn">
+          <span>Skontaktuj się</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow pt-20 sm:pt-24">
+
+    <!-- Hero Header with Notebook Grid -->
+    <section class="py-14 lg:py-18 border-b border-border-subtle notebook-grid">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        <div class="max-w-3xl space-y-4">
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="cont_title">
+            Skontaktuj się z Nami
+          </h1>
+          <p class="text-lg text-slate-600 leading-relaxed font-normal" data-i18n="cont_subtitle">
+            Jesteśmy otwarci na nowe znajomości, partnerstwa w projektach europejskich oraz współpracę szkoleniową. Skontaktuj się z nami w najdogodniejszy dla Ciebie sposób.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Details & Form Grid -->
+    <section class="py-16 bg-white border-b border-border-subtle">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left: Institutional Legal Data & Direct Contacts -->
+          <div class="lg:col-span-5 space-y-8">
+            
+            <div class="bg-surface border border-slate-200 rounded-3xl p-7 sm:p-8 space-y-6 shadow-sm">
+              <h2 class="text-xl font-bold font-heading text-slate-900 border-b border-slate-200 pb-3" data-i18n="cont_card_title">
+                Dane Identyfikacyjne i Rejestrowe
+              </h2>
+
+              <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase block font-semibold">Nazwa Rejestrowa:</span>
+                  <span class="font-bold text-slate-900 block mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</span>
+                </div>
+
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase block font-semibold">Adres Siedziby:</span>
+                  <span class="font-bold text-slate-900 block mt-0.5">ul. Polna 16, 43-180 Orzesze, Polska</span>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2.5 pt-2">
+                  <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
+                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">KRS:</span>
+                    <span class="font-mono font-bold text-brand-violet text-sm">0000535710</span>
+                  </div>
+                  <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
+                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">NIP:</span>
+                    <span class="font-mono font-bold text-slate-900 text-sm">6272740470</span>
+                  </div>
+                  <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
+                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">REGON:</span>
+                    <span class="font-mono font-bold text-slate-900 text-sm">360577338</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direct Channels -->
+              <div class="pt-4 border-t border-slate-200 space-y-3.5">
+                <div class="flex items-center gap-3 text-sm">
+                  <div class="w-9 h-9 rounded-xl bg-purple-50 border border-purple-200/60 text-brand-violet flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[19px]">mail</span>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-400 block font-mono">E-mail:</span>
+                    <a href="mailto:animuscentrum@gmail.com" class="font-bold text-slate-900 hover:text-brand-violet transition-colors">
+                      animuscentrum@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 text-sm">
+                  <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/60 text-brand-coral flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[19px]">call</span>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-400 block font-mono">Telefon (PL / ENG):</span>
+                    <a href="tel:+48608616675" class="font-mono font-bold text-slate-900 hover:text-brand-coral transition-colors">
+                      +48 608 616 675
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 text-sm">
+                  <div class="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/60 text-brand-coral flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[19px]">call</span>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-400 block font-mono">Telefon (ENG / UA / RU):</span>
+                    <a href="tel:+48573394180" class="font-mono font-bold text-slate-900 hover:text-brand-coral transition-colors">
+                      +48 573 394 180
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Bank Account Box with Copy Button -->
+                <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[11px] font-mono font-bold text-slate-500 uppercase">Rachunek Bankowy (Alior Bank)</span>
+                    <button type="button" onclick="copyToClipboard('66 2490 0005 0000 4530 8493 8470', 'Skopiowano numer konta!')" class="px-2 py-1 bg-brand-violet text-white text-[11px] font-mono font-bold rounded-lg hover:bg-primary-hover transition-colors flex items-center gap-1 shadow-2xs">
+                      <span class="material-symbols-outlined text-[13px]">content_copy</span>
+                      <span>Kopiuj</span>
+                    </button>
+                  </div>
+                  <code class="text-xs sm:text-sm font-mono font-bold text-slate-900 block break-all select-all">
+                    66 2490 0005 0000 4530 8493 8470
+                  </code>
+                </div>
+
+                <div class="pt-1.5">
+                  <span class="text-xs text-slate-400 block font-mono mb-2">Media Społecznościowe:</span>
+                  <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-gradient-to-r from-blue-50/70 to-indigo-50/50 hover:from-blue-50 hover:to-indigo-50 rounded-2xl border border-blue-200/70 hover:border-[#1877F2]/60 transition-all group shadow-2xs hover:shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span class="text-[13px] font-bold text-slate-900 group-hover:text-[#1877F2] transition-colors block">
+                          Fundacja ANIMUS na Facebooku
+                        </span>
+                        <span class="text-[11px] font-mono text-slate-500">Oficjalny profil organizacji</span>
+                      </div>
+                    </div>
+                    <span class="w-7 h-7 rounded-lg bg-white border border-blue-200 text-[#1877F2] flex items-center justify-center shrink-0 group-hover:bg-[#1877F2] group-hover:text-white transition-all shadow-2xs">
+                      <span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right: Interactive Message & Partnership Form -->
+          <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-sm relative">
+            
+            <!-- Quick Test Autofill Bar -->
+            <div class="mb-6 pb-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-slate-50 -mx-4 -mt-4 p-4 rounded-2xl border border-slate-200/80">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-brand-coral text-white font-mono font-bold text-[10px]">TEST FORM</span>
+                <span class="text-xs font-mono text-slate-600">Narzędzia testowe formularza:</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="autofillTestData()" class="px-2.5 py-1.5 rounded-lg bg-brand-violet hover:bg-primary-hover text-white font-mono text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
+                  <span class="material-symbols-outlined text-[14px]">bolt</span>
+                  <span>Wypełnij dane testowe</span>
+                </button>
+                <button type="button" onclick="openTestInboxModal()" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 hover:border-brand-violet text-slate-700 font-mono text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
+                  <span class="material-symbols-outlined text-[14px]">inbox</span>
+                  <span id="test-inbox-count-btn">Skrzynka (0)</span>
+                </button>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold font-heading text-slate-900 mb-2" data-i18n="form_title">
+              Napisz do Nas
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mb-8" data-i18n="form_subtitle">
+              Wypełnij formularz – odpowiemy w ciągu 48 godzin roboczych.
+            </p>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="name" data-i18n="form_name">
+                    Imię i Nazwisko *
+                  </label>
+                  <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="Jan Kowalski">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="email" data-i18n="form_email">
+                    Adres E-mail *
+                  </label>
+                  <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="jan@przyklad.pl">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="org" data-i18n="form_org">
+                    Organizacja / Instytucja
+                  </label>
+                  <input type="text" id="org" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="NGO, Szkoła, Uczelnia, Partner">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="topic" data-i18n="form_topic">
+                    Temat Wiadomości
+                  </label>
+                  <select id="topic" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors">
+                    <option value="erasmus">Partnerstwo Erasmus+ (KA1/KA2)</option>
+                    <option value="training">Zamówienie Szkolenia / Warsztatu</option>
+                    <option value="games">Gry Planszowe i CARE RPG</option>
+                    <option value="youth">Wymiana Młodzieży</option>
+                    <option value="other">Inna sprawa</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="message" data-i18n="form_message">
+                  Treść Wiadomości *
+                </label>
+                <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="Opisz swój projekt, pomysł na partnerstwo lub zadaj pytanie..."></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <button type="submit" id="submit-btn" class="inline-flex items-center justify-center gap-2 bg-brand-violet hover:bg-[#200045] text-white px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all w-full sm:w-auto cursor-pointer">
+                  <span id="submit-text" data-i18n="form_submit">Wyślij Wiadomość</span>
+                  <span id="submit-icon" class="material-symbols-outlined text-base">send</span>
+                </button>
+                <span class="text-[11px] font-mono text-slate-400">
+                  Tryb testowy: Zapis lokalny do localStorage
+                </span>
+              </div>
+
+              <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-medium space-y-1">
+                <div class="font-bold flex items-center gap-1.5 text-sm">
+                  <span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+                  <span>Wiadomość testowa została pomyślnie wysłana!</span>
+                </div>
+                <p>Zarejestrowano w lokalnej bazie testowej. Możesz podejrzeć wpis w skrzynce testowej.</p>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+        
+        <div class="space-y-4">
+          <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 w-auto object-contain brightness-0 invert">
+          <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
+            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400">
+            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
+            <li><a href="activities.html" class="hover:text-white transition-colors" data-i18n="nav_activities">Nasze działania</a></li>
+            <li><a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a></li>
+            <li><a href="partners.html" class="hover:text-white transition-colors" data-i18n="nav_partners">Partnerzy</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">Aktualności</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
+            <p><strong class="text-white">KRS:</strong> 0000535710</p>
+            <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
+            <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
+            <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MULTILINGUAL SCRIPT -->
+  <script>
+    const I18N = {
+      pl: {
+        nav_home: "Strona główna",
+        nav_about: "O nas",
+        nav_activities: "Nasze działania",
+        nav_projects: "Projekty",
+        nav_partners: "Partnerzy",
+        nav_news: "Aktualności",
+        nav_news_label: "Aktualności",
+        nav_contact_btn: "Skontaktuj się",
+        cont_title: "Skontaktuj się z Nami",
+        cont_subtitle: "Jesteśmy otwarci na nowe znajomości, partnerstwa w projektach europejskich oraz współpracę szkoleniową. Skontaktuj się z nami w najdogodniejszy dla Ciebie sposób.",
+        cont_card_title: "Dane Identyfikacyjne i Rejestrowe",
+        form_title: "Napisz do Nas",
+        form_subtitle: "Wypełnij formularz – odpowiemy w ciągu 48 godzin roboczych.",
+        form_name: "Imię i Nazwisko *",
+        form_email: "Adres E-mail *",
+        form_org: "Organizacja / Instytucja",
+        form_topic: "Temat Wiadomości",
+        form_message: "Treść Wiadomości *",
+        form_submit: "Wyślij Wiadomość",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.",
+        footer_nav_title: "Nawigacja",
+        footer_contact_title: "Kontakt",
+      },
+      en: {
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_activities: "Our Activities",
+        nav_projects: "Our Projects",
+        nav_partners: "Our Partners",
+        nav_news: "News",
+        nav_news_label: "News",
+        nav_contact_btn: "Get in touch",
+        cont_title: "Get in Touch With Us",
+        cont_subtitle: "We are continually open to cross-border cooperation, Erasmus+ consortia and educational partnerships. Reach out through your preferred channel.",
+        cont_card_title: "Legal & Organizational Dossier",
+        form_title: "Direct Message",
+        form_subtitle: "Complete the inquiry form – we will get back to you within 48 business hours.",
+        form_name: "Full Name *",
+        form_email: "E-mail Address *",
+        form_org: "Organisation / Institution",
+        form_topic: "Inquiry Subject",
+        form_message: "Message Body *",
+        form_submit: "Send Message",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) is an autonomous Training & Education Center active since 2015. We empower youth workers, teachers, and communities through non-formal learning and Erasmus+ cooperation.",
+        footer_nav_title: "Navigation",
+        footer_contact_title: "Contact",
+      }
+    };
+
+    let currentLang = localStorage.getItem('animus_lang') || 'pl';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('animus_lang', lang);
+
+      const btnPl = document.getElementById('lang-pl');
+      const btnEn = document.getElementById('lang-en');
+      if (btnPl && btnEn) {
+        if (lang === 'pl') {
+          btnPl.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnPl.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        }
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.textContent = I18N[lang][key];
+        }
+      });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    // TEST TOOLS FOR CONTACT FORM
+    function autofillTestData() {
+      const sampleNames = ["Anna Nowak", "Michał Wiśniewski", "Katarzyna Wójcik", "Piotr Kowalczyk"];
+      const sampleOrgs = ["Fundacja Rozwoju Młodzieży", "Liceum Ogólnokształcące w Katowicach", "Stowarzyszenie Inicjatyw Społecznych", "Uniwersytet Śląski"];
+      const sampleTopics = ["erasmus", "training", "games", "youth", "other"];
+      const sampleMessages = [
+        "Dzień dobry! Zgłaszamy się z propozycją wspólnego wniosku w programie Erasmus+ KA2 (Partnerstwa Współpracy) w obszarze edukacji pozaformalnej i gier adaptacyjnych. Chcielibyśmy przedyskutować możliwości konsorcjum na rok 2026.",
+        "Szanowni Państwo, jesteśmy zainteresowani organizacją warsztatów z wykorzystaniem gry symulacyjnej CARE RPG dla naszej 20-osobowej grupy liderów młodzieżowych. Prosimy o przedstawienie oferty terminowej i szczegółów metodyki.",
+        "Chcielibyśmy nawiązać współpracę w zakresie wymian młodzieży (Erasmus+ KA1) oraz wdrożenia certyfikacji Youthpass. Jakie są aktualne możliwości dołączenia do Waszych inicjatyw?"
+      ];
+
+      const rName = sampleNames[Math.floor(Math.random() * sampleNames.length)];
+      const rEmail = rName.toLowerCase().replace(/\s+/g, '.').normalize("NFD").replace(/[\u0300-\u036f]/g, "") + "@przyklad-test.pl";
+      const rOrg = sampleOrgs[Math.floor(Math.random() * sampleOrgs.length)];
+      const rTopic = sampleTopics[Math.floor(Math.random() * sampleTopics.length)];
+      const rMsg = sampleMessages[Math.floor(Math.random() * sampleMessages.length)];
+
+      document.getElementById('name').value = rName;
+      document.getElementById('email').value = rEmail;
+      document.getElementById('org').value = rOrg;
+      document.getElementById('topic').value = rTopic;
+      document.getElementById('message').value = rMsg;
+
+      if (window.animusToast) {
+        window.animusToast('⚡ Wypełniono formularz danymi testowymi!', 'info');
+      }
+    }
+
+    function getTestMessages() {
+      try {
+        return JSON.parse(localStorage.getItem('animus_test_messages') || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function updateInboxCount() {
+      const msgs = getTestMessages();
+      const btn = document.getElementById('test-inbox-count-btn');
+      if (btn) btn.textContent = `Skrzynka (${msgs.length})`;
+    }
+
+    function openTestInboxModal() {
+      const msgs = getTestMessages();
+      let modal = document.getElementById('test-inbox-modal');
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'test-inbox-modal';
+        modal.className = 'fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300';
+        document.body.appendChild(modal);
+      }
+
+      modal.innerHTML = `
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-brand-violet/10 text-brand-violet flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">inbox</span>
+              </span>
+              <div>
+                <h3 class="text-lg font-heading font-extrabold text-slate-900">Lokalna Skrzynka Testowa</h3>
+                <p class="text-xs text-slate-500 font-mono">Wiadomości zapisane w przeglądarce (${msgs.length})</p>
+              </div>
+            </div>
+            <button onclick="closeTestInboxModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
+              <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+          </div>
+
+          <div class="flex-1 overflow-y-auto py-4 space-y-3 custom-scrollbar">
+            ${msgs.length === 0 ? `
+              <div class="py-12 text-center text-slate-400">
+                <span class="material-symbols-outlined text-4xl mb-2">drafts</span>
+                <p class="text-sm font-semibold">Skrzynka testowa jest pusta.</p>
+                <p class="text-xs">Wypełnij formularz i kliknij „Wyślij”, aby zarejestrować testową wiadomość.</p>
+              </div>
+            ` : msgs.map((m, i) => `
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="font-bold text-brand-violet">${m.name} &lt;${m.email}&gt;</span>
+                  <span class="text-slate-400">${m.date}</span>
+                </div>
+                ${m.org ? `<div class="text-[11px] font-mono text-slate-500 font-medium">Instytucja: ${m.org}</div>` : ''}
+                <div class="text-xs font-bold text-slate-800 font-sans">Temat: ${m.topic}</div>
+                <p class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-slate-100 font-sans leading-relaxed">${m.message}</p>
+              </div>
+            `).reverse().join('')}
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+            <button onclick="clearTestInbox()" class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-600 hover:bg-rose-50 text-xs font-mono font-bold transition-all">
+              Wyczyść skrzynkę
+            </button>
+            <button onclick="closeTestInboxModal()" class="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-heading font-bold hover:bg-brand-violet transition-all">
+              Zamknij
+            </button>
+          </div>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+    }
+
+    function closeTestInboxModal() {
+      const modal = document.getElementById('test-inbox-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function clearTestInbox() {
+      localStorage.removeItem('animus_test_messages');
+      updateInboxCount();
+      closeTestInboxModal();
+      if (window.animusToast) window.animusToast('Wyczyszczono lokalną skrzynkę testową.', 'info');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const submitIcon = document.getElementById('submit-icon');
+      const fb = document.getElementById('form-feedback');
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const org = document.getElementById('org').value.trim();
+      const topic = document.getElementById('topic').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        if (window.animusToast) window.animusToast('Proszę wypełnić wszystkie wymagane pola (*)', 'warning');
+        return;
+      }
+
+      // UI Loading state
+      if (btn) btn.disabled = true;
+      if (submitText) submitText.textContent = "Wysyłanie...";
+      if (submitIcon) submitIcon.textContent = "hourglass_empty";
+
+      setTimeout(() => {
+        // Save to localStorage
+        const msgs = getTestMessages();
+        const newMsg = {
+          id: Date.now(),
+          date: new Date().toLocaleString('pl-PL'),
+          name,
+          email,
+          org,
+          topic,
+          message
+        };
+        msgs.push(newMsg);
+        localStorage.setItem('animus_test_messages', JSON.stringify(msgs));
+
+        // Restore UI
+        if (btn) btn.disabled = false;
+        if (submitText) submitText.textContent = "Wyślij Wiadomość";
+        if (submitIcon) submitIcon.textContent = "send";
+
+        if (fb) {
+          fb.classList.remove('hidden');
+          fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        updateInboxCount();
+
+        if (window.animusToast) {
+          window.animusToast('🎉 Wiadomość testowa została pomyślnie wysłana i zapisana!', 'success');
+        }
+
+        // Reset form inputs
+        document.getElementById('contact-form').reset();
+      }, 750);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+      updateInboxCount();
+    });
+  
+    function copyToClipboard(text, msg) {
+      navigator.clipboard.writeText(text).then(() => {
+        let t = document.createElement('div');
+        t.className = 'fixed bottom-6 right-6 z-50 bg-emerald-600 text-white px-5 py-3 rounded-2xl shadow-xl font-medium text-xs flex items-center gap-2.5 transition-all';
+        t.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span> <span>' + (msg || 'Skopiowano!') + '</span>';
+        document.body.appendChild(t);
+        setTimeout(() => {
+          t.style.opacity = '0';
+          t.style.transform = 'translateY(10px)';
+          setTimeout(() => t.remove(), 300);
+        }, 2500);
+      }).catch(() => {
+        prompt('Skopiuj numer konta:', text);
+      });
+    }
+
+  </script>
+</body>
+</html>

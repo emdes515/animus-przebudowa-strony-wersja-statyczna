@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nasze Projekty & Kronika Działań | ANIMUS Foundation — Training & Education Center</title>
+  <meta name="description" content="Poznaj projekty i kronikę działań Fundacji ANIMUS: wymiany Erasmus+, inicjatywy obywatelskie, CARE RPG, Be Active!, Tiny Habits i warsztaty terenowe.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              violet: '#300064',
+              coral: '#F35813',
+              cyan: '#2AD0FF',
+              amber: '#EA9A05',
+              ink: '#0F172A',
+              paper: '#FAF9F6'
+            },
+            surface: '#fdfbf7',
+            'border-subtle': '#E2E8F0'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link rel="stylesheet" href="./material-symbols.css" />
+
+  <style>
+    .notebook-grid {
+      background-color: #FAF9F6;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    /* Expandable Accordion with CSS Grid */
+    .accordion-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-wrapper.is-open {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+      min-height: 0;
+    }
+    .accordion-chevron {
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-chevron.rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    /* Modal Animation */
+    #article-modal {
+      visibility: hidden;
+      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s;
+    }
+    #article-modal.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    #modal-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s;
+      transform: scale(0.96) translateY(12px);
+    }
+    #article-modal.active #modal-card {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Custom Sleek Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 7px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    html, body {
+      overflow-x: clip;
+      max-width: 100vw;
+    }
+  </style>
+</head>
+<body class="bg-surface text-slate-900 antialiased flex flex-col min-h-screen overflow-x-clip">
+
+  <!-- PRIMARY NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-20 sm:h-24 flex items-center justify-between gap-4 xl:gap-6">
+      
+      <a href="index.html" class="flex items-center shrink-0 py-1" aria-label="ANIMUS Foundation Home">
+        <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-[65px] w-auto max-w-[190px] sm:max-w-none object-contain transition-transform group-hover:scale-[1.03] drop-shadow-[0_2px_4px_rgba(48,0,100,0.06)] shrink-0">
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[13px] xl:text-[14px] font-medium text-slate-600 shrink-0" aria-label="Main menu">
+        <a href="index.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group">
+          <span data-i18n="nav_projects">Projekty</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
+        </a>
+        <a href="partners.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">Aktualności</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+          <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
+          <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
+        </div>
+
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="w-8 h-8 xl:w-9 xl:h-9 rounded-xl border border-slate-200 bg-white hover:bg-[#1877F2] text-slate-600 hover:text-white flex items-center justify-center transition-all shadow-2xs hover:border-[#1877F2] hover:shadow-sm group shrink-0" title="Facebook Fundacji ANIMUS" aria-label="Facebook Fundacji ANIMUS">
+          <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <a href="contact.html" class="inline-flex items-center gap-1.5 xl:gap-2 bg-[#300064] hover:bg-[#220047] text-white px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-xl font-semibold text-xs xl:text-sm transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 shrink-0">
+          <span data-i18n="nav_contact_btn">Skontaktuj się</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-brand-violet hover:bg-slate-100 transition-colors shrink-0" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+          <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
+          <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
+        </div>
+      </div>
+      <nav class="flex flex-col space-y-3 text-base font-medium text-slate-700">
+        <a href="index.html" class="py-1 hover:text-brand-violet" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="py-1 hover:text-brand-violet" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="py-1 hover:text-brand-violet" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="py-1 font-bold text-brand-violet" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="py-1 hover:text-brand-violet" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="py-1 hover:text-brand-violet" data-i18n="nav_news">Aktualności</a>
+                <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
+          <span class="w-5 h-5 rounded bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </span>
+          <span>Facebook ANIMUS</span>
+        </a>
+        <a href="contact.html" class="pt-2 text-brand-coral font-bold flex items-center justify-between" data-i18n="nav_contact_btn">
+          <span>Skontaktuj się</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow pt-20 sm:pt-24">
+
+    <!-- Hero Header with Notebook Grid -->
+    <section class="py-14 lg:py-18 border-b border-border-subtle notebook-grid relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+        <div class="max-w-3xl space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-brand-violet text-xs font-mono font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-brand-violet animate-pulse"></span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="proj_title">
+            Nasze Projekty i Inicjatywy
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal" data-i18n="proj_subtitle">
+            Międzynarodowe wymiany Erasmus+, programy edukacji obywatelskiej, autorskie narzędzia metodyczne i lokalne działania edukacyjne Fundacji ANIMUS.
+          </p>
+
+          <!-- Authentic Metrics Ribbon -->
+          <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-2xl font-bold font-heading text-brand-violet">10</div>
+              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_projects">Flagowych Inicjatyw</div>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-2xl font-bold font-heading text-brand-coral">117</div>
+              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_articles">Relacji & Artykułów</div>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-2xl font-bold font-heading text-emerald-700">8+</div>
+              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_countries">Krajów w Europie</div>
+            </div>
+            <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-2xl font-bold font-heading text-slate-900">2015</div>
+              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_year">Aktywni od 2015 r.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Search Section -->
+    <section class="py-6 bg-white border-b border-border-subtle sticky top-20 sm:top-24 z-30 shadow-xs">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <!-- Category Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none text-xs font-mono font-bold" id="filter-pills">
+          <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl transition-all bg-brand-violet text-white shadow-sm" data-filter="all" data-i18n="filter_all">
+            Wszystkie (10)
+          </button>
+          <button onclick="filterProjects('erasmus')" class="filter-btn px-4 py-2 rounded-xl transition-all bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200" data-filter="erasmus" data-i18n="filter_erasmus">
+            Erasmus+ & Wymiany (4)
+          </button>
+          <button onclick="filterProjects('civic')" class="filter-btn px-4 py-2 rounded-xl transition-all bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200" data-filter="civic" data-i18n="filter_civic">
+            Edukacja Obywatelska (2)
+          </button>
+          <button onclick="filterProjects('games')" class="filter-btn px-4 py-2 rounded-xl transition-all bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200" data-filter="games" data-i18n="filter_games">
+            Gry RPG & Innowacje (2)
+          </button>
+          <button onclick="filterProjects('resilience')" class="filter-btn px-4 py-2 rounded-xl transition-all bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200" data-filter="resilience" data-i18n="filter_resilience">
+            Rezyliencja & Społeczność (2)
+          </button>
+        </div>
+
+        <!-- Chronicle Hint -->
+        <div class="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-mono">
+          <span class="material-symbols-outlined text-[16px] text-brand-coral">touch_app</span>
+          <span data-i18n="click_hint">Rozwiń kartę, aby przeglądać artykuły</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects Expandable Field Dossier Section -->
+    <section class="py-12 lg:py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <!-- Grid of Project Cards with Expandable Dossiers -->
+        <div id="projects-container" class="space-y-8">
+          <!-- Rendered dynamically via JavaScript from ANIMUS_PROJECTS -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EDITORIAL READING MODAL (Kinetyczny Modal Artykułu) -->
+  <div id="article-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" onclick="handleBackdropClick(event)">
+    <div id="modal-card" class="bg-white rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="px-6 sm:px-8 py-4 border-b border-slate-200 flex items-center justify-between gap-4 bg-slate-50/80 sticky top-0 z-10">
+        <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-brand-violet text-white uppercase tracking-wider">
+            [Okulary Młodzieżowe]
+          </span>
+          <span id="modal-date-badge" class="text-xs font-mono font-semibold text-slate-500 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+            <span id="modal-date-text">2025-09-30</span>
+          </span>
+        </div>
+        <button onclick="closeArticleModal()" class="w-9 h-9 rounded-full bg-slate-200/80 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-all cursor-pointer" aria-label="Close modal">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="overflow-y-auto px-6 sm:px-10 py-6 sm:py-8 space-y-6 custom-scrollbar flex-grow">
+        
+        <!-- Hero Image -->
+        <div id="modal-hero-container" class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 max-h-[420px] relative">
+          <img id="modal-hero-img" src="" alt="Raport z projektu" class="w-full h-full object-cover max-h-[420px]">
+        </div>
+
+        <!-- Title -->
+        <h2 id="modal-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading leading-tight">
+          Tytuł artykułu
+        </h2>
+
+        <!-- Text Content -->
+        <div id="modal-content" class="space-y-4 text-base text-slate-700 leading-relaxed font-sans">
+          <!-- Text blocks populated here -->
+        </div>
+
+        <!-- Photo Gallery if multiple photos -->
+        <div id="modal-gallery-wrapper" class="pt-6 border-t border-slate-200 hidden">
+          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
+            <span class="material-symbols-outlined text-[16px]">photo_library</span>
+            <span>Galeria zdjęć z relacji</span>
+          </h3>
+          <div id="modal-gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <!-- Gallery images populated here -->
+          </div>
+        </div>
+
+
+        <!-- ASSOCIATED PROJECT CARD -->
+        <div id="modal-project-box" class="pt-6 border-t border-slate-200 hidden"></div>
+
+        <!-- RELATED ARTICLES (From same project OR latest articles) -->
+        <div id="modal-related-wrapper" class="pt-8 border-t border-slate-200 hidden">
+          <div class="mb-4">
+            <h3 id="modal-related-heading" class="text-base sm:text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-violet text-lg">auto_stories</span>
+              <span>Inne relacje z tego projektu</span>
+            </h3>
+          </div>
+          <div id="modal-related-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Footer Callout -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50 p-5 rounded-2xl">
+          <div class="space-y-1">
+            <div class="text-xs font-mono font-bold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
+            <div class="text-xs text-slate-500" data-i18n="modal_project_note">Działania w ramach programów edukacji pozaformalnej i projektów partnerskich</div>
+          </div>
+          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-mono font-bold transition-all shadow-sm cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+            <span data-i18n="modal_close_btn">Zamknij czytnik</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+        
+        <div class="space-y-4">
+          <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 w-auto object-contain brightness-0 invert">
+          <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
+            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400">
+            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
+            <li><a href="activities.html" class="hover:text-white transition-colors" data-i18n="nav_activities">Nasze działania</a></li>
+            <li><a href="projects.html" class="text-white font-bold transition-colors" data-i18n="nav_projects">Projekty</a></li>
+            <li><a href="partners.html" class="hover:text-white transition-colors" data-i18n="nav_partners">Partnerzy</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">Aktualności (117)</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
+            <p><strong class="text-white">KRS:</strong> 0000535710</p>
+            <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
+            <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
+            <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- DATA & SCRIPTS -->
+  <script src="projects-data.js"></script>
+  <script>
+    const I18N = {
+      pl: {
+        nav_home: "Strona główna",
+        nav_about: "O nas",
+        nav_activities: "Nasze działania",
+        nav_projects: "Projekty",
+        nav_partners: "Partnerzy",
+        nav_news: "Aktualności",
+        nav_news_label: "Aktualności",
+        nav_contact_btn: "Skontaktuj się",
+        proj_title: "Nasze Projekty i Inicjatywy",
+        proj_subtitle: "Międzynarodowe wymiany Erasmus+, programy edukacji obywatelskiej, autorskie narzędzia metodyczne i lokalne działania edukacyjne Fundacji ANIMUS.",
+        stat_projects: "Flagowych Inicjatyw",
+        stat_articles: "Relacji & Artykułów",
+        stat_countries: "Krajów w Europie",
+        stat_year: "Aktywni od 2015 r.",
+        filter_all: "Wszystkie (10)",
+        filter_erasmus: "Erasmus+ & Wymiany (4)",
+        filter_civic: "Edukacja Obywatelska (2)",
+        filter_games: "Gry RPG & Innowacje (2)",
+        filter_resilience: "Rezyliencja & Społeczność (2)",
+        click_hint: "Rozwiń kartę, aby przeglądać artykuły",
+        btn_toggle_dossier: "Kronika Projektu",
+        btn_hide_dossier: "Zwiń kronikę projektu",
+        btn_view_project_card: "Karta Projektu",
+        items_count: "wpisów",
+        dossier_title: "Kronika działań i relacje z projektu",
+        dossier_sub: "Warsztaty, szkolenia i relacje terenowe z realizacji tego projektu",
+        read_report_btn: "Czytaj pełną relację",
+        photos_count: "zdjęć",
+        modal_gallery_title: "Galeria zdjęć z relacji",
+        modal_project_tag: "Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe",
+        modal_project_note: "Działania w ramach programów edukacji pozaformalnej i projektów partnerskich",
+        modal_close_btn: "Zamknij czytnik",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.",
+        footer_nav_title: "Nawigacja",
+        footer_contact_title: "Kontakt",
+      },
+      en: {
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_activities: "Our Activities",
+        nav_projects: "Our Projects",
+        nav_partners: "Our Partners",
+        nav_news: "News",
+        nav_news_label: "News",
+        nav_contact_btn: "Get in touch",
+        proj_title: "Our Projects & Field Initiatives",
+        proj_subtitle: "International Erasmus+ exchanges, citizenship education toolkits, proprietary serious games, and community initiatives of ANIMUS Foundation.",
+        stat_projects: "Flagship Initiatives",
+        stat_articles: "Field Reports & Articles",
+        stat_countries: "European Countries",
+        stat_year: "Active since 2015",
+        filter_all: "All Projects (10)",
+        filter_erasmus: "Erasmus+ & Exchanges (4)",
+        filter_civic: "Civic Agency (2)",
+        filter_games: "Serious Games & RPG (2)",
+        filter_resilience: "Resilience & Inclusion (2)",
+        click_hint: "Click to toggle field reports & chronicle",
+        btn_toggle_dossier: "Project Chronicle",
+        btn_hide_dossier: "Collapse project chronicle",
+        btn_view_project_card: "Project Dossier",
+        items_count: "reports",
+        dossier_title: "Project Field Chronicle & Reports",
+        dossier_sub: "Workshops, trainings, and field accounts published for this project",
+        read_report_btn: "Read full report",
+        photos_count: "photos",
+        modal_gallery_title: "Field Photo Gallery",
+        modal_project_tag: "ANIMUS Foundation • Training & Education Center",
+        modal_project_note: "Non-formal education programmes and European partnerships",
+        modal_close_btn: "Close reader",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) is an autonomous Training & Education Center active since 2015. We empower youth workers, teachers, and communities through non-formal learning and Erasmus+ cooperation.",
+        footer_nav_title: "Navigation",
+        footer_contact_title: "Contact",
+      }
+    };
+
+    let currentLang = localStorage.getItem('animus_lang') || 'pl';
+    let currentFilter = 'all';
+    let activeOpenDossier = null;
+
+    // Project classification mapping for filters
+    const PROJECT_CATEGORIES = {
+      'plugtree': 'erasmus',
+      'rabbit-on-the-moon': 'erasmus',
+      'tiny-habits': 'erasmus',
+      'green-deal': 'erasmus',
+      'okulary-mlodziezowe': 'civic',
+      'be-active': 'civic',
+      'care': 'games',
+      'youth-in-action': 'games',
+      'from-home-to-home': 'resilience',
+      'comres': 'resilience'
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('animus_lang', lang);
+
+      const btnPl = document.getElementById('lang-pl');
+      const btnEn = document.getElementById('lang-en');
+      if (btnPl && btnEn) {
+        if (lang === 'pl') {
+          btnPl.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnPl.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        }
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.textContent = I18N[lang][key];
+        }
+      });
+
+      renderProjects();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function filterProjects(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === filter) {
+          btn.className = 'filter-btn active px-4 py-2 rounded-xl transition-all bg-brand-violet text-white shadow-sm';
+        } else {
+          btn.className = 'filter-btn px-4 py-2 rounded-xl transition-all bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200';
+        }
+      });
+      renderProjects();
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&amp;/g, '&')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function toggleDossier(projectId) {
+      const wrapper = document.getElementById(`dossier-${projectId}`);
+      const btnText = document.getElementById(`toggle-text-${projectId}`);
+      const chevron = document.getElementById(`chevron-${projectId}`);
+      const projects = (typeof ANIMUS_PROJECTS !== 'undefined') ? ANIMUS_PROJECTS : (window.ANIMUS_PROJECTS || {});
+      
+      if (!wrapper) return;
+
+      const isOpen = wrapper.classList.contains('is-open');
+      
+      // Close previous open dossier for clean accordion exclusivity
+      if (!isOpen && activeOpenDossier && activeOpenDossier !== projectId) {
+        const prevWrapper = document.getElementById(`dossier-${activeOpenDossier}`);
+        const prevText = document.getElementById(`toggle-text-${activeOpenDossier}`);
+        const prevChevron = document.getElementById(`chevron-${activeOpenDossier}`);
+        if (prevWrapper) prevWrapper.classList.remove('is-open');
+        if (prevChevron) prevChevron.classList.remove('rotate-180');
+        if (prevText) {
+          const count = projects[activeOpenDossier]?.articles?.length || 0;
+          prevText.textContent = `${I18N[currentLang].btn_toggle_dossier} (${count} ${I18N[currentLang].items_count})`;
+        }
+      }
+
+      if (isOpen) {
+        wrapper.classList.remove('is-open');
+        if (chevron) chevron.classList.remove('rotate-180');
+        activeOpenDossier = null;
+        if (btnText) {
+          const count = projects[projectId]?.articles?.length || 0;
+          btnText.textContent = `${I18N[currentLang].btn_toggle_dossier} (${count} ${I18N[currentLang].items_count})`;
+        }
+      } else {
+        wrapper.classList.add('is-open');
+        if (chevron) chevron.classList.add('rotate-180');
+        activeOpenDossier = projectId;
+        if (btnText) {
+          btnText.textContent = I18N[currentLang].btn_hide_dossier;
+        }
+        // Smooth scroll to project card
+        setTimeout(() => {
+          wrapper.closest('article')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 150);
+      }
+    }
+
+    function renderProjects() {
+      const container = document.getElementById('projects-container');
+      const projects = (typeof ANIMUS_PROJECTS !== 'undefined') ? ANIMUS_PROJECTS : (window.ANIMUS_PROJECTS || {});
+      if (!container || !projects || Object.keys(projects).length === 0) return;
+
+      const projectIds = Object.keys(projects);
+      const filteredIds = projectIds.filter(id => {
+        if (currentFilter === 'all') return true;
+        return PROJECT_CATEGORIES[id] === currentFilter;
+      });
+
+      let html = '';
+
+      filteredIds.forEach(id => {
+        const p = projects[id];
+        const title = currentLang === 'en' ? (p.name_en || p.name) : p.name;
+        const desc = currentLang === 'en' ? p.desc_en : p.desc_pl;
+        const badge = currentLang === 'en' ? p.badge_en : p.badge_pl;
+        const articles = p.articles || [];
+        const isAlreadyOpen = activeOpenDossier === id;
+
+        // Render articles inside the dossier
+        let articlesHtml = '';
+        if (articles.length === 0) {
+          articlesHtml = `
+            <div class="col-span-full py-8 text-center text-slate-400 font-mono text-sm">
+              Brak dodatkowych artykułów archiwalnych dla tego projektu.
+            </div>
+          `;
+        } else {
+          articlesHtml = articles.map(a => {
+            const photosCount = a.images ? a.images.length : 0;
+            const photoBadge = photosCount > 1 ? `
+              <span class="absolute bottom-2.5 right-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-mono px-2 py-0.5 rounded flex items-center gap-1 font-bold">
+                <span class="material-symbols-outlined text-[12px]">photo_camera</span>
+                <span>${photosCount}</span>
+              </span>
+            ` : '';
+
+            const fallbackImg = './cropped-Animus-Logo-Horizontal.png';
+            const imgUrl = a.hero_img || p.hero_img || fallbackImg;
+            const safeTitle = escapeHtml(a.title);
+
+            return `
+              <div onclick="openArticleModal('${a.slug}')" class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1 shadow-xs">
+                <div>
+                  <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+                    <img src="${imgUrl}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${fallbackImg}'">
+                    <span class="absolute top-2.5 left-2.5 bg-brand-violet text-white font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded font-bold shadow-xs">
+                      ${badge || 'Relacja'}
+                    </span>
+                    ${photoBadge}
+                  </div>
+                  <div class="p-4 space-y-2">
+                    <div class="text-[11px] font-mono text-slate-500 font-semibold flex items-center gap-1.5">
+                      <span class="material-symbols-outlined text-[13px] text-brand-coral">calendar_today</span>
+                      <span>${a.date}</span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">
+                      ${safeTitle}
+                    </h4>
+                    <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                      ${escapeHtml(a.summary || (a.text_blocks && a.text_blocks[0]) || '')}
+                    </p>
+                  </div>
+                </div>
+                <div class="p-4 pt-0">
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-mono">
+                    <span>${I18N[currentLang].read_report_btn}</span>
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        const safeProjectTitle = escapeHtml(title);
+        const projectUrl = 'single-project.html?id=' + id;
+
+        html += `
+          <article class="bg-white rounded-3xl border border-slate-200 hover:border-brand-violet/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            
+            <!-- Project Card Main Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+              
+              <!-- Project Imagery Column -->
+              <div class="lg:col-span-5 relative h-64 sm:h-72 lg:h-auto min-h-[260px] bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 group/img">
+                <a href="${projectUrl}" class="block w-full h-full" title="${safeProjectTitle} - ${I18N[currentLang].btn_view_project_card}">
+                  <img src="${p.hero_img}" alt="${safeProjectTitle}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
+                </a>
+                
+                <!-- Overlay Badges -->
+                <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 flex-wrap pointer-events-none">
+                  <span class="bg-brand-violet text-white font-mono text-[11px] uppercase tracking-wider px-3 py-1 rounded-lg font-bold shadow-md">
+                    ${badge}
+                  </span>
+                  <span class="bg-slate-950/85 backdrop-blur-sm text-white font-mono text-[11px] px-2.5 py-1 rounded-lg font-semibold shadow-md">
+                    ${p.period}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Project Metadata & Content Column -->
+              <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                
+                <div class="space-y-4">
+                  
+                  <!-- Metadata Info Rows -->
+                  <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-mono text-slate-500 font-medium">
+                    <div class="flex items-center gap-1 text-slate-700 font-semibold">
+                      <span class="material-symbols-outlined text-[16px] text-brand-coral">location_on</span>
+                      <span>${p.location}</span>
+                    </div>
+                    <div class="flex items-center gap-1 text-slate-600">
+                      <span class="material-symbols-outlined text-[16px] text-brand-violet">handshake</span>
+                      <span class="truncate max-w-xs sm:max-w-sm">${p.partners}</span>
+                    </div>
+                  </div>
+
+                  <!-- Project Heading -->
+                  <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 leading-tight">
+                    <a href="${projectUrl}" class="hover:text-brand-violet transition-colors">
+                      ${safeProjectTitle}
+                    </a>
+                  </h2>
+
+                  <!-- Description -->
+                  <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
+                    ${desc}
+                  </p>
+
+                </div>
+
+                <!-- Interactive Action Bar (Karta Projektu + Akordeon Kroniki) -->
+                <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  
+                  <div class="text-xs font-mono text-slate-500 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[16px] text-brand-violet">event_note</span>
+                    <span>${articles.length} ${I18N[currentLang].items_count}</span>
+                  </div>
+
+                  <div class="flex items-center gap-2.5 flex-wrap">
+                    <a href="${projectUrl}" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-brand-violet hover:border-brand-violet hover:text-white text-slate-800 font-mono text-xs font-bold transition-all shadow-2xs group/btn cursor-pointer">
+                      <span>${I18N[currentLang].btn_view_project_card}</span>
+                      <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+
+                    <button onclick="toggleDossier('${id}')" class="inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-violet text-white font-mono text-xs font-bold transition-all shadow-sm hover:shadow-md cursor-pointer group">
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-brand-cyan">folder_open</span>
+                        <span id="toggle-text-${id}">
+                          ${isAlreadyOpen ? I18N[currentLang].btn_hide_dossier : `${I18N[currentLang].btn_toggle_dossier} (${articles.length})`}
+                        </span>
+                      </div>
+                      <span id="chevron-${id}" class="accordion-chevron material-symbols-outlined text-[18px] transition-transform duration-300 ${isAlreadyOpen ? 'rotate-180' : ''}">expand_more</span>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- EXPANDABLE DOSSIER (CSS Grid Accordion) -->
+            <div id="dossier-${id}" class="accordion-wrapper ${isAlreadyOpen ? 'is-open' : ''}">
+              <div class="accordion-inner">
+                <div class="bg-slate-50/90 border-t border-slate-200 p-6 sm:p-8 space-y-6">
+                  
+                  <!-- Dossier Header -->
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
+                    <div>
+                      <div class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                        <span>${I18N[currentLang].dossier_title}</span>
+                      </div>
+                      <p class="text-xs text-slate-500 font-sans mt-0.5">
+                        ${I18N[currentLang].dossier_sub} • ${safeProjectTitle}
+                      </p>
+                    </div>
+                    <div class="text-xs font-mono font-bold bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 shadow-xs">
+                      ${articles.length} ${I18N[currentLang].items_count}
+                    </div>
+                  </div>
+
+                  <!-- Dossier Grid -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    ${articlesHtml}
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </article>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // Modal Operations
+    let currentOpenArticleSlug = null;
+
+    function openArticleModal(slug) {
+      const articles = (typeof ANIMUS_ARTICLES !== 'undefined') ? ANIMUS_ARTICLES : (window.ANIMUS_ARTICLES || []);
+      const projects = (typeof ANIMUS_PROJECTS !== 'undefined') ? ANIMUS_PROJECTS : (window.ANIMUS_PROJECTS || {});
+      const article = articles.find(a => a.slug === slug);
+      if (!article) return;
+
+      currentOpenArticleSlug = slug;
+      const modal = document.getElementById('article-modal');
+      const projectBadge = document.getElementById('modal-project-badge');
+      const dateText = document.getElementById('modal-date-text');
+      const heroContainer = document.getElementById('modal-hero-container');
+      const heroImg = document.getElementById('modal-hero-img');
+      const titleEl = document.getElementById('modal-title');
+      const contentEl = document.getElementById('modal-content');
+      const galleryWrapper = document.getElementById('modal-gallery-wrapper');
+      const galleryGrid = document.getElementById('modal-gallery-grid');
+      const origLink = document.getElementById('modal-orig-link');
+
+      // Populate basic info
+      const proj = projects[article.project_id];
+      const projDisplayName = currentLang === 'en' ? (proj?.name_en || article.project_name || 'ANIMUS') : (proj?.name || article.project_name || 'ANIMUS');
+      projectBadge.textContent = `[${projDisplayName}]`;
+      dateText.textContent = article.date || '';
+      titleEl.textContent = article.title;
+
+      // Populate hero img
+      const fallbackHero = './cropped-Animus-Logo-Horizontal.png';
+      if (article.hero_img) {
+        heroImg.src = article.hero_img;
+        heroImg.onerror = function() { this.onerror = null; this.src = fallbackHero; };
+        heroContainer.classList.remove('hidden');
+      } else {
+        heroContainer.classList.add('hidden');
+      }
+
+      // Populate text blocks
+      if (article.text_blocks && article.text_blocks.length > 0) {
+        contentEl.innerHTML = article.text_blocks.map(p => `
+          <p class="text-slate-700 leading-relaxed text-sm sm:text-base">${escapeHtml(p)}</p>
+        `).join('');
+      } else if (article.summary) {
+        contentEl.innerHTML = `<p class="text-slate-700 leading-relaxed text-sm sm:text-base">${escapeHtml(article.summary)}</p>`;
+      } else {
+        contentEl.innerHTML = `<p class="text-slate-500 italic">Brak treści tekstowej.</p>`;
+      }
+
+      // Populate photo gallery if multiple images
+      if (article.images && article.images.length > 1) {
+        galleryWrapper.classList.remove('hidden');
+        galleryGrid.innerHTML = article.images.map(img => `
+          <div class="h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 group cursor-pointer" onclick="window.open('${img}', '_blank')">
+            <img src="${img}" alt="${escapeHtml(article.title)}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" onerror="this.onerror=null; this.src='${fallbackHero}'">
+          </div>
+        `).join('');
+      } else {
+        galleryWrapper.classList.add('hidden');
+      }
+
+      // 1. Populate Associated Project Box
+      const projectBox = document.getElementById('modal-project-box');
+      if (projectBox) {
+        if (proj) {
+          projectBox.classList.remove('hidden');
+          const projName = currentLang === 'en' ? (proj.name_en || proj.name) : proj.name;
+          const projDesc = currentLang === 'en' ? (proj.desc_en || proj.desc_pl) : proj.desc_pl;
+          const projectsUrl = 'single-project.html?id=' + (article.project_id || 'okulary-mlodziezowe');
+          
+          projectBox.innerHTML = `
+            <div class="rounded-2xl p-5 sm:p-6 border-2 border-brand-violet/25 bg-gradient-to-br from-purple-50/70 to-white shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
+                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet">
+                    ${currentLang === 'en' ? 'Associated Programme' : 'Powiązany Projekt'}
+                  </span>
+                </div>
+                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-mono font-bold">${proj.period}</span>` : ''}
+              </div>
+              <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900">${escapeHtml(projName)}</h4>
+              ${proj.location ? `
+                <div class="text-xs font-mono text-slate-600 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-brand-coral">location_on</span>
+                  <span>${escapeHtml(proj.location)}</span>
+                </div>
+              ` : ''}
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans line-clamp-3">
+                ${escapeHtml(projDesc || '')}
+              </p>
+              <div class="pt-2">
+                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono group/btn">
+                  <span>${currentLang === 'en' ? 'View Full Project Dossier' : 'Zobacz pełne dossier i kronikę projektu'}</span>
+                  <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          `;
+        } else {
+          projectBox.classList.add('hidden');
+          projectBox.innerHTML = '';
+        }
+      }
+
+      // 2. Populate Related Articles Grid (From same project OR latest articles if standalone)
+      const relatedWrapper = document.getElementById('modal-related-wrapper');
+      const relatedHeading = document.getElementById('modal-related-heading');
+      const relatedGrid = document.getElementById('modal-related-grid');
+
+      if (relatedWrapper && relatedGrid) {
+        let relatedArticles = [];
+        let isProjectSpecific = false;
+
+        if (article.project_id) {
+          relatedArticles = articles.filter(a => a.project_id === article.project_id && a.slug !== article.slug);
+          if (relatedArticles.length > 0) {
+            isProjectSpecific = true;
+          }
+        }
+
+        if (!isProjectSpecific) {
+          relatedArticles = articles.filter(a => a.slug !== article.slug).slice(0, 3);
+        } else {
+          relatedArticles = relatedArticles.slice(0, 3);
+        }
+
+        if (relatedArticles.length > 0) {
+          relatedWrapper.classList.remove('hidden');
+          if (relatedHeading) {
+            if (isProjectSpecific) {
+              const projName = currentLang === 'en' ? (proj?.name_en || article.project_name || 'Projekt') : (proj?.name || article.project_name || 'Projekt');
+              relatedHeading.innerHTML = `
+                <span class="material-symbols-outlined text-brand-violet text-lg">auto_stories</span>
+                <span>${currentLang === 'en' ? `Other reports from: ${projName}` : `Inne relacje z projektu: ${projName}`}</span>
+              `;
+            } else {
+              relatedHeading.innerHTML = `
+                <span class="material-symbols-outlined text-brand-coral text-lg">schedule</span>
+                <span>${currentLang === 'en' ? 'Latest foundation field reports' : 'Najnowsze relacje z życia Fundacji'}</span>
+              `;
+            }
+          }
+
+          relatedGrid.innerHTML = relatedArticles.map(rel => {
+            const relHero = rel.hero_img || fallbackHero;
+            const relTitle = escapeHtml(rel.title || '');
+            const relDate = escapeHtml(rel.date || '');
+            return `
+              <div onclick="openArticleModal('${rel.slug}')" class="group/card bg-slate-50 hover:bg-purple-50/50 rounded-xl overflow-hidden border border-slate-200 hover:border-brand-violet/40 transition-all duration-200 cursor-pointer flex flex-col justify-between p-3.5 shadow-sm hover:shadow">
+                <div>
+                  <div class="h-28 w-full rounded-lg overflow-hidden bg-slate-200 relative mb-2.5">
+                    <img src="${relHero}" alt="${relTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='${fallbackHero}'">
+                  </div>
+                  ${relDate ? `<div class="text-[10px] font-mono text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
+                  <h5 class="text-xs font-bold text-slate-900 group-hover/card:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">${relTitle}</h5>
+                </div>
+                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-mono font-bold text-brand-violet group-hover/card:text-brand-coral">
+                  <span>${currentLang === 'en' ? 'Read report' : 'Czytaj relację'}</span>
+                  <span class="material-symbols-outlined text-[13px] group-hover/card:translate-x-0.5 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          relatedWrapper.classList.add('hidden');
+        }
+      }
+
+      // Reset internal modal scroll position to top
+      const scrollBody = modal.querySelector('.overflow-y-auto');
+      if (scrollBody) scrollBody.scrollTop = 0;
+
+
+      // Set link to single article test page
+      if (origLink) origLink.href = 'single-article.html?slug=' + article.slug;
+
+      // Show modal & prevent body scroll
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById('article-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      currentOpenArticleSlug = null;
+    }
+
+    function handleBackdropClick(event) {
+      if (event.target.id === 'article-modal') {
+        closeArticleModal();
+      }
+    }
+
+    // Escape key listener for modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeArticleModal();
+      }
+    });
+
+    // Initialize immediately
+    setLanguage(currentLang);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => setLanguage(currentLang));
+    }
+
+  </script>
+</body>
+</html>

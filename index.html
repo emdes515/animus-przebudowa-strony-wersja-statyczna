@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIMUS Foundation | Youth Impact, Training & Education Center</title>
+  <meta name="description" content="ANIMUS Foundation - Non-formal education, youth empowerment, Erasmus+ and European values since 2015.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./logo.png" type="image/png">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link rel="stylesheet" href="./material-symbols.css">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration matching Animus Logo & Warm Foundation Character -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#300064', // Authentic Animus Royal Violet from logo
+              hover: '#220047',
+              container: '#4a0e8f',
+              fixed: '#eedcff',
+              dark: '#1c003b'
+            },
+            secondary: {
+              DEFAULT: '#F35813', // Warm energetic Coral/Amber from logo
+              container: '#ff7738'
+            },
+            brand: {
+              'violet': '#300064',
+              'coral': '#F35813',
+              'cyan': '#0097C7',
+              'gold': '#EA9A05',
+              'ink': '#0F172A',
+              'cream': '#FBFBF9'
+            },
+            surface: {
+              DEFAULT: '#FAF9F6',
+              card: '#ffffff',
+              muted: '#f4f2ec'
+            },
+            'on-surface': '#0F172A',
+            'border-subtle': '#E7E5E4'
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+            mono: ['ui-monospace', 'monospace']
+          },
+          boxShadow: {
+            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
+            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background-color: #FAF9F6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: clip;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    /* ==========================================================
+       HERO LOGO ANIMATION (Modern Web Guidance, GPU accelerated)
+    ========================================================== */
+    @keyframes heroLogoReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.96);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+    @keyframes heroGlowPulse {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.97);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(1.04);
+      }
+    }
+    .hero-logo-container {
+      animation: heroLogoReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+      transform-origin: left center;
+    }
+    .hero-logo-glow {
+      animation: heroGlowPulse 5s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    .hero-logo-img {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+      aspect-ratio: 1548 / 516;
+      /* Dynamiczne skalowanie logo nad H1: dopasowuje się do ekranu laptopa i monitora */
+      height: clamp(46px, min(9vw, 7.5vh), 76px);
+      width: auto;
+      object-fit: contain;
+    }
+    .hero-logo-container:hover .hero-logo-img {
+      transform: translateY(-2px) scale(1.025);
+      filter: drop-shadow(0 8px 18px rgba(48, 0, 100, 0.15));
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo-container,
+      .hero-logo-glow {
+        animation: none !important;
+      }
+      .hero-logo-img {
+        transition: none !important;
+      }
+    }
+
+    /* ==========================================================
+       AUTHENTIC PLAYING CARDS (Motywy Kart do Gry & Realistyczny Fling)
+    ========================================================== */
+    @keyframes deckLevitate {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+    @keyframes deckShadowPulse {
+      0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.45;
+      }
+      50% {
+        transform: translateX(-50%) scale(0.9);
+        opacity: 0.28;
+      }
+    }
+
+        /* ==========================================================
+       ANIMUS KINETIC PHOTO FIELDWORK SHOWCASE (Bento Stos Fotografii)
+    ========================================================== */
+    .photo-hero-canvas {
+      background-color: #FAF9F6;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
+      background-size: 28px 28px;
+      position: relative;
+    }
+
+    /* ==========================================================
+       HERO PROJECT SLIDER (Tactile Editorial Showcase)
+    ========================================================== */
+    .hero-project-slider-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .slider-ambient-glow {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42, 208, 255, 0.2) 0%, rgba(243, 88, 19, 0.12) 40%, rgba(48, 0, 100, 0.1) 70%, transparent 80%);
+      filter: blur(48px);
+      pointer-events: none;
+      z-index: 0;
+      transition: background 0.8s ease;
+    }
+
+    .hero-project-slider {
+      position: relative;
+      width: 100%;
+      height: clamp(340px, min(45vw, 54vh), 500px);
+      border-radius: 28px;
+      overflow: hidden;
+      background-color: #0f172a;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      box-shadow: 0 24px 48px -12px rgba(48, 0, 100, 0.18), 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+      z-index: 1;
+      outline: none;
+    }
+
+    .hero-project-slider:focus-visible {
+      box-shadow: 0 0 0 3px rgba(91, 19, 185, 0.45);
+    }
+
+    .project-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1.03);
+      z-index: 1;
+    }
+
+    .project-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 7s ease-out;
+      transform: scale(1);
+    }
+
+    .project-slide.active .slide-img {
+      transform: scale(1.05);
+    }
+
+    .slide-scrim-top {
+      position: absolute;
+      inset: 0;
+      bottom: 50%;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .slide-scrim-bottom {
+      position: absolute;
+      inset: 0;
+      top: 25%;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 45%, rgba(15, 23, 42, 0) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .slider-progress-bar {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .progress-segment {
+      flex: 1;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.28);
+      border-radius: 9999px;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      transition: height 0.2s ease, background-color 0.2s ease;
+    }
+
+    .progress-segment:hover {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .progress-fill {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: #ffffff;
+      border-radius: 9999px;
+      transition: width 0.05s linear;
+    }
+
+    .progress-segment.completed .progress-fill {
+      width: 100%;
+    }
+
+    .slide-top-badges {
+      position: absolute;
+      top: 26px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .badge-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge-location {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .badge-counter {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      display: inline-flex;
+    }
+
+    .slide-bottom-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.25rem 1.25rem 3.75rem 1.25rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 640px) {
+      .slide-bottom-content {
+        padding: 1.5rem 1.5rem 4rem 1.5rem;
+      }
+    }
+
+    .slide-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .badge-year {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #2AD0FF;
+      background: rgba(42, 208, 255, 0.15);
+      border: 1px solid rgba(42, 208, 255, 0.3);
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    .slide-title {
+      font-size: clamp(1.2rem, min(2vw, 3vh), 1.65rem);
+      font-weight: 900;
+      color: #ffffff;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide-desc {
+      font-size: clamp(0.78rem, min(1vw, 1.4vh), 0.88rem);
+      color: rgba(241, 245, 249, 0.92);
+      line-height: 1.45;
+      max-width: 32rem;
+      margin-bottom: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .slide-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .slide-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #ffffff;
+      color: #300064;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 12px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+    }
+
+    .slide-cta-btn:hover {
+      background: #F35813;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(243, 88, 19, 0.35);
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+    }
+
+    @media (min-width: 640px) {
+      .slider-arrow {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .hero-project-slider:hover .slider-arrow {
+      opacity: 1;
+    }
+
+    .slider-arrow:hover {
+      background: #ffffff;
+      color: #300064;
+      transform: translateY(-50%) scale(1.1);
+      border-color: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider-arrow-left {
+      left: 12px;
+    }
+
+    .slider-arrow-right {
+      right: 12px;
+    }
+
+    .slider-thumbnails-bar {
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      z-index: 20;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .slider-thumbnails-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .thumb-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      color: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .thumb-pill:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .thumb-pill.active {
+      background: #ffffff;
+      color: #300064;
+      font-weight: 800;
+      border-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      transform: scale(1.04);
+    }
+
+    /* ========================================================
+       KINETIC MONOLITHS & ARCHITECTURAL SPOTLIGHT
+    ======================================================== */
+    .monoliths-section {
+      background-color: #fbfbfe;
+      background-image: radial-gradient(rgba(48, 0, 100, 0.06) 1.2px, transparent 1.2px);
+      background-size: 28px 28px;
+      position: relative;
+    }
+
+    .monolith-spotlight {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(750px circle at var(--mouse-x, 50%) var(--mouse-y, 40%), rgba(48, 0, 100, 0.05) 0%, rgba(243, 88, 19, 0.035) 40%, transparent 70%);
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .kinetic-monolith {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 24px;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      z-index: 2;
+      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
+    }
+
+    .kinetic-monolith:hover {
+      box-shadow: 0 24px 48px -12px rgba(48, 0, 100, 0.12), 0 10px 20px -6px rgba(15, 23, 42, 0.06);
+    }
+
+    .kinetic-monolith.monolith-violet:hover {
+      border-color: rgba(48, 0, 100, 0.4);
+    }
+
+    .kinetic-monolith.monolith-coral:hover {
+      border-color: rgba(243, 88, 19, 0.45);
+    }
+
+    .kinetic-monolith.monolith-cyan:hover {
+      border-color: rgba(42, 208, 255, 0.6);
+    }
+
+    .monolith-glare {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      pointer-events: none;
+      background: radial-gradient(350px circle at var(--card-mouse-x, -100px) var(--card-mouse-y, -100px), rgba(255, 255, 255, 0.75), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+    }
+
+    .kinetic-monolith:hover .monolith-glare {
+      opacity: 1;
+    }
+
+    /* Micro-SVG Kinetic Engines Animations */
+    @keyframes gyroRotateCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes gyroRotateCCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes nucleusPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.28); opacity: 1; filter: drop-shadow(0 0 6px rgba(48,0,100,0.6)); }
+    }
+
+    @keyframes cubeFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-3px) rotate(1deg); }
+    }
+
+    @keyframes cubeArc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes radarSweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseNode {
+      0% { r: 2; opacity: 1; }
+      50% { r: 5; opacity: 0.6; }
+      100% { r: 7.5; opacity: 0; }
+    }
+
+    .engine-gyro-cw {
+      transform-origin: 32px 32px;
+      animation: gyroRotateCW 20s linear infinite;
+    }
+    .kinetic-monolith:hover .engine-gyro-cw {
+      animation-duration: 7s;
+    }
+
+    .engine-gyro-ccw {
+      transform-origin: 32px 32px;
+      animation: gyroRotateCCW 14s linear infinite;
+    }
+    .kinetic-monolith:hover .engine-gyro-ccw {
+      animation-duration: 5s;
+    }
+
+    .engine-gyro-pulse {
+      transform-origin: 32px 32px;
+      animation: nucleusPulse 3s ease-in-out infinite;
+    }
+
+    .engine-cube-float {
+      animation: cubeFloat 5s ease-in-out infinite;
+    }
+
+    .engine-cube-arc {
+      transform-origin: 32px 32px;
+      animation: cubeArc 12s linear infinite;
+    }
+    .kinetic-monolith:hover .engine-cube-arc {
+      animation-duration: 4s;
+    }
+
+    .engine-radar-sweep {
+      transform-origin: 32px 32px;
+      animation: radarSweep 4.5s linear infinite;
+    }
+    .kinetic-monolith:hover .engine-radar-sweep {
+      animation-duration: 1.8s;
+    }
+
+    .engine-node-pulse {
+      animation: pulseNode 2.6s ease-out infinite;
+    }
+
+    .monolith-pill {
+      font-size: 0.72rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      padding: 0.3rem 0.65rem;
+      border-radius: 9999px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .kinetic-monolith:hover .monolith-pill {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-project-slider,
+      .project-slide,
+      .slide-img {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+      .engine-gyro-cw,
+      .engine-gyro-ccw,
+      .engine-gyro-pulse,
+      .engine-cube-float,
+      .engine-cube-arc,
+      .engine-radar-sweep,
+      .engine-node-pulse {
+        animation: none !important;
+      }
+      .kinetic-monolith {
+        transition: none !important;
+        transform: none !important;
+      }
+    }
+</style>
+</head>
+
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
+
+  <!-- ========================================================
+       PRIMARY NAVBAR
+  ======================================================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-20 sm:h-24 flex items-center justify-between gap-4 xl:gap-6">
+      
+      <!-- Foundation Brand Logo with Authentic Proportion -->
+      <a href="index.html" class="flex items-center shrink-0 py-1" aria-label="ANIMUS Foundation Home">
+        <img src="./cropped-Animus-Logo-Horizontal.png" alt="ANIMUS Foundation" class="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-[65px] w-auto max-w-[190px] sm:max-w-none object-contain transition-transform group-hover:scale-[1.03] drop-shadow-[0_2px_4px_rgba(48,0,100,0.06)] shrink-0">
+      </a>
+
+      <!-- Clean Editorial Navigation -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-8 text-[13px] xl:text-[14px] font-medium text-slate-600 shrink-0" aria-label="Main menu">
+        <a href="index.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group">
+          <span data-i18n="nav_home">Strona główna</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+        </a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="hover:text-slate-900 transition-colors py-1" data-i18n="nav_news">Aktualności</a>
+      </nav>
+
+      <!-- Right Action CTA & Language Toggle -->
+      <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Language Switcher in Header -->
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+          <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
+          <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
+        </div>
+
+        <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="w-8 h-8 xl:w-9 xl:h-9 rounded-xl border border-slate-200 bg-white hover:bg-[#1877F2] text-slate-600 hover:text-white flex items-center justify-center transition-all shadow-2xs hover:border-[#1877F2] hover:shadow-sm group shrink-0" title="Facebook Fundacji ANIMUS" aria-label="Facebook Fundacji ANIMUS">
+          <svg class="w-3.5 h-3.5 xl:w-4 xl:h-4 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+
+        <a href="contact.html" class="inline-flex items-center gap-1.5 xl:gap-2 bg-[#300064] hover:bg-[#220047] text-white px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-xl font-semibold text-xs xl:text-sm transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 shrink-0">
+          <span data-i18n="nav_contact_btn">Skontaktuj się</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button id="mobile-toggle" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 transition-colors shrink-0" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-border-subtle bg-white px-6 py-6 space-y-3 shadow-xl">
+      <nav class="flex flex-col space-y-2 text-base font-medium text-slate-700">
+        <a href="index.html" class="px-3 py-2 text-primary font-bold bg-slate-50 rounded-lg" data-i18n="nav_home">Strona główna</a>
+        <a href="about.html" class="px-3 py-2 hover:text-primary rounded-lg" data-i18n="nav_about">O nas</a>
+        <a href="activities.html" class="px-3 py-2 hover:text-primary rounded-lg" data-i18n="nav_activities">Nasze działania</a>
+        <a href="projects.html" class="px-3 py-2 hover:text-primary rounded-lg" data-i18n="nav_projects">Projekty</a>
+        <a href="partners.html" class="px-3 py-2 hover:text-primary rounded-lg" data-i18n="nav_partners">Partnerzy</a>
+        <a href="blog.html" class="py-1 hover:text-primary flex items-center justify-between" data-i18n="nav_news">Aktualności</a>
+                <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
+          <span class="w-5 h-5 rounded bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </span>
+          <span>Facebook ANIMUS</span>
+        </a>
+        <a href="contact.html" class="mt-4 block text-center bg-brand-violet-deep text-white py-3 rounded-xl font-bold shadow" data-i18n="nav_contact_btn">Skontaktuj się</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       SPLIT-HERO SECTION: MONUMENTAL TYPOGRAPHY + KINETIC FIELDWORK SHOWCASE
+  ======================================================== -->
+  <main class="flex-grow pt-20 sm:pt-24">
+    <section class="hero-viewport-fit photo-hero-canvas">
+      
+      <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 relative z-10 w-full my-auto py-4 sm:py-6 lg:py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 2xl:gap-14 items-center w-full">
+          
+          <!-- Left Column: Monumental Typography, Animated Brand Logo & Narrative -->
+          <div class="lg:col-span-6 flex flex-col justify-center gap-y-2.5 sm:gap-y-3.5 xl:gap-y-4">
+
+            <!-- Animated Horizontal Foundation Logo (Fluid Viewport Sizing) -->
+            <div class="hero-logo-container relative inline-block group w-fit">
+              <!-- Ambient Subtle Aura Glow -->
+              <div class="hero-logo-glow absolute -inset-3 bg-gradient-to-r from-brand-violet/20 via-brand-coral/15 to-brand-cyan/20 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              
+              <a href="index.html" class="relative block" aria-label="Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe">
+                <img 
+                  src="cropped-Animus-Logo-Horizontal.png" 
+                  alt="Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe" 
+                  width="1548" 
+                  height="516" 
+                  fetchpriority="high"
+                  class="hero-logo-img h-[clamp(34px,min(5.5vw,6.5vh),64px)] w-auto object-contain relative select-none drop-shadow-[0_2px_8px_rgba(48,0,100,0.1)] transition-all duration-300 group-hover:scale-[1.03] group-hover:drop-shadow-[0_4px_18px_rgba(243,88,19,0.22)]"
+                />
+              </a>
+            </div>
+
+            <!-- Monumental Headline with Fluid Clamp -->
+            <h1 class="text-[clamp(1.75rem,min(3.2vw,4.4vh),3.5rem)] font-extrabold leading-[1.05] tracking-tight font-heading text-slate-900">
+              <span class="block text-[#141824]" data-i18n="hero_title_2">Odwaga Myśli</span>
+              <span class="block text-brand-coral" data-i18n="hero_title_3">Siła Wspólnoty</span>
+            </h1>
+
+            <!-- Authentic Mission Statement -->
+            <p class="text-[clamp(0.85rem,min(1.05vw,1.55vh),1.05rem)] text-slate-600 leading-relaxed font-normal max-w-xl" data-i18n="hero_sub">
+              Od 2015 roku łączymy ludzi ponad podziałami. Tworzymy autorskie gry adaptacyjne, prowadzimy międzynarodowe wymiany młodzieżowe Erasmus+ i rozwijamy edukację pozaformalną.
+            </p>
+
+            <!-- Latin Quote Box -->
+            <div class="py-0.5">
+              <div id="quote-container" class="transition-all duration-500 opacity-100">
+                <blockquote class="border-l-3 border-brand-violet pl-3 sm:pl-3.5 text-slate-800 italic text-[clamp(0.8rem,min(0.95vw,1.4vh),0.98rem)] leading-snug sm:leading-relaxed font-medium">
+                  <span id="quote-text">„Animus in consulendo liber — Umysł wolny w poszukiwaniu prawdy, dialogu i porozumienia.”</span>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-0.5">
+              <a href="activities.html" class="group inline-flex items-center gap-2 bg-brand-violet hover:bg-[#200045] text-white px-4 py-2 sm:px-5 sm:py-2.5 xl:px-6 xl:py-3 rounded-xl font-bold text-xs sm:text-sm xl:text-base shadow-[0_4px_14px_rgba(48,0,100,0.22)] hover:shadow-[0_8px_24px_rgba(48,0,100,0.3)] transition-all hover:-translate-y-0.5 active:translate-y-0">
+                <span data-i18n="hero_cta_explore">Poznaj Nasze Działania</span>
+                <span class="material-symbols-outlined text-[16px] sm:text-[18px] transition-transform duration-200 group-hover:rotate-45" aria-hidden="true">explore</span>
+              </a>
+              <a href="about.html" class="group inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 hover:text-brand-violet border border-slate-200 hover:border-brand-violet/30 px-4 py-2 sm:px-5 sm:py-2.5 xl:px-6 xl:py-3 rounded-xl font-semibold text-xs sm:text-sm xl:text-base transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md active:translate-y-0">
+                <span data-i18n="hero_cta_about">O Fundacji</span>
+                <span class="material-symbols-outlined text-[16px] sm:text-[18px] transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Architectural Metric Strip -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-2.5 mt-0.5 border-t border-slate-200/90 max-w-lg">
+              <div>
+                <div class="text-lg sm:text-2xl font-black text-brand-violet font-heading leading-tight">10</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_projects">Flagowych projektów</div>
+              </div>
+              <div>
+                <div class="text-lg sm:text-2xl font-black text-brand-coral font-heading leading-tight">117</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_reports">Działań i relacji</div>
+              </div>
+              <div>
+                <div class="text-lg sm:text-2xl font-black text-[#2AD0FF] font-heading leading-tight">12</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_partners">Partnerów w Europie</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Tactile Editorial Project Slider -->
+          <div class="lg:col-span-6 flex flex-col items-center justify-center relative w-full">
+            <div class="hero-project-slider-wrapper">
+              
+              <!-- Subtle Background Ambient Glow (Reactivates based on project color) -->
+              <div class="slider-ambient-glow" id="slider-ambient-glow"></div>
+
+              <!-- Main Hero Project Slider Card -->
+              <div class="hero-project-slider" id="hero-project-slider" tabindex="0" role="region" aria-label="Slider projektów Fundacji ANIMUS">
+                
+                <!-- Story / Progress Segments -->
+                <div class="slider-progress-bar" id="slider-progress-bar">
+                  <button type="button" class="progress-segment active" onclick="goToProjectSlide(0)" aria-label="Projekt 1"><span class="progress-fill"></span></button>
+                  <button type="button" class="progress-segment" onclick="goToProjectSlide(1)" aria-label="Projekt 2"><span class="progress-fill"></span></button>
+                  <button type="button" class="progress-segment" onclick="goToProjectSlide(2)" aria-label="Projekt 3"><span class="progress-fill"></span></button>
+                  <button type="button" class="progress-segment" onclick="goToProjectSlide(3)" aria-label="Projekt 4"><span class="progress-fill"></span></button>
+                  <button type="button" class="progress-segment" onclick="goToProjectSlide(4)" aria-label="Projekt 5"><span class="progress-fill"></span></button>
+                </div>
+
+                <!-- Slide 0: #PLUGTREE+ -->
+                <div class="project-slide active" data-index="0" data-glow="#2AD0FF">
+                  <img src="assets/hero/plugtree_exchange.jpg" alt="#PLUGTREE+ Wymiana Erasmus+" class="slide-img" fetchpriority="high" />
+                  <div class="slide-scrim-top"></div>
+                  <div class="slide-scrim-bottom"></div>
+
+                  <div class="slide-top-badges">
+                    <span class="badge-category bg-white/95 text-brand-violet">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#2AD0FF]"></span>
+                      <span data-i18n="slide_cat_plugtree">Erasmus+ Wymiana Młodzieży</span>
+                    </span>
+                    <span class="badge-location">
+                      <span class="material-symbols-outlined text-[12px]">location_on</span>
+                      <span>Vatra Dornei • Rumunia</span>
+                    </span>
+                    <span class="badge-counter font-mono">01 / 05</span>
+                  </div>
+
+                  <div class="slide-bottom-content">
+                    <div class="slide-meta-row">
+                      <span class="badge-year">2024–2025</span>
+                      <span class="text-white/60">•</span>
+                      <span class="text-white/80 text-xs font-medium">35 liderów z 7 krajów</span>
+                    </div>
+                    <h3 class="slide-title" data-i18n="slide_title_plugtree">#PLUGTREE+</h3>
+                    <p class="slide-desc" data-i18n="slide_desc_plugtree">
+                      Międzynarodowa wymiana młodzieżowa łącząca ekologię, technologie cyfrowe i integrację międzykulturową.
+                    </p>
+                    <div class="slide-actions">
+                      <a href="single-project.html?id=plugtree" class="slide-cta-btn group">
+                        <span data-i18n="slide_cta">Zobacz projekt</span>
+                        <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 1: CARE RPG: Climate Adaptation -->
+                <div class="project-slide" data-index="1" data-glow="#F35813">
+                  <img src="assets/hero/care_rpg_boardgame.jpg" alt="CARE RPG Autorska Gra Planszowa" class="slide-img" loading="lazy" />
+                  <div class="slide-scrim-top"></div>
+                  <div class="slide-scrim-bottom"></div>
+
+                  <div class="slide-top-badges">
+                    <span class="badge-category bg-white/95 text-brand-coral">
+                      <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
+                      <span data-i18n="slide_cat_care">Gry Adaptacyjne & Symulacja</span>
+                    </span>
+                    <span class="badge-location">
+                      <span class="material-symbols-outlined text-[12px]">location_on</span>
+                      <span>Polska • Czechy • Słowacja</span>
+                    </span>
+                    <span class="badge-counter font-mono">02 / 05</span>
+                  </div>
+
+                  <div class="slide-bottom-content">
+                    <div class="slide-meta-row">
+                      <span class="badge-year">2023–2025</span>
+                      <span class="text-white/60">•</span>
+                      <span class="text-white/80 text-xs font-medium">Symulacja & Edukacja</span>
+                    </div>
+                    <h3 class="slide-title" data-i18n="slide_title_care">CARE: Climate Action RPG</h3>
+                    <p class="slide-desc" data-i18n="slide_desc_care">
+                      Autorska planszowa symulacja strategiczna i warsztaty adaptacji klimatycznej dla szkół i liderów.
+                    </p>
+                    <div class="slide-actions">
+                      <a href="single-project.html?id=care-rpg" class="slide-cta-btn group">
+                        <span data-i18n="slide_cta">Zobacz projekt</span>
+                        <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Okulary Młodzieżowe -->
+                <div class="project-slide" data-index="2" data-glow="#5B13B9">
+                  <img src="assets/hero/okulary_mlodziezowe.jpg" alt="Okulary Młodzieżowe" class="slide-img" loading="lazy" />
+                  <div class="slide-scrim-top"></div>
+                  <div class="slide-scrim-bottom"></div>
+
+                  <div class="slide-top-badges">
+                    <span class="badge-category bg-white/95 text-brand-violet">
+                      <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
+                      <span data-i18n="slide_cat_okulary">Edukacja Obywatelska</span>
+                    </span>
+                    <span class="badge-location">
+                      <span class="material-symbols-outlined text-[12px]">location_on</span>
+                      <span>Żory • Bytom • Opole</span>
+                    </span>
+                    <span class="badge-counter font-mono">03 / 05</span>
+                  </div>
+
+                  <div class="slide-bottom-content">
+                    <div class="slide-meta-row">
+                      <span class="badge-year">2025–2026</span>
+                      <span class="text-white/60">•</span>
+                      <span class="text-white/80 text-xs font-medium">Inicjatywy Lokalne</span>
+                    </div>
+                    <h3 class="slide-title" data-i18n="slide_title_okulary">Okulary Młodzieżowe</h3>
+                    <p class="slide-desc" data-i18n="slide_desc_okulary">
+                      Cykle warsztatów komunikacji, budowania mostów i młodzieżowych inicjatyw obywatelskich na Śląsku.
+                    </p>
+                    <div class="slide-actions">
+                      <a href="single-project.html?id=okulary-mlodziezowe" class="slide-cta-btn group">
+                        <span data-i18n="slide_cta">Zobacz projekt</span>
+                        <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Be Active! -->
+                <div class="project-slide" data-index="3" data-glow="#EA9A05">
+                  <img src="assets/hero/be_active_quest.jpg" alt="Be Active Quest Terenowy" class="slide-img" loading="lazy" />
+                  <div class="slide-scrim-top"></div>
+                  <div class="slide-scrim-bottom"></div>
+
+                  <div class="slide-top-badges">
+                    <span class="badge-category bg-white/95 text-amber-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                      <span data-i18n="slide_cat_beactive">Edukacja Pozaformalna</span>
+                    </span>
+                    <span class="badge-location">
+                      <span class="material-symbols-outlined text-[12px]">location_on</span>
+                      <span>Śląsk • Polska</span>
+                    </span>
+                    <span class="badge-counter font-mono">04 / 05</span>
+                  </div>
+
+                  <div class="slide-bottom-content">
+                    <div class="slide-meta-row">
+                      <span class="badge-year">2023–2024</span>
+                      <span class="text-white/60">•</span>
+                      <span class="text-white/80 text-xs font-medium">Outdoor & Gry</span>
+                    </div>
+                    <h3 class="slide-title" data-i18n="slide_title_beactive">Be Active! Quest Terenowy</h3>
+                    <p class="slide-desc" data-i18n="slide_desc_beactive">
+                      Gry terenowe, questing i metody outdoor education aktywizujące młodzież do zdrowego stylu życia.
+                    </p>
+                    <div class="slide-actions">
+                      <a href="single-project.html?id=be-active" class="slide-cta-btn group">
+                        <span data-i18n="slide_cta">Zobacz projekt</span>
+                        <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 4: Youth in Action & Starters -->
+                <div class="project-slide" data-index="4" data-glow="#2AD0FF">
+                  <img src="assets/hero/youth_in_action.jpg" alt="Youth in Action Starters" class="slide-img" loading="lazy" />
+                  <div class="slide-scrim-top"></div>
+                  <div class="slide-scrim-bottom"></div>
+
+                  <div class="slide-top-badges">
+                    <span class="badge-category bg-white/95 text-sky-800">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#2AD0FF]"></span>
+                      <span data-i18n="slide_cat_youth">Wymiana Młodzieży Erasmus+</span>
+                    </span>
+                    <span class="badge-location">
+                      <span class="material-symbols-outlined text-[12px]">location_on</span>
+                      <span>Polska • Litwa • Włochy</span>
+                    </span>
+                    <span class="badge-counter font-mono">05 / 05</span>
+                  </div>
+
+                  <div class="slide-bottom-content">
+                    <div class="slide-meta-row">
+                      <span class="badge-year">2022–2024</span>
+                      <span class="text-white/60">•</span>
+                      <span class="text-white/80 text-xs font-medium">Inkubacja Inicjatyw</span>
+                    </div>
+                    <h3 class="slide-title" data-i18n="slide_title_youth">Youth in Action & Starters</h3>
+                    <p class="slide-desc" data-i18n="slide_desc_youth">
+                      Inkubacja inicjatyw młodzieżowych, rozwój kompetencji liderskich i przedsiębiorczych w Europie.
+                    </p>
+                    <div class="slide-actions">
+                      <a href="single-project.html?id=youth-in-action" class="slide-cta-btn group">
+                        <span data-i18n="slide_cta">Zobacz projekt</span>
+                        <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Nav Arrows -->
+                <button type="button" class="slider-arrow slider-arrow-left" onclick="prevProjectSlide()" aria-label="Poprzedni projekt">
+                  <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                </button>
+                <button type="button" class="slider-arrow slider-arrow-right" onclick="nextProjectSlide()" aria-label="Następny projekt">
+                  <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+                </button>
+
+                <!-- Bottom Minimal Quick Selector (Pills) -->
+                <div class="slider-thumbnails-bar">
+                  <button type="button" class="thumb-pill active" onclick="goToProjectSlide(0)">#PLUGTREE+</button>
+                  <button type="button" class="thumb-pill" onclick="goToProjectSlide(1)">CARE RPG</button>
+                  <button type="button" class="thumb-pill" onclick="goToProjectSlide(2)">Okulary</button>
+                  <button type="button" class="thumb-pill" onclick="goToProjectSlide(3)">Be Active</button>
+                  <button type="button" class="thumb-pill" onclick="goToProjectSlide(4)">Starters</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+<!-- ========================================================
+         LATEST FIELD NEWS & DISPATCHES (Direct Access)
+    ======================================================== -->
+    <section class="py-16 bg-white border-t border-border-subtle">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-border-subtle">
+          <div>
+              <span>Z ŻYCIA FUNDACJI • AKTUALNOŚCI I DZIAŁANIA W TERENIE</span>
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 font-heading" data-i18n="news_heading">
+              Ostatnie Wydarzenia i Relacje
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 font-sans" data-i18n="news_sub">
+              Świeże relacje z międzynarodowych wymian młodzieżowych, warsztatów edukacyjnych oraz projektów realizowanych na Śląsku i w Europie.
+            </p>
+          </div>
+          <a href="blog.html" class="inline-flex items-center gap-1.5 text-slate-900 hover:text-brand-violet font-semibold text-sm transition-colors group">
+            <span data-i18n="news_view_all">Wszystkie relacje i wpisy</span>
+            <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- News 1: #PLUGTREE+ -->
+          <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-xs">
+            <div>
+              <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('plugtree-youth-exchange')">
+                <img src="https://animusedu.com/wp-content/uploads/2026/09/726949550_36599849226326635_8358088394579047416_n-768x485.jpg" alt="#PLUGTREE+ Youth Exchange" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
+                <span class="absolute top-3 left-3 bg-brand-violet text-white font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                  Erasmus+
+                </span>
+              </div>
+              <div class="p-6 space-y-2.5">
+                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                  <span>15 SIERPNIA 2026 • VATRA DORNEI, RUMUNIA</span>
+                </time>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 hover:text-brand-violet transition-colors font-heading leading-snug cursor-pointer" onclick="openArticleModal('plugtree-youth-exchange')">
+                  #PLUGTREE+ Youth Exchange
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed font-sans" data-i18n="news_1_desc">
+                  35 młodych uczestników i liderów z Polski, Rumunii, Litwy, Łotwy, Estonii, Grecji i Turcji wzięło udział w wymianie młodzieżowej w Vatra Dornei, rozwijając kompetencje ekologiczne i społeczne.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <button type="button" onclick="openArticleModal('plugtree-youth-exchange')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+                <span data-i18n="news_read">Czytaj pełną relację</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- News 2: Rabbit on the Moon -->
+          <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-xs">
+            <div>
+              <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('training-course-rabbit-on-the-moon')">
+                <img src="https://animusedu.com/wp-content/uploads/2026/02/Rabbit-on-the-moon-infopack.pdf-768x432.png" alt="Rabbit on the Moon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
+                <span class="absolute top-3 left-3 bg-brand-coral text-white font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                  Szkolenie Erasmus+
+                </span>
+              </div>
+              <div class="p-6 space-y-2.5">
+                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                  <span>20 LUTEGO 2026 • SEGOWIA, HISZPANIA</span>
+                </time>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 hover:text-brand-violet transition-colors font-heading leading-snug cursor-pointer" onclick="openArticleModal('training-course-rabbit-on-the-moon')">
+                  Training Course "Rabbit on the Moon"
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed font-sans" data-i18n="news_2_desc">
+                  Międzynarodowy kurs szkoleniowy w Segowii dla osób pracujących z młodzieżą, poświęcony metodom somatycznym, odporności emocjonalnej i przeciwdziałaniu wypaleniu zawodowemu.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <button type="button" onclick="openArticleModal('training-course-rabbit-on-the-moon')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+                <span data-i18n="news_read">Czytaj pełną relację</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- News 3: Budowanie mostów -->
+          <article class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-xs">
+            <div>
+              <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')">
+                <img src="https://animusedu.com/wp-content/uploads/2025/12/556360085_777863461700425_9180504503078992900_n-1-768x576.jpg" alt="Budowanie mostów" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
+                <span class="absolute top-3 left-3 bg-brand-cyan text-slate-900 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                  Okulary Młodzieżowe
+                </span>
+              </div>
+              <div class="p-6 space-y-2.5">
+                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                  <span>30 WRZEŚNIA 2025 • ZEBRZYDOWICE / ŚLĄSK</span>
+                </time>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 hover:text-brand-violet transition-colors font-heading leading-snug cursor-pointer" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')">
+                  Budowanie mostów: szkolenie dla młodzieży
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed font-sans" data-i18n="news_3_desc">
+                  Warsztaty komunikacji bez przemocy (NVC), integracji międzykulturowej i planowania oddolnych inicjatyw społecznych dla młodzieży ze Śląska.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <button type="button" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+                <span data-i18n="news_read">Czytaj pełną relację</span>
+                <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CORE HUB DIRECT ACCESS: ARCHITECTURAL KINETIC MONOLITHS
+    ======================================================== -->
+    <section id="filary-fundacji" class="py-20 lg:py-28 monoliths-section border-t border-border-subtle" aria-labelledby="monoliths-heading">
+      <!-- Magnetic Ambient Spotlight -->
+      <div class="monolith-spotlight" id="monoliths-spotlight"></div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="mb-12 pb-6 border-b border-slate-200/80">
+          <h2 id="monoliths-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-heading" data-i18n="gate_title">
+            Poznaj Nasze Obszary Działania
+          </h2>
+        </div>
+
+        <!-- 3 Kinetic Architectural Monoliths -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch" id="monoliths-grid">
+          
+          <!-- Monolith 01: O Fundacji & Misja -->
+          <a href="about.html" class="kinetic-monolith monolith-violet group flex flex-col justify-between" data-monolith="1">
+            <div class="monolith-glare"></div>
+            
+            <div class="relative z-10">
+              <!-- Top Kinetic SVG Engine -->
+              <div class="mb-8">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-violet/10 to-brand-violet/5 border border-brand-violet/20 flex items-center justify-center group-hover:border-brand-violet/40 group-hover:shadow-[0_8px_20px_-4px_rgba(48,0,100,0.2)] transition-all duration-300 shadow-sm">
+                  <!-- SVG Engine 01: Wisdom & Mission Compass -->
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110" aria-hidden="true">
+                    <circle cx="24" cy="24" r="21" stroke="#300064" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <circle cx="24" cy="24" r="16.5" stroke="#300064" stroke-opacity="0.25" stroke-width="1.5"/>
+                    <path d="M24 6 L27.5 20.5 L42 24 L27.5 27.5 L24 42 L20.5 27.5 L6 24 L20.5 20.5 Z" fill="url(#violet-grad-idx1)" stroke="#300064" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M24 6 L27.5 20.5 L24 24 Z" fill="#ffffff" fill-opacity="0.35"/>
+                    <path d="M42 24 L27.5 27.5 L24 24 Z" fill="#ffffff" fill-opacity="0.2"/>
+                    <path d="M24 42 L20.5 27.5 L24 24 Z" fill="#ffffff" fill-opacity="0.35"/>
+                    <path d="M6 24 L20.5 20.5 L24 24 Z" fill="#ffffff" fill-opacity="0.2"/>
+                    <circle cx="24" cy="24" r="3.5" fill="#F35813"/>
+                    <circle cx="24" cy="24" r="1.5" fill="#ffffff"/>
+                    <circle cx="24" cy="3" r="1.5" fill="#300064"/>
+                    <circle cx="45" cy="24" r="1.5" fill="#300064"/>
+                    <circle cx="24" cy="45" r="1.5" fill="#300064"/>
+                    <circle cx="3" cy="24" r="1.5" fill="#300064"/>
+                    <defs>
+                      <linearGradient id="violet-grad-idx1" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#5B13B9"/>
+                        <stop offset="100%" stop-color="#300064"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Monolith Title -->
+              <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
+                <span data-i18n="card_about_title">O Fundacji</span>
+                <span class="w-8 h-8 rounded-full bg-brand-violet/5 group-hover:bg-brand-violet group-hover:text-white text-brand-violet flex items-center justify-center transition-all duration-300">
+                  <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+                </span>
+              </h3>
+
+              <!-- Monolith Lead & Narrative -->
+              <p class="text-xs font-semibold text-brand-violet/90 mt-2 font-mono" data-i18n="monolith_1_lead">
+                Łacińskie korzenie: racjonalna dusza, odwaga myśli i siła dialogu.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_about_desc">
+                Łacińskie korzenie *animus*, 10 lat doświadczenia od 2015 roku, ewolucja w centrum edukacji pozaformalnej, misja, wartości i strategia.
+              </p>
+            </div>
+
+            <!-- Monolith Bottom Direct CTA -->
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-200" data-i18n="card_learn_more">Poznaj naszą misję</span>
+            </div>
+          </a>
+
+          <!-- Monolith 02: Działania & Gry Adaptacyjne -->
+          <a href="activities.html" class="kinetic-monolith monolith-coral group flex flex-col justify-between" data-monolith="2">
+            <div class="monolith-glare"></div>
+            
+            <div class="relative z-10">
+              <!-- Top Kinetic SVG Engine -->
+              <div class="mb-8">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-coral/10 to-brand-coral/5 border border-brand-coral/20 flex items-center justify-center group-hover:border-brand-coral/40 group-hover:shadow-[0_8px_20px_-4px_rgba(243,88,19,0.2)] transition-all duration-300 shadow-sm">
+                  <!-- SVG Engine 02: Modern Isometric Game Die / Simulation Block -->
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3" aria-hidden="true">
+                    <!-- Dynamic orbital trajectory -->
+                    <ellipse cx="24" cy="24" rx="21" ry="9" stroke="#F35813" stroke-opacity="0.25" stroke-width="1.5" transform="rotate(-20 24 24)"/>
+                    <circle cx="41" cy="18" r="2" fill="#F35813"/>
+                    <!-- 3D Polyhedron / Dice Faces -->
+                    <path d="M24 9 L38 17 L24 25 L10 17 Z" fill="#FF834E" stroke="#F35813" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M10 17 L24 25 L24 39 L10 31 Z" fill="#F35813" stroke="#F35813" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M24 25 L38 17 L38 31 L24 39 Z" fill="#C43E00" stroke="#F35813" stroke-width="1.5" stroke-linejoin="round"/>
+                    <!-- Tactile Game Pips -->
+                    <circle cx="24" cy="17" r="2" fill="#ffffff"/>
+                    <circle cx="15" cy="22" r="1.6" fill="#ffffff" fill-opacity="0.95"/>
+                    <circle cx="19" cy="32" r="1.6" fill="#ffffff" fill-opacity="0.95"/>
+                    <circle cx="29" cy="33" r="1.6" fill="#ffffff" fill-opacity="0.95"/>
+                    <circle cx="31" cy="28" r="1.6" fill="#ffffff" fill-opacity="0.95"/>
+                    <circle cx="33" cy="23" r="1.6" fill="#ffffff" fill-opacity="0.95"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Monolith Title -->
+              <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-coral transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
+                <span data-i18n="card_activities_title">Działania i Gry Adaptacyjne</span>
+                <span class="w-8 h-8 rounded-full bg-brand-coral/5 group-hover:bg-brand-coral group-hover:text-white text-brand-coral flex items-center justify-center transition-all duration-300">
+                  <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+                </span>
+              </h3>
+
+              <!-- Monolith Lead & Narrative -->
+              <p class="text-xs font-semibold text-brand-coral/90 mt-2 font-mono" data-i18n="monolith_2_lead">
+                Nowatorskie narzędzia: symulacje, planszówki i partycypacja.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_activities_desc">
+                Autorska gra symulacyjna CARE RPG, programy edukacji obywatelskiej, szkolenia dla osób pracujących z młodzieżą i warsztaty integracyjne.
+              </p>
+            </div>
+
+            <!-- Monolith Bottom Direct CTA -->
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-coral transition-colors duration-200" data-i18n="card_learn_more">Zobacz metody i gry</span>
+            </div>
+          </a>
+
+          <!-- Monolith 03: Projekty i Inicjatywy -->
+          <a href="projects.html" class="kinetic-monolith monolith-cyan group flex flex-col justify-between" data-monolith="3">
+            <div class="monolith-glare"></div>
+            
+            <div class="relative z-10">
+              <!-- Top Kinetic SVG Engine -->
+              <div class="mb-8">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-cyan/20 to-brand-cyan/5 border border-brand-cyan/30 flex items-center justify-center group-hover:border-brand-cyan/50 group-hover:shadow-[0_8px_20px_-4px_rgba(42,208,255,0.25)] transition-all duration-300 shadow-sm">
+                  <!-- SVG Engine 03: European Network & Mobility Constellation -->
+                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0 transition-transform duration-500 group-hover:scale-110" aria-hidden="true">
+                    <!-- Outer orbital globe latitude / longitude grid -->
+                    <circle cx="24" cy="24" r="20" stroke="#0ea5e9" stroke-opacity="0.25" stroke-width="1.5"/>
+                    <ellipse cx="24" cy="24" rx="20" ry="8" stroke="#0ea5e9" stroke-opacity="0.2" stroke-width="1.2"/>
+                    <ellipse cx="24" cy="24" rx="8" ry="20" stroke="#0ea5e9" stroke-opacity="0.2" stroke-width="1.2"/>
+                    <!-- Network Connection Lines -->
+                    <path d="M12 28 L22 16 L36 20 L28 34 L12 28 Z" stroke="#0284c7" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="2 2"/>
+                    <path d="M22 16 L28 34" stroke="#0284c7" stroke-width="1.5"/>
+                    <!-- Dynamic Mobility Vector (Paper plane / Erasmus mobility arrow) -->
+                    <path d="M38 10 L21 21 L27 25 Z" fill="#0284c7"/>
+                    <path d="M38 10 L27 25 L34 23 Z" fill="#38bdf8"/>
+                    <path d="M38 10 L16 19 L21 21 Z" fill="#7dd3fc"/>
+                    <!-- Glowing Network Nodes -->
+                    <circle cx="12" cy="28" r="3" fill="#300064" stroke="#ffffff" stroke-width="1.2"/>
+                    <circle cx="22" cy="16" r="3" fill="#F35813" stroke="#ffffff" stroke-width="1.2"/>
+                    <circle cx="36" cy="20" r="3.5" fill="#0284c7" stroke="#ffffff" stroke-width="1.2"/>
+                    <circle cx="28" cy="34" r="3" fill="#300064" stroke="#ffffff" stroke-width="1.2"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Monolith Title -->
+              <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-300 font-heading tracking-tight flex items-center justify-between">
+                <span data-i18n="card_projects_title">Projekty i Inicjatywy</span>
+                <span class="w-8 h-8 rounded-full bg-brand-cyan/10 group-hover:bg-brand-violet group-hover:text-white text-slate-900 flex items-center justify-center transition-all duration-300">
+                  <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+                </span>
+              </h3>
+
+              <!-- Monolith Lead & Narrative -->
+              <p class="text-xs font-semibold text-slate-700 mt-2 font-mono" data-i18n="monolith_3_lead">
+                10 flagowych inicjatyw, wymiany Erasmus+ i sieć partnerska.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-sans" data-i18n="card_projects_desc">
+                10 flagowych inicjatyw z rozwijanymi kronikami działań, fotorelacjami, toolkitami metodycznymi i partnerstwami w całej Europie.
+              </p>
+            </div>
+
+            <!-- Monolith Bottom Direct CTA -->
+            <div class="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-bold text-slate-900 group-hover:text-brand-violet transition-colors duration-200" data-i18n="card_learn_more">Przeglądaj projekty</span>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Etymology -->
+        <div class="space-y-4">
+          <img src="./logo.png" alt="ANIMUS Foundation" class="h-10 w-auto object-contain brightness-0 invert" onerror="this.onerror=null; this.src='https://animusedu.com/wp-content/uploads/2022/08/cropped-Animus-Logo-Horizontal.png'">
+          <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
+            ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
+          </p>
+          <div class="text-[11px] font-mono text-slate-400">
+            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
+            <li><a href="activities.html" class="hover:text-white transition-colors" data-i18n="nav_activities">Nasze działania</a></li>
+            <li><a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a></li>
+            <li><a href="partners.html" class="hover:text-white transition-colors" data-i18n="nav_partners">Partnerzy</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav_news">Aktualności</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <div class="space-y-2 text-xs text-slate-400">
+            <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
+            <p><strong class="text-white">KRS:</strong> 0000535710</p>
+            <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
+            <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal Notice -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <p>&copy; 2015&ndash;2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- EDITORIAL READING MODAL -->
+  <div id="article-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" onclick="handleBackdropClick(event)">
+    <div id="modal-card" class="bg-white rounded-2xl sm:rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="px-6 sm:px-8 py-4 border-b border-slate-200 flex items-center justify-between gap-4 bg-slate-50/80 sticky top-0 z-10">
+        <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-brand-violet text-white uppercase tracking-wider">
+            [Projekt]
+          </span>
+          <span id="modal-date-badge" class="text-xs font-mono font-semibold text-slate-500 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+            <span id="modal-date-text">2026</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="modal-orig-link" href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-violet hover:bg-primary-hover text-white text-xs font-mono font-bold transition-all shadow-xs" title="Otwórz jako dedykowany artykuł">
+            <span class="material-symbols-outlined text-[15px]">open_in_new</span>
+            <span class="hidden sm:inline">Pełna strona</span>
+          </a>
+          <button onclick="closeArticleModal()" class="w-9 h-9 rounded-full bg-slate-200/80 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-all cursor-pointer" aria-label="Close modal">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="overflow-y-auto px-6 sm:px-10 py-6 sm:py-8 space-y-6 custom-scrollbar flex-grow">
+        
+        <!-- Hero Image -->
+        <div id="modal-hero-container" class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 max-h-[420px] relative">
+          <img id="modal-hero-img" src="" alt="Raport z projektu" class="w-full h-full object-cover max-h-[420px]">
+        </div>
+
+        <!-- Title -->
+        <h2 id="modal-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading leading-tight">
+          Tytuł artykułu
+        </h2>
+
+        <!-- Text Content -->
+        <div id="modal-content" class="space-y-4 text-slate-700 leading-relaxed font-sans text-sm sm:text-base">
+          <!-- Text blocks populated here -->
+        </div>
+
+        <!-- Photo Gallery if multiple photos -->
+        <div id="modal-gallery-wrapper" class="pt-6 border-t border-slate-200 hidden">
+          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
+            <span class="material-symbols-outlined text-[16px]">photo_library</span>
+            <span>Galeria zdjęć z relacji</span>
+          </h3>
+          <div id="modal-gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <!-- Gallery images populated here -->
+          </div>
+        </div>
+
+
+        <!-- ASSOCIATED PROJECT CARD -->
+        <div id="modal-project-box" class="pt-6 border-t border-slate-200 hidden"></div>
+
+        <!-- RELATED ARTICLES (From same project OR latest articles) -->
+        <div id="modal-related-wrapper" class="pt-8 border-t border-slate-200 hidden">
+          <div class="mb-4">
+            <h3 id="modal-related-heading" class="text-base sm:text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-violet text-lg">auto_stories</span>
+              <span>Inne relacje z tego projektu</span>
+            </h3>
+          </div>
+          <div id="modal-related-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Footer Callout -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50 p-5 rounded-2xl">
+          <div class="space-y-1">
+            <div class="text-xs font-mono font-bold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
+            <div class="text-xs text-slate-500" data-i18n="modal_project_note">Działania w ramach programów edukacji pozaformalnej i projektów partnerskich</div>
+          </div>
+          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-mono font-bold transition-all shadow-sm cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+            <span data-i18n="modal_close_btn">Zamknij czytnik</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DATA & SCRIPTS -->
+  <script src="projects-data.js"></script>
+  <script>
+    /* ==========================================================
+       1. DATA: 6 AUTHENTIC PILLARS WITH EXACT ROTATION MATRICES
+    ========================================================== */
+    const PILLARS = [
+      {
+        id: 0,
+        number: "01",
+        tagEn: "MISSION",
+        tagPl: "MISJA",
+        nameEn: "Our Mission",
+        namePl: "Nasza Misja",
+        descEn: "To unite and develop modern society based on the education and communication principles.",
+        descPl: "Łączyć i rozwijać nowoczesne społeczeństwo w oparciu o zasady edukacji i dialogu.",
+        rotX: -12,
+        rotY: 18
+      },
+      {
+        id: 1,
+        number: "02",
+        tagEn: "VALUES",
+        tagPl: "WARTOŚCI",
+        nameEn: "Our Values",
+        namePl: "Nasze Wartości",
+        descEn: "To give people support to understand their values, priorities, to help develop and grow in connection with European Values.",
+        descPl: "Wspierać ludzi w zrozumieniu własnych wartości i celów oraz rozwijać się w harmonii z wartościami europejskimi.",
+        rotX: -12,
+        rotY: 198
+      },
+      {
+        id: 2,
+        number: "03",
+        tagEn: "STRATEGY",
+        tagPl: "STRATEGIA",
+        nameEn: "Our Strategy",
+        namePl: "Nasza Strategia",
+        descEn: "To help and support communities in their development through the innovative methods of non-formal education.",
+        descPl: "Pomagać społecznościom w rozwoju poprzez metody edukacji pozaformalnej i aktywizację obywatelską.",
+        rotX: -12,
+        rotY: -72
+      },
+      {
+        id: 3,
+        number: "04",
+        tagEn: "ANIMUS",
+        tagPl: "ANIMUS",
+        nameEn: "Origin: ANIMUS",
+        namePl: "Geneza: ANIMUS",
+        descEn: "From Latin: rational soul, mind, life, mental powers, consciousness and sensibility. Active since 2015.",
+        descPl: "Z łaciny: racjonalna dusza, umysł, życie, siły psychiczne, świadomość i wrażliwość. Działamy od 2015 roku.",
+        rotX: -12,
+        rotY: 108
+      },
+      {
+        id: 4,
+        number: "05",
+        tagEn: "ERASMUS+",
+        tagPl: "ERASMUS+",
+        nameEn: "Erasmus+ & Youth",
+        namePl: "Erasmus+ i Młodzież",
+        descEn: "International youth exchanges, training courses for youth workers, educators, and cross-border European solidarity.",
+        descPl: "Międzynarodowe wymiany młodzieżowe, kursy dla edukatorów, mobilność i solidarność europejska.",
+        rotX: -102,
+        rotY: 18
+      },
+      {
+        id: 5,
+        number: "06",
+        tagEn: "TOOLKITS",
+        tagPl: "NARZĘDZIA",
+        nameEn: "Toolkits & Games",
+        namePl: "Narzędzia i Gry",
+        descEn: "Development of learning toolkits, adaptation board games, NGO resilience frameworks, and youth coaching models.",
+        descPl: "Tworzenie przewodników (toolkits), gier planszowych i symulacji, narzędzi adaptacyjnych oraz wsparcie NGO.",
+        rotX: 78,
+        rotY: 18
+      }
+    ];
+
+    /* ==========================================================
+       2. LATIN MOTTO & QUOTES (Oficjalna Dewiza Animusa)
+    ========================================================== */
+    const QUOTES = {
+      pl: [
+        { text: "„Animus in consulendo liber — Umysł wolny w poszukiwaniu prawdy, dialogu i porozumienia.”" }
+      ],
+      en: [
+        { text: "“Animus in consulendo liber — A mind free in consultation, dialogue and discovery.”" }
+      ]
+    };
+
+    let currentLang = 'pl';
+    let currentQuoteIndex = 0;
+    let quoteInterval = null;
+
+    function startQuoteRotator() {
+      // Dewiza fundacji na stałe widoczna bez podpisu
+      updateQuoteDisplay();
+    }
+
+    function updateQuoteDisplay() {
+      const list = QUOTES[currentLang] || QUOTES.pl;
+      const q = list[currentQuoteIndex % list.length];
+      const container = document.getElementById('quote-container');
+      const textEl = document.getElementById('quote-text');
+      const authorEl = document.getElementById('quote-author');
+
+      if (!container || !textEl) return;
+
+      container.style.opacity = '0';
+      container.style.transform = 'translateY(6px)';
+
+      setTimeout(() => {
+        textEl.innerText = q.text;
+        if (authorEl) {
+          authorEl.innerText = '';
+          authorEl.style.display = 'none';
+        }
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+      }, 300);
+    }
+
+    /* ==========================================================
+       3. HERO PROJECT SLIDER ENGINE (Tactile Auto-Play & Gestures)
+    ========================================================== */
+    let currentSlide = 0;
+    const totalSlides = 5;
+    let progressStartTime = 0;
+    const slideDuration = 5500; // 5.5s
+    let isSliderPaused = false;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function updateSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      const slider = document.getElementById('hero-project-slider');
+      if (!slider) return;
+
+      const slides = slider.querySelectorAll('.project-slide');
+      const segments = slider.querySelectorAll('.progress-segment');
+      const pills = slider.querySelectorAll('.thumb-pill');
+      const ambientGlow = document.getElementById('slider-ambient-glow');
+
+      slides.forEach((s, i) => {
+        if (i === currentSlide) {
+          s.classList.add('active');
+          if (ambientGlow) {
+            const glowColor = s.getAttribute('data-glow') || '#300064';
+            ambientGlow.style.background = `radial-gradient(circle, ${glowColor}33 0%, rgba(243, 88, 19, 0.14) 40%, rgba(48, 0, 100, 0.1) 70%, transparent 80%)`;
+          }
+        } else {
+          s.classList.remove('active');
+        }
+      });
+
+      segments.forEach((seg, i) => {
+        const fill = seg.querySelector('.progress-fill');
+        if (i < currentSlide) {
+          seg.classList.remove('active');
+          seg.classList.add('completed');
+          if (fill) fill.style.width = '100%';
+        } else if (i === currentSlide) {
+          seg.classList.add('active');
+          seg.classList.remove('completed');
+          if (fill) fill.style.width = '0%';
+        } else {
+          seg.classList.remove('active', 'completed');
+          if (fill) fill.style.width = '0%';
+        }
+      });
+
+      pills.forEach((p, i) => {
+        if (i === currentSlide) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+
+      progressStartTime = Date.now();
+    }
+
+    function nextProjectSlide() {
+      updateSlide(currentSlide + 1);
+    }
+
+    function prevProjectSlide() {
+      updateSlide(currentSlide - 1);
+    }
+
+    function goToProjectSlide(index) {
+      updateSlide(index);
+    }
+
+    function initProjectSlider() {
+      const slider = document.getElementById('hero-project-slider');
+      if (!slider) return;
+
+      // Touch Gestures
+      slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isSliderPaused = true;
+      }, { passive: true });
+
+      slider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        isSliderPaused = false;
+        progressStartTime = Date.now();
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff < 0) nextProjectSlide();
+          else prevProjectSlide();
+        }
+      }, { passive: true });
+
+      // Hover pause
+      slider.addEventListener('mouseenter', () => { isSliderPaused = true; });
+      slider.addEventListener('mouseleave', () => { 
+        isSliderPaused = false; 
+        progressStartTime = Date.now(); 
+      });
+
+      // Keyboard navigation
+      slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { nextProjectSlide(); e.preventDefault(); }
+        else if (e.key === 'ArrowLeft') { prevProjectSlide(); e.preventDefault(); }
+      });
+
+      // Set initial slide
+      updateSlide(0);
+
+      // Smooth progress tick
+      function progressLoop() {
+        if (!isSliderPaused) {
+          const elapsed = Date.now() - progressStartTime;
+          const pct = Math.min((elapsed / slideDuration) * 100, 100);
+          const activeSeg = slider.querySelector('.progress-segment.active .progress-fill');
+          if (activeSeg) {
+            activeSeg.style.width = `${pct}%`;
+          }
+          if (elapsed >= slideDuration) {
+            nextProjectSlide();
+          }
+        }
+        requestAnimationFrame(progressLoop);
+      }
+      requestAnimationFrame(progressLoop);
+    }
+
+    /* ==========================================================
+       4. BILINGUAL DICTIONARY (INSTANT SWITCHER)
+    ========================================================== */
+    const I18N = {
+      pl: {
+        top_org: "FUNDACJA ANIMUS • DZIAŁAMY OD 2015 ROKU",
+        top_krs: "KRS: 0000535710 • ŚLĄSK, POLSKA",
+        nav_home: "Strona główna",
+        nav_about: "O nas",
+        nav_activities: "Nasze działania",
+        nav_projects: "Projekty",
+        nav_partners: "Partnerzy",
+        nav_news: "Aktualności",
+        nav_news_label: "Aktualności",
+        nav_contact_btn: "Skontaktuj się",
+        hero_title_1: "Fundacja ANIMUS — ",
+        hero_title_2: "Odwaga Myśli",
+        hero_title_3: "Siła Wspólnoty",
+        hero_sub: "Od 2015 roku łączymy ludzi ponad podziałami. Tworzymy autorskie gry adaptacyjne, prowadzimy międzynarodowe wymiany młodzieżowe Erasmus+ i rozwijamy edukację pozaformalną.",
+        hero_cta_explore: "Poznaj Nasze Działania",
+        hero_cta_about: "O Fundacji",
+        gate_title: "Poznaj Nasze Obszary Działania",
+        card_about_title: "O Fundacji",
+        card_about_desc: "Łacińskie korzenie *animus*, 10 lat doświadczenia od 2015 roku, ewolucja w centrum edukacji pozaformalnej, misja, wartości i strategia.",
+        card_activities_title: "Działania i Gry Adaptacyjne",
+        card_activities_desc: "Autorska gra symulacyjna CARE RPG, programy edukacji obywatelskiej, szkolenia dla osób pracujących z młodzieżą i warsztaty integracyjne.",
+        card_projects_title: "Projekty i Inicjatywy",
+        card_projects_desc: "10 flagowych inicjatyw z rozwijanymi kronikami działań, fotorelacjami, toolkitami metodycznymi i partnerstwami w całej Europie.",
+        card_learn_more: "Zobacz szczegóły",
+        monolith_1_lead: "Łacińskie korzenie: racjonalna dusza, odwaga myśli i siła dialogu.",
+        monolith_1_p1: "Od 2015 na Śląsku",
+        monolith_1_p2: "Statut i Wartości",
+        monolith_1_p3: "Dialog Obywatelski",
+        monolith_2_lead: "Nowatorskie narzędzia: symulacje, planszówki i partycypacja.",
+        monolith_2_p1: "CARE RPG planszówka",
+        monolith_2_p2: "Warsztaty Somatyczne",
+        monolith_2_p3: "Treningi NVC i Dialog",
+        monolith_3_lead: "10 flagowych inicjatyw, wymiany Erasmus+ i sieć partnerska.",
+        monolith_3_p1: "Erasmus+ Wymiany",
+        monolith_3_p2: "10 Flagowych Inicjatyw",
+        monolith_3_p3: "Certyfikaty Youthpass",
+        news_heading: "Ostatnie Wydarzenia i Relacje",
+        news_sub: "Świeże relacje z międzynarodowych wymian młodzieżowych, warsztatów edukacyjnych oraz projektów realizowanych na Śląsku i w Europie.",
+        news_view_all: "Wszystkie relacje i wpisy",
+        news_1_desc: "35 młodych uczestników i liderów z Polski, Rumunii, Litwy, Łotwy, Estonii, Grecji i Turcji wzięło udział w wymianie młodzieżowej w Vatra Dornei.",
+        news_2_desc: "Międzynarodowy kurs szkoleniowy w Segowii dla osób pracujących z młodzieżą, poświęcony metodom somatycznym, odporności emocjonalnej i budowaniu relacji.",
+        news_3_desc: "Warsztaty komunikacji bez przemocy (NVC), integracji międzykulturowej i planowania oddolnych inicjatyw społecznych dla młodzieży ze Śląska.",
+        news_read: "Czytaj pełną relację",
+        modal_gallery_title: "Galeria zdjęć z relacji",
+        modal_project_tag: "Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe",
+        modal_project_note: "Działania w ramach programów edukacji pozaformalnej i projektów partnerskich",
+        modal_close_btn: "Zamknij czytnik",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.",
+        footer_nav_title: "Nawigacja",
+        footer_contact_title: "Kontakt",
+
+                slide_cta: "Zobacz projekt",
+        slide_cat_plugtree: "Erasmus+ Wymiana Młodzieży",
+        slide_title_plugtree: "#PLUGTREE+",
+        slide_desc_plugtree: "Międzynarodowa wymiana młodzieżowa łącząca ekologię, technologie cyfrowe i integrację międzykulturową.",
+        slide_cat_care: "Gry Adaptacyjne & Symulacja",
+        slide_title_care: "CARE: Climate Action RPG",
+        slide_desc_care: "Autorska planszowa symulacja strategiczna i warsztaty adaptacji klimatycznej dla szkół i liderów.",
+        slide_cat_okulary: "Edukacja Obywatelska",
+        slide_title_okulary: "Okulary Młodzieżowe",
+        slide_desc_okulary: "Cykle warsztatów komunikacji, budowania mostów i młodzieżowych inicjatyw obywatelskich na Śląsku.",
+        slide_cat_beactive: "Edukacja Pozaformalna",
+        slide_title_beactive: "Be Active! Quest Terenowy",
+        slide_desc_beactive: "Gry terenowe, questing i metody outdoor education aktywizujące młodzież do zdrowego stylu życia.",
+        slide_cat_youth: "Wymiana Młodzieży Erasmus+",
+        slide_title_youth: "Youth in Action & Starters",
+        slide_desc_youth: "Inkubacja inicjatyw młodzieżowych, rozwój kompetencji liderskich i przedsiębiorczych w Europie." 
+      },
+      en: {
+        top_org: "ANIMUS NGO • ACTIVE SINCE 2015",
+        top_krs: "KRS: 0000535710 • SILESIA, POLAND",
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_activities: "Our Activities",
+        nav_projects: "Our Projects",
+        nav_partners: "Our Partners",
+        nav_news: "News",
+        nav_news_label: "News",
+        nav_contact_btn: "Get in touch",
+        hero_title_1: "ANIMUS Foundation — ",
+        hero_title_2: "Courage of Mind",
+        hero_title_3: "Power of Community",
+        hero_sub: "Bridging communities across borders since 2015. We design proprietary adaptation games, run international Erasmus+ youth exchanges, and pioneer non-formal learning.",
+        hero_cta_explore: "Explore Our Activities",
+        hero_cta_about: "About Foundation",
+        dice_hint: "DRAG CUBE FREELY OR CHOOSE PILLAR",
+        gate_title: "Explore Our Activity Areas",
+        card_about_title: "About Foundation",
+        card_about_desc: "Latin roots of animus, 10 years of experience since 2015, non-formal learning center evolution, mission, values and strategy.",
+        card_activities_title: "Activities & Adaptive Games",
+        card_activities_desc: "Proprietary simulation RPG CARE, civic participation programmes, training courses for youth workers, and local inclusion workshops.",
+        card_projects_title: "Projects & Field Chronicles",
+        card_projects_desc: "10 flagship initiatives with expandable field dossiers, photo chronicles, toolkits, and European partnerships.",
+        card_learn_more: "Explore section",
+        monolith_1_lead: "Latin roots: rational soul, courage of mind, and the power of dialogue.",
+        monolith_1_p1: "Active since 2015",
+        monolith_1_p2: "Charter & Values",
+        monolith_1_p3: "Civic Dialogue",
+        monolith_2_lead: "Innovative tools: simulation board games, somatic coaching, and civic dialogue.",
+        monolith_2_p1: "CARE RPG Game",
+        monolith_2_p2: "Somatic Workshops",
+        monolith_2_p3: "NVC & Team Dialogues",
+        monolith_3_lead: "10 flagship initiatives, Erasmus+ youth exchanges, and European alliances.",
+        monolith_3_p1: "Erasmus+ Exchanges",
+        monolith_3_p2: "10 Flagship Projects",
+        monolith_3_p3: "Youthpass Certified",
+        news_heading: "Recent Events & Field Reports",
+        news_sub: "Direct dispatches from international Erasmus+ youth exchanges, educational workshops, and community initiatives in Silesia and across Europe.",
+        news_view_all: "Browse all field reports",
+        news_1_desc: "35 young participants and youth leaders from 7 European countries gathered for an immersive green exchange in Vatra Dornei.",
+        news_2_desc: "An embodiment journey for youth workers in Segovia, Spain, focusing on somatic methodologies, emotional resilience, and youth coaching.",
+        news_3_desc: "Nonviolent communication (NVC) and intercultural team building training for youth leaders in Silesia.",
+        news_read: "Read full report",
+        modal_gallery_title: "Field Photo Gallery",
+        modal_project_tag: "ANIMUS Foundation • Training & Education Center",
+        modal_project_note: "Non-formal education programmes and European partnerships",
+        modal_close_btn: "Close reader",
+        footer_about_text: "ANIMUS Foundation (Fundacja ANIMUS) is an autonomous Training & Education Center active since 2015. We empower youth workers, teachers, and communities through non-formal learning and Erasmus+ cooperation.",
+        footer_nav_title: "Navigation",
+        footer_contact_title: "Contact",
+
+                slide_cta: "Explore project",
+        slide_cat_plugtree: "Erasmus+ Youth Exchange",
+        slide_title_plugtree: "#PLUGTREE+",
+        slide_desc_plugtree: "International youth exchange combining ecology, digital technologies, and intercultural solidarity.",
+        slide_cat_care: "Adaptive Games & Simulation",
+        slide_title_care: "CARE: Climate Action RPG",
+        slide_desc_care: "Proprietary strategic board simulation and climate adaptation workshops for schools and youth leaders.",
+        slide_cat_okulary: "Civic Education & Agency",
+        slide_title_okulary: "Youth Spectacles",
+        slide_desc_okulary: "Communication workshops, building bridges, and youth civic engagement initiatives across Silesia.",
+        slide_cat_beactive: "Non-Formal Education",
+        slide_title_beactive: "Be Active! Field Quest",
+        slide_desc_beactive: "Outdoor games, questing, and non-formal methodologies empowering youth for active lifestyle.",
+        slide_cat_youth: "Erasmus+ Youth Exchange",
+        slide_title_youth: "Youth in Action & Starters",
+        slide_desc_youth: "Youth initiative incubation, leadership competencies, and social entrepreneurship across Europe." 
+      }
+    };
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function openArticleModal(slug) {
+      const articles = (typeof ANIMUS_ARTICLES !== 'undefined') ? ANIMUS_ARTICLES : (window.ANIMUS_ARTICLES || []);
+      const projects = (typeof ANIMUS_PROJECTS !== 'undefined') ? ANIMUS_PROJECTS : (window.ANIMUS_PROJECTS || {});
+      const article = articles.find(a => a.slug === slug);
+      if (!article) return;
+
+      const modal = document.getElementById('article-modal');
+      const projectBadge = document.getElementById('modal-project-badge');
+      const dateText = document.getElementById('modal-date-text');
+      const heroContainer = document.getElementById('modal-hero-container');
+      const heroImg = document.getElementById('modal-hero-img');
+      const titleEl = document.getElementById('modal-title');
+      const contentEl = document.getElementById('modal-content');
+      const galleryWrapper = document.getElementById('modal-gallery-wrapper');
+      const galleryGrid = document.getElementById('modal-gallery-grid');
+
+      const proj = projects[article.project_id];
+      const projDisplayName = currentLang === 'en' ? (proj?.name_en || article.project_name || 'ANIMUS') : (proj?.name || article.project_name || 'ANIMUS');
+      if (projectBadge) projectBadge.textContent = `[${projDisplayName}]`;
+      if (dateText) dateText.textContent = article.date || '';
+      if (titleEl) titleEl.textContent = article.title;
+
+      const fallbackHero = './cropped-Animus-Logo-Horizontal.png';
+      if (heroImg) {
+        if (article.hero_img) {
+          heroImg.src = article.hero_img;
+          heroImg.onerror = function() { this.onerror = null; this.src = fallbackHero; };
+          heroContainer?.classList.remove('hidden');
+        } else {
+          heroContainer?.classList.add('hidden');
+        }
+      }
+
+      if (contentEl) {
+        if (article.text_blocks && article.text_blocks.length > 0) {
+          contentEl.innerHTML = article.text_blocks.map(p => `
+            <p class="text-slate-700 leading-relaxed text-sm sm:text-base">${escapeHtml(p)}</p>
+          `).join('');
+        } else if (article.summary) {
+          contentEl.innerHTML = `<p class="text-slate-700 leading-relaxed text-sm sm:text-base">${escapeHtml(article.summary)}</p>`;
+        } else {
+          contentEl.innerHTML = `<p class="text-slate-500 italic">Brak treści tekstowej.</p>`;
+        }
+      }
+
+      if (galleryWrapper && galleryGrid) {
+        if (article.images && article.images.length > 1) {
+          galleryWrapper.classList.remove('hidden');
+          galleryGrid.innerHTML = article.images.map(img => `
+            <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 aspect-video">
+              <img src="${img}" alt="Zdjęcie z projektu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" onerror="this.parentElement.style.display='none'">
+            </div>
+          `).join('');
+        } else {
+          galleryWrapper.classList.add('hidden');
+        }
+      }
+
+
+      // 1. Populate Associated Project Box
+      const projectBox = document.getElementById('modal-project-box');
+      if (projectBox) {
+        if (proj) {
+          projectBox.classList.remove('hidden');
+          const projName = currentLang === 'en' ? (proj.name_en || proj.name) : proj.name;
+          const projDesc = currentLang === 'en' ? (proj.desc_en || proj.desc_pl) : proj.desc_pl;
+          const projectsUrl = 'single-project.html?id=' + (article.project_id || 'okulary-mlodziezowe');
+          
+          projectBox.innerHTML = `
+            <div class="rounded-2xl p-5 sm:p-6 border-2 border-brand-violet/25 bg-gradient-to-br from-purple-50/70 to-white shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
+                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet">
+                    ${currentLang === 'en' ? 'Associated Programme' : 'Powiązany Projekt'}
+                  </span>
+                </div>
+                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-mono font-bold">${proj.period}</span>` : ''}
+              </div>
+              <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900">${escapeHtml(projName)}</h4>
+              ${proj.location ? `
+                <div class="text-xs font-mono text-slate-600 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-brand-coral">location_on</span>
+                  <span>${escapeHtml(proj.location)}</span>
+                </div>
+              ` : ''}
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans line-clamp-3">
+                ${escapeHtml(projDesc || '')}
+              </p>
+              <div class="pt-2">
+                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono group/btn">
+                  <span>${currentLang === 'en' ? 'View Full Project Dossier' : 'Zobacz pełne dossier i kronikę projektu'}</span>
+                  <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          `;
+        } else {
+          projectBox.classList.add('hidden');
+          projectBox.innerHTML = '';
+        }
+      }
+
+      // 2. Populate Related Articles Grid (From same project OR latest articles if standalone)
+      const relatedWrapper = document.getElementById('modal-related-wrapper');
+      const relatedHeading = document.getElementById('modal-related-heading');
+      const relatedGrid = document.getElementById('modal-related-grid');
+
+      if (relatedWrapper && relatedGrid) {
+        let relatedArticles = [];
+        let isProjectSpecific = false;
+
+        if (article.project_id) {
+          relatedArticles = articles.filter(a => a.project_id === article.project_id && a.slug !== article.slug);
+          if (relatedArticles.length > 0) {
+            isProjectSpecific = true;
+          }
+        }
+
+        if (!isProjectSpecific) {
+          relatedArticles = articles.filter(a => a.slug !== article.slug).slice(0, 3);
+        } else {
+          relatedArticles = relatedArticles.slice(0, 3);
+        }
+
+        if (relatedArticles.length > 0) {
+          relatedWrapper.classList.remove('hidden');
+          if (relatedHeading) {
+            if (isProjectSpecific) {
+              const projName = currentLang === 'en' ? (proj?.name_en || article.project_name || 'Projekt') : (proj?.name || article.project_name || 'Projekt');
+              relatedHeading.innerHTML = `
+                <span class="material-symbols-outlined text-brand-violet text-lg">auto_stories</span>
+                <span>${currentLang === 'en' ? `Other reports from: ${projName}` : `Inne relacje z projektu: ${projName}`}</span>
+              `;
+            } else {
+              relatedHeading.innerHTML = `
+                <span class="material-symbols-outlined text-brand-coral text-lg">schedule</span>
+                <span>${currentLang === 'en' ? 'Latest foundation field reports' : 'Najnowsze relacje z życia Fundacji'}</span>
+              `;
+            }
+          }
+
+          relatedGrid.innerHTML = relatedArticles.map(rel => {
+            const relHero = rel.hero_img || fallbackHero;
+            const relTitle = escapeHtml(rel.title || '');
+            const relDate = escapeHtml(rel.date || '');
+            return `
+              <div onclick="openArticleModal('${rel.slug}')" class="group/card bg-slate-50 hover:bg-purple-50/50 rounded-xl overflow-hidden border border-slate-200 hover:border-brand-violet/40 transition-all duration-200 cursor-pointer flex flex-col justify-between p-3.5 shadow-sm hover:shadow">
+                <div>
+                  <div class="h-28 w-full rounded-lg overflow-hidden bg-slate-200 relative mb-2.5">
+                    <img src="${relHero}" alt="${relTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='${fallbackHero}'">
+                  </div>
+                  ${relDate ? `<div class="text-[10px] font-mono text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
+                  <h5 class="text-xs font-bold text-slate-900 group-hover/card:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">${relTitle}</h5>
+                </div>
+                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-mono font-bold text-brand-violet group-hover/card:text-brand-coral">
+                  <span>${currentLang === 'en' ? 'Read report' : 'Czytaj relację'}</span>
+                  <span class="material-symbols-outlined text-[13px] group-hover/card:translate-x-0.5 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          relatedWrapper.classList.add('hidden');
+        }
+      }
+
+      // Set link to dedicated article test page
+      const origLink = document.getElementById('modal-orig-link');
+      if (origLink) origLink.href = 'single-article.html?slug=' + article.slug;
+
+      // Reset internal modal scroll position to top
+      const scrollBody = modal.querySelector('.overflow-y-auto');
+      if (scrollBody) scrollBody.scrollTop = 0;
+
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeArticleModal() {
+      const modal = document.getElementById('article-modal');
+      if (modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleBackdropClick(event) {
+      if (event.target.id === 'article-modal') {
+        closeArticleModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeArticleModal();
+    });
+
+    /* ==========================================================
+       5. ARCHITECTURAL KINETIC MONOLITHS ENGINE
+    ========================================================== */
+    function initMonolithsInteractions() {
+      const section = document.getElementById('filary-fundacji');
+      const monoliths = document.querySelectorAll('.kinetic-monolith');
+
+      if (!section || !monoliths.length) return;
+
+      // Section-wide Magnetic Spotlight tracking cursor
+      section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        section.style.setProperty('--mouse-x', `${x}px`);
+        section.style.setProperty('--mouse-y', `${y}px`);
+      });
+
+      // Individual Monolith 3D Tilt & Local Glare
+      monoliths.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const cardX = e.clientX - rect.left;
+          const cardY = e.clientY - rect.top;
+          
+          card.style.setProperty('--card-mouse-x', `${cardX}px`);
+          card.style.setProperty('--card-mouse-y', `${cardY}px`);
+
+          // Calculate tilt angle (-6 to +6 degrees)
+          const normX = (cardX / rect.width) * 2 - 1;
+          const normY = (cardY / rect.height) * 2 - 1;
+          const tiltX = -normY * 6;
+          const tiltY = normX * 6;
+
+          card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+          card.style.setProperty('--card-mouse-x', '-100px');
+          card.style.setProperty('--card-mouse-y', '-100px');
+        });
+      });
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('animus_lang', lang);
+
+      const btnPl = document.getElementById('lang-pl');
+      const btnEn = document.getElementById('lang-en');
+      if (btnPl && btnEn) {
+        if (lang === 'pl') {
+          btnPl.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnEn.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        } else {
+          btnEn.className = 'px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm';
+          btnPl.className = 'px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+        }
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) {
+          el.innerHTML = I18N[lang][key];
+        }
+      });
+
+      updateQuoteDisplay();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initMonolithsInteractions();
+      initProjectSlider();
+      startQuoteRotator();
+      const saved = localStorage.getItem('animus_lang') || 'pl';
+      setLanguage(saved);
+    });
+  </script>
+</body>
+</html>
