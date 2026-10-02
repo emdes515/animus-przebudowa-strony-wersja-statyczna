@@ -160,9 +160,52 @@
       }
     }
 
-        /* ==========================================================
-       ANIMUS KINETIC PHOTO FIELDWORK SHOWCASE (Bento Stos Fotografii)
+    /* ==========================================================
+       HERO VIEWPORT-FIT FULL SCREEN (Laptops & Multi-Monitors)
     ========================================================== */
+    .hero-viewport-fit {
+      position: relative;
+      width: 100%;
+      min-height: calc(100vh - 5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      box-sizing: border-box;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .hero-viewport-fit {
+        min-height: calc(100vh - 6rem);
+        padding-top: 1.25rem;
+        padding-bottom: 1.75rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .hero-viewport-fit {
+        height: calc(100vh - 6rem);
+        min-height: 640px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    @media (min-width: 1536px) {
+      .hero-viewport-fit {
+        height: calc(100vh - 6rem);
+        min-height: 720px;
+      }
+    }
+    @media (min-width: 1024px) and (max-height: 720px) {
+      .hero-viewport-fit {
+        height: auto;
+        min-height: calc(100vh - 6rem);
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+    }
+
     .photo-hero-canvas {
       background-color: #FAF9F6;
       background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
@@ -176,7 +219,18 @@
     .hero-project-slider-wrapper {
       position: relative;
       width: 100%;
-      max-width: 580px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    @media (min-width: 1280px) {
+      .hero-project-slider-wrapper {
+        max-width: 700px;
+      }
+    }
+    @media (min-width: 1536px) {
+      .hero-project-slider-wrapper {
+        max-width: 800px;
+      }
     }
 
     .slider-ambient-glow {
@@ -196,7 +250,7 @@
     .hero-project-slider {
       position: relative;
       width: 100%;
-      height: clamp(340px, min(45vw, 54vh), 500px);
+      height: clamp(340px, min(48vw, 56vh), 560px);
       border-radius: 28px;
       overflow: hidden;
       background-color: #0f172a;
@@ -204,6 +258,26 @@
       box-shadow: 0 24px 48px -12px rgba(48, 0, 100, 0.18), 0 8px 24px -6px rgba(15, 23, 42, 0.08);
       z-index: 1;
       outline: none;
+    }
+    @media (min-width: 1024px) {
+      .hero-project-slider {
+        height: clamp(410px, 58vh, 640px);
+      }
+    }
+    @media (min-width: 1280px) {
+      .hero-project-slider {
+        height: clamp(450px, 61vh, 680px);
+      }
+    }
+    @media (min-width: 1536px) {
+      .hero-project-slider {
+        height: clamp(520px, 65vh, 750px);
+      }
+    }
+    @media (min-width: 1024px) and (max-height: 720px) {
+      .hero-project-slider {
+        height: clamp(340px, 52vh, 460px);
+      }
     }
 
     .hero-project-slider:focus-visible {
@@ -374,7 +448,7 @@
     }
 
     .badge-year {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       font-size: 0.68rem;
       font-weight: 700;
       color: #2AD0FF;
@@ -665,7 +739,7 @@
 
     .monolith-pill {
       font-size: 0.72rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       padding: 0.3rem 0.65rem;
       border-radius: 9999px;
       background: #f8fafc;
@@ -714,7 +788,7 @@
        PRIMARY NAVBAR
   ======================================================== -->
   <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-border-subtle transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-20 sm:h-24 flex items-center justify-between gap-4 xl:gap-6">
+    <div class="w-full max-w-[1720px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 h-20 sm:h-24 flex items-center justify-between gap-4 xl:gap-6">
       
       <!-- Foundation Brand Logo with Authentic Proportion -->
       <a href="index.html" class="flex items-center shrink-0 py-1" aria-label="ANIMUS Foundation Home">
@@ -737,7 +811,7 @@
       <!-- Right Action CTA & Language Toggle -->
       <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
         <!-- Language Switcher in Header -->
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1 shrink-0">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -789,11 +863,11 @@
   <main class="flex-grow pt-20 sm:pt-24">
     <section class="hero-viewport-fit photo-hero-canvas">
       
-      <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10 relative z-10 w-full my-auto py-4 sm:py-6 lg:py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 2xl:gap-14 items-center w-full">
+      <div class="w-full max-w-[1720px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 relative z-10 my-auto py-2 sm:py-4 lg:py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 2xl:gap-20 items-center w-full">
           
           <!-- Left Column: Monumental Typography, Animated Brand Logo & Narrative -->
-          <div class="lg:col-span-6 flex flex-col justify-center gap-y-2.5 sm:gap-y-3.5 xl:gap-y-4">
+          <div class="lg:col-span-6 xl:col-span-6 flex flex-col justify-center gap-y-3 sm:gap-y-4 xl:gap-y-5 2xl:gap-y-6">
 
             <!-- Animated Horizontal Foundation Logo (Fluid Viewport Sizing) -->
             <div class="hero-logo-container relative inline-block group w-fit">
@@ -807,56 +881,56 @@
                   width="1548" 
                   height="516" 
                   fetchpriority="high"
-                  class="hero-logo-img h-[clamp(34px,min(5.5vw,6.5vh),64px)] w-auto object-contain relative select-none drop-shadow-[0_2px_8px_rgba(48,0,100,0.1)] transition-all duration-300 group-hover:scale-[1.03] group-hover:drop-shadow-[0_4px_18px_rgba(243,88,19,0.22)]"
+                  class="hero-logo-img h-[clamp(36px,min(5.5vw,7vh),72px)] 2xl:h-[78px] w-auto object-contain relative select-none drop-shadow-[0_2px_8px_rgba(48,0,100,0.1)] transition-all duration-300 group-hover:scale-[1.03] group-hover:drop-shadow-[0_4px_18px_rgba(243,88,19,0.22)]"
                 />
               </a>
             </div>
 
             <!-- Monumental Headline with Fluid Clamp -->
-            <h1 class="text-[clamp(1.75rem,min(3.2vw,4.4vh),3.5rem)] font-extrabold leading-[1.05] tracking-tight font-heading text-slate-900">
+            <h1 class="text-[clamp(1.9rem,min(3.4vw,5vh),3.85rem)] 2xl:text-[clamp(2.4rem,3.6vw,4.5rem)] font-extrabold leading-[1.08] tracking-tight font-heading text-slate-900">
               <span class="block text-[#141824]" data-i18n="hero_title_2">Odwaga Myśli</span>
               <span class="block text-brand-coral" data-i18n="hero_title_3">Siła Wspólnoty</span>
             </h1>
 
             <!-- Authentic Mission Statement -->
-            <p class="text-[clamp(0.85rem,min(1.05vw,1.55vh),1.05rem)] text-slate-600 leading-relaxed font-normal max-w-xl" data-i18n="hero_sub">
+            <p class="text-[clamp(0.88rem,min(1.05vw,1.7vh),1.12rem)] 2xl:text-[1.18rem] text-slate-600 leading-relaxed font-normal max-w-2xl" data-i18n="hero_sub">
               Od 2015 roku łączymy ludzi ponad podziałami. Tworzymy autorskie gry adaptacyjne, prowadzimy międzynarodowe wymiany młodzieżowe Erasmus+ i rozwijamy edukację pozaformalną.
             </p>
 
             <!-- Latin Quote Box -->
             <div class="py-0.5">
               <div id="quote-container" class="transition-all duration-500 opacity-100">
-                <blockquote class="border-l-3 border-brand-violet pl-3 sm:pl-3.5 text-slate-800 italic text-[clamp(0.8rem,min(0.95vw,1.4vh),0.98rem)] leading-snug sm:leading-relaxed font-medium">
+                <blockquote class="border-l-3 border-brand-violet pl-3.5 sm:pl-4 text-slate-800 italic text-[clamp(0.82rem,min(0.98vw,1.6vh),1.02rem)] leading-snug sm:leading-relaxed font-medium">
                   <span id="quote-text">„Animus in consulendo liber — Umysł wolny w poszukiwaniu prawdy, dialogu i porozumienia.”</span>
                 </blockquote>
               </div>
             </div>
 
             <!-- Action CTAs -->
-            <div class="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pt-0.5">
-              <a href="activities.html" class="group inline-flex items-center gap-2 bg-brand-violet hover:bg-[#200045] text-white px-4 py-2 sm:px-5 sm:py-2.5 xl:px-6 xl:py-3 rounded-xl font-bold text-xs sm:text-sm xl:text-base shadow-[0_4px_14px_rgba(48,0,100,0.22)] hover:shadow-[0_8px_24px_rgba(48,0,100,0.3)] transition-all hover:-translate-y-0.5 active:translate-y-0">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
+              <a href="activities.html" class="group inline-flex items-center gap-2 bg-brand-violet hover:bg-[#200045] text-white px-5 py-2.5 sm:px-6 sm:py-3 xl:px-7 xl:py-3.5 rounded-xl font-bold text-xs sm:text-sm xl:text-base shadow-[0_4px_14px_rgba(48,0,100,0.22)] hover:shadow-[0_8px_24px_rgba(48,0,100,0.3)] transition-all hover:-translate-y-0.5 active:translate-y-0">
                 <span data-i18n="hero_cta_explore">Poznaj Nasze Działania</span>
                 <span class="material-symbols-outlined text-[16px] sm:text-[18px] transition-transform duration-200 group-hover:rotate-45" aria-hidden="true">explore</span>
               </a>
-              <a href="about.html" class="group inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 hover:text-brand-violet border border-slate-200 hover:border-brand-violet/30 px-4 py-2 sm:px-5 sm:py-2.5 xl:px-6 xl:py-3 rounded-xl font-semibold text-xs sm:text-sm xl:text-base transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md active:translate-y-0">
+              <a href="about.html" class="group inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 hover:text-brand-violet border border-slate-200 hover:border-brand-violet/30 px-5 py-2.5 sm:px-6 sm:py-3 xl:px-7 xl:py-3.5 rounded-xl font-semibold text-xs sm:text-sm xl:text-base transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md active:translate-y-0">
                 <span data-i18n="hero_cta_about">O Fundacji</span>
                 <span class="material-symbols-outlined text-[16px] sm:text-[18px] transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">arrow_forward</span>
               </a>
             </div>
 
             <!-- Architectural Metric Strip -->
-            <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-2.5 mt-0.5 border-t border-slate-200/90 max-w-lg">
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 xl:gap-6 pt-3 mt-1 border-t border-slate-200/90 max-w-xl">
               <div>
-                <div class="text-lg sm:text-2xl font-black text-brand-violet font-heading leading-tight">10</div>
-                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_projects">Flagowych projektów</div>
+                <div class="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl font-black text-brand-violet font-heading leading-tight">10</div>
+                <div class="text-[11px] sm:text-xs xl:text-sm text-slate-500 font-medium" data-i18n="hero_stat_projects">Flagowych projektów</div>
               </div>
               <div>
-                <div class="text-lg sm:text-2xl font-black text-brand-coral font-heading leading-tight">117</div>
-                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_reports">Działań i relacji</div>
+                <div class="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl font-black text-brand-coral font-heading leading-tight">117</div>
+                <div class="text-[11px] sm:text-xs xl:text-sm text-slate-500 font-medium" data-i18n="hero_stat_reports">Działań i relacji</div>
               </div>
               <div>
-                <div class="text-lg sm:text-2xl font-black text-[#2AD0FF] font-heading leading-tight">12</div>
-                <div class="text-[10px] sm:text-xs text-slate-500 font-medium" data-i18n="hero_stat_partners">Partnerów w Europie</div>
+                <div class="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl font-black text-[#2AD0FF] font-heading leading-tight">12</div>
+                <div class="text-[11px] sm:text-xs xl:text-sm text-slate-500 font-medium" data-i18n="hero_stat_partners">Partnerów w Europie</div>
               </div>
             </div>
 
@@ -896,7 +970,7 @@
                       <span class="material-symbols-outlined text-[12px]">location_on</span>
                       <span>Vatra Dornei • Rumunia</span>
                     </span>
-                    <span class="badge-counter font-mono">01 / 05</span>
+                    <span class="badge-counter font-sans">01 / 05</span>
                   </div>
 
                   <div class="slide-bottom-content">
@@ -933,7 +1007,7 @@
                       <span class="material-symbols-outlined text-[12px]">location_on</span>
                       <span>Polska • Czechy • Słowacja</span>
                     </span>
-                    <span class="badge-counter font-mono">02 / 05</span>
+                    <span class="badge-counter font-sans">02 / 05</span>
                   </div>
 
                   <div class="slide-bottom-content">
@@ -970,7 +1044,7 @@
                       <span class="material-symbols-outlined text-[12px]">location_on</span>
                       <span>Żory • Bytom • Opole</span>
                     </span>
-                    <span class="badge-counter font-mono">03 / 05</span>
+                    <span class="badge-counter font-sans">03 / 05</span>
                   </div>
 
                   <div class="slide-bottom-content">
@@ -1007,7 +1081,7 @@
                       <span class="material-symbols-outlined text-[12px]">location_on</span>
                       <span>Śląsk • Polska</span>
                     </span>
-                    <span class="badge-counter font-mono">04 / 05</span>
+                    <span class="badge-counter font-sans">04 / 05</span>
                   </div>
 
                   <div class="slide-bottom-content">
@@ -1044,7 +1118,7 @@
                       <span class="material-symbols-outlined text-[12px]">location_on</span>
                       <span>Polska • Litwa • Włochy</span>
                     </span>
-                    <span class="badge-counter font-mono">05 / 05</span>
+                    <span class="badge-counter font-sans">05 / 05</span>
                   </div>
 
                   <div class="slide-bottom-content">
@@ -1124,12 +1198,12 @@
             <div>
               <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('plugtree-youth-exchange')">
                 <img src="https://animusedu.com/wp-content/uploads/2026/09/726949550_36599849226326635_8358088394579047416_n-768x485.jpg" alt="#PLUGTREE+ Youth Exchange" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
-                <span class="absolute top-3 left-3 bg-brand-violet text-white font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
                   Erasmus+
                 </span>
               </div>
               <div class="p-6 space-y-2.5">
-                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                <time class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
                   <span>15 SIERPNIA 2026 • VATRA DORNEI, RUMUNIA</span>
                 </time>
@@ -1142,7 +1216,7 @@
               </div>
             </div>
             <div class="p-6 pt-0">
-              <button type="button" onclick="openArticleModal('plugtree-youth-exchange')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+              <button type="button" onclick="openArticleModal('plugtree-youth-exchange')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-sans w-full cursor-pointer">
                 <span data-i18n="news_read">Czytaj pełną relację</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
@@ -1154,12 +1228,12 @@
             <div>
               <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('training-course-rabbit-on-the-moon')">
                 <img src="https://animusedu.com/wp-content/uploads/2026/02/Rabbit-on-the-moon-infopack.pdf-768x432.png" alt="Rabbit on the Moon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
-                <span class="absolute top-3 left-3 bg-brand-coral text-white font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                <span class="absolute top-3 left-3 bg-brand-coral text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
                   Szkolenie Erasmus+
                 </span>
               </div>
               <div class="p-6 space-y-2.5">
-                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                <time class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
                   <span>20 LUTEGO 2026 • SEGOWIA, HISZPANIA</span>
                 </time>
@@ -1172,7 +1246,7 @@
               </div>
             </div>
             <div class="p-6 pt-0">
-              <button type="button" onclick="openArticleModal('training-course-rabbit-on-the-moon')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+              <button type="button" onclick="openArticleModal('training-course-rabbit-on-the-moon')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-sans w-full cursor-pointer">
                 <span data-i18n="news_read">Czytaj pełną relację</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
@@ -1184,12 +1258,12 @@
             <div>
               <div class="h-52 w-full bg-slate-100 overflow-hidden relative cursor-pointer block" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')">
                 <img src="https://animusedu.com/wp-content/uploads/2025/12/556360085_777863461700425_9180504503078992900_n-1-768x576.jpg" alt="Budowanie mostów" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='./cropped-Animus-Logo-Horizontal.png'">
-                <span class="absolute top-3 left-3 bg-brand-cyan text-slate-900 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                <span class="absolute top-3 left-3 bg-brand-cyan text-slate-900 font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
                   Okulary Młodzieżowe
                 </span>
               </div>
               <div class="p-6 space-y-2.5">
-                <time class="text-[11px] font-mono font-semibold text-slate-500 flex items-center gap-1.5">
+                <time class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
                   <span>30 WRZEŚNIA 2025 • ZEBRZYDOWICE / ŚLĄSK</span>
                 </time>
@@ -1202,7 +1276,7 @@
               </div>
             </div>
             <div class="p-6 pt-0">
-              <button type="button" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono w-full cursor-pointer">
+              <button type="button" onclick="openArticleModal('budowanie-mostow-szkolenie-dla-mlodziezy')" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-sans w-full cursor-pointer">
                 <span data-i18n="news_read">Czytaj pełną relację</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
@@ -1407,14 +1481,11 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <!-- Col 2: Navigation -->
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -1427,21 +1498,21 @@
 
         <!-- Col 3: Contact -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Legal Notice -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>&copy; 2015&ndash;2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 
@@ -1455,16 +1526,16 @@
       <!-- Modal Header -->
       <div class="px-6 sm:px-8 py-4 border-b border-slate-200 flex items-center justify-between gap-4 bg-slate-50/80 sticky top-0 z-10">
         <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
-          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-brand-violet text-white uppercase tracking-wider">
+          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-sans font-bold bg-brand-violet text-white uppercase tracking-wider">
             [Projekt]
           </span>
-          <span id="modal-date-badge" class="text-xs font-mono font-semibold text-slate-500 flex items-center gap-1">
+          <span id="modal-date-badge" class="text-xs font-sans font-semibold text-slate-500 flex items-center gap-1">
             <span class="material-symbols-outlined text-[15px]">calendar_today</span>
             <span id="modal-date-text">2026</span>
           </span>
         </div>
         <div class="flex items-center gap-2">
-          <a id="modal-orig-link" href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-violet hover:bg-primary-hover text-white text-xs font-mono font-bold transition-all shadow-xs" title="Otwórz jako dedykowany artykuł">
+          <a id="modal-orig-link" href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-violet hover:bg-primary-hover text-white text-xs font-semibold transition-all shadow-xs" title="Otwórz jako dedykowany artykuł">
             <span class="material-symbols-outlined text-[15px]">open_in_new</span>
             <span class="hidden sm:inline">Pełna strona</span>
           </a>
@@ -1494,7 +1565,7 @@
 
         <!-- Photo Gallery if multiple photos -->
         <div id="modal-gallery-wrapper" class="pt-6 border-t border-slate-200 hidden">
-          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
             <span class="material-symbols-outlined text-[16px]">photo_library</span>
             <span>Galeria zdjęć z relacji</span>
           </h3>
@@ -1521,10 +1592,10 @@
         <!-- Footer Callout -->
         <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50 p-5 rounded-2xl">
           <div class="space-y-1">
-            <div class="text-xs font-mono font-bold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
+            <div class="text-xs font-semibold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
             <div class="text-xs text-slate-500" data-i18n="modal_project_note">Działania w ramach programów edukacji pozaformalnej i projektów partnerskich</div>
           </div>
-          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-mono font-bold transition-all shadow-sm cursor-pointer">
+          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-semibold transition-all shadow-sm cursor-pointer">
             <span class="material-symbols-outlined text-[16px]">close</span>
             <span data-i18n="modal_close_btn">Zamknij czytnik</span>
           </button>
@@ -1583,10 +1654,10 @@
         number: "04",
         tagEn: "ANIMUS",
         tagPl: "ANIMUS",
-        nameEn: "Origin: ANIMUS",
-        namePl: "Geneza: ANIMUS",
-        descEn: "From Latin: rational soul, mind, life, mental powers, consciousness and sensibility. Active since 2015.",
-        descPl: "Z łaciny: racjonalna dusza, umysł, życie, siły psychiczne, świadomość i wrażliwość. Działamy od 2015 roku.",
+        nameEn: "ANIMUS Foundation",
+        namePl: "Fundacja ANIMUS",
+        descEn: "Non-formal education, youth empowerment and European values since 2015.",
+        descPl: "Edukacja pozaformalna, rozwój młodzieży i dialog europejski od 2015 roku.",
         rotX: -12,
         rotY: 108
       },
@@ -2003,15 +2074,15 @@
               <div class="flex flex-wrap items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
-                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet">
+                  <span class="text-xs font-semibold uppercase tracking-wider text-brand-violet">
                     ${currentLang === 'en' ? 'Associated Programme' : 'Powiązany Projekt'}
                   </span>
                 </div>
-                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-mono font-bold">${proj.period}</span>` : ''}
+                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-sans font-bold">${proj.period}</span>` : ''}
               </div>
               <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900">${escapeHtml(projName)}</h4>
               ${proj.location ? `
-                <div class="text-xs font-mono text-slate-600 flex items-center gap-1.5">
+                <div class="text-xs font-sans text-slate-600 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[15px] text-brand-coral">location_on</span>
                   <span>${escapeHtml(proj.location)}</span>
                 </div>
@@ -2020,7 +2091,7 @@
                 ${escapeHtml(projDesc || '')}
               </p>
               <div class="pt-2">
-                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono group/btn">
+                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-sans group/btn">
                   <span>${currentLang === 'en' ? 'View Full Project Dossier' : 'Zobacz pełne dossier i kronikę projektu'}</span>
                   <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
@@ -2082,10 +2153,10 @@
                   <div class="h-28 w-full rounded-lg overflow-hidden bg-slate-200 relative mb-2.5">
                     <img src="${relHero}" alt="${relTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='${fallbackHero}'">
                   </div>
-                  ${relDate ? `<div class="text-[10px] font-mono text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
+                  ${relDate ? `<div class="text-[10px] font-sans text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
                   <h5 class="text-xs font-bold text-slate-900 group-hover/card:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">${relTitle}</h5>
                 </div>
-                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-mono font-bold text-brand-violet group-hover/card:text-brand-coral">
+                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-sans font-bold text-brand-violet group-hover/card:text-brand-coral">
                   <span>${currentLang === 'en' ? 'Read report' : 'Czytaj relację'}</span>
                   <span class="material-symbols-outlined text-[13px] group-hover/card:translate-x-0.5 transition-transform">arrow_forward</span>
                 </div>

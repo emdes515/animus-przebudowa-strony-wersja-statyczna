@@ -12,7 +12,7 @@
   <!-- Google Fonts: Space Grotesk, Inter, Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
@@ -105,7 +105,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1 shrink-0">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -131,8 +131,8 @@
     <!-- Mobile Drawer Navigation -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4 shadow-xl">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n="mobile_nav_lang_label">Język serwisu:</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-sans uppercase text-slate-400 font-bold" data-i18n="mobile_nav_lang_label">Język serwisu:</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -174,20 +174,20 @@
           
           <!-- Breadcrumb & Back Link -->
           <div class="flex flex-wrap items-center justify-between gap-4">
-            <a href="blog.html" class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-slate-400 hover:text-white transition-colors">
+            <a href="blog.html" class="inline-flex items-center gap-1.5 text-xs font-sans font-semibold text-slate-400 hover:text-white transition-colors">
               <span class="material-symbols-outlined text-[16px]">arrow_back</span>
               <span data-i18n="back_to_blog">Wróć do listy aktualności (117)</span>
             </a>
 
             <!-- Parent Project Badge -->
-            <a id="article-project-link" href="projects.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-brand-violet/80 hover:bg-brand-violet text-white font-mono text-xs font-bold transition-colors shadow-xs">
+            <a id="article-project-link" href="projects.html" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-brand-violet/80 hover:bg-brand-violet text-white font-sans text-xs font-bold transition-colors shadow-xs">
               <span class="material-symbols-outlined text-[14px]">folder_special</span>
               <span id="article-project-name">ANIMUS</span>
             </a>
           </div>
 
           <!-- Metadata Pill Row -->
-          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-300">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-sans text-slate-300">
             <span class="flex items-center gap-1 bg-white/10 px-2.5 py-1 rounded-md">
               <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
               <span id="article-date">2026-00-00</span>
@@ -214,19 +214,19 @@
 
           <!-- Share Toolbar -->
           <div class="flex items-center justify-between gap-4 pt-4 border-t border-white/10 flex-wrap">
-            <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
               <span>Autor: <strong class="text-white">Zespół Fundacji ANIMUS</strong></span>
             </div>
 
             <div class="flex items-center gap-2">
-              <span class="text-xs font-mono text-slate-400 mr-1" data-i18n="share_label">Udostępnij:</span>
+              <span class="text-xs font-sans text-slate-400 mr-1" data-i18n="share_label">Udostępnij:</span>
               <button onclick="shareArticle('facebook')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors" title="Facebook">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               </button>
               <button onclick="shareArticle('twitter')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-sky-500 text-white flex items-center justify-center transition-colors" title="Twitter / X">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </button>
-              <button onclick="copyCurrentLink()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-semibold flex items-center gap-1 transition-colors" title="Kopiuj link">
+              <button onclick="copyCurrentLink()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans text-xs font-semibold flex items-center gap-1 transition-colors" title="Kopiuj link">
                 <span class="material-symbols-outlined text-[15px]">content_copy</span>
                 <span data-i18n="copy_link_btn">Kopiuj</span>
               </button>
@@ -241,7 +241,7 @@
         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[16/9] sm:aspect-[21/9] relative group">
           <img id="article-hero-img" src="./cropped-Animus-Logo-Horizontal.png" alt="Cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
-          <button onclick="openGalleryAt(0)" class="absolute bottom-4 right-4 bg-brand-ink/80 hover:bg-brand-violet text-white text-xs font-mono px-3.5 py-2 rounded-xl backdrop-blur-md flex items-center gap-2 shadow-lg transition-all">
+          <button onclick="openGalleryAt(0)" class="absolute bottom-4 right-4 bg-brand-ink/80 hover:bg-brand-violet text-white text-xs font-sans px-3.5 py-2 rounded-xl backdrop-blur-md flex items-center gap-2 shadow-lg transition-all">
             <span class="material-symbols-outlined text-[16px]">fullscreen</span>
             <span data-i18n="expand_gallery_btn">Otwórz pełną galerię w Lightbox</span>
           </button>
@@ -263,12 +263,12 @@
           <div id="bento-gallery-container" class="space-y-4">
             <div class="flex items-center justify-between gap-4">
               <div>
-                <span class="text-xs font-mono font-bold text-brand-violet uppercase tracking-wider">Galeria Foto & Reportaż</span>
+                <span class="text-xs font-semibold text-brand-violet uppercase tracking-wider">Galeria Foto & Reportaż</span>
                 <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900" data-i18n="gallery_heading">
                   Fotorelacja z Działań w Terenie
                 </h2>
               </div>
-              <span id="gallery-counter-badge" class="text-xs font-mono text-slate-500 font-semibold">
+              <span id="gallery-counter-badge" class="text-xs font-sans text-slate-500 font-semibold">
                 Kliknij zdjęcie, aby powiększyć
               </span>
             </div>
@@ -286,14 +286,14 @@
                   <span class="material-symbols-outlined text-[22px]">account_tree</span>
                 </div>
                 <div>
-                  <span class="text-[11px] font-mono font-bold text-brand-coral uppercase tracking-wider">Kontekst Inicjatywy</span>
+                  <span class="text-[11px] font-sans font-bold text-brand-coral uppercase tracking-wider">Kontekst Inicjatywy</span>
                   <h3 class="text-lg sm:text-xl font-heading font-extrabold text-slate-900" data-i18n="hierarchy_title">
                     Pozostałe Etapy i Relacje w Tym Projekcie
                   </h3>
                 </div>
               </div>
 
-              <a id="view-parent-project-btn" href="projects.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white font-mono text-xs font-bold text-slate-700 transition-colors shadow-2xs">
+              <a id="view-parent-project-btn" href="projects.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white font-sans text-xs font-bold text-slate-700 transition-colors shadow-2xs">
                 <span data-i18n="view_project_dossier_btn">Karta Projektu</span>
                 <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
               </a>
@@ -306,7 +306,7 @@
           </div>
 
           <!-- Adjacent Article Navigation -->
-          <div class="flex items-center justify-between gap-4 pt-6 font-mono text-xs font-bold">
+          <div class="flex items-center justify-between gap-4 pt-6 font-sans text-xs font-bold">
             <a id="prev-article-btn" href="#" class="px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:text-brand-violet shadow-2xs transition-all flex items-center gap-2">
               <span class="material-symbols-outlined text-[18px]">chevron_left</span>
               <span data-i18n="prev_article">Poprzednia relacja</span>
@@ -330,7 +330,7 @@
   <div id="photo-lightbox" class="fixed inset-0 z-[10000] bg-slate-950/95 backdrop-blur-md hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
     
     <!-- Top Lightbox Bar -->
-    <div class="flex items-center justify-between text-white text-xs font-mono z-20">
+    <div class="flex items-center justify-between text-white text-xs font-sans z-20">
       <div class="flex items-center gap-3">
         <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold">
           1 / 1
@@ -387,14 +387,11 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <!-- Col 2: Navigation -->
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -407,21 +404,21 @@
 
         <!-- Col 3: Contact -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Legal Notice -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>&copy; 2015&ndash;2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 
@@ -577,7 +574,7 @@
       const siblings = allArticles.filter(a => a.project_id === projectId);
       if (siblings.length <= 1) {
         container.innerHTML = `
-          <div class="text-xs font-mono text-slate-500 py-3">
+          <div class="text-xs font-sans text-slate-500 py-3">
             To jest główna relacja podsumowująca w tym projekcie.
           </div>
         `;
@@ -589,25 +586,25 @@
         return `
           <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all ${isCurrent ? 'bg-brand-violet/10 border-2 border-brand-violet font-bold' : 'bg-slate-50 hover:bg-slate-100 border border-slate-200'}">
             <div class="flex items-center gap-3">
-              <div class="w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs ${isCurrent ? 'bg-brand-violet text-white' : 'bg-slate-200 text-slate-700'}">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs ${isCurrent ? 'bg-brand-violet text-white' : 'bg-slate-200 text-slate-700'}">
                 0${idx + 1}
               </div>
               <div>
                 <a href="single-article.html?slug=${a.slug}" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
                   ${a.title}
                 </a>
-                <div class="text-[11px] font-mono text-slate-500">${a.date}</div>
+                <div class="text-[11px] font-sans text-slate-500">${a.date}</div>
               </div>
             </div>
 
             <div>
               ${isCurrent ? `
-                <span class="px-2.5 py-1 rounded-md bg-brand-violet text-white text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
+                <span class="px-2.5 py-1 rounded-md bg-brand-violet text-white text-[10px] font-sans font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Aktualnie czytasz</span>
                 </span>
               ` : `
-                <a href="single-article.html?slug=${a.slug}" class="text-xs font-mono font-bold text-brand-violet hover:text-brand-coral flex items-center gap-1">
+                <a href="single-article.html?slug=${a.slug}" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
                   <span>Przejdź</span>
                   <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                 </a>

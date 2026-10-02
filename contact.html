@@ -26,8 +26,7 @@
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             heading: ['Space Grotesk', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            mono: ['Plus Jakarta Sans', 'Inter', sans-serif]
           }
         }
       }
@@ -36,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
 
   <style>
@@ -68,7 +67,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -93,8 +92,8 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-semibold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
         </div>
@@ -155,27 +154,27 @@
 
               <div class="space-y-4 text-xs sm:text-sm text-slate-700">
                 <div>
-                  <span class="text-xs font-mono text-slate-400 uppercase block font-semibold">Nazwa Rejestrowa:</span>
+                  <span class="text-xs font-sans text-slate-400 uppercase block font-semibold">Nazwa Rejestrowa:</span>
                   <span class="font-bold text-slate-900 block mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</span>
                 </div>
 
                 <div>
-                  <span class="text-xs font-mono text-slate-400 uppercase block font-semibold">Adres Siedziby:</span>
+                  <span class="text-xs font-sans text-slate-400 uppercase block font-semibold">Adres Siedziby:</span>
                   <span class="font-bold text-slate-900 block mt-0.5">ul. Polna 16, 43-180 Orzesze, Polska</span>
                 </div>
 
                 <div class="grid grid-cols-3 gap-2.5 pt-2">
                   <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
-                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">KRS:</span>
-                    <span class="font-mono font-bold text-brand-violet text-sm">0000535710</span>
+                    <span class="text-[11px] font-sans text-slate-500 uppercase block font-semibold">KRS:</span>
+                    <span class="font-sans font-bold text-brand-violet text-sm">0000535710</span>
                   </div>
                   <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
-                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">NIP:</span>
-                    <span class="font-mono font-bold text-slate-900 text-sm">6272740470</span>
+                    <span class="text-[11px] font-sans text-slate-500 uppercase block font-semibold">NIP:</span>
+                    <span class="font-sans font-bold text-slate-900 text-sm">6272740470</span>
                   </div>
                   <div class="p-3 bg-white rounded-xl border border-slate-200 text-center sm:text-left">
-                    <span class="text-[11px] font-mono text-slate-500 uppercase block font-semibold">REGON:</span>
-                    <span class="font-mono font-bold text-slate-900 text-sm">360577338</span>
+                    <span class="text-[11px] font-sans text-slate-500 uppercase block font-semibold">REGON:</span>
+                    <span class="font-sans font-bold text-slate-900 text-sm">360577338</span>
                   </div>
                 </div>
               </div>
@@ -187,7 +186,7 @@
                     <span class="material-symbols-outlined text-[19px]">mail</span>
                   </div>
                   <div>
-                    <span class="text-xs text-slate-400 block font-mono">E-mail:</span>
+                    <span class="text-xs text-slate-400 block font-sans">E-mail:</span>
                     <a href="mailto:animuscentrum@gmail.com" class="font-bold text-slate-900 hover:text-brand-violet transition-colors">
                       animuscentrum@gmail.com
                     </a>
@@ -199,8 +198,8 @@
                     <span class="material-symbols-outlined text-[19px]">call</span>
                   </div>
                   <div>
-                    <span class="text-xs text-slate-400 block font-mono">Telefon (PL / ENG):</span>
-                    <a href="tel:+48608616675" class="font-mono font-bold text-slate-900 hover:text-brand-coral transition-colors">
+                    <span class="text-xs text-slate-400 block font-sans">Telefon (PL / ENG):</span>
+                    <a href="tel:+48608616675" class="font-sans font-bold text-slate-900 hover:text-brand-coral transition-colors">
                       +48 608 616 675
                     </a>
                   </div>
@@ -211,8 +210,8 @@
                     <span class="material-symbols-outlined text-[19px]">call</span>
                   </div>
                   <div>
-                    <span class="text-xs text-slate-400 block font-mono">Telefon (ENG / UA / RU):</span>
-                    <a href="tel:+48573394180" class="font-mono font-bold text-slate-900 hover:text-brand-coral transition-colors">
+                    <span class="text-xs text-slate-400 block font-sans">Telefon (ENG / UA / RU):</span>
+                    <a href="tel:+48573394180" class="font-sans font-bold text-slate-900 hover:text-brand-coral transition-colors">
                       +48 573 394 180
                     </a>
                   </div>
@@ -221,19 +220,19 @@
                 <!-- Bank Account Box with Copy Button -->
                 <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
                   <div class="flex items-center justify-between gap-2">
-                    <span class="text-[11px] font-mono font-bold text-slate-500 uppercase">Rachunek Bankowy (Alior Bank)</span>
-                    <button type="button" onclick="copyToClipboard('66 2490 0005 0000 4530 8493 8470', 'Skopiowano numer konta!')" class="px-2 py-1 bg-brand-violet text-white text-[11px] font-mono font-bold rounded-lg hover:bg-primary-hover transition-colors flex items-center gap-1 shadow-2xs">
+                    <span class="text-[11px] font-sans font-bold text-slate-500 uppercase">Rachunek Bankowy (Alior Bank)</span>
+                    <button type="button" onclick="copyToClipboard('66 2490 0005 0000 4530 8493 8470', 'Skopiowano numer konta!')" class="px-2 py-1 bg-brand-violet text-white text-[11px] font-sans font-bold rounded-lg hover:bg-primary-hover transition-colors flex items-center gap-1 shadow-2xs">
                       <span class="material-symbols-outlined text-[13px]">content_copy</span>
                       <span>Kopiuj</span>
                     </button>
                   </div>
-                  <code class="text-xs sm:text-sm font-mono font-bold text-slate-900 block break-all select-all">
+                  <code class="text-xs sm:text-sm font-sans font-bold text-slate-900 block break-all select-all">
                     66 2490 0005 0000 4530 8493 8470
                   </code>
                 </div>
 
                 <div class="pt-1.5">
-                  <span class="text-xs text-slate-400 block font-mono mb-2">Media Społecznościowe:</span>
+                  <span class="text-xs text-slate-400 block font-sans mb-2">Media Społecznościowe:</span>
                   <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-gradient-to-r from-blue-50/70 to-indigo-50/50 hover:from-blue-50 hover:to-indigo-50 rounded-2xl border border-blue-200/70 hover:border-[#1877F2]/60 transition-all group shadow-2xs hover:shadow-sm">
                     <div class="flex items-center gap-3">
                       <div class="w-9 h-9 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
@@ -245,7 +244,7 @@
                         <span class="text-[13px] font-bold text-slate-900 group-hover:text-[#1877F2] transition-colors block">
                           Fundacja ANIMUS na Facebooku
                         </span>
-                        <span class="text-[11px] font-mono text-slate-500">Oficjalny profil organizacji</span>
+                        <span class="text-[11px] font-sans text-slate-500">Oficjalny profil organizacji</span>
                       </div>
                     </div>
                     <span class="w-7 h-7 rounded-lg bg-white border border-blue-200 text-[#1877F2] flex items-center justify-center shrink-0 group-hover:bg-[#1877F2] group-hover:text-white transition-all shadow-2xs">
@@ -265,15 +264,15 @@
             <!-- Quick Test Autofill Bar -->
             <div class="mb-6 pb-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-slate-50 -mx-4 -mt-4 p-4 rounded-2xl border border-slate-200/80">
               <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded bg-brand-coral text-white font-mono font-bold text-[10px]">TEST FORM</span>
-                <span class="text-xs font-mono text-slate-600">Narzędzia testowe formularza:</span>
+                <span class="px-2 py-0.5 rounded bg-brand-coral text-white font-sans font-bold text-[10px]">TEST FORM</span>
+                <span class="text-xs font-sans text-slate-600">Narzędzia testowe formularza:</span>
               </div>
               <div class="flex items-center gap-2">
-                <button type="button" onclick="autofillTestData()" class="px-2.5 py-1.5 rounded-lg bg-brand-violet hover:bg-primary-hover text-white font-mono text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
+                <button type="button" onclick="autofillTestData()" class="px-2.5 py-1.5 rounded-lg bg-brand-violet hover:bg-primary-hover text-white font-sans text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
                   <span class="material-symbols-outlined text-[14px]">bolt</span>
                   <span>Wypełnij dane testowe</span>
                 </button>
-                <button type="button" onclick="openTestInboxModal()" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 hover:border-brand-violet text-slate-700 font-mono text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
+                <button type="button" onclick="openTestInboxModal()" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 hover:border-brand-violet text-slate-700 font-sans text-xs font-bold transition-all flex items-center gap-1 shadow-2xs">
                   <span class="material-symbols-outlined text-[14px]">inbox</span>
                   <span id="test-inbox-count-btn">Skrzynka (0)</span>
                 </button>
@@ -291,14 +290,14 @@
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="name" data-i18n="form_name">
+                  <label class="block text-xs font-semibold uppercase text-slate-700 mb-1" for="name" data-i18n="form_name">
                     Imię i Nazwisko *
                   </label>
                   <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="Jan Kowalski">
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="email" data-i18n="form_email">
+                  <label class="block text-xs font-semibold uppercase text-slate-700 mb-1" for="email" data-i18n="form_email">
                     Adres E-mail *
                   </label>
                   <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="jan@przyklad.pl">
@@ -307,14 +306,14 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="org" data-i18n="form_org">
+                  <label class="block text-xs font-semibold uppercase text-slate-700 mb-1" for="org" data-i18n="form_org">
                     Organizacja / Instytucja
                   </label>
                   <input type="text" id="org" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="NGO, Szkoła, Uczelnia, Partner">
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="topic" data-i18n="form_topic">
+                  <label class="block text-xs font-semibold uppercase text-slate-700 mb-1" for="topic" data-i18n="form_topic">
                     Temat Wiadomości
                   </label>
                   <select id="topic" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors">
@@ -328,7 +327,7 @@
               </div>
 
               <div>
-                <label class="block text-xs font-mono font-bold uppercase text-slate-700 mb-1" for="message" data-i18n="form_message">
+                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1" for="message" data-i18n="form_message">
                   Treść Wiadomości *
                 </label>
                 <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-violet text-sm bg-surface transition-colors" placeholder="Opisz swój projekt, pomysł na partnerstwo lub zadaj pytanie..."></textarea>
@@ -339,7 +338,7 @@
                   <span id="submit-text" data-i18n="form_submit">Wyślij Wiadomość</span>
                   <span id="submit-icon" class="material-symbols-outlined text-base">send</span>
                 </button>
-                <span class="text-[11px] font-mono text-slate-400">
+                <span class="text-[11px] font-sans text-slate-400">
                   Tryb testowy: Zapis lokalny do localStorage
                 </span>
               </div>
@@ -374,13 +373,10 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -392,21 +388,21 @@
         </div>
 
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 
@@ -558,7 +554,7 @@
               </span>
               <div>
                 <h3 class="text-lg font-heading font-extrabold text-slate-900">Lokalna Skrzynka Testowa</h3>
-                <p class="text-xs text-slate-500 font-mono">Wiadomości zapisane w przeglądarce (${msgs.length})</p>
+                <p class="text-xs text-slate-500 font-medium">Wiadomości zapisane w przeglądarce (${msgs.length})</p>
               </div>
             </div>
             <button onclick="closeTestInboxModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors">
@@ -575,11 +571,11 @@
               </div>
             ` : msgs.map((m, i) => `
               <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-                <div class="flex items-center justify-between text-xs font-mono">
+                <div class="flex items-center justify-between text-xs font-sans">
                   <span class="font-bold text-brand-violet">${m.name} &lt;${m.email}&gt;</span>
                   <span class="text-slate-400">${m.date}</span>
                 </div>
-                ${m.org ? `<div class="text-[11px] font-mono text-slate-500 font-medium">Instytucja: ${m.org}</div>` : ''}
+                ${m.org ? `<div class="text-[11px] font-sans text-slate-500 font-medium">Instytucja: ${m.org}</div>` : ''}
                 <div class="text-xs font-bold text-slate-800 font-sans">Temat: ${m.topic}</div>
                 <p class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-slate-100 font-sans leading-relaxed">${m.message}</p>
               </div>
@@ -587,7 +583,7 @@
           </div>
 
           <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-            <button onclick="clearTestInbox()" class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-600 hover:bg-rose-50 text-xs font-mono font-bold transition-all">
+            <button onclick="clearTestInbox()" class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-600 hover:bg-rose-50 text-xs font-semibold transition-all">
               Wyczyść skrzynkę
             </button>
             <button onclick="closeTestInboxModal()" class="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-heading font-bold hover:bg-brand-violet transition-all">

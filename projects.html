@@ -26,8 +26,7 @@
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             heading: ['Space Grotesk', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            mono: ['Plus Jakarta Sans', 'Inter', sans-serif]
           }
         }
       }
@@ -36,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
 
   <style>
@@ -129,7 +128,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1 shrink-0">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -154,8 +153,8 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-semibold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
         </div>
@@ -190,7 +189,7 @@
     <section class="py-14 lg:py-18 border-b border-border-subtle notebook-grid relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
         <div class="max-w-3xl space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-brand-violet text-xs font-mono font-bold uppercase tracking-wider">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-violet/10 border border-brand-violet/20 text-brand-violet text-xs font-semibold uppercase tracking-wider">
             <span class="w-2 h-2 rounded-full bg-brand-violet animate-pulse"></span>
           </div>
           <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="proj_title">
@@ -204,19 +203,19 @@
           <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <div class="text-2xl font-bold font-heading text-brand-violet">10</div>
-              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_projects">Flagowych Inicjatyw</div>
+              <div class="text-[11px] font-sans font-semibold text-slate-500 uppercase" data-i18n="stat_projects">Flagowych Inicjatyw</div>
             </div>
             <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <div class="text-2xl font-bold font-heading text-brand-coral">117</div>
-              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_articles">Relacji & Artykułów</div>
+              <div class="text-[11px] font-sans font-semibold text-slate-500 uppercase" data-i18n="stat_articles">Relacji & Artykułów</div>
             </div>
             <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <div class="text-2xl font-bold font-heading text-emerald-700">8+</div>
-              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_countries">Krajów w Europie</div>
+              <div class="text-[11px] font-sans font-semibold text-slate-500 uppercase" data-i18n="stat_countries">Krajów w Europie</div>
             </div>
             <div class="bg-white/90 backdrop-blur-sm p-3.5 rounded-xl border border-slate-200 shadow-sm">
               <div class="text-2xl font-bold font-heading text-slate-900">2015</div>
-              <div class="text-[11px] font-mono font-semibold text-slate-500 uppercase" data-i18n="stat_year">Aktywni od 2015 r.</div>
+              <div class="text-[11px] font-sans font-semibold text-slate-500 uppercase" data-i18n="stat_year">Aktywni od 2015 r.</div>
             </div>
           </div>
         </div>
@@ -228,7 +227,7 @@
       <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
         
         <!-- Category Filter Pills -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none text-xs font-mono font-bold" id="filter-pills">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none text-xs font-semibold" id="filter-pills">
           <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl transition-all bg-brand-violet text-white shadow-sm" data-filter="all" data-i18n="filter_all">
             Wszystkie (10)
           </button>
@@ -247,7 +246,7 @@
         </div>
 
         <!-- Chronicle Hint -->
-        <div class="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <div class="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-medium">
           <span class="material-symbols-outlined text-[16px] text-brand-coral">touch_app</span>
           <span data-i18n="click_hint">Rozwiń kartę, aby przeglądać artykuły</span>
         </div>
@@ -276,10 +275,10 @@
       <!-- Modal Header -->
       <div class="px-6 sm:px-8 py-4 border-b border-slate-200 flex items-center justify-between gap-4 bg-slate-50/80 sticky top-0 z-10">
         <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
-          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-brand-violet text-white uppercase tracking-wider">
+          <span id="modal-project-badge" class="px-2.5 py-1 rounded-md text-[11px] font-sans font-bold bg-brand-violet text-white uppercase tracking-wider">
             [Okulary Młodzieżowe]
           </span>
-          <span id="modal-date-badge" class="text-xs font-mono font-semibold text-slate-500 flex items-center gap-1">
+          <span id="modal-date-badge" class="text-xs font-sans font-semibold text-slate-500 flex items-center gap-1">
             <span class="material-symbols-outlined text-[15px]">calendar_today</span>
             <span id="modal-date-text">2025-09-30</span>
           </span>
@@ -309,7 +308,7 @@
 
         <!-- Photo Gallery if multiple photos -->
         <div id="modal-gallery-wrapper" class="pt-6 border-t border-slate-200 hidden">
-          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-1.5" data-i18n="modal_gallery_title">
             <span class="material-symbols-outlined text-[16px]">photo_library</span>
             <span>Galeria zdjęć z relacji</span>
           </h3>
@@ -336,10 +335,10 @@
         <!-- Footer Callout -->
         <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50 p-5 rounded-2xl">
           <div class="space-y-1">
-            <div class="text-xs font-mono font-bold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
+            <div class="text-xs font-semibold text-slate-900" data-i18n="modal_project_tag">Fundacja ANIMUS • Centrum Edukacyjno-Szkoleniowe</div>
             <div class="text-xs text-slate-500" data-i18n="modal_project_note">Działania w ramach programów edukacji pozaformalnej i projektów partnerskich</div>
           </div>
-          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-mono font-bold transition-all shadow-sm cursor-pointer">
+          <button onclick="closeArticleModal()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-brand-violet text-white text-xs font-semibold transition-all shadow-sm cursor-pointer">
             <span class="material-symbols-outlined text-[16px]">close</span>
             <span data-i18n="modal_close_btn">Zamknij czytnik</span>
           </button>
@@ -361,13 +360,10 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -379,21 +375,21 @@
         </div>
 
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 
@@ -622,7 +618,7 @@
         let articlesHtml = '';
         if (articles.length === 0) {
           articlesHtml = `
-            <div class="col-span-full py-8 text-center text-slate-400 font-mono text-sm">
+            <div class="col-span-full py-8 text-center text-slate-400 font-sans text-sm">
               Brak dodatkowych artykułów archiwalnych dla tego projektu.
             </div>
           `;
@@ -630,7 +626,7 @@
           articlesHtml = articles.map(a => {
             const photosCount = a.images ? a.images.length : 0;
             const photoBadge = photosCount > 1 ? `
-              <span class="absolute bottom-2.5 right-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-mono px-2 py-0.5 rounded flex items-center gap-1 font-bold">
+              <span class="absolute bottom-2.5 right-2.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-sans px-2 py-0.5 rounded flex items-center gap-1 font-bold">
                 <span class="material-symbols-outlined text-[12px]">photo_camera</span>
                 <span>${photosCount}</span>
               </span>
@@ -645,13 +641,13 @@
                 <div>
                   <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
                     <img src="${imgUrl}" alt="${safeTitle}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${fallbackImg}'">
-                    <span class="absolute top-2.5 left-2.5 bg-brand-violet text-white font-mono text-[10px] tracking-wider uppercase px-2 py-0.5 rounded font-bold shadow-xs">
+                    <span class="absolute top-2.5 left-2.5 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2 py-0.5 rounded font-bold shadow-xs">
                       ${badge || 'Relacja'}
                     </span>
                     ${photoBadge}
                   </div>
                   <div class="p-4 space-y-2">
-                    <div class="text-[11px] font-mono text-slate-500 font-semibold flex items-center gap-1.5">
+                    <div class="text-[11px] font-sans text-slate-500 font-semibold flex items-center gap-1.5">
                       <span class="material-symbols-outlined text-[13px] text-brand-coral">calendar_today</span>
                       <span>${a.date}</span>
                     </div>
@@ -664,7 +660,7 @@
                   </div>
                 </div>
                 <div class="p-4 pt-0">
-                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-mono">
+                  <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-sans">
                     <span>${I18N[currentLang].read_report_btn}</span>
                     <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </div>
@@ -691,10 +687,10 @@
                 
                 <!-- Overlay Badges -->
                 <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 flex-wrap pointer-events-none">
-                  <span class="bg-brand-violet text-white font-mono text-[11px] uppercase tracking-wider px-3 py-1 rounded-lg font-bold shadow-md">
+                  <span class="bg-brand-violet text-white font-sans text-[11px] uppercase tracking-wider px-3 py-1 rounded-lg font-bold shadow-md">
                     ${badge}
                   </span>
-                  <span class="bg-slate-950/85 backdrop-blur-sm text-white font-mono text-[11px] px-2.5 py-1 rounded-lg font-semibold shadow-md">
+                  <span class="bg-slate-950/85 backdrop-blur-sm text-white font-sans text-[11px] px-2.5 py-1 rounded-lg font-semibold shadow-md">
                     ${p.period}
                   </span>
                 </div>
@@ -706,7 +702,7 @@
                 <div class="space-y-4">
                   
                   <!-- Metadata Info Rows -->
-                  <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-mono text-slate-500 font-medium">
+                  <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-sans text-slate-500 font-medium">
                     <div class="flex items-center gap-1 text-slate-700 font-semibold">
                       <span class="material-symbols-outlined text-[16px] text-brand-coral">location_on</span>
                       <span>${p.location}</span>
@@ -734,18 +730,18 @@
                 <!-- Interactive Action Bar (Karta Projektu + Akordeon Kroniki) -->
                 <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   
-                  <div class="text-xs font-mono text-slate-500 flex items-center gap-1.5">
+                  <div class="text-xs font-sans text-slate-500 flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-[16px] text-brand-violet">event_note</span>
                     <span>${articles.length} ${I18N[currentLang].items_count}</span>
                   </div>
 
                   <div class="flex items-center gap-2.5 flex-wrap">
-                    <a href="${projectUrl}" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-brand-violet hover:border-brand-violet hover:text-white text-slate-800 font-mono text-xs font-bold transition-all shadow-2xs group/btn cursor-pointer">
+                    <a href="${projectUrl}" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-brand-violet hover:border-brand-violet hover:text-white text-slate-800 font-sans text-xs font-bold transition-all shadow-2xs group/btn cursor-pointer">
                       <span>${I18N[currentLang].btn_view_project_card}</span>
                       <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
 
-                    <button onclick="toggleDossier('${id}')" class="inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-violet text-white font-mono text-xs font-bold transition-all shadow-sm hover:shadow-md cursor-pointer group">
+                    <button onclick="toggleDossier('${id}')" class="inline-flex items-center justify-between sm:justify-start gap-3 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-violet text-white font-sans text-xs font-bold transition-all shadow-sm hover:shadow-md cursor-pointer group">
                       <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-[18px] text-brand-cyan">folder_open</span>
                         <span id="toggle-text-${id}">
@@ -770,7 +766,7 @@
                   <!-- Dossier Header -->
                   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
                     <div>
-                      <div class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet flex items-center gap-1.5">
+                      <div class="text-xs font-semibold uppercase tracking-wider text-brand-violet flex items-center gap-1.5">
                         <span class="material-symbols-outlined text-[16px]">menu_book</span>
                         <span>${I18N[currentLang].dossier_title}</span>
                       </div>
@@ -778,7 +774,7 @@
                         ${I18N[currentLang].dossier_sub} • ${safeProjectTitle}
                       </p>
                     </div>
-                    <div class="text-xs font-mono font-bold bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 shadow-xs">
+                    <div class="text-xs font-semibold bg-white px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 shadow-xs">
                       ${articles.length} ${I18N[currentLang].items_count}
                     </div>
                   </div>
@@ -874,15 +870,15 @@
               <div class="flex flex-wrap items-center justify-between gap-2">
                 <div class="flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-brand-violet"></span>
-                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-violet">
+                  <span class="text-xs font-semibold uppercase tracking-wider text-brand-violet">
                     ${currentLang === 'en' ? 'Associated Programme' : 'Powiązany Projekt'}
                   </span>
                 </div>
-                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-mono font-bold">${proj.period}</span>` : ''}
+                ${proj.period ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[11px] font-sans font-bold">${proj.period}</span>` : ''}
               </div>
               <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900">${escapeHtml(projName)}</h4>
               ${proj.location ? `
-                <div class="text-xs font-mono text-slate-600 flex items-center gap-1.5">
+                <div class="text-xs font-sans text-slate-600 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[15px] text-brand-coral">location_on</span>
                   <span>${escapeHtml(proj.location)}</span>
                 </div>
@@ -891,7 +887,7 @@
                 ${escapeHtml(projDesc || '')}
               </p>
               <div class="pt-2">
-                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-mono group/btn">
+                <a href="${projectsUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-violet hover:text-brand-coral transition-colors font-sans group/btn">
                   <span>${currentLang === 'en' ? 'View Full Project Dossier' : 'Zobacz pełne dossier i kronikę projektu'}</span>
                   <span class="material-symbols-outlined text-[15px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
                 </a>
@@ -953,10 +949,10 @@
                   <div class="h-28 w-full rounded-lg overflow-hidden bg-slate-200 relative mb-2.5">
                     <img src="${relHero}" alt="${relTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='${fallbackHero}'">
                   </div>
-                  ${relDate ? `<div class="text-[10px] font-mono text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
+                  ${relDate ? `<div class="text-[10px] font-sans text-slate-500 mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span><span>${relDate}</span></div>` : ''}
                   <h5 class="text-xs font-bold text-slate-900 group-hover/card:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">${relTitle}</h5>
                 </div>
-                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-mono font-bold text-brand-violet group-hover/card:text-brand-coral">
+                <div class="pt-2 mt-2 border-t border-slate-200/60 flex items-center justify-between text-[11px] font-sans font-bold text-brand-violet group-hover/card:text-brand-coral">
                   <span>${currentLang === 'en' ? 'Read report' : 'Czytaj relację'}</span>
                   <span class="material-symbols-outlined text-[13px] group-hover/card:translate-x-0.5 transition-transform">arrow_forward</span>
                 </div>

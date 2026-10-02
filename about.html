@@ -26,8 +26,7 @@
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             heading: ['Space Grotesk', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            mono: ['Plus Jakarta Sans', 'Inter', sans-serif]
           }
         }
       }
@@ -36,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
 
   <style>
@@ -71,7 +70,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -96,8 +95,8 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-semibold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
         </div>
@@ -185,15 +184,15 @@
               </div>
               <div class="flex justify-between items-baseline py-1 border-b border-slate-100">
                 <dt class="text-slate-500 font-medium">KRS:</dt>
-                <dd class="font-mono font-bold text-brand-violet">0000535710</dd>
+                <dd class="font-sans font-bold text-brand-violet">0000535710</dd>
               </div>
               <div class="flex justify-between items-baseline py-1 border-b border-slate-100">
                 <dt class="text-slate-500 font-medium">NIP:</dt>
-                <dd class="font-mono font-bold text-slate-800">6272740470</dd>
+                <dd class="font-sans font-bold text-slate-800">6272740470</dd>
               </div>
               <div class="flex justify-between items-baseline py-1 border-b border-slate-100">
                 <dt class="text-slate-500 font-medium">REGON:</dt>
-                <dd class="font-mono font-bold text-slate-800">360577338</dd>
+                <dd class="font-sans font-bold text-slate-800">360577338</dd>
               </div>
               <div class="flex justify-between items-baseline py-1">
                 <dt class="text-slate-500 font-medium">Rok założenia:</dt>
@@ -227,7 +226,7 @@
               <div class="w-12 h-12 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center mb-6">
                 <span class="material-symbols-outlined text-2xl">flag</span>
               </div>
-              <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">01 • MISJA</span>
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">01 • MISJA</span>
               <h3 class="text-xl font-bold font-heading text-slate-900 mt-2 mb-4" data-i18n="about_mission_title">
                 Nasza Misja
               </h3>
@@ -235,7 +234,7 @@
                 Łączymy ludzi ponad podziałami. Budujemy i rozwijamy otwarte, nowoczesne społeczeństwo oparte na edukacji pozaformalnej, komunikacji i wzajemnym zrozumieniu.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-mono text-slate-400">
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-sans text-slate-400">
               "To unite and develop modern society"
             </div>
           </div>
@@ -246,7 +245,7 @@
               <div class="w-12 h-12 rounded-xl bg-brand-coral/10 text-brand-coral flex items-center justify-center mb-6">
                 <span class="material-symbols-outlined text-2xl">favorite</span>
               </div>
-              <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">02 • WARTOŚCI</span>
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">02 • WARTOŚCI</span>
               <h3 class="text-xl font-bold font-heading text-slate-900 mt-2 mb-4" data-i18n="about_values_title">
                 Nasze Wartości
               </h3>
@@ -254,7 +253,7 @@
                 Wspieramy ludzi w odkrywaniu ich własnych wartości, priorytetów i potencjału. Pomagamy rozwijać się w kierunkach związanych z fundamentalnymi Wartościami Europejskimi: solidarnością, godnością i otwartością.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-mono text-slate-400">
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-sans text-slate-400">
               "Connected with the European Values"
             </div>
           </div>
@@ -265,7 +264,7 @@
               <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-6">
                 <span class="material-symbols-outlined text-2xl">trending_up</span>
               </div>
-              <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">03 • STRATEGIA</span>
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">03 • STRATEGIA</span>
               <h3 class="text-xl font-bold font-heading text-slate-900 mt-2 mb-4" data-i18n="about_strategy_title">
                 Nasza Strategia
               </h3>
@@ -273,7 +272,7 @@
                 Pomagamy i wspieramy społeczności lokalne oraz międzynarodowe w zrównoważonym rozwoju poprzez sprawdzone, angażujące metody edukacji pozaformalnej, gry planszowe i wymianę dobrych praktyk.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-mono text-slate-400">
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-sans text-slate-400">
               "Methods of non-formal education"
             </div>
           </div>
@@ -296,13 +295,10 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="text-white font-bold transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -314,21 +310,21 @@
         </div>
 
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 

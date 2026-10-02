@@ -12,7 +12,7 @@
   <!-- Typography: Space Grotesk, Inter, Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
@@ -97,7 +97,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1 shrink-0">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1 shrink-0">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -123,8 +123,8 @@
     <!-- Mobile Drawer Navigation -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4 shadow-xl">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n="mobile_nav_lang_label">Język serwisu:</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-sans uppercase text-slate-400 font-bold" data-i18n="mobile_nav_lang_label">Język serwisu:</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -165,7 +165,7 @@
         
         <!-- Breadcrumbs & Meta Badges -->
         <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
             <a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Główna</a>
             <span>/</span>
             <a href="projects.html" class="hover:text-white transition-colors" data-i18n="nav_projects">Projekty</a>
@@ -174,10 +174,10 @@
           </div>
 
           <div class="flex items-center gap-2">
-            <span id="project-period-badge" class="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-xs font-mono text-xs font-bold text-white border border-white/15">
+            <span id="project-period-badge" class="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-xs font-sans text-xs font-bold text-white border border-white/15">
               2025–2026
             </span>
-            <span id="project-badge" class="px-3 py-1 rounded-lg bg-brand-coral text-white font-mono text-xs font-bold shadow-md">
+            <span id="project-badge" class="px-3 py-1 rounded-lg bg-brand-coral text-white font-sans text-xs font-bold shadow-md">
               Erasmus+
             </span>
           </div>
@@ -196,7 +196,7 @@
             </p>
 
             <!-- Quick Specs Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 font-mono text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 font-sans text-xs">
               <div class="flex items-start gap-2.5">
                 <span class="material-symbols-outlined text-brand-coral text-[20px] shrink-0 mt-0.5">location_on</span>
                 <div>
@@ -220,7 +220,7 @@
                 <span class="material-symbols-outlined text-[16px]">menu_book</span>
                 <span data-i18n="btn_scroll_chronicle">Zobacz kronikę relacji</span>
               </a>
-              <button onclick="copyCurrentProjectLink()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-mono text-xs font-semibold border border-white/15 transition-all">
+              <button onclick="copyCurrentProjectLink()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-sans text-xs font-semibold border border-white/15 transition-all">
                 <span class="material-symbols-outlined text-[16px]">share</span>
                 <span data-i18n="btn_share_project">Udostępnij projekt</span>
               </button>
@@ -233,7 +233,7 @@
               <img id="project-hero-img" src="./cropped-Animus-Logo-Horizontal.png" alt="Project Banner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
               
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-white/90 pointer-events-none">
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-sans text-white/90 pointer-events-none">
                 <span class="flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-md">
                   <span class="material-symbols-outlined text-[14px] text-brand-coral">verified</span>
                   <span>Zweryfikowana inicjatywa ANIMUS</span>
@@ -265,7 +265,7 @@
                   <span class="material-symbols-outlined text-[22px]">description</span>
                 </div>
                 <div>
-                  <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-coral" data-i18n="dossier_kicker">Paszport Merytoryczny</span>
+                  <span class="text-[11px] font-sans font-bold uppercase tracking-wider text-brand-coral" data-i18n="dossier_kicker">Paszport Merytoryczny</span>
                   <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900" data-i18n="dossier_title">Opis i Założenia Strategiczne</h2>
                 </div>
               </div>
@@ -276,7 +276,7 @@
 
               <!-- Methodology / Impact Highlights -->
               <div class="pt-6 border-t border-slate-100">
-                <h3 class="text-sm font-mono uppercase tracking-wider font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 class="text-sm font-sans uppercase tracking-wider font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <span class="material-symbols-outlined text-brand-coral text-[18px]">verified</span>
                   <span data-i18n="dossier_key_pillars">Kluczowe rezultaty i metodyka pracy</span>
                 </h3>
@@ -313,20 +313,20 @@
 
               <div class="space-y-4 text-xs font-sans">
                 <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_promoter">Lider / Koordynator</div>
+                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider" data-i18n="passport_promoter">Lider / Koordynator</div>
                   <div class="font-bold text-slate-900 text-sm mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</div>
-                  <div class="text-slate-500 font-mono text-[11px] mt-0.5">Orzesze, Polska • OID: E10189332</div>
+                  <div class="text-slate-500 font-sans text-[11px] mt-0.5">Orzesze, Polska • OID: E10189332</div>
                 </div>
 
                 <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_partners_list">Partnerzy Wdrożeniowi</div>
+                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider" data-i18n="passport_partners_list">Partnerzy Wdrożeniowi</div>
                   <div id="passport-partners-list" class="font-medium text-slate-700 mt-1 space-y-1">
                     <!-- Partner pills -->
                   </div>
                 </div>
 
                 <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_status">Status Inicjatywy</div>
+                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider" data-i18n="passport_status">Status Inicjatywy</div>
                   <div class="flex items-center gap-2 mt-1">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span class="font-semibold text-slate-900" data-i18n="passport_status_active">Aktywny program archiwalno-wdrożeniowy</span>
@@ -334,7 +334,7 @@
                 </div>
 
                 <div>
-                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider" data-i18n="passport_certificate">Certyfikacja i Uznawalność</div>
+                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider" data-i18n="passport_certificate">Certyfikacja i Uznawalność</div>
                   <div class="font-medium text-slate-700 mt-1 flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-brand-coral text-[16px]">military_tech</span>
                     <span>Certyfikat Youthpass / Zaświadczenie MEN</span>
@@ -353,8 +353,8 @@
 
             <!-- Adjacent Projects Navigation Card -->
             <div class="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-4">
-              <div class="text-[10px] font-mono uppercase text-slate-400 tracking-wider">Nawigacja po projektach</div>
-              <div class="flex items-center justify-between gap-3 text-xs font-mono font-bold">
+              <div class="text-[10px] font-sans uppercase text-slate-400 tracking-wider">Nawigacja po projektach</div>
+              <div class="flex items-center justify-between gap-3 text-xs font-semibold">
                 <a id="prev-project-btn" href="#" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
                   <span class="material-symbols-outlined text-[16px]">chevron_left</span>
                   <span>Poprzedni</span>
@@ -380,7 +380,7 @@
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <span class="text-xs font-mono uppercase font-bold tracking-widest text-brand-violet flex items-center gap-1.5 mb-2">
+            <span class="text-xs font-sans uppercase font-bold tracking-widest text-brand-violet flex items-center gap-1.5 mb-2">
               <span class="material-symbols-outlined text-[16px]">menu_book</span>
               <span data-i18n="chronicle_kicker">Kronika Terenowa</span>
             </span>
@@ -388,7 +388,7 @@
               Raporty, Relacje i Działania w Ramach Tego Projektu
             </h2>
           </div>
-          <p id="chronicle-subtitle" class="text-xs sm:text-sm font-mono text-slate-500">
+          <p id="chronicle-subtitle" class="text-xs sm:text-sm font-sans text-slate-500">
             Wyświetlane relacje z terenu
           </p>
         </div>
@@ -415,14 +415,11 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <!-- Col 2: Navigation -->
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -435,21 +432,21 @@
 
         <!-- Col 3: Contact -->
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Legal Notice -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>&copy; 2015&ndash;2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 

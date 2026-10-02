@@ -26,8 +26,7 @@
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             heading: ['Space Grotesk', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            mono: ['Plus Jakarta Sans', 'Inter', sans-serif]
           }
         }
       }
@@ -36,8 +35,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-  <!-- Material Symbols Outlined (Local WOFF2 Subset) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined (Local WOFF2 Subset) -->
   <link rel="stylesheet" href="./material-symbols.css" />
 
   <style>
@@ -71,7 +70,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-3">
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold mr-1">
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold mr-1">
           <button id="lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded-md text-white bg-brand-violet transition-all shadow-sm">PL</button>
           <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition-all">EN</button>
         </div>
@@ -96,8 +95,8 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-6 space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-        <span class="text-xs font-mono font-bold uppercase text-slate-400">Język / Language</span>
-        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-mono font-bold">
+        <span class="text-xs font-semibold uppercase text-slate-400">Język / Language</span>
+        <div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
           <button onclick="setLanguage('pl')" class="px-3 py-1 rounded-md text-white bg-brand-violet">PL</button>
           <button onclick="setLanguage('en')" class="px-3 py-1 rounded-md text-slate-600">EN</button>
         </div>
@@ -164,7 +163,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Unia Europejska</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Program Edukacyjny</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Program Edukacyjny</span>
             </div>
           </div>
 
@@ -175,7 +174,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Fundacja EVZ</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Niemcy • Berlin</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Niemcy • Berlin</span>
             </div>
           </div>
 
@@ -186,7 +185,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Fundacja FEIO</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Polska • feio.pl</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Polska • feio.pl</span>
             </div>
           </div>
 
@@ -197,7 +196,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">MDK 2 Piekary Śląskie</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Partner Samorządowy</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Partner Samorządowy</span>
             </div>
           </div>
 
@@ -208,7 +207,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">EPEKA Association</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Słowenia • Maribor</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Słowenia • Maribor</span>
             </div>
           </div>
 
@@ -219,7 +218,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">LVJUC</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Litwa • Wilno</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Litwa • Wilno</span>
             </div>
           </div>
 
@@ -230,7 +229,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Cesta Rozvoje</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Czechy • Praga</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Czechy • Praga</span>
             </div>
           </div>
 
@@ -241,7 +240,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Eur. Conf. Youth Clubs</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Bruksela • Belgia</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Bruksela • Belgia</span>
             </div>
           </div>
 
@@ -252,7 +251,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Empower Plus</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Rumunia</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Rumunia</span>
             </div>
           </div>
 
@@ -263,7 +262,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">ASNU APS</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Włochy</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Włochy</span>
             </div>
           </div>
 
@@ -274,7 +273,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Aktyvistai.lt</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Litwa</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Litwa</span>
             </div>
           </div>
 
@@ -285,7 +284,7 @@
             </div>
             <div class="pt-4 border-t border-slate-200 w-full space-y-1">
               <span class="text-xs font-bold text-slate-800 block group-hover:text-brand-violet transition-colors">Interaktiva Association</span>
-              <span class="text-[11px] font-mono text-slate-500 block">Europa Środkowa</span>
+              <span class="text-[11px] font-sans text-slate-500 block">Europa Środkowa</span>
             </div>
           </div>
 
@@ -307,13 +306,10 @@
           <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer_about_text">
             ANIMUS Foundation (Fundacja ANIMUS) to centrum edukacyjno-szkoleniowe aktywne od 2015 roku na rzecz edukacji pozaformalnej, młodzieży i integracji europejskiej.
           </p>
-          <div class="text-[11px] font-mono text-slate-400">
-            <span class="text-white font-semibold">Latin "Animus":</span> racjonalna dusza, umysł, świadomość i wrażliwość.
-          </div>
         </div>
 
         <div>
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_nav_title">Nawigacja</h4>
           <ul class="space-y-2.5 text-xs text-slate-400 font-medium">
             <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">Strona główna</a></li>
             <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">O nas</a></li>
@@ -325,21 +321,21 @@
         </div>
 
         <div class="space-y-3">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4" data-i18n="footer_contact_title">Kontakt</h4>
           <div class="space-y-2 text-xs text-slate-400">
             <p><strong class="text-white">Adres:</strong> ul. Polna 16, 43-180 Orzesze</p>
             <p><strong class="text-white">KRS:</strong> 0000535710</p>
             <p><strong class="text-white">NIP:</strong> 6272740470 • <strong class="text-white">REGON:</strong> 360577338</p>
             <p><strong class="text-white">Erasmus+ OID:</strong> E10189332</p>
             <p><strong class="text-white">E-mail:</strong> <a href="mailto:animuscentrum@gmail.com" class="hover:underline">animuscentrum@gmail.com</a></p>
-            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-mono">+48 608 616 675</a></p>
-            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-mono">+48 573 394 180</a></p>
+            <p><strong class="text-white">Tel. (PL / ENG):</strong> <a href="tel:+48608616675" class="hover:underline font-medium">+48 608 616 675</a></p>
+            <p><strong class="text-white">Tel. (ENG / UA / RU):</strong> <a href="tel:+48573394180" class="hover:underline font-medium">+48 573 394 180</a></p>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-medium">
         <p>© 2015–2026 Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe. Wszystkie prawa zastrzeżone.</p>
       </div>
 
