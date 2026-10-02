@@ -671,7 +671,7 @@
         }
 
         const safeProjectTitle = escapeHtml(title);
-        const projectUrl = 'single-project.html?id=' + id;
+        const projectUrl = 'projekty/' + id + '/';
 
         html += `
           <article class="bg-white rounded-3xl border border-slate-200 hover:border-brand-violet/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
@@ -863,7 +863,7 @@
           projectBox.classList.remove('hidden');
           const projName = currentLang === 'en' ? (proj.name_en || proj.name) : proj.name;
           const projDesc = currentLang === 'en' ? (proj.desc_en || proj.desc_pl) : proj.desc_pl;
-          const projectsUrl = 'single-project.html?id=' + (article.project_id || 'okulary-mlodziezowe');
+          const projectsUrl = 'projekty/' + (article.project_id || 'okulary-mlodziezowe') + '/';
           
           projectBox.innerHTML = `
             <div class="rounded-2xl p-5 sm:p-6 border-2 border-brand-violet/25 bg-gradient-to-br from-purple-50/70 to-white shadow-sm space-y-3">
@@ -970,7 +970,7 @@
 
 
       // Set link to single article test page
-      if (origLink) origLink.href = 'single-article.html?slug=' + article.slug;
+      if (origLink) origLink.href = 'aktualnosci/' + article.slug + '/';
 
       // Show modal & prevent body scroll
       modal.classList.add('active');

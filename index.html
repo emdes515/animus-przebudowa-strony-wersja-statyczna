@@ -984,7 +984,7 @@
                       Międzynarodowa wymiana młodzieżowa łącząca ekologię, technologie cyfrowe i integrację międzykulturową.
                     </p>
                     <div class="slide-actions">
-                      <a href="single-project.html?id=plugtree" class="slide-cta-btn group">
+                      <a href="projekty/plugtree/" class="slide-cta-btn group">
                         <span data-i18n="slide_cta">Zobacz projekt</span>
                         <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                       </a>
@@ -1021,7 +1021,7 @@
                       Autorska planszowa symulacja strategiczna i warsztaty adaptacji klimatycznej dla szkół i liderów.
                     </p>
                     <div class="slide-actions">
-                      <a href="single-project.html?id=care-rpg" class="slide-cta-btn group">
+                      <a href="projekty/care/" class="slide-cta-btn group">
                         <span data-i18n="slide_cta">Zobacz projekt</span>
                         <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                       </a>
@@ -1058,7 +1058,7 @@
                       Cykle warsztatów komunikacji, budowania mostów i młodzieżowych inicjatyw obywatelskich na Śląsku.
                     </p>
                     <div class="slide-actions">
-                      <a href="single-project.html?id=okulary-mlodziezowe" class="slide-cta-btn group">
+                      <a href="projekty/okulary-mlodziezowe/" class="slide-cta-btn group">
                         <span data-i18n="slide_cta">Zobacz projekt</span>
                         <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                       </a>
@@ -1095,7 +1095,7 @@
                       Gry terenowe, questing i metody outdoor education aktywizujące młodzież do zdrowego stylu życia.
                     </p>
                     <div class="slide-actions">
-                      <a href="single-project.html?id=be-active" class="slide-cta-btn group">
+                      <a href="projekty/be-active/" class="slide-cta-btn group">
                         <span data-i18n="slide_cta">Zobacz projekt</span>
                         <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                       </a>
@@ -1111,7 +1111,7 @@
 
                   <div class="slide-top-badges">
                     <span class="badge-category bg-white/95 text-sky-800">
-                      <span class="w-1.5 h-1.5 rounded-full bg-[#2AD0FF]"></span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-cyan-800"></span>
                       <span data-i18n="slide_cat_youth">Wymiana Młodzieży Erasmus+</span>
                     </span>
                     <span class="badge-location">
@@ -1132,7 +1132,7 @@
                       Inkubacja inicjatyw młodzieżowych, rozwój kompetencji liderskich i przedsiębiorczych w Europie.
                     </p>
                     <div class="slide-actions">
-                      <a href="single-project.html?id=youth-in-action" class="slide-cta-btn group">
+                      <a href="projekty/youth-in-action/" class="slide-cta-btn group">
                         <span data-i18n="slide_cta">Zobacz projekt</span>
                         <span class="material-symbols-outlined text-[15px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
                       </a>
@@ -2067,7 +2067,7 @@
           projectBox.classList.remove('hidden');
           const projName = currentLang === 'en' ? (proj.name_en || proj.name) : proj.name;
           const projDesc = currentLang === 'en' ? (proj.desc_en || proj.desc_pl) : proj.desc_pl;
-          const projectsUrl = 'single-project.html?id=' + (article.project_id || 'okulary-mlodziezowe');
+          const projectsUrl = 'projekty/' + (article.project_id || 'okulary-mlodziezowe') + '/';
           
           projectBox.innerHTML = `
             <div class="rounded-2xl p-5 sm:p-6 border-2 border-brand-violet/25 bg-gradient-to-br from-purple-50/70 to-white shadow-sm space-y-3">
@@ -2170,7 +2170,7 @@
 
       // Set link to dedicated article test page
       const origLink = document.getElementById('modal-orig-link');
-      if (origLink) origLink.href = 'single-article.html?slug=' + article.slug;
+      if (origLink) origLink.href = 'aktualnosci/' + article.slug + '/';
 
       // Reset internal modal scroll position to top
       const scrollBody = modal.querySelector('.overflow-y-auto');
