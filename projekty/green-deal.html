@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youth Say – Green Deal | Karta Projektu | Fundacja ANIMUS</title>
+  <title>Youth Say – Green Deal | Fundacja ANIMUS</title>
   <meta name="description" content="Międzynarodowa wymiana młodzieży skupiona na założeniach Europejskiego Zielonego Ładu, odnawialnych źródłach energii, segregacji odpadów i praktykach zero-waste">
 
   <!-- Favicon -->
@@ -48,14 +48,12 @@
             'border-subtle': '#E2E8F0'
           },
           fontFamily: {
-            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['"Inter"', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
-            mono: ['"Plus Jakarta Sans"', 'ui-monospace', 'monospace']
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
           },
           boxShadow: {
-            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
-            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+            'elevation-hover': '0 12px 30px -8px rgba(48, 0, 100, 0.12), 0 4px 10px -3px rgba(0, 0, 0, 0.04)'
           }
         }
       }
@@ -63,14 +61,14 @@
   </script>
 
   <style>
+    html, body {
+      overflow-x: clip;
+      max-width: 100vw;
+    }
     .notebook-grid {
       background-color: #FAF9F6;
       background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
       background-size: 28px 28px;
-    }
-    html, body {
-      overflow-x: clip;
-      max-width: 100vw;
     }
     .custom-scrollbar::-webkit-scrollbar {
       height: 6px;
@@ -96,10 +94,7 @@
         <a href="../index.html" class="hover:text-slate-900 transition-colors py-1 ">Strona główna</a>
         <a href="../about.html" class="hover:text-slate-900 transition-colors py-1 ">O nas</a>
         <a href="../activities.html" class="hover:text-slate-900 transition-colors py-1 ">Nasze działania</a>
-        <a href="../projects.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group text-slate-900 font-bold">
-          <span>Projekty</span>
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
-        </a>
+        <a href="../projects.html" class="hover:text-slate-900 transition-colors py-1 text-slate-900 font-bold">Projekty</a>
         <a href="../partners.html" class="hover:text-slate-900 transition-colors py-1 ">Partnerzy</a>
         <a href="../blog.html" class="hover:text-slate-900 transition-colors py-1 ">Aktualności</a>
       </nav>
@@ -141,7 +136,7 @@
         <a href="../index.html" class="py-1 hover:text-brand-violet">Strona główna</a>
         <a href="../about.html" class="py-1 hover:text-brand-violet">O nas</a>
         <a href="../activities.html" class="py-1 hover:text-brand-violet">Nasze działania</a>
-        <a href="../projects.html" class="py-1 font-bold text-brand-violet">Projekty</a>
+        <a href="../projects.html" class="py-1 hover:text-brand-violet">Projekty</a>
         <a href="../partners.html" class="py-1 hover:text-brand-violet">Partnerzy</a>
         <a href="../blog.html" class="py-1 hover:text-brand-violet">Aktualności</a>
         <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
@@ -161,722 +156,714 @@
   </header>
   
 
-  <!-- MAIN PROJECT DOSSIER HERO -->
-  <main class="flex-grow">
-    
-    <!-- Hero Header Section -->
-    <section class="relative bg-brand-ink text-white pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
-      <!-- Ambient Backdrop Glow -->
-      <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,#4a0e8f,transparent_60%)]"></div>
-      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-coral/10 blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <!-- Breadcrumbs & Meta Badges -->
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
-            <a href="../index.html" class="hover:text-white transition-colors">Główna</a>
-            <span>/</span>
-            <a href="../projects.html" class="hover:text-white transition-colors">Projekty</a>
-            <span>/</span>
-            <span class="text-white font-semibold">Youth Say – Green Deal</span>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <span class="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-xs font-sans text-xs font-bold text-white border border-white/15">
-              2023
-            </span>
-            <span class="px-3 py-1 rounded-lg bg-brand-coral text-white font-sans text-xs font-bold shadow-md">
-              Ekologia &amp; Zielona Transformacja
-            </span>
-          </div>
+  <!-- MAIN ARTICLE CONTAINER (1-to-1 matching single-project.php) -->
+  <main class="flex-grow pt-24 sm:pt-28 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      
+      <!-- TOP BREADCRUMBS & NAVIGATION -->
+      <nav class="py-4 flex flex-wrap items-center justify-between gap-3 text-xs font-sans text-slate-500 border-b border-slate-200 mb-8 min-w-0" aria-label="Breadcrumb">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <a href="../index.html" class="hover:text-brand-violet transition-colors shrink-0">ANIMUS</a>
+          <span>/</span>
+          <a href="../projects.html" class="hover:text-brand-violet transition-colors shrink-0">Projekty</a>
+          <span>/</span>
+          <span class="text-slate-900 font-bold truncate max-w-xs sm:max-w-md min-w-0">Youth Say – Green Deal</span>
         </div>
 
-        <!-- Project Title Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <a href="../projects.html" class="inline-flex items-center gap-1.5 text-slate-700 hover:text-brand-violet font-bold transition-colors shrink-0">
+          <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          <span>Wszystkie Projekty</span>
+        </a>
+      </nav>
+
+      <!-- PROJECT HERO CARD -->
+      <section class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 mb-12 min-w-0">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 min-w-0">
           
-          <div class="lg:col-span-7 space-y-6">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              Youth Say – Green Deal
-            </h1>
+          <!-- Hero Imagery -->
+          <div class="lg:col-span-5 relative min-h-[300px] sm:min-h-[360px] bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 min-w-0">
+            <img src="https://animusedu.com/wp-content/uploads/2023/03/green-deal.jpg" alt="Youth Say – Green Deal" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
             
-            <p class="text-base sm:text-lg text-slate-300 font-sans leading-relaxed">
-              Międzynarodowa wymiana młodzieży skupiona na założeniach Europejskiego Zielonego Ładu, odnawialnych źródłach energii, segregacji odpadów i praktykach zero-waste w codziennym życiu młodych obywateli.
-            </p>
-
-            <!-- Quick Specs Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 font-sans text-xs">
-              <div class="flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-brand-coral text-[20px] shrink-0 mt-0.5">location_on</span>
-                <div>
-                  <div class="text-slate-400 uppercase tracking-wider text-[10px]">Zasięg / Lokalizacja</div>
-                  <div class="text-white font-semibold mt-0.5">Polska • Wymiana Międzynarodowa</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-brand-cyan text-[20px] shrink-0 mt-0.5">group_work</span>
-                <div>
-                  <div class="text-slate-400 uppercase tracking-wider text-[10px]">Konsorcjum i Partnerzy</div>
-                  <div class="text-white font-semibold mt-0.5">Międzynarodowa Młodzież i Aktywiści Klimatyczni</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              
-              <a href="#galeria" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-coral hover:bg-orange-600 text-white font-sans font-bold text-xs shadow-md transition-all">
-                <span class="material-symbols-outlined text-[16px]">photo_library</span>
-                <span>Zobacz galerię (25 zdjęć)</span>
-              </a>
-              
-              
-              <a href="#relacje" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-violet hover:bg-primary-container text-white font-sans font-bold text-xs shadow-md transition-all">
-                <span class="material-symbols-outlined text-[16px]">menu_book</span>
-                <span>Kronika relacji (3)</span>
-              </a>
-              
-              <button onclick="copyCurrentProjectLink()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-sans text-xs font-semibold border border-white/15 transition-all">
-                <span class="material-symbols-outlined text-[16px]">share</span>
-                <span>Udostępnij</span>
-              </button>
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 flex-wrap">
+              <span style="background-color: #16A34A;" class="text-white font-sans text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-lg font-bold shadow-md">
+                <span>Ekologia &amp; Zielona Transformacja</span>
+              </span>
+              <span class="bg-slate-950/85 backdrop-blur-sm text-white font-sans text-xs px-3 py-1.5 rounded-lg font-semibold shadow-md">
+                2023
+              </span>
             </div>
           </div>
 
-          <!-- Hero Image Column -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-900 aspect-[4/3] group">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/green-deal.jpg" alt="Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+          <!-- Hero Core Dossier Header -->
+          <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6 min-w-0">
+            <div class="space-y-4">
               
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-sans text-white/90 pointer-events-none">
-                <span class="flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-md">
-                  <span class="material-symbols-outlined text-[14px] text-brand-coral">verified</span>
-                  <span>Zweryfikowana inicjatywa ANIMUS</span>
-                </span>
-                <span class="bg-brand-violet/90 backdrop-blur-xs px-2.5 py-1 rounded-md font-bold">
-                  3 relacji • 25 zdjęć
-                </span>
+              <!-- Meta Row -->
+              <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-sans text-slate-500 font-medium">
+                <div class="flex items-center gap-1.5 text-slate-800 font-bold">
+                  <span class="material-symbols-outlined text-[18px] text-brand-coral">location_on</span>
+                  <span>Polska • Wymiana Międzynarodowa</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-600">
+                  <span class="material-symbols-outlined text-[18px] text-brand-violet">handshake</span>
+                  <span>Międzynarodowa Młodzież i Aktywiści Klimatyczni</span>
+                </div>
+              </div>
+
+              <!-- Main H1 Title -->
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-slate-900 leading-tight tracking-tight">
+                Youth Say – Green Deal
+              </h1>
+
+              
+                <p class="text-sm font-sans text-brand-violet font-semibold">
+                  English Title: Youth Say – Green Deal Exchange
+                </p>
+              
+
+              <!-- Subtitle Excerpt -->
+              <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-sans pt-2">
+                Międzynarodowa wymiana młodzieży skupiona na założeniach Europejskiego Zielonego Ładu, odnawialnych źródłach energii, segregacji odpadów i praktykach zero-waste w codziennym życiu młodych obywateli.
+              </p>
+
+            </div>
+
+            <!-- Key Metrics Bar -->
+            <div class="pt-6 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Kronika Działań</div>
+                <div class="text-lg font-extrabold font-heading text-slate-900 mt-0.5">3 <span>relacji</span></div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Okres Realizacji</div>
+                <div class="text-lg font-extrabold font-heading text-slate-900 mt-0.5">2023</div>
+              </div>
+              <div class="col-span-2 sm:col-span-1 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Zasięg</div>
+                <div class="text-lg font-extrabold font-heading text-brand-violet mt-0.5 truncate">Polska • Wymiana Międzynarodowa</div>
               </div>
             </div>
+
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- CONTENT & PASSPORT SECTION -->
-    <section class="py-16 sm:py-20 notebook-grid border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- TWO-COLUMN EDITORIAL & PASSPORT SECTION -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 w-full min-w-0">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Main Content Column (8 cols) -->
+        <div class="lg:col-span-8 space-y-10 min-w-0 w-full">
           
-          <!-- Left Column: Detailed Description & Strategic Blueprint -->
-          <div class="lg:col-span-8 space-y-10">
+          <!-- Opis merytoryczny projektu -->
+          <article class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-2xl text-brand-violet">description</span>
+                <h2 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                  Merytoryczne Założenia i Cele Inicjatywy
+                </h2>
+              </div>
+              <span class="text-xs font-sans bg-purple-50 text-brand-violet px-3 py-1 rounded-full font-bold border border-purple-200">
+                Dossier Merytoryczne
+              </span>
+            </div>
+
+            <!-- Content Body -->
+            <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-sans text-base sm:text-lg space-y-4">
+              <p>Międzynarodowa wymiana młodzieży skupiona na założeniach Europejskiego Zielonego Ładu, odnawialnych źródłach energii, segregacji odpadów i praktykach zero-waste w codziennym życiu młodych obywateli.</p>
+            </div>
+
+            <!-- English Abstract Box if available -->
             
-            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-warm-card space-y-6">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center font-bold">
-                  <span class="material-symbols-outlined text-[22px]">description</span>
+              <div class="mt-8 pt-6 border-t border-slate-200 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                <div class="flex items-center gap-2 text-brand-violet font-sans text-xs font-bold uppercase tracking-wider mb-2">
+                  <span class="material-symbols-outlined text-[18px]">language</span>
+                  <span>International Project Abstract (English)</span>
                 </div>
-                <div>
-                  <span class="text-[11px] font-sans font-bold uppercase tracking-wider text-brand-coral">Paszport Merytoryczny</span>
-                  <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900">Opis i Założenia Strategiczne</h2>
-                </div>
-              </div>
-
-              <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-sans space-y-4 text-base sm:text-lg">
-                <p>Międzynarodowa wymiana młodzieży skupiona na założeniach Europejskiego Zielonego Ładu, odnawialnych źródłach energii, segregacji odpadów i praktykach zero-waste w codziennym życiu młodych obywateli.</p>
-              </div>
-
-              
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 mt-6">
-                <div class="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                  <span class="material-symbols-outlined text-[16px] text-brand-violet">translate</span>
-                  <span>Abstract (English)</span>
-                </div>
-                <p class="text-sm text-slate-600 italic leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed font-sans">
                   International youth exchange exploring the European Green Deal, zero-waste lifestyles, renewable energy adoption and practical eco-friendly habits for youth communities.
                 </p>
               </div>
+            
+
+          </article>
+
+          <!-- VISUAL DOCUMENTATION GALLERY CARD (BENTO GRID + LIGHTBOX) -->
+          
+          <section id="galeria" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-5">
+              <div>
+                <div class="flex items-center gap-2 text-brand-violet font-sans text-xs font-bold uppercase tracking-wider mb-1">
+                  <span class="material-symbols-outlined text-base">photo_library</span>
+                  <span>Dokumentacja Wizualna Projektu</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  Fotoreportaż &amp; Archiwum Działań w Terenie
+                </h2>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-sans text-slate-500">
+                  25 oryginalnych fotografii
+                </span>
+                <button onclick="openLightbox(0)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-coral hover:bg-orange-600 text-white text-xs font-bold transition-all shadow-xs">
+                  <span class="material-symbols-outlined text-sm">fullscreen</span>
+                  <span>Lightbox</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Bento Grid Gallery Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               
+                <div class="sm:col-span-2 sm:row-span-2 min-h-[300px] sm:min-h-[420px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(0)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/green-deal.jpg" alt="Fotografia 1 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #01
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(1)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-24-850x638.jpg" alt="Fotografia 2 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #02
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(2)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-27-1024x768.jpg" alt="Fotografia 3 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #03
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(3)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-32-1024x768.jpg" alt="Fotografia 4 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #04
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(4)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-34-1024x768.jpg" alt="Fotografia 5 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #05
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(5)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-38-1024x768.jpg" alt="Fotografia 6 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #06
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(6)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-41-1024x768.jpg" alt="Fotografia 7 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #07
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(7)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-46-1024x768.jpg" alt="Fotografia 8 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #08
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(8)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-29-1024x768.jpg" alt="Fotografia 9 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #09
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(9)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-58-850x638.jpg" alt="Fotografia 10 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #10
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(10)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-57-55-1024x768.jpg" alt="Fotografia 11 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #11
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(11)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-57-59-1024x768.jpg" alt="Fotografia 12 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #12
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(12)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-04-1024x768.jpg" alt="Fotografia 13 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #13
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(13)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-09-1024x768.jpg" alt="Fotografia 14 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #14
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(14)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-13-1024x768.jpg" alt="Fotografia 15 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #15
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(15)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-49-1024x768.jpg" alt="Fotografia 16 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #16
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(16)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-52-1024x768.jpg" alt="Fotografia 17 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #17
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(17)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-54-1024x768.jpg" alt="Fotografia 18 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #18
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(18)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-49-850x638.jpg" alt="Fotografia 19 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #19
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(19)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-38-1024x768.jpg" alt="Fotografia 20 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #20
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(20)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-43-1024x768.jpg" alt="Fotografia 21 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #21
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(21)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-46-1024x768.jpg" alt="Fotografia 22 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #22
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(22)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-48-1024x768.jpg" alt="Fotografia 23 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #23
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(23)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-50-15-1024x768.jpg" alt="Fotografia 24 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #24
+                  </span>
+                </div>
+                
+                <div class="min-h-[200px] sm:min-h-[200px] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(24)">
+                  <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-50-17-1024x768.jpg" alt="Fotografia 25 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #25
+                  </span>
+                </div>
+                
+            </div>
+          </section>
+          
 
-              <!-- Methodology / Impact Highlights -->
-              <div class="pt-6 border-t border-slate-100">
-                <h3 class="text-sm font-sans uppercase tracking-wider font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <span class="material-symbols-outlined text-brand-coral text-[18px]">verified</span>
-                  <span>Kluczowe rezultaty i metodyka pracy</span>
+          <!-- CHRONICLE OF FIELD REPORTS (RELACJE TERENOWE) -->
+          <section id="kronika" class="space-y-6">
+            <div class="flex items-center justify-between flex-wrap gap-3">
+              <div>
+                <span class="text-xs font-sans text-brand-coral uppercase tracking-wider font-bold">Relacje Terenowe</span>
+                <h3 class="text-2xl font-extrabold font-heading text-slate-900">
+                  Kronika Działań Projektu (3)
                 </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-violet text-[22px] mb-2">sports_esports</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Edukacja Pozaformalna</h4>
-                    <p class="text-xs text-slate-600 mt-1">Aktywne warsztaty, gry adaptacyjne i uczenie przez doświadczenie (experiential learning).</p>
-                  </div>
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-coral text-[22px] mb-2">diversity_3</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Włączenie Młodzieży</h4>
-                    <p class="text-xs text-slate-600 mt-1">Równe szanse, certyfikacja Youthpass i budowanie kompetencji obywatelskich.</p>
-                  </div>
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-cyan text-[22px] mb-2">public</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Wymiar Europejski</h4>
-                    <p class="text-xs text-slate-600 mt-1">Konsorcja międzynarodowe, transfer dobrych praktyk i mobilność Erasmus+.</p>
-                  </div>
-                </div>
               </div>
+              <span class="text-xs font-sans text-slate-500">
+                Pełna dokumentacja warsztatów i wymian
+              </span>
             </div>
 
-          </div>
-
-          <!-- Right Column: Consortium Passport Card & Fast Actions -->
-          <div class="lg:col-span-4 space-y-6">
             
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-warm-card space-y-6">
-              <h3 class="font-heading font-extrabold text-xl text-slate-900 flex items-center gap-2">
-                <span class="material-symbols-outlined text-brand-violet text-[22px]">badge</span>
-                <span>Paszport Konsorcjum</span>
-              </h3>
-
-              <div class="space-y-4 text-xs font-sans">
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Lider / Koordynator</div>
-                  <div class="font-bold text-slate-900 text-sm mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</div>
-                  <div class="text-slate-500 font-sans text-[11px] mt-0.5">Orzesze, Polska • OID: E10189332</div>
-                </div>
-
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Partnerzy Wdrożeniowi</div>
-                  <div class="font-medium text-slate-700 mt-1 space-y-1">
-                    
-                      <div class="flex items-center gap-1.5 text-xs text-slate-800">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
-                        <span>Międzynarodowa Młodzież i Aktywiści Klimatyczni</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                  <article class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                      <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html" class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                        <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-24-850x638.jpg" alt="“Youth Say - Green Deal” Youth Exchange Final" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                        <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                          Ekologia &amp; Zielona Transformacja
+                        </span>
+                        
+                          <span class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-xs text-white font-sans text-[10px] px-2 py-0.5 rounded font-bold flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[12px]">photo_camera</span>
+                            <span>8</span>
+                          </span>
+                        
+                      </a>
+                      
+                      <div class="p-5 sm:p-6 space-y-2.5">
+                        <div class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                          <span>2023-03-16</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">
+                          <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html">
+                            “Youth Say - Green Deal” Youth Exchange Final
+                          </a>
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                          We are overwhelmed with a mixture of emotions!
+                        </p>
                       </div>
-                    
-                  </div>
-                </div>
+                    </div>
 
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Status Inicjatywy</div>
-                  <div class="flex items-center gap-2 mt-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="font-semibold text-slate-900">Zrealizowany i udokumentowany</span>
-                  </div>
-                </div>
+                    <div class="p-5 sm:p-6 pt-0">
+                      <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-sans">
+                        <span>Czytaj relację</span>
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </a>
+                    </div>
+                  </article>
+                  
+                  <article class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                      <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html" class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                        <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-58-850x638.jpg" alt="Progress of the Project “Youth Say - Green Deal”" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                        <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                          Ekologia &amp; Zielona Transformacja
+                        </span>
+                        
+                          <span class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-xs text-white font-sans text-[10px] px-2 py-0.5 rounded font-bold flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[12px]">photo_camera</span>
+                            <span>9</span>
+                          </span>
+                        
+                      </a>
+                      
+                      <div class="p-5 sm:p-6 space-y-2.5">
+                        <div class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                          <span>2023-03-12</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">
+                          <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html">
+                            Progress of the Project “Youth Say - Green Deal”
+                          </a>
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                          Being in the middle of our project, we at Fundacja Animus Centrum Edukacyjno-Szkoleniowe are delighted with the progress we have made so far.
+                        </p>
+                      </div>
+                    </div>
 
-                <div>
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Certyfikacja i Uznawalność</div>
-                  <div class="font-medium text-slate-700 mt-1 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-brand-coral text-[16px]">military_tech</span>
-                    <span>Certyfikat Youthpass / Zaświadczenie MEN</span>
-                  </div>
-                </div>
+                    <div class="p-5 sm:p-6 pt-0">
+                      <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-sans">
+                        <span>Czytaj relację</span>
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </a>
+                    </div>
+                  </article>
+                  
+                  <article class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                      <a href="../aktualnosci/green-deal-or-how-to-save-environment.html" class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                        <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-49-850x638.jpg" alt="Green Deal or How to Save Environment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                        <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                          Ekologia &amp; Zielona Transformacja
+                        </span>
+                        
+                          <span class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-xs text-white font-sans text-[10px] px-2 py-0.5 rounded font-bold flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[12px]">photo_camera</span>
+                            <span>7</span>
+                          </span>
+                        
+                      </a>
+                      
+                      <div class="p-5 sm:p-6 space-y-2.5">
+                        <div class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                          <span>2023-03-09</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">
+                          <a href="../aktualnosci/green-deal-or-how-to-save-environment.html">
+                            Green Deal or How to Save Environment
+                          </a>
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                          The Animus Foundation is the hosting organization for the “Youth Say – Green Deal” youth exchange project, which is taking place in Budy Głogowskie, near Rzeszów. This project brings together young people from six different countries, including Georgia, Poland, Italy, Ukraine, the Czech Republic, and Lithuania.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="p-5 sm:p-6 pt-0">
+                      <a href="../aktualnosci/green-deal-or-how-to-save-environment.html" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-sans">
+                        <span>Czytaj relację</span>
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </a>
+                    </div>
+                  </article>
+                  
               </div>
+            
+          </section>
 
-              <!-- Quick Contact CTA -->
-              <div class="pt-4 border-t border-slate-100">
-                <a href="../contact.html" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white text-slate-800 font-heading font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-xs">
-                  <span class="material-symbols-outlined text-[16px]">mail</span>
-                  <span>Zgłoś partnerstwo lub zapytaj o projekt</span>
-                </a>
+        </div>
+
+        <!-- Right Sidebar Passport Column (4 cols) -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28 min-w-0 w-full">
+          
+          <!-- Passport Card -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <span class="text-sm font-bold text-slate-800 font-heading">Paszport Projektu</span>
+              <span class="material-symbols-outlined text-xl text-brand-violet">verified</span>
+            </div>
+
+            <div class="space-y-4 text-xs">
+              <div>
+                <span class="text-slate-500 block mb-0.5 font-medium">Program ramowy</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">Ekologia &amp; Zielona Transformacja</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Lata realizacji</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">2023</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Lokalizacja</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">Polska • Wymiana Międzynarodowa</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Konsorcjum i partnerzy</span>
+                <p class="text-slate-800 font-medium text-xs leading-relaxed mt-1">
+                  Międzynarodowa Młodzież i Aktywiści Klimatyczni
+                </p>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Liczba wpisów w kronice</span>
+                <span class="text-brand-violet font-extrabold text-sm sm:text-base font-heading">3 <span>udokumentowanych relacji</span></span>
               </div>
             </div>
 
-            <!-- Adjacent Projects Navigation Card -->
-            <div class="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-4">
-              <div class="text-[10px] font-sans uppercase text-slate-400 tracking-wider">Nawigacja po projektach</div>
-              <div class="flex items-center justify-between gap-3 text-xs font-semibold">
-                <a href="youth-in-action.html" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">chevron_left</span>
-                  <span>Poprzedni</span>
-                </a>
-                <a href="../projects.html" class="text-slate-400 hover:text-white transition-colors">Wszystkie (10)</a>
-                <a href="okulary-mlodziezowe.html" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
-                  <span>Następny</span>
-                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                </a>
-              </div>
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <a href="../contact.html" class="w-full inline-flex items-center justify-center gap-2 bg-[#300064] hover:bg-[#220047] text-white py-3 px-4 rounded-xl font-semibold text-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                <span>Zapytaj o ten projekt</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+
+              <a href="../projects.html" class="w-full inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 px-4 rounded-xl font-semibold text-sm transition-all">
+                <span class="material-symbols-outlined text-[16px]">grid_view</span>
+                <span>Katalog Wszystkich Projektów</span>
+              </a>
             </div>
 
           </div>
 
-        </div>
+          <!-- Institutional Seal -->
+          <div class="bg-gradient-to-br from-slate-900 to-brand-violet text-white rounded-3xl p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-3">
+              <img src="../cropped-Animus-Logo-Horizontal.png" alt="ANIMUS" class="h-8 w-auto brightness-0 invert">
+            </div>
+            <p class="text-xs text-purple-200 leading-relaxed font-sans">
+              Fundacja ANIMUS realizuje projekty edukacji pozaformalnej, młodzieżowe wymiany Erasmus+ oraz narzędzia adaptacji społecznej od 2015 roku.
+            </p>
+            <div class="pt-2 text-[11px] font-sans text-purple-300">
+              KRS 0000535710 • NIP 6272740470
+            </div>
+          </div>
+
+        </aside>
 
       </div>
-    </section>
 
-    
-    <!-- BENTO PHOTO GALLERY SECTION -->
-    <section id="galeria" class="py-16 sm:py-24 bg-slate-900 text-white border-b border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- BOTTOM ADJACENT PROJECTS NAVIGATION -->
+      <section class="border-t border-slate-200 pt-8 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span class="text-xs font-sans uppercase font-bold tracking-widest text-brand-coral flex items-center gap-1.5 mb-2">
-              <span class="material-symbols-outlined text-[16px]">photo_camera</span>
-              <span>Galeria Fotograficzna Projektu</span>
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white">
-              Fotorelacja i Archiwum Działań w Terenie (25 zdjęć)
-            </h2>
-          </div>
-          <button onclick="openGalleryAt(0)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-coral hover:bg-orange-600 text-white font-sans font-bold text-xs shadow-md transition-all shrink-0">
-            <span class="material-symbols-outlined text-[18px]">fullscreen</span>
-            <span>Otwórz pełnoekranową galerię (Lightbox)</span>
-          </button>
-        </div>
-
-        <!-- Bento Grid of Photos -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          
-            <div onclick="openGalleryAt(0)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/green-deal.jpg" alt="Zdjęcie 1 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #1
-              </span>
+          <a href="youth-in-action.html" class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:shadow-md transition-all group flex items-center gap-4">
+            <span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-brand-violet transition-colors">arrow_back</span>
+            <div>
+              <span class="text-[10px] font-sans text-slate-400 uppercase tracking-wider block font-bold">Poprzedni Projekt</span>
+              <span class="text-sm font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-1">Youth in Action &amp; Starters</span>
             </div>
-          
-            <div onclick="openGalleryAt(1)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-24-850x638.jpg" alt="Zdjęcie 2 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #2
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(2)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-27-1024x768.jpg" alt="Zdjęcie 3 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #3
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(3)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-32-1024x768.jpg" alt="Zdjęcie 4 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #4
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(4)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-34-1024x768.jpg" alt="Zdjęcie 5 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #5
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(5)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-38-1024x768.jpg" alt="Zdjęcie 6 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #6
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(6)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-41-1024x768.jpg" alt="Zdjęcie 7 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #7
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(7)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-46-1024x768.jpg" alt="Zdjęcie 8 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #8
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(8)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-50-29-1024x768.jpg" alt="Zdjęcie 9 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #9
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(9)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-58-850x638.jpg" alt="Zdjęcie 10 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #10
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(10)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-57-55-1024x768.jpg" alt="Zdjęcie 11 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #11
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(11)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-57-59-1024x768.jpg" alt="Zdjęcie 12 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #12
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(12)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-04-1024x768.jpg" alt="Zdjęcie 13 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #13
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(13)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-09-1024x768.jpg" alt="Zdjęcie 14 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #14
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(14)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_09-58-13-1024x768.jpg" alt="Zdjęcie 15 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #15
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(15)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-49-1024x768.jpg" alt="Zdjęcie 16 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #16
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(16)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-52-1024x768.jpg" alt="Zdjęcie 17 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #17
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(17)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-54-1024x768.jpg" alt="Zdjęcie 18 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #18
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(18)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-49-850x638.jpg" alt="Zdjęcie 19 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #19
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(19)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-38-1024x768.jpg" alt="Zdjęcie 20 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #20
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(20)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-43-1024x768.jpg" alt="Zdjęcie 21 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #21
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(21)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-46-1024x768.jpg" alt="Zdjęcie 22 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #22
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(22)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-48-1024x768.jpg" alt="Zdjęcie 23 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #23
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(23)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-50-15-1024x768.jpg" alt="Zdjęcie 24 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #24
-              </span>
-            </div>
-          
-            <div onclick="openGalleryAt(24)" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-50-17-1024x768.jpg" alt="Zdjęcie 25 - Youth Say – Green Deal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #25
-              </span>
-            </div>
-          
-        </div>
-
-      </div>
-    </section>
-    
-
-    
-    <!-- PROJECT CHRONICLE & ARTICLES SECTION -->
-    <section id="relacje" class="py-16 sm:py-24 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          </a>
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span class="text-xs font-sans uppercase font-bold tracking-widest text-brand-violet flex items-center gap-1.5 mb-2">
-              <span class="material-symbols-outlined text-[16px]">menu_book</span>
-              <span>Kronika Terenowa</span>
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900">
-              Raporty, Relacje i Działania w Ramach Tego Projektu (3)
-            </h2>
-          </div>
-          <p class="text-xs sm:text-sm font-sans text-slate-500">
-            Wszystkie oficjalne relacje zrealizowane w projekcie
-          </p>
-        </div>
 
-        <!-- Articles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          
-            <article class="bg-white rounded-3xl border border-slate-200/90 shadow-warm-card hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
-              <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html" class="relative aspect-[16/10] overflow-hidden bg-slate-100 block">
-                <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-49-24-850x638.jpg" alt="“Youth Say - Green Deal” Youth Exchange Final" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-                <div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-md text-[11px] font-sans font-medium">
-                  <span class="material-symbols-outlined text-[13px] text-brand-amber">photo_library</span>
-                  <span>8 zdjęć</span>
-                </div>
-                <div class="absolute bottom-3 left-3 bg-brand-violet text-white px-2.5 py-1 rounded-md text-[10px] font-sans font-bold uppercase tracking-wider">
-                  2023-03-16
-                </div>
-              </a>
-              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div class="space-y-2">
-                  <h3 class="font-heading font-extrabold text-lg text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2">
-                    <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html">
-                      “Youth Say - Green Deal” Youth Exchange Final
-                    </a>
-                  </h3>
-                  <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    We are overwhelmed with a mixture of emotions!
-                  </p>
-                </div>
-                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span class="text-[11px] font-sans text-slate-400">Raport terenowy</span>
-                  <a href="../aktualnosci/youth-say-green-deal-youth-exchange-final.html" class="inline-flex items-center gap-1 text-xs font-bold text-brand-coral group-hover:translate-x-0.5 transition-transform">
-                    <span>Czytaj relację</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            
-            <article class="bg-white rounded-3xl border border-slate-200/90 shadow-warm-card hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
-              <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html" class="relative aspect-[16/10] overflow-hidden bg-slate-100 block">
-                <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-21_10-12-58-850x638.jpg" alt="Progress of the Project “Youth Say - Green Deal”" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-                <div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-md text-[11px] font-sans font-medium">
-                  <span class="material-symbols-outlined text-[13px] text-brand-amber">photo_library</span>
-                  <span>9 zdjęć</span>
-                </div>
-                <div class="absolute bottom-3 left-3 bg-brand-violet text-white px-2.5 py-1 rounded-md text-[10px] font-sans font-bold uppercase tracking-wider">
-                  2023-03-12
-                </div>
-              </a>
-              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div class="space-y-2">
-                  <h3 class="font-heading font-extrabold text-lg text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2">
-                    <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html">
-                      Progress of the Project “Youth Say - Green Deal”
-                    </a>
-                  </h3>
-                  <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    Being in the middle of our project, we at Fundacja Animus Centrum Edukacyjno-Szkoleniowe are delighted with the progress we have made so far.
-                  </p>
-                </div>
-                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span class="text-[11px] font-sans text-slate-400">Raport terenowy</span>
-                  <a href="../aktualnosci/progress-of-the-project-youth-say-green-deal.html" class="inline-flex items-center gap-1 text-xs font-bold text-brand-coral group-hover:translate-x-0.5 transition-transform">
-                    <span>Czytaj relację</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            
-            <article class="bg-white rounded-3xl border border-slate-200/90 shadow-warm-card hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
-              <a href="../aktualnosci/green-deal-or-how-to-save-environment.html" class="relative aspect-[16/10] overflow-hidden bg-slate-100 block">
-                <img src="https://animusedu.com/wp-content/uploads/2023/03/photo_2023-03-09_15-49-49-850x638.jpg" alt="Green Deal or How to Save Environment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-                <div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-md text-[11px] font-sans font-medium">
-                  <span class="material-symbols-outlined text-[13px] text-brand-amber">photo_library</span>
-                  <span>7 zdjęć</span>
-                </div>
-                <div class="absolute bottom-3 left-3 bg-brand-violet text-white px-2.5 py-1 rounded-md text-[10px] font-sans font-bold uppercase tracking-wider">
-                  2023-03-09
-                </div>
-              </a>
-              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div class="space-y-2">
-                  <h3 class="font-heading font-extrabold text-lg text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2">
-                    <a href="../aktualnosci/green-deal-or-how-to-save-environment.html">
-                      Green Deal or How to Save Environment
-                    </a>
-                  </h3>
-                  <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    The Animus Foundation is the hosting organization for the “Youth Say – Green Deal” youth exchange project, which is taking place in Budy Głogowskie, near Rzeszów. This project brings together young people from six different countries, including Georgia, Poland, Italy, Ukraine, the Czech Republic, and Lithuania.
-                  </p>
-                </div>
-                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span class="text-[11px] font-sans text-slate-400">Raport terenowy</span>
-                  <a href="../aktualnosci/green-deal-or-how-to-save-environment.html" class="inline-flex items-center gap-1 text-xs font-bold text-brand-coral group-hover:translate-x-0.5 transition-transform">
-                    <span>Czytaj relację</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            
-        </div>
+        
+          <a href="okulary-mlodziezowe.html" class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:shadow-md transition-all group flex items-center justify-between gap-4 text-right">
+            <div>
+              <span class="text-[10px] font-sans text-slate-400 uppercase tracking-wider block font-bold">Kolejny Projekt</span>
+              <span class="text-sm font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-1">Okulary Młodzieżowe</span>
+            </div>
+            <span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-brand-violet transition-colors">arrow_forward</span>
+          </a>
+        
+      </section>
 
-      </div>
-    </section>
-    
-
+    </div>
   </main>
 
   
-  <!-- FULLSCREEN INTERACTIVE PHOTO LIGHTBOX -->
-  <div id="photo-lightbox" class="fixed inset-0 z-[10000] bg-slate-950/95 backdrop-blur-md hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
+  <!-- PREMIUM CINEMA DARKROOM LIGHTBOX -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-[999999] bg-[#0b0f19]/98 backdrop-blur-2xl hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
     
     <!-- Top Lightbox Bar -->
     <div class="flex items-center justify-between text-white text-xs font-sans z-20">
       <div class="flex items-center gap-3">
-        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold">
+        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold text-white">
           1 / 1
         </span>
         <span id="lightbox-filename" class="text-slate-400 hidden sm:inline truncate max-w-sm">
-          Fotografia
+          Fotografia archiwalna ANIMUS
         </span>
       </div>
 
@@ -917,7 +904,7 @@
   
 
   
-  <!-- HARMONIZED 4-COLUMN FOOTER -->
+  <!-- HARMONIZED 3-COLUMN FOOTER -->
   <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
       
@@ -940,7 +927,7 @@
             <li><a href="../activities.html" class="hover:text-white transition-colors">Nasze działania</a></li>
             <li><a href="../projects.html" class="hover:text-white transition-colors">Projekty</a></li>
             <li><a href="../partners.html" class="hover:text-white transition-colors">Partnerzy</a></li>
-            <li><a href="../blog.html" class="hover:text-white transition-colors">Aktualności (117)</a></li>
+            <li><a href="../blog.html" class="hover:text-white transition-colors">Aktualności</a></li>
           </ul>
         </div>
 
@@ -974,11 +961,11 @@
     let currentLightboxIdx = 0;
     let isZoomed = false;
 
-    function openGalleryAt(idx) {
+    function openLightbox(idx) {
       if (!currentGallery || currentGallery.length === 0) return;
       currentLightboxIdx = idx;
       isZoomed = false;
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb) return;
       lb.classList.remove('hidden');
       updateLightboxDisplay();
@@ -986,7 +973,7 @@
     }
 
     function closeLightbox() {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (lb) lb.classList.add('hidden');
       document.body.style.overflow = '';
     }
@@ -1034,7 +1021,7 @@
 
       if (thumbsContainer) {
         thumbsContainer.innerHTML = currentGallery.map((t, i) => `
-          <button onclick="openGalleryAt(${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all ${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
+          <button onclick="openLightbox(${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all ${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
             <img src="${t}" alt="thumb" class="w-full h-full object-cover">
           </button>
         `).join('');
@@ -1042,7 +1029,7 @@
     }
 
     window.addEventListener('keydown', (e) => {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb || lb.classList.contains('hidden')) return;
 
       if (e.key === 'ArrowRight') nextLightboxImage();
@@ -1053,32 +1040,6 @@
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       if (menu) menu.classList.toggle('hidden');
-    }
-
-    function copyCurrentProjectLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do projektu do schowka!');
-      });
-    }
-
-    function copyCurrentLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do relacji do schowka!');
-      });
-    }
-
-    function shareArticle(network) {
-      const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(document.title);
-      let shareUrl = '';
-      if (network === 'facebook') {
-        shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
-      } else if (network === 'twitter') {
-        shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
-      }
-      if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=450');
-      }
     }
 
     function setLanguage(lang) {

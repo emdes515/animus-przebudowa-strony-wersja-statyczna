@@ -64,10 +64,7 @@ function generateHeader(relRoot, activeNav) {
         <a href="${relRoot}index.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'home' ? 'text-slate-900 font-bold' : ''}">Strona główna</a>
         <a href="${relRoot}about.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'about' ? 'text-slate-900 font-bold' : ''}">O nas</a>
         <a href="${relRoot}activities.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'activities' ? 'text-slate-900 font-bold' : ''}">Nasze działania</a>
-        <a href="${relRoot}projects.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group ${activeNav === 'projects' ? 'text-slate-900 font-bold' : ''}">
-          <span>Projekty</span>
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
-        </a>
+        <a href="${relRoot}projects.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'projects' ? 'text-slate-900 font-bold' : ''}">Projekty</a>
         <a href="${relRoot}partners.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'partners' ? 'text-slate-900 font-bold' : ''}">Partnerzy</a>
         <a href="${relRoot}blog.html" class="hover:text-slate-900 transition-colors py-1 ${activeNav === 'blog' ? 'text-slate-900 font-bold' : ''}">Aktualności</a>
       </nav>
@@ -109,7 +106,7 @@ function generateHeader(relRoot, activeNav) {
         <a href="${relRoot}index.html" class="py-1 hover:text-brand-violet">Strona główna</a>
         <a href="${relRoot}about.html" class="py-1 hover:text-brand-violet">O nas</a>
         <a href="${relRoot}activities.html" class="py-1 hover:text-brand-violet">Nasze działania</a>
-        <a href="${relRoot}projects.html" class="py-1 font-bold text-brand-violet">Projekty</a>
+        <a href="${relRoot}projects.html" class="py-1 hover:text-brand-violet">Projekty</a>
         <a href="${relRoot}partners.html" class="py-1 hover:text-brand-violet">Partnerzy</a>
         <a href="${relRoot}blog.html" class="py-1 hover:text-brand-violet">Aktualności</a>
         <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
@@ -130,10 +127,10 @@ function generateHeader(relRoot, activeNav) {
   `;
 }
 
-// Shared Harmonized 4-Column Footer generator (Zero Latin quote, clean font)
+// Shared Harmonized 3-Column Footer generator (Zero Latin quote, clean font)
 function generateFooter(relRoot) {
   return `
-  <!-- HARMONIZED 4-COLUMN FOOTER -->
+  <!-- HARMONIZED 3-COLUMN FOOTER -->
   <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
       
@@ -156,7 +153,7 @@ function generateFooter(relRoot) {
             <li><a href="${relRoot}activities.html" class="hover:text-white transition-colors">Nasze działania</a></li>
             <li><a href="${relRoot}projects.html" class="hover:text-white transition-colors">Projekty</a></li>
             <li><a href="${relRoot}partners.html" class="hover:text-white transition-colors">Partnerzy</a></li>
-            <li><a href="${relRoot}blog.html" class="hover:text-white transition-colors">Aktualności (117)</a></li>
+            <li><a href="${relRoot}blog.html" class="hover:text-white transition-colors">Aktualności</a></li>
           </ul>
         </div>
 
@@ -185,20 +182,20 @@ function generateFooter(relRoot) {
   `;
 }
 
-// Lightbox HTML & Scripts
+// Premium Cinema Darkroom Lightbox (1-to-1 with single.php)
 function generateLightboxHtml() {
   return `
-  <!-- FULLSCREEN INTERACTIVE PHOTO LIGHTBOX -->
-  <div id="photo-lightbox" class="fixed inset-0 z-[10000] bg-slate-950/95 backdrop-blur-md hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
+  <!-- PREMIUM CINEMA DARKROOM LIGHTBOX -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-[999999] bg-[#0b0f19]/98 backdrop-blur-2xl hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
     
     <!-- Top Lightbox Bar -->
     <div class="flex items-center justify-between text-white text-xs font-sans z-20">
       <div class="flex items-center gap-3">
-        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold">
+        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold text-white">
           1 / 1
         </span>
         <span id="lightbox-filename" class="text-slate-400 hidden sm:inline truncate max-w-sm">
-          Fotografia
+          Fotografia archiwalna ANIMUS
         </span>
       </div>
 
@@ -246,11 +243,11 @@ function generateLightboxScript(galleryArrayJson) {
     let currentLightboxIdx = 0;
     let isZoomed = false;
 
-    function openGalleryAt(idx) {
+    function openLightbox(idx) {
       if (!currentGallery || currentGallery.length === 0) return;
       currentLightboxIdx = idx;
       isZoomed = false;
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb) return;
       lb.classList.remove('hidden');
       updateLightboxDisplay();
@@ -258,7 +255,7 @@ function generateLightboxScript(galleryArrayJson) {
     }
 
     function closeLightbox() {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (lb) lb.classList.add('hidden');
       document.body.style.overflow = '';
     }
@@ -306,7 +303,7 @@ function generateLightboxScript(galleryArrayJson) {
 
       if (thumbsContainer) {
         thumbsContainer.innerHTML = currentGallery.map((t, i) => \`
-          <button onclick="openGalleryAt(\${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all \${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
+          <button onclick="openLightbox(\${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all \${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
             <img src="\${t}" alt="thumb" class="w-full h-full object-cover">
           </button>
         \`).join('');
@@ -314,7 +311,7 @@ function generateLightboxScript(galleryArrayJson) {
     }
 
     window.addEventListener('keydown', (e) => {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb || lb.classList.contains('hidden')) return;
 
       if (e.key === 'ArrowRight') nextLightboxImage();
@@ -325,32 +322,6 @@ function generateLightboxScript(galleryArrayJson) {
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       if (menu) menu.classList.toggle('hidden');
-    }
-
-    function copyCurrentProjectLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do projektu do schowka!');
-      });
-    }
-
-    function copyCurrentLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do relacji do schowka!');
-      });
-    }
-
-    function shareArticle(network) {
-      const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(document.title);
-      let shareUrl = '';
-      if (network === 'facebook') {
-        shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
-      } else if (network === 'twitter') {
-        shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
-      }
-      if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=450');
-      }
     }
 
     function setLanguage(lang) {
@@ -371,13 +342,12 @@ function generateLightboxScript(galleryArrayJson) {
   `;
 }
 
-// Generate Static Project Page
+// -------------------------------------------------------------
+// GENERATE STATIC PROJECT PAGE (1-to-1 matching single-project.php)
+// -------------------------------------------------------------
 function generateProjectPageHtml(projectId, isNested) {
   const p = projects[projectId];
   const relRoot = isNested ? '../../' : '../';
-  const relProjekty = isNested ? '../' : '';
-  const relAktualnosci = isNested ? '../../aktualnosci/' : '../aktualnosci/';
-  const ext = isNested ? '/' : '.html';
 
   const pIndex = projectIds.indexOf(projectId);
   const prevId = projectIds[(pIndex - 1 + projectIds.length) % projectIds.length];
@@ -385,138 +355,19 @@ function generateProjectPageHtml(projectId, isNested) {
 
   const prevLink = isNested ? `../${prevId}/` : `${prevId}.html`;
   const nextLink = isNested ? `../${nextId}/` : `${nextId}.html`;
+  const prevProj = projects[prevId];
+  const nextProj = projects[nextId];
 
   const projectPhotos = projectPhotosMap[projectId] || [];
   const projectArticles = p.articles || [];
-
-  // Split description paragraphs
   const descParagraphs = (p.desc_pl || '').split('\n').filter(Boolean);
-
-  // Build Bento Grid HTML for project photos
-  let bentoGalleryHtml = '';
-  if (projectPhotos.length > 0) {
-    bentoGalleryHtml = `
-    <!-- BENTO PHOTO GALLERY SECTION -->
-    <section id="galeria" class="py-16 sm:py-24 bg-slate-900 text-white border-b border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span class="text-xs font-sans uppercase font-bold tracking-widest text-brand-coral flex items-center gap-1.5 mb-2">
-              <span class="material-symbols-outlined text-[16px]">photo_camera</span>
-              <span>Galeria Fotograficzna Projektu</span>
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white">
-              Fotorelacja i Archiwum Działań w Terenie (${projectPhotos.length} zdjęć)
-            </h2>
-          </div>
-          <button onclick="openGalleryAt(0)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-coral hover:bg-orange-600 text-white font-sans font-bold text-xs shadow-md transition-all shrink-0">
-            <span class="material-symbols-outlined text-[18px]">fullscreen</span>
-            <span>Otwórz pełnoekranową galerię (Lightbox)</span>
-          </button>
-        </div>
-
-        <!-- Bento Grid of Photos -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          ${projectPhotos.map((img, idx) => `
-            <div onclick="openGalleryAt(${idx})" class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/80 aspect-[4/3] group cursor-pointer shadow-md hover:shadow-2xl hover:border-brand-coral transition-all duration-300 hover:scale-[1.02]">
-              <img src="${img}" alt="Zdjęcie ${idx + 1} - ${escapeHtml(p.name)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-brand-violet/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/95 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                  <span class="material-symbols-outlined text-[20px]">zoom_in</span>
-                </span>
-              </div>
-              <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[10px] font-sans text-white/90">
-                #${idx + 1}
-              </span>
-            </div>
-          `).join('')}
-        </div>
-
-      </div>
-    </section>
-    `;
-  }
-
-  // Build Chronicle Grid HTML for project articles
-  let chronicleHtml = '';
-  if (projectArticles.length > 0) {
-    chronicleHtml = `
-    <!-- PROJECT CHRONICLE & ARTICLES SECTION -->
-    <section id="relacje" class="py-16 sm:py-24 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span class="text-xs font-sans uppercase font-bold tracking-widest text-brand-violet flex items-center gap-1.5 mb-2">
-              <span class="material-symbols-outlined text-[16px]">menu_book</span>
-              <span>Kronika Terenowa</span>
-            </span>
-            <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900">
-              Raporty, Relacje i Działania w Ramach Tego Projektu (${projectArticles.length})
-            </h2>
-          </div>
-          <p class="text-xs sm:text-sm font-sans text-slate-500">
-            Wszystkie oficjalne relacje zrealizowane w projekcie
-          </p>
-        </div>
-
-        <!-- Articles Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          ${projectArticles.map((a, aIdx) => {
-            const artUrl = isNested ? `../../aktualnosci/${a.slug}/` : `../aktualnosci/${a.slug}.html`;
-            const artImg = a.hero_img || (a.images && a.images[0]) || `${relRoot}cropped-Animus-Logo-Horizontal.png`;
-            const photosCount = (a.images || []).length;
-            return `
-            <article class="bg-white rounded-3xl border border-slate-200/90 shadow-warm-card hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
-              <a href="${artUrl}" class="relative aspect-[16/10] overflow-hidden bg-slate-100 block">
-                <img src="${artImg}" alt="${escapeHtml(a.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
-                <div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-xs text-white px-2.5 py-1 rounded-md text-[11px] font-sans font-medium">
-                  <span class="material-symbols-outlined text-[13px] text-brand-amber">photo_library</span>
-                  <span>${photosCount} zdjęć</span>
-                </div>
-                <div class="absolute bottom-3 left-3 bg-brand-violet text-white px-2.5 py-1 rounded-md text-[10px] font-sans font-bold uppercase tracking-wider">
-                  ${escapeHtml(a.date)}
-                </div>
-              </a>
-              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div class="space-y-2">
-                  <h3 class="font-heading font-extrabold text-lg text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2">
-                    <a href="${artUrl}">
-                      ${escapeHtml(a.title)}
-                    </a>
-                  </h3>
-                  <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    ${escapeHtml(a.summary || '')}
-                  </p>
-                </div>
-                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span class="text-[11px] font-sans text-slate-400">Raport terenowy</span>
-                  <a href="${artUrl}" class="inline-flex items-center gap-1 text-xs font-bold text-brand-coral group-hover:translate-x-0.5 transition-transform">
-                    <span>Czytaj relację</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            `;
-          }).join('')}
-        </div>
-
-      </div>
-    </section>
-    `;
-  }
-
-  // Partners pills
-  const partnersList = (p.partners || '').split('•').map(s => s.trim()).filter(Boolean);
 
   return `<!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(p.name)} | Karta Projektu | Fundacja ANIMUS</title>
+  <title>${escapeHtml(p.name)} | Fundacja ANIMUS</title>
   <meta name="description" content="${escapeHtml(p.desc_pl ? p.desc_pl.substring(0, 160) : '')}">
 
   <!-- Favicon -->
@@ -561,14 +412,12 @@ function generateProjectPageHtml(projectId, isNested) {
             'border-subtle': '#E2E8F0'
           },
           fontFamily: {
-            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['"Inter"', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
-            mono: ['"Plus Jakarta Sans"', 'ui-monospace', 'monospace']
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
           },
           boxShadow: {
-            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
-            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+            'elevation-hover': '0 12px 30px -8px rgba(48, 0, 100, 0.12), 0 4px 10px -3px rgba(0, 0, 0, 0.04)'
           }
         }
       }
@@ -576,14 +425,14 @@ function generateProjectPageHtml(projectId, isNested) {
   </script>
 
   <style>
+    html, body {
+      overflow-x: clip;
+      max-width: 100vw;
+    }
     .notebook-grid {
       background-color: #FAF9F6;
       background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
       background-size: 28px 28px;
-    }
-    html, body {
-      overflow-x: clip;
-      max-width: 100vw;
     }
     .custom-scrollbar::-webkit-scrollbar {
       height: 6px;
@@ -598,257 +447,350 @@ function generateProjectPageHtml(projectId, isNested) {
 
   ${generateHeader(relRoot, 'projects')}
 
-  <!-- MAIN PROJECT DOSSIER HERO -->
-  <main class="flex-grow">
-    
-    <!-- Hero Header Section -->
-    <section class="relative bg-brand-ink text-white pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
-      <!-- Ambient Backdrop Glow -->
-      <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,#4a0e8f,transparent_60%)]"></div>
-      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-coral/10 blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <!-- Breadcrumbs & Meta Badges -->
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
-            <a href="${relRoot}index.html" class="hover:text-white transition-colors">Główna</a>
-            <span>/</span>
-            <a href="${relRoot}projects.html" class="hover:text-white transition-colors">Projekty</a>
-            <span>/</span>
-            <span class="text-white font-semibold">${escapeHtml(p.name)}</span>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <span class="px-3 py-1 rounded-lg bg-white/10 backdrop-blur-xs font-sans text-xs font-bold text-white border border-white/15">
-              ${escapeHtml(p.period || '2020–2026')}
-            </span>
-            <span class="px-3 py-1 rounded-lg bg-brand-coral text-white font-sans text-xs font-bold shadow-md">
-              ${escapeHtml(p.badge_pl || 'Erasmus+')}
-            </span>
-          </div>
+  <!-- MAIN ARTICLE CONTAINER (1-to-1 matching single-project.php) -->
+  <main class="flex-grow pt-24 sm:pt-28 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      
+      <!-- TOP BREADCRUMBS & NAVIGATION -->
+      <nav class="py-4 flex flex-wrap items-center justify-between gap-3 text-xs font-sans text-slate-500 border-b border-slate-200 mb-8 min-w-0" aria-label="Breadcrumb">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <a href="${relRoot}index.html" class="hover:text-brand-violet transition-colors shrink-0">ANIMUS</a>
+          <span>/</span>
+          <a href="${relRoot}projects.html" class="hover:text-brand-violet transition-colors shrink-0">Projekty</a>
+          <span>/</span>
+          <span class="text-slate-900 font-bold truncate max-w-xs sm:max-w-md min-w-0">${escapeHtml(p.name)}</span>
         </div>
 
-        <!-- Project Title Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <a href="${relRoot}projects.html" class="inline-flex items-center gap-1.5 text-slate-700 hover:text-brand-violet font-bold transition-colors shrink-0">
+          <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+          <span>Wszystkie Projekty</span>
+        </a>
+      </nav>
+
+      <!-- PROJECT HERO CARD -->
+      <section class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 mb-12 min-w-0">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 min-w-0">
           
-          <div class="lg:col-span-7 space-y-6">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              ${escapeHtml(p.name)}
-            </h1>
+          <!-- Hero Imagery -->
+          <div class="lg:col-span-5 relative min-h-[300px] sm:min-h-[360px] bg-slate-100 overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200 min-w-0">
+            <img src="${p.hero_img || `${relRoot}cropped-Animus-Logo-Horizontal.png`}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
             
-            <p class="text-base sm:text-lg text-slate-300 font-sans leading-relaxed">
-              ${escapeHtml(p.desc_pl || '')}
-            </p>
-
-            <!-- Quick Specs Row -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10 font-sans text-xs">
-              <div class="flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-brand-coral text-[20px] shrink-0 mt-0.5">location_on</span>
-                <div>
-                  <div class="text-slate-400 uppercase tracking-wider text-[10px]">Zasięg / Lokalizacja</div>
-                  <div class="text-white font-semibold mt-0.5">${escapeHtml(p.location || 'Polska • Europa')}</div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <span class="material-symbols-outlined text-brand-cyan text-[20px] shrink-0 mt-0.5">group_work</span>
-                <div>
-                  <div class="text-slate-400 uppercase tracking-wider text-[10px]">Konsorcjum i Partnerzy</div>
-                  <div class="text-white font-semibold mt-0.5">${escapeHtml(p.partners || 'Fundacja ANIMUS i Partnerzy Międzynarodowi')}</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              ${projectPhotos.length > 0 ? `
-              <a href="#galeria" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-coral hover:bg-orange-600 text-white font-sans font-bold text-xs shadow-md transition-all">
-                <span class="material-symbols-outlined text-[16px]">photo_library</span>
-                <span>Zobacz galerię (${projectPhotos.length} zdjęć)</span>
-              </a>
-              ` : ''}
-              ${projectArticles.length > 0 ? `
-              <a href="#relacje" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-violet hover:bg-primary-container text-white font-sans font-bold text-xs shadow-md transition-all">
-                <span class="material-symbols-outlined text-[16px]">menu_book</span>
-                <span>Kronika relacji (${projectArticles.length})</span>
-              </a>
-              ` : ''}
-              <button onclick="copyCurrentProjectLink()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-sans text-xs font-semibold border border-white/15 transition-all">
-                <span class="material-symbols-outlined text-[16px]">share</span>
-                <span>Udostępnij</span>
-              </button>
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 flex-wrap">
+              <span style="background-color: ${escapeHtml(p.color || '#300064')};" class="text-white font-sans text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-lg font-bold shadow-md">
+                <span>${escapeHtml(p.badge_pl || 'Erasmus+')}</span>
+              </span>
+              <span class="bg-slate-950/85 backdrop-blur-sm text-white font-sans text-xs px-3 py-1.5 rounded-lg font-semibold shadow-md">
+                ${escapeHtml(p.period || '2024–2025')}
+              </span>
             </div>
           </div>
 
-          <!-- Hero Image Column -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-900 aspect-[4/3] group">
-              <img src="${p.hero_img || `${relRoot}cropped-Animus-Logo-Horizontal.png`}" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+          <!-- Hero Core Dossier Header -->
+          <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6 min-w-0">
+            <div class="space-y-4">
               
-              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-sans text-white/90 pointer-events-none">
-                <span class="flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-md">
-                  <span class="material-symbols-outlined text-[14px] text-brand-coral">verified</span>
-                  <span>Zweryfikowana inicjatywa ANIMUS</span>
-                </span>
-                <span class="bg-brand-violet/90 backdrop-blur-xs px-2.5 py-1 rounded-md font-bold">
-                  ${projectArticles.length} relacji • ${projectPhotos.length} zdjęć
-                </span>
+              <!-- Meta Row -->
+              <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-sans text-slate-500 font-medium">
+                <div class="flex items-center gap-1.5 text-slate-800 font-bold">
+                  <span class="material-symbols-outlined text-[18px] text-brand-coral">location_on</span>
+                  <span>${escapeHtml(p.location || 'Polska • Europa')}</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-600">
+                  <span class="material-symbols-outlined text-[18px] text-brand-violet">handshake</span>
+                  <span>${escapeHtml(p.partners || 'Fundacja ANIMUS i Partnerzy')}</span>
+                </div>
+              </div>
+
+              <!-- Main H1 Title -->
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-slate-900 leading-tight tracking-tight">
+                ${escapeHtml(p.name)}
+              </h1>
+
+              ${p.name_en && p.name_en !== p.name ? `
+                <p class="text-sm font-sans text-brand-violet font-semibold">
+                  English Title: ${escapeHtml(p.name_en)}
+                </p>
+              ` : ''}
+
+              <!-- Subtitle Excerpt -->
+              <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-sans pt-2">
+                ${escapeHtml(p.desc_pl || '')}
+              </p>
+
+            </div>
+
+            <!-- Key Metrics Bar -->
+            <div class="pt-6 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Kronika Działań</div>
+                <div class="text-lg font-extrabold font-heading text-slate-900 mt-0.5">${projectArticles.length} <span>relacji</span></div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Okres Realizacji</div>
+                <div class="text-lg font-extrabold font-heading text-slate-900 mt-0.5">${escapeHtml(p.period || '2024–2025')}</div>
+              </div>
+              <div class="col-span-2 sm:col-span-1 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-slate-500 text-xs font-medium">Zasięg</div>
+                <div class="text-lg font-extrabold font-heading text-brand-violet mt-0.5 truncate">${escapeHtml(p.location || 'Polska • Europa')}</div>
               </div>
             </div>
+
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- CONTENT & PASSPORT SECTION -->
-    <section class="py-16 sm:py-20 notebook-grid border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- TWO-COLUMN EDITORIAL & PASSPORT SECTION -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 w-full min-w-0">
         
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Main Content Column (8 cols) -->
+        <div class="lg:col-span-8 space-y-10 min-w-0 w-full">
           
-          <!-- Left Column: Detailed Description & Strategic Blueprint -->
-          <div class="lg:col-span-8 space-y-10">
-            
-            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-warm-card space-y-6">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center font-bold">
-                  <span class="material-symbols-outlined text-[22px]">description</span>
-                </div>
-                <div>
-                  <span class="text-[11px] font-sans font-bold uppercase tracking-wider text-brand-coral">Paszport Merytoryczny</span>
-                  <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900">Opis i Założenia Strategiczne</h2>
-                </div>
+          <!-- Opis merytoryczny projektu -->
+          <article class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-2xl text-brand-violet">description</span>
+                <h2 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                  Merytoryczne Założenia i Cele Inicjatywy
+                </h2>
               </div>
+              <span class="text-xs font-sans bg-purple-50 text-brand-violet px-3 py-1 rounded-full font-bold border border-purple-200">
+                Dossier Merytoryczne
+              </span>
+            </div>
 
-              <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-sans space-y-4 text-base sm:text-lg">
-                ${descParagraphs.map(pText => `<p>${escapeHtml(pText)}</p>`).join('')}
-              </div>
+            <!-- Content Body -->
+            <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed font-sans text-base sm:text-lg space-y-4">
+              ${descParagraphs.map(para => `<p>${escapeHtml(para)}</p>`).join('')}
+            </div>
 
-              ${p.desc_en ? `
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 mt-6">
-                <div class="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                  <span class="material-symbols-outlined text-[16px] text-brand-violet">translate</span>
-                  <span>Abstract (English)</span>
+            <!-- English Abstract Box if available -->
+            ${p.desc_en ? `
+              <div class="mt-8 pt-6 border-t border-slate-200 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                <div class="flex items-center gap-2 text-brand-violet font-sans text-xs font-bold uppercase tracking-wider mb-2">
+                  <span class="material-symbols-outlined text-[18px]">language</span>
+                  <span>International Project Abstract (English)</span>
                 </div>
-                <p class="text-sm text-slate-600 italic leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed font-sans">
                   ${escapeHtml(p.desc_en)}
                 </p>
               </div>
-              ` : ''}
+            ` : ''}
 
-              <!-- Methodology / Impact Highlights -->
-              <div class="pt-6 border-t border-slate-100">
-                <h3 class="text-sm font-sans uppercase tracking-wider font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <span class="material-symbols-outlined text-brand-coral text-[18px]">verified</span>
-                  <span>Kluczowe rezultaty i metodyka pracy</span>
+          </article>
+
+          <!-- VISUAL DOCUMENTATION GALLERY CARD (BENTO GRID + LIGHTBOX) -->
+          ${projectPhotos.length > 0 ? `
+          <section id="galeria" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-5">
+              <div>
+                <div class="flex items-center gap-2 text-brand-violet font-sans text-xs font-bold uppercase tracking-wider mb-1">
+                  <span class="material-symbols-outlined text-base">photo_library</span>
+                  <span>Dokumentacja Wizualna Projektu</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  Fotoreportaż &amp; Archiwum Działań w Terenie
+                </h2>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-sans text-slate-500">
+                  ${projectPhotos.length} oryginalnych fotografii
+                </span>
+                <button onclick="openLightbox(0)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-coral hover:bg-orange-600 text-white text-xs font-bold transition-all shadow-xs">
+                  <span class="material-symbols-outlined text-sm">fullscreen</span>
+                  <span>Lightbox</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Bento Grid Gallery Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              ${projectPhotos.map((imgUrl, idx) => {
+                const isFirst = (idx === 0);
+                const cellClass = isFirst ? 'sm:col-span-2 sm:row-span-2 min-h-[300px] sm:min-h-[420px]' : 'min-h-[200px] sm:min-h-[200px]';
+                return `
+                <div class="${cellClass} relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(${idx})">
+                  <img src="${imgUrl}" alt="Fotografia ${idx + 1} - ${escapeHtml(p.name)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
+                    </span>
+                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #${String(idx + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+          ` : ''}
+
+          <!-- CHRONICLE OF FIELD REPORTS (RELACJE TERENOWE) -->
+          <section id="kronika" class="space-y-6">
+            <div class="flex items-center justify-between flex-wrap gap-3">
+              <div>
+                <span class="text-xs font-sans text-brand-coral uppercase tracking-wider font-bold">Relacje Terenowe</span>
+                <h3 class="text-2xl font-extrabold font-heading text-slate-900">
+                  Kronika Działań Projektu (${projectArticles.length})
                 </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-violet text-[22px] mb-2">sports_esports</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Edukacja Pozaformalna</h4>
-                    <p class="text-xs text-slate-600 mt-1">Aktywne warsztaty, gry adaptacyjne i uczenie przez doświadczenie (experiential learning).</p>
-                  </div>
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-coral text-[22px] mb-2">diversity_3</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Włączenie Młodzieży</h4>
-                    <p class="text-xs text-slate-600 mt-1">Równe szanse, certyfikacja Youthpass i budowanie kompetencji obywatelskich.</p>
-                  </div>
-                  <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-                    <span class="material-symbols-outlined text-brand-cyan text-[22px] mb-2">public</span>
-                    <h4 class="font-heading font-bold text-sm text-slate-900">Wymiar Europejski</h4>
-                    <p class="text-xs text-slate-600 mt-1">Konsorcja międzynarodowe, transfer dobrych praktyk i mobilność Erasmus+.</p>
-                  </div>
-                </div>
               </div>
+              <span class="text-xs font-sans text-slate-500">
+                Pełna dokumentacja warsztatów i wymian
+              </span>
             </div>
 
-          </div>
-
-          <!-- Right Column: Consortium Passport Card & Fast Actions -->
-          <div class="lg:col-span-4 space-y-6">
-            
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-warm-card space-y-6">
-              <h3 class="font-heading font-extrabold text-xl text-slate-900 flex items-center gap-2">
-                <span class="material-symbols-outlined text-brand-violet text-[22px]">badge</span>
-                <span>Paszport Konsorcjum</span>
-              </h3>
-
-              <div class="space-y-4 text-xs font-sans">
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Lider / Koordynator</div>
-                  <div class="font-bold text-slate-900 text-sm mt-0.5">Fundacja ANIMUS Centrum Edukacyjno-Szkoleniowe</div>
-                  <div class="text-slate-500 font-sans text-[11px] mt-0.5">Orzesze, Polska • OID: E10189332</div>
-                </div>
-
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Partnerzy Wdrożeniowi</div>
-                  <div class="font-medium text-slate-700 mt-1 space-y-1">
-                    ${partnersList.map(part => `
-                      <div class="flex items-center gap-1.5 text-xs text-slate-800">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-coral"></span>
-                        <span>${escapeHtml(part)}</span>
+            ${projectArticles.length > 0 ? `
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                ${projectArticles.map(art => {
+                  const artUrl = isNested ? `../../aktualnosci/${art.slug}/` : `../aktualnosci/${art.slug}.html`;
+                  const artHero = art.hero_img || (art.images && art.images[0]) || `${relRoot}cropped-Animus-Logo-Horizontal.png`;
+                  const artPhotosCount = (art.images || []).length;
+                  return `
+                  <article class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                      <a href="${artUrl}" class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                        <img src="${artHero}" alt="${escapeHtml(art.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+                        <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                          ${escapeHtml(p.badge_pl || 'Relacja')}
+                        </span>
+                        ${artPhotosCount > 1 ? `
+                          <span class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur-xs text-white font-sans text-[10px] px-2 py-0.5 rounded font-bold flex items-center gap-1 shadow-sm">
+                            <span class="material-symbols-outlined text-[12px]">photo_camera</span>
+                            <span>${artPhotosCount}</span>
+                          </span>
+                        ` : ''}
+                      </a>
+                      
+                      <div class="p-5 sm:p-6 space-y-2.5">
+                        <div class="text-[11px] font-sans font-semibold text-slate-500 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                          <span>${escapeHtml(art.date)}</span>
+                        </div>
+                        <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug font-heading">
+                          <a href="${artUrl}">
+                            ${escapeHtml(art.title)}
+                          </a>
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                          ${escapeHtml(art.summary || '')}
+                        </p>
                       </div>
-                    `).join('')}
-                  </div>
-                </div>
+                    </div>
 
-                <div class="pb-3 border-b border-slate-100">
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Status Inicjatywy</div>
-                  <div class="flex items-center gap-2 mt-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="font-semibold text-slate-900">Zrealizowany i udokumentowany</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="text-[10px] font-sans text-slate-400 uppercase tracking-wider">Certyfikacja i Uznawalność</div>
-                  <div class="font-medium text-slate-700 mt-1 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-brand-coral text-[16px]">military_tech</span>
-                    <span>Certyfikat Youthpass / Zaświadczenie MEN</span>
-                  </div>
-                </div>
+                    <div class="p-5 sm:p-6 pt-0">
+                      <a href="${artUrl}" class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-violet group-hover:text-brand-coral transition-colors font-sans">
+                        <span>Czytaj relację</span>
+                        <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </a>
+                    </div>
+                  </article>
+                  `;
+                }).join('')}
               </div>
-
-              <!-- Quick Contact CTA -->
-              <div class="pt-4 border-t border-slate-100">
-                <a href="${relRoot}contact.html" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white text-slate-800 font-heading font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-xs">
-                  <span class="material-symbols-outlined text-[16px]">mail</span>
-                  <span>Zgłoś partnerstwo lub zapytaj o projekt</span>
-                </a>
+            ` : `
+              <div class="bg-white rounded-2xl border border-slate-200 p-8 text-center space-y-3">
+                <span class="material-symbols-outlined text-4xl text-slate-400">folder_open</span>
+                <p class="text-sm text-slate-600 font-sans">
+                  Kronika tego projektu jest w trakcie redakcji. Wkrótce pojawią się nowe wpisy i reportaże.
+                </p>
               </div>
-            </div>
-
-            <!-- Adjacent Projects Navigation Card -->
-            <div class="bg-slate-900 text-white rounded-3xl p-6 border border-slate-800 space-y-4">
-              <div class="text-[10px] font-sans uppercase text-slate-400 tracking-wider">Nawigacja po projektach</div>
-              <div class="flex items-center justify-between gap-3 text-xs font-semibold">
-                <a href="${prevLink}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">chevron_left</span>
-                  <span>Poprzedni</span>
-                </a>
-                <a href="${relRoot}projects.html" class="text-slate-400 hover:text-white transition-colors">Wszystkie (10)</a>
-                <a href="${nextLink}" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors flex items-center gap-1">
-                  <span>Następny</span>
-                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                </a>
-              </div>
-            </div>
-
-          </div>
+            `}
+          </section>
 
         </div>
 
+        <!-- Right Sidebar Passport Column (4 cols) -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28 min-w-0 w-full">
+          
+          <!-- Passport Card -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <span class="text-sm font-bold text-slate-800 font-heading">Paszport Projektu</span>
+              <span class="material-symbols-outlined text-xl text-brand-violet">verified</span>
+            </div>
+
+            <div class="space-y-4 text-xs">
+              <div>
+                <span class="text-slate-500 block mb-0.5 font-medium">Program ramowy</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">${escapeHtml(p.badge_pl || 'Erasmus+')}</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Lata realizacji</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">${escapeHtml(p.period || '2024–2025')}</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Lokalizacja</span>
+                <span class="text-slate-900 font-bold text-sm font-heading">${escapeHtml(p.location || 'Polska • Europa')}</span>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Konsorcjum i partnerzy</span>
+                <p class="text-slate-800 font-medium text-xs leading-relaxed mt-1">
+                  ${escapeHtml(p.partners || 'Fundacja ANIMUS')}
+                </p>
+              </div>
+              <div class="border-t border-slate-100 pt-3">
+                <span class="text-slate-500 block mb-0.5 font-medium">Liczba wpisów w kronice</span>
+                <span class="text-brand-violet font-extrabold text-sm sm:text-base font-heading">${projectArticles.length} <span>udokumentowanych relacji</span></span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <a href="${relRoot}contact.html" class="w-full inline-flex items-center justify-center gap-2 bg-[#300064] hover:bg-[#220047] text-white py-3 px-4 rounded-xl font-semibold text-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                <span>Zapytaj o ten projekt</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+
+              <a href="${relRoot}projects.html" class="w-full inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 px-4 rounded-xl font-semibold text-sm transition-all">
+                <span class="material-symbols-outlined text-[16px]">grid_view</span>
+                <span>Katalog Wszystkich Projektów</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Institutional Seal -->
+          <div class="bg-gradient-to-br from-slate-900 to-brand-violet text-white rounded-3xl p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-3">
+              <img src="${relRoot}cropped-Animus-Logo-Horizontal.png" alt="ANIMUS" class="h-8 w-auto brightness-0 invert">
+            </div>
+            <p class="text-xs text-purple-200 leading-relaxed font-sans">
+              Fundacja ANIMUS realizuje projekty edukacji pozaformalnej, młodzieżowe wymiany Erasmus+ oraz narzędzia adaptacji społecznej od 2015 roku.
+            </p>
+            <div class="pt-2 text-[11px] font-sans text-purple-300">
+              KRS 0000535710 • NIP 6272740470
+            </div>
+          </div>
+
+        </aside>
+
       </div>
-    </section>
 
-    ${bentoGalleryHtml}
+      <!-- BOTTOM ADJACENT PROJECTS NAVIGATION -->
+      <section class="border-t border-slate-200 pt-8 mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        ${prevProj ? `
+          <a href="${prevLink}" class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:shadow-md transition-all group flex items-center gap-4">
+            <span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-brand-violet transition-colors">arrow_back</span>
+            <div>
+              <span class="text-[10px] font-sans text-slate-400 uppercase tracking-wider block font-bold">Poprzedni Projekt</span>
+              <span class="text-sm font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-1">${escapeHtml(prevProj.name)}</span>
+            </div>
+          </a>
+        ` : '<div></div>'}
 
-    ${chronicleHtml}
+        ${nextProj ? `
+          <a href="${nextLink}" class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:shadow-md transition-all group flex items-center justify-between gap-4 text-right">
+            <div>
+              <span class="text-[10px] font-sans text-slate-400 uppercase tracking-wider block font-bold">Kolejny Projekt</span>
+              <span class="text-sm font-bold text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-1">${escapeHtml(nextProj.name)}</span>
+            </div>
+            <span class="material-symbols-outlined text-2xl text-slate-400 group-hover:text-brand-violet transition-colors">arrow_forward</span>
+          </a>
+        ` : '<div></div>'}
+      </section>
 
+    </div>
   </main>
 
   ${generateLightboxHtml()}
@@ -862,37 +804,40 @@ function generateProjectPageHtml(projectId, isNested) {
 `;
 }
 
-// Generate Static Article Page
+// -------------------------------------------------------------
+// GENERATE STATIC ARTICLE PAGE (1-to-1 matching WordPress single.php)
+// -------------------------------------------------------------
 function generateArticlePageHtml(article, isNested) {
   const relRoot = isNested ? '../../' : '../';
-  const parentProject = projects[article.project_id] || { name: 'Projekt ANIMUS', id: 'okulary-mlodziezowe' };
+  const parentProject = projects[article.project_id] || null;
   
-  const articlePhotos = article.images || [];
+  const articlePhotos = (article.images && article.images.length > 0) ? [...article.images] : [];
   if (article.hero_img && !articlePhotos.includes(article.hero_img) && !article.hero_img.includes('cropped-Animus-Logo')) {
     articlePhotos.unshift(article.hero_img);
   }
 
-  // Find index in all articles for Prev / Next
-  const artIdx = articles.findIndex(a => a.slug === article.slug);
-  const prevArt = articles[(artIdx - 1 + articles.length) % articles.length];
-  const nextArt = articles[(artIdx + 1) % articles.length];
+  const projectLink = parentProject ? (isNested ? `../../projekty/${article.project_id}/` : `../projekty/${article.project_id}.html`) : `${relRoot}projects.html`;
 
-  const prevLink = isNested ? `../../aktualnosci/${prevArt.slug}/` : `../aktualnosci/${prevArt.slug}.html`;
-  const nextLink = isNested ? `../../aktualnosci/${nextArt.slug}/` : `../aktualnosci/${nextArt.slug}.html`;
-  const projectLink = isNested ? `../../projekty/${article.project_id}/` : `../projekty/${article.project_id}.html`;
+  // Sibling articles belonging to the same project (Hierarchy Tree)
+  const siblings = parentProject ? (parentProject.articles || []) : [];
 
-  // Sibling articles
-  const siblings = articles.filter(a => a.project_id === article.project_id);
+  // Related articles from OTHER projects (Section 3)
+  const otherArticles = articles.filter(a => a.project_id !== article.project_id && a.slug !== article.slug).slice(0, 3);
 
-  // Text blocks
+  // Text blocks & Reading Time calculation
   const textBlocks = article.text_blocks || [article.summary || ''];
+  const fullText = textBlocks.join(' ');
+  const wordCount = fullText.split(/\s+/).length;
+  const readingTime = Math.max(1, Math.ceil(wordCount / 180));
+
+  const heroImg = article.hero_img || (articlePhotos.length > 0 ? articlePhotos[0] : `${relRoot}cropped-Animus-Logo-Horizontal.png`);
 
   return `<!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(article.title)} | Aktualności | Fundacja ANIMUS</title>
+  <title>${escapeHtml(article.title)} | ANIMUS Foundation</title>
   <meta name="description" content="${escapeHtml(article.summary ? article.summary.substring(0, 160) : '')}">
 
   <!-- Favicon -->
@@ -914,37 +859,20 @@ function generateArticlePageHtml(article, isNested) {
       theme: {
         extend: {
           colors: {
-            primary: {
-              DEFAULT: '#300064',
-              hover: '#220047',
-              container: '#4a0e8f',
-              fixed: '#eedcff',
-              dark: '#1c003b'
-            },
-            secondary: {
-              DEFAULT: '#F35813',
-              container: '#ff7738'
-            },
-            brand: {
-              'violet': '#300064',
-              'coral': '#F35813',
-              'cyan': '#2AD0FF',
-              'amber': '#EA9A05',
-              'ink': '#0F172A',
-              'paper': '#FAF9F6'
-            },
-            surface: '#fdfbf7',
-            'border-subtle': '#E2E8F0'
+            'brand-violet': '#300064',
+            'brand-coral': '#F35813',
+            'brand-cyan': '#2AD0FF',
+            'brand-amber': '#EA9A05',
+            'brand-ink': '#141824',
+            'brand-canvas': '#fdfbf7',
+            primary: '#300064',
+            surface: '#ffffff',
+            'border-subtle': '#e2e8f0',
           },
           fontFamily: {
-            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['"Inter"', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
-            mono: ['"Plus Jakarta Sans"', 'ui-monospace', 'monospace']
-          },
-          boxShadow: {
-            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
-            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+            sans: ['"Inter"', '"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"Plus Jakarta Sans"', 'monospace'],
           }
         }
       }
@@ -952,6 +880,17 @@ function generateArticlePageHtml(article, isNested) {
   </script>
 
   <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background-color: #FAF9F6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
     .notebook-grid {
       background-color: #FAF9F6;
       background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
@@ -974,215 +913,387 @@ function generateArticlePageHtml(article, isNested) {
 
   ${generateHeader(relRoot, 'blog')}
 
-  <main class="flex-grow">
-    
-    <!-- Article Header Hero -->
-    <article class="relative">
-      
-      <div class="bg-brand-ink text-white pt-28 pb-16 sm:pt-36 sm:pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,#4a0e8f,transparent_60%)]"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-coral/10 blur-3xl pointer-events-none"></div>
+  <!-- MAIN ARTICLE CONTENT (1-to-1 matching single.php) -->
+  <main class="flex-grow pt-24 sm:pt-28 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-          
-          <!-- Breadcrumb & Top Bar -->
-          <div class="flex items-center justify-between gap-4 flex-wrap text-xs font-sans text-slate-400">
-            <div class="flex items-center gap-2">
-              <a href="${relRoot}index.html" class="hover:text-white transition-colors">Główna</a>
-              <span>/</span>
-              <a href="${relRoot}blog.html" class="hover:text-white transition-colors">Aktualności</a>
-              <span>/</span>
-              <a href="${projectLink}" class="hover:text-white transition-colors">${escapeHtml(parentProject.name)}</a>
-            </div>
-
-            <a href="${relRoot}blog.html" class="text-brand-coral hover:text-white flex items-center gap-1 font-semibold">
-              <span class="material-symbols-outlined text-[16px]">arrow_back</span>
-              <span>Wszystkie aktualności (117)</span>
+      <!-- ========================================================
+           1. TOP BREADCRUMBS & NAVIGATION
+      ======================================================== -->
+      <nav class="py-4 flex flex-wrap items-center justify-between gap-3 text-xs font-sans text-slate-500 border-b border-slate-200 mb-8 min-w-0" aria-label="Breadcrumb">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <a href="${relRoot}index.html" class="hover:text-brand-violet transition-colors shrink-0">ANIMUS</a>
+          <span>/</span>
+          <a href="${relRoot}blog.html" class="hover:text-brand-violet transition-colors shrink-0">Aktualności</a>
+          ${parentProject ? `
+            <span>/</span>
+            <a href="${projectLink}" class="hover:text-brand-violet transition-colors shrink-0 flex items-center gap-1 text-slate-700 font-semibold">
+              <span class="material-symbols-outlined text-[14px] text-brand-violet">folder</span>
+              <span>${escapeHtml(parentProject.name)}</span>
             </a>
-          </div>
-
-          <!-- Metadata Tags -->
-          <div class="flex items-center gap-3 flex-wrap">
-            <span class="px-3 py-1 rounded-lg bg-brand-violet font-sans text-xs font-bold text-white shadow-xs">
-              ${escapeHtml(parentProject.name)}
-            </span>
-            <span class="text-xs font-sans text-slate-400 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[14px]">calendar_today</span>
-              <span>${escapeHtml(article.date)}</span>
-            </span>
-            <span class="text-xs font-sans text-slate-400 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[14px] text-brand-amber">photo_library</span>
-              <span>${articlePhotos.length} zdjęć</span>
-            </span>
-          </div>
-
-          <!-- Article Title -->
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white leading-tight tracking-tight">
-            ${escapeHtml(article.title)}
-          </h1>
-
-          <!-- Lead Summary -->
-          <p class="text-base sm:text-xl text-slate-300 font-sans leading-relaxed">
-            ${escapeHtml(article.summary || '')}
-          </p>
-
-          <!-- Share Toolbar -->
-          <div class="flex items-center justify-between gap-4 pt-4 border-t border-white/10 flex-wrap">
-            <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
-              <span>Autor: <strong class="text-white">Zespół Fundacji ANIMUS</strong></span>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-sans text-slate-400 mr-1">Udostępnij:</span>
-              <button onclick="shareArticle('facebook')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors" title="Facebook">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </button>
-              <button onclick="shareArticle('twitter')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-sky-500 text-white flex items-center justify-center transition-colors" title="Twitter / X">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </button>
-              <button onclick="copyCurrentLink()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans text-xs font-semibold flex items-center gap-1 transition-colors" title="Kopiuj link">
-                <span class="material-symbols-outlined text-[15px]">content_copy</span>
-                <span>Kopiuj</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Main Photo Hero Feature -->
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
-        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[16/9] sm:aspect-[21/9] relative group">
-          <img src="${article.hero_img || `${relRoot}cropped-Animus-Logo-Horizontal.png`}" alt="${escapeHtml(article.title)}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
-          ${articlePhotos.length > 0 ? `
-          <button onclick="openGalleryAt(0)" class="absolute bottom-4 right-4 bg-brand-ink/80 hover:bg-brand-violet text-white text-xs font-sans px-3.5 py-2 rounded-xl backdrop-blur-md flex items-center gap-2 shadow-lg transition-all">
-            <span class="material-symbols-outlined text-[16px]">fullscreen</span>
-            <span>Otwórz pełną galerię w Lightbox</span>
-          </button>
           ` : ''}
+          <span>/</span>
+          <span class="text-slate-900 font-bold truncate max-w-xs sm:max-w-md min-w-0">${escapeHtml(article.title)}</span>
         </div>
-      </div>
 
-      <!-- Article Content & Bento Gallery Section -->
-      <div class="py-14 sm:py-20 notebook-grid">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="flex items-center gap-3">
+          ${parentProject ? `
+            <a href="${projectLink}" class="inline-flex items-center gap-1.5 text-brand-violet hover:text-brand-coral font-bold transition-colors shrink-0 text-xs font-sans">
+              <span class="material-symbols-outlined text-[15px]">folder</span>
+              <span>Karta Projektu</span>
+            </a>
+            <span class="text-slate-300">•</span>
+          ` : ''}
+          <a href="${relRoot}blog.html" class="inline-flex items-center gap-1.5 text-slate-700 hover:text-brand-violet font-bold transition-colors shrink-0 text-xs font-sans">
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span>Wszystkie Aktualności</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- ========================================================
+           2. TWO-COLUMN ARTICLE & PASSPORT SECTION
+      ======================================================== -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 w-full min-w-0">
+        
+        <!-- Main Content Column (Left lg:col-span-8) -->
+        <div class="lg:col-span-8 space-y-10 min-w-0 w-full">
           
-          <!-- Article Text Body -->
-          <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-warm-card">
-            <div class="space-y-6 text-slate-800 text-base sm:text-lg font-sans leading-relaxed">
+          <!-- Article Primary Card -->
+          <article class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-8 min-w-0">
+            
+            <!-- Metadata & Header -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 flex-wrap">
+                ${parentProject ? `
+                  <a href="${projectLink}" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-violet hover:bg-[#200045] text-white shadow-xs transition-colors flex items-center gap-1.5" title="Przejdź do karty projektu">
+                    <span class="material-symbols-outlined text-[14px]">folder</span>
+                    <span>${escapeHtml(parentProject.name)}</span>
+                  </a>
+                ` : `
+                  <span class="px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-violet text-white shadow-xs">
+                    Aktualności
+                  </span>
+                `}
+
+                <span class="text-xs font-sans font-semibold text-slate-500 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px] text-brand-coral">calendar_today</span>
+                  <span>${escapeHtml(article.date)}</span>
+                </span>
+                <span class="text-slate-300">•</span>
+                <span class="text-xs font-sans text-slate-500 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">schedule</span>
+                  <span>ok. ${readingTime} min czytania</span>
+                </span>
+              </div>
+
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading leading-tight tracking-tight">
+                ${escapeHtml(article.title)}
+              </h1>
+
+              ${article.summary ? `
+              <p class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed border-l-4 border-brand-violet pl-4 py-1 italic bg-purple-50/40 rounded-r-xl">
+                ${escapeHtml(article.summary)}
+              </p>
+              ` : ''}
+            </div>
+
+            <!-- Spotlight Hero Image inside Card -->
+            ${heroImg ? `
+            <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 max-h-[500px] shadow-xs relative group cursor-pointer" onclick="openLightbox(0)">
+              <img src="${heroImg}" alt="${escapeHtml(article.title)}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div class="flex items-center gap-2 text-white text-xs font-semibold bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/20">
+                  <span class="material-symbols-outlined text-sm">zoom_in</span>
+                  <span>Kliknij, aby powiększyć zdjęcie</span>
+                </div>
+              </div>
+            </div>
+            ` : ''}
+
+            <!-- Article Body Text -->
+            <div class="prose prose-lg max-w-none text-slate-800 leading-relaxed font-sans space-y-6 pt-2">
               ${textBlocks.map(block => `<p>${escapeHtml(block)}</p>`).join('')}
             </div>
-          </div>
 
-          ${articlePhotos.length > 0 ? `
-          <!-- Bento Photo Gallery Grid -->
-          <div class="space-y-4">
-            <div class="flex items-center justify-between gap-4">
+          </article>
+
+          <!-- Visual Documentation Gallery Card (if multiple photos) -->
+          ${articlePhotos.length > 1 ? `
+          <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6 min-w-0">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
-                <span class="text-xs font-semibold text-brand-violet uppercase tracking-wider">Galeria Foto & Reportaż</span>
-                <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900">
-                  Fotorelacja z Działań w Terenie (${articlePhotos.length} zdjęć)
+                <div class="flex items-center gap-2 text-brand-violet font-sans text-xs font-bold uppercase tracking-wider mb-1">
+                  <span class="material-symbols-outlined text-base">photo_library</span>
+                  <span>Dokumentacja Wizualna</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+                  Fotoreportaż &amp; Kadry z Działań
                 </h2>
               </div>
-              <span class="text-xs font-sans text-slate-500 font-semibold">
-                Kliknij zdjęcie, aby powiększyć
+              <span class="text-xs font-sans text-slate-500">
+                ${articlePhotos.length} oryginalnych fotografii
               </span>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-              ${articlePhotos.map((img, idx) => `
-                <div onclick="openGalleryAt(${idx})" class="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 aspect-[4/3] group cursor-pointer shadow-xs hover:shadow-lg transition-all hover:scale-[1.02]">
-                  <img src="${img}" alt="Zdjęcie ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
-                  <div class="absolute inset-0 bg-brand-violet/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="w-10 h-10 rounded-full bg-white/90 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                      <span class="material-symbols-outlined text-[20px]">zoom_in</span>
+            <!-- Bento Grid Gallery Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              ${articlePhotos.map((imgUrl, idx) => {
+                const isFirst = (idx === 0);
+                const cellClass = isFirst ? 'sm:col-span-2 sm:row-span-2 min-h-[300px] sm:min-h-[420px]' : 'min-h-[200px] sm:min-h-[200px]';
+                return `
+                <div class="${cellClass} relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group shadow-xs hover:shadow-md transition-all duration-300" onclick="openLightbox(${idx})">
+                  <img src="${imgUrl}" alt="Fotografia ${idx + 1} - ${escapeHtml(article.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+                  <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-white">
+                    <span class="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
+                      <span class="material-symbols-outlined text-lg">zoom_in</span>
                     </span>
                   </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-          ` : ''}
-
-          <!-- Project Hierarchy Tree (Sibling articles in this project) -->
-          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-warm-card space-y-6">
-            <div class="flex items-center justify-between gap-4 pb-4 border-b border-slate-100 flex-wrap">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center">
-                  <span class="material-symbols-outlined text-[22px]">account_tree</span>
-                </div>
-                <div>
-                  <span class="text-[11px] font-sans font-bold text-brand-coral uppercase tracking-wider">Kontekst Inicjatywy</span>
-                  <h3 class="text-lg sm:text-xl font-heading font-extrabold text-slate-900">
-                    Pozostałe Etapy i Relacje w Tym Projekcie (${siblings.length})
-                  </h3>
-                </div>
-              </div>
-
-              <a href="${projectLink}" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white font-sans text-xs font-bold text-slate-700 transition-colors shadow-2xs">
-                <span>Karta Projektu: ${escapeHtml(parentProject.name)}</span>
-                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
-              </a>
-            </div>
-
-            <!-- Hierarchy Timeline List -->
-            <div class="space-y-3">
-              ${siblings.map((sib, sIdx) => {
-                const isCurrent = (sib.slug === article.slug);
-                const sibLink = isNested ? `../../aktualnosci/${sib.slug}/` : `../aktualnosci/${sib.slug}.html`;
-                return `
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all ${isCurrent ? 'bg-brand-violet/10 border-2 border-brand-violet font-bold' : 'bg-slate-50 hover:bg-slate-100 border border-slate-200'}">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs ${isCurrent ? 'bg-brand-violet text-white' : 'bg-slate-200 text-slate-700'}">
-                      0${sIdx + 1}
-                    </div>
-                    <div>
-                      <a href="${sibLink}" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        ${escapeHtml(sib.title)}
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">${escapeHtml(sib.date)}</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    ${isCurrent ? `
-                      <span class="px-2.5 py-1 rounded-md bg-brand-violet text-white text-[10px] font-sans font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Aktualnie czytasz</span>
-                      </span>
-                    ` : `
-                      <a href="${sibLink}" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    `}
-                  </div>
+                  <span class="absolute bottom-2.5 left-2.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-sans px-2 py-0.5 rounded border border-white/10">
+                    #${String(idx + 1).padStart(2, '0')}
+                  </span>
                 </div>
                 `;
               }).join('')}
             </div>
-          </div>
+          </section>
+          ` : ''}
 
-          <!-- Adjacent Article Navigation -->
-          <div class="flex items-center justify-between gap-4 pt-6 font-sans text-xs font-bold">
-            <a href="${prevLink}" class="px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:text-brand-violet shadow-2xs transition-all flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px]">chevron_left</span>
-              <span>Poprzednia relacja</span>
-            </a>
-            <a href="${relRoot}blog.html" class="text-slate-500 hover:text-slate-900 transition-colors hidden sm:inline">
-              Wszystkie relacje (117)
-            </a>
-            <a href="${nextLink}" class="px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:text-brand-violet shadow-2xs transition-all flex items-center gap-2">
-              <span>Następna relacja</span>
-              <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-            </a>
-          </div>
+          <!-- Project Timeline / Chronicle (Hierarchical Tree of Project Articles) -->
+          ${siblings.length > 0 && parentProject ? `
+          <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6 min-w-0">
+            
+            <!-- Tree Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="w-2 h-2 rounded-full bg-brand-violet"></span>
+                  <span class="text-[11px] font-sans font-bold uppercase tracking-wider text-brand-violet">
+                    Kronika Działań Projektowych
+                  </span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                  ${escapeHtml(parentProject.name)}
+                </h3>
+                <div class="flex flex-wrap items-center gap-2.5 text-xs font-sans text-slate-500 mt-1">
+                  ${parentProject.location ? `
+                    <span class="flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[14px] text-brand-coral">location_on</span>
+                      <span>${escapeHtml(parentProject.location)}</span>
+                    </span>
+                    <span>•</span>
+                  ` : ''}
+                  ${parentProject.period ? `
+                    <span>${escapeHtml(parentProject.period)}</span>
+                    <span>•</span>
+                  ` : ''}
+                  <span>${siblings.length} wpisów w kronice</span>
+                </div>
+              </div>
+
+              <a href="${projectLink}" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-violet hover:bg-[#200045] text-white text-xs font-semibold transition-all shadow-sm shrink-0">
+                <span>Pełna Karta Projektu</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Tree Timeline with Vertical Bar -->
+            <div class="relative pl-6 sm:pl-8 before:absolute before:left-3 before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-200 space-y-3">
+              ${siblings.map(sib => {
+                const isCurrent = (sib.slug === article.slug);
+                const sibLink = isNested ? `../../aktualnosci/${sib.slug}/` : `../aktualnosci/${sib.slug}.html`;
+                if (isCurrent) {
+                  return `
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-3.5 h-3.5 rounded-full bg-brand-violet ring-4 ring-purple-100 shadow-xs"></span>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-brand-ink text-white border border-slate-900 shadow-xs">
+                      <div class="flex items-center justify-between gap-3 mb-1">
+                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-sans font-bold uppercase tracking-wider bg-white/15 text-white">
+                          <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+                          TERAZ CZYTASZ
+                        </span>
+                        <span class="text-xs font-sans text-slate-400">${escapeHtml(sib.date)}</span>
+                      </div>
+                      <h4 class="text-base sm:text-lg font-bold font-heading text-white">
+                        ${escapeHtml(sib.title)}
+                      </h4>
+                    </div>
+                  </div>
+                  `;
+                } else {
+                  return `
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="${sibLink}" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">${escapeHtml(sib.date)}</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            ${escapeHtml(sib.title)}
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                  `;
+                }
+              }).join('')}
+            </div>
+
+          </section>
+          ` : ''}
 
         </div>
-      </div>
-    </article>
 
+        <!-- Right Sidebar Passport Column (lg:col-span-4 sticky) -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28 min-w-0 w-full">
+          
+          <!-- Article Passport Card -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <span class="text-sm font-bold text-slate-800 font-heading">Metryka Artykułu</span>
+              <span class="material-symbols-outlined text-xl text-brand-violet">description</span>
+            </div>
+
+            <!-- Key Metadata Items -->
+            <div class="space-y-4 text-xs">
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Data publikacji</span>
+                <span class="font-bold text-slate-800 text-right font-sans">${escapeHtml(article.date)}</span>
+              </div>
+              
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Kategoria</span>
+                <span class="font-bold text-brand-violet text-right">${escapeHtml(parentProject ? parentProject.name : 'Aktualności')}</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Czas lektury</span>
+                <span class="font-bold text-slate-800 text-right font-sans">ok. ${readingTime} min</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Galeria zdjęć</span>
+                <span class="font-bold text-slate-800 text-right font-sans">${articlePhotos.length} kadrów</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3">
+                <span class="text-slate-500 font-sans">Wydawca</span>
+                <span class="font-bold text-slate-800 text-right">Fundacja ANIMUS</span>
+              </div>
+            </div>
+
+            <!-- Associated Project Mini-Card -->
+            ${parentProject ? `
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <span class="text-[11px] font-sans text-slate-400 uppercase tracking-wider font-bold block">
+                Powiązany Projekt Flagowy
+              </span>
+              <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl overflow-hidden bg-white border border-slate-200 shrink-0">
+                    <img src="${parentProject.hero_img || `${relRoot}cropped-Animus-Logo-Horizontal.png`}" alt="${escapeHtml(parentProject.name)}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-bold text-slate-900 truncate font-heading">
+                      ${escapeHtml(parentProject.name)}
+                    </h4>
+                    ${parentProject.period ? `
+                      <span class="text-[11px] font-sans text-slate-500 block">${escapeHtml(parentProject.period)}</span>
+                    ` : ''}
+                  </div>
+                </div>
+                <a href="${projectLink}" class="w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-violet hover:bg-[#200045] text-white text-xs font-semibold transition-all shadow-xs">
+                  <span>Przejdź do karty projektu</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            ` : ''}
+
+            <!-- Foundation Contact Card -->
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
+                <div class="flex items-center gap-2 text-slate-800 font-bold">
+                  <span class="material-symbols-outlined text-base text-brand-coral">verified</span>
+                  <span>Fundacja ANIMUS</span>
+                </div>
+                <p class="text-slate-500 text-[11px] leading-relaxed">
+                  Centrum Edukacyjno-Szkoleniowe aktywne od 2015 roku na Śląsku i w Europie.
+                </p>
+                <div class="pt-2 flex items-center justify-between">
+                  <a href="${relRoot}contact.html" class="text-brand-coral hover:text-brand-violet font-bold text-xs font-sans inline-flex items-center gap-1 transition-colors">
+                    <span>Kontakt z fundacją</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- ========================================================
+           3. POWIĄZANE ARTYKUŁY (RELACJE Z INNYCH PROJEKTÓW)
+      ======================================================== -->
+      <section class="pt-10 border-t border-slate-200">
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-violet block mb-1">
+              POZNAJ INNE DZIAŁANIA
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+              Relacje z innych projektów Fundacji
+            </h3>
+          </div>
+          <a href="${relRoot}blog.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral transition-colors flex items-center gap-1 shrink-0">
+            <span>Wszystkie aktualności</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          ${otherArticles.map(rel => {
+            const relUrl = isNested ? `../../aktualnosci/${rel.slug}/` : `../aktualnosci/${rel.slug}.html`;
+            const relHero = rel.hero_img || `${relRoot}cropped-Animus-Logo-Horizontal.png`;
+            const relProjName = rel.project_name || 'Aktualności';
+            return `
+            <a href="${relUrl}" class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 block no-underline text-inherit">
+              <div>
+                <div class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                  <img src="${relHero}" alt="${escapeHtml(rel.title)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='${relRoot}cropped-Animus-Logo-Horizontal.png'">
+                  <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                    ${escapeHtml(relProjName)}
+                  </span>
+                </div>
+                <div class="p-5 sm:p-6 space-y-2.5">
+                  <div class="text-[11px] font-sans text-slate-500 font-semibold uppercase flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                    <span>${escapeHtml(rel.date)}</span>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-bold font-heading text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug">
+                    ${escapeHtml(rel.title)}
+                  </h4>
+                  ${rel.summary ? `
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                    ${escapeHtml(rel.summary)}
+                  </p>
+                  ` : ''}
+                </div>
+              </div>
+            </a>
+            `;
+          }).join('')}
+        </div>
+      </section>
+
+    </div>
   </main>
 
   ${generateLightboxHtml()}
@@ -1197,7 +1308,7 @@ function generateArticlePageHtml(article, isNested) {
 }
 
 // 2. Execution Loop
-console.log('Generating files and directories...');
+console.log('Generating files and directories with 1-to-1 WordPress template match...');
 
 // Ensure base directories
 const projektyDir = path.join(staticDir, 'projekty');
@@ -1243,9 +1354,7 @@ for (const art of articles) {
 console.log(`Generated ${articleCount} article pages (dual nested + flat).`);
 
 // C. Copy / Create Index pages for projekty/ and aktualnosci/
-// projekty/index.html can mirror projects.html with adjusted asset links
 let projectsIndexContent = fs.readFileSync(path.join(staticDir, 'projects.html'), 'utf8');
-// Adjust relative paths for projekty/index.html (it's one level deep)
 projectsIndexContent = projectsIndexContent.replace(/href="\.\//g, 'href="../');
 projectsIndexContent = projectsIndexContent.replace(/src="\.\//g, 'src="../');
 projectsIndexContent = projectsIndexContent.replace(/href="index\.html"/g, 'href="../index.html"');
@@ -1259,12 +1368,10 @@ projectsIndexContent = projectsIndexContent.replace(/src="projects-data\.js"/g, 
 projectsIndexContent = projectsIndexContent.replace(/src="cropped-Animus-Logo-Horizontal\.png"/g, 'src="../cropped-Animus-Logo-Horizontal.png"');
 projectsIndexContent = projectsIndexContent.replace(/src="logo\.png"/g, 'src="../logo.png"');
 projectsIndexContent = projectsIndexContent.replace(/href="material-symbols\.css"/g, 'href="../material-symbols.css"');
-// Point project cards directly to their subfolder
 projectsIndexContent = projectsIndexContent.replace(/single-project\.html\?id=(\w[\w-]*)/g, '$1/');
 fs.writeFileSync(path.join(projektyDir, 'index.html'), projectsIndexContent, 'utf8');
 console.log('Generated projekty/index.html.');
 
-// aktualnosci/index.html can mirror blog.html with adjusted asset links
 let blogIndexContent = fs.readFileSync(path.join(staticDir, 'blog.html'), 'utf8');
 blogIndexContent = blogIndexContent.replace(/href="\.\//g, 'href="../');
 blogIndexContent = blogIndexContent.replace(/src="\.\//g, 'src="../');
@@ -1279,7 +1386,6 @@ blogIndexContent = blogIndexContent.replace(/src="projects-data\.js"/g, 'src="..
 blogIndexContent = blogIndexContent.replace(/src="cropped-Animus-Logo-Horizontal\.png"/g, 'src="../cropped-Animus-Logo-Horizontal.png"');
 blogIndexContent = blogIndexContent.replace(/src="logo\.png"/g, 'src="../logo.png"');
 blogIndexContent = blogIndexContent.replace(/href="material-symbols\.css"/g, 'href="../material-symbols.css"');
-// Point article cards directly to their subfolder
 blogIndexContent = blogIndexContent.replace(/single-article\.html\?slug=([\w-]+)/g, '$1/');
 fs.writeFileSync(path.join(aktualnosciDir, 'index.html'), blogIndexContent, 'utf8');
 console.log('Generated aktualnosci/index.html.');

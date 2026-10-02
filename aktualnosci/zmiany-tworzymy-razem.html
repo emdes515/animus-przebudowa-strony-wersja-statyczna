@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zmiany tworzymy razem | Aktualności | Fundacja ANIMUS</title>
+  <title>Zmiany tworzymy razem | ANIMUS Foundation</title>
   <meta name="description" content="Zrób pierwszy krok. Nie czekaj — działaj">
 
   <!-- Favicon -->
@@ -25,37 +25,20 @@
       theme: {
         extend: {
           colors: {
-            primary: {
-              DEFAULT: '#300064',
-              hover: '#220047',
-              container: '#4a0e8f',
-              fixed: '#eedcff',
-              dark: '#1c003b'
-            },
-            secondary: {
-              DEFAULT: '#F35813',
-              container: '#ff7738'
-            },
-            brand: {
-              'violet': '#300064',
-              'coral': '#F35813',
-              'cyan': '#2AD0FF',
-              'amber': '#EA9A05',
-              'ink': '#0F172A',
-              'paper': '#FAF9F6'
-            },
-            surface: '#fdfbf7',
-            'border-subtle': '#E2E8F0'
+            'brand-violet': '#300064',
+            'brand-coral': '#F35813',
+            'brand-cyan': '#2AD0FF',
+            'brand-amber': '#EA9A05',
+            'brand-ink': '#141824',
+            'brand-canvas': '#fdfbf7',
+            primary: '#300064',
+            surface: '#ffffff',
+            'border-subtle': '#e2e8f0',
           },
           fontFamily: {
-            heading: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-            body: ['"Inter"', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
-            mono: ['"Plus Jakarta Sans"', 'ui-monospace', 'monospace']
-          },
-          boxShadow: {
-            'die-ambient': '0 20px 40px -10px rgba(48, 0, 100, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04)',
-            'warm-card': '0 10px 30px -5px rgba(48, 0, 100, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02)'
+            sans: ['"Inter"', '"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"Plus Jakarta Sans"', 'monospace'],
           }
         }
       }
@@ -63,6 +46,17 @@
   </script>
 
   <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background-color: #FAF9F6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
     .notebook-grid {
       background-color: #FAF9F6;
       background-image: radial-gradient(rgba(148, 163, 184, 0.38) 1px, transparent 1px);
@@ -96,10 +90,7 @@
         <a href="../index.html" class="hover:text-slate-900 transition-colors py-1 ">Strona główna</a>
         <a href="../about.html" class="hover:text-slate-900 transition-colors py-1 ">O nas</a>
         <a href="../activities.html" class="hover:text-slate-900 transition-colors py-1 ">Nasze działania</a>
-        <a href="../projects.html" class="text-slate-900 font-bold relative py-1 flex items-center gap-1.5 group ">
-          <span>Projekty</span>
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-violet"></span>
-        </a>
+        <a href="../projects.html" class="hover:text-slate-900 transition-colors py-1 ">Projekty</a>
         <a href="../partners.html" class="hover:text-slate-900 transition-colors py-1 ">Partnerzy</a>
         <a href="../blog.html" class="hover:text-slate-900 transition-colors py-1 text-slate-900 font-bold">Aktualności</a>
       </nav>
@@ -141,7 +132,7 @@
         <a href="../index.html" class="py-1 hover:text-brand-violet">Strona główna</a>
         <a href="../about.html" class="py-1 hover:text-brand-violet">O nas</a>
         <a href="../activities.html" class="py-1 hover:text-brand-violet">Nasze działania</a>
-        <a href="../projects.html" class="py-1 font-bold text-brand-violet">Projekty</a>
+        <a href="../projects.html" class="py-1 hover:text-brand-violet">Projekty</a>
         <a href="../partners.html" class="py-1 hover:text-brand-violet">Partnerzy</a>
         <a href="../blog.html" class="py-1 hover:text-brand-violet">Aktualności</a>
         <a href="https://www.facebook.com/profile.php?id=100084303353670" target="_blank" rel="noopener noreferrer" class="py-1 text-slate-700 hover:text-[#1877F2] flex items-center gap-2 font-semibold">
@@ -161,887 +152,872 @@
   </header>
   
 
-  <main class="flex-grow">
-    
-    <!-- Article Header Hero -->
-    <article class="relative">
-      
-      <div class="bg-brand-ink text-white pt-28 pb-16 sm:pt-36 sm:pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,#4a0e8f,transparent_60%)]"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-coral/10 blur-3xl pointer-events-none"></div>
+  <!-- MAIN ARTICLE CONTENT (1-to-1 matching single.php) -->
+  <main class="flex-grow pt-24 sm:pt-28 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+      <!-- ========================================================
+           1. TOP BREADCRUMBS & NAVIGATION
+      ======================================================== -->
+      <nav class="py-4 flex flex-wrap items-center justify-between gap-3 text-xs font-sans text-slate-500 border-b border-slate-200 mb-8 min-w-0" aria-label="Breadcrumb">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <a href="../index.html" class="hover:text-brand-violet transition-colors shrink-0">ANIMUS</a>
+          <span>/</span>
+          <a href="../blog.html" class="hover:text-brand-violet transition-colors shrink-0">Aktualności</a>
           
-          <!-- Breadcrumb & Top Bar -->
-          <div class="flex items-center justify-between gap-4 flex-wrap text-xs font-sans text-slate-400">
-            <div class="flex items-center gap-2">
-              <a href="../index.html" class="hover:text-white transition-colors">Główna</a>
-              <span>/</span>
-              <a href="../blog.html" class="hover:text-white transition-colors">Aktualności</a>
-              <span>/</span>
-              <a href="../projekty/okulary-mlodziezowe.html" class="hover:text-white transition-colors">Okulary Młodzieżowe</a>
-            </div>
-
-            <a href="../blog.html" class="text-brand-coral hover:text-white flex items-center gap-1 font-semibold">
-              <span class="material-symbols-outlined text-[16px]">arrow_back</span>
-              <span>Wszystkie aktualności (117)</span>
+            <span>/</span>
+            <a href="../projekty/okulary-mlodziezowe.html" class="hover:text-brand-violet transition-colors shrink-0 flex items-center gap-1 text-slate-700 font-semibold">
+              <span class="material-symbols-outlined text-[14px] text-brand-violet">folder</span>
+              <span>Okulary Młodzieżowe</span>
             </a>
-          </div>
+          
+          <span>/</span>
+          <span class="text-slate-900 font-bold truncate max-w-xs sm:max-w-md min-w-0">Zmiany tworzymy razem</span>
+        </div>
 
-          <!-- Metadata Tags -->
-          <div class="flex items-center gap-3 flex-wrap">
-            <span class="px-3 py-1 rounded-lg bg-brand-violet font-sans text-xs font-bold text-white shadow-xs">
-              Okulary Młodzieżowe
-            </span>
-            <span class="text-xs font-sans text-slate-400 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[14px]">calendar_today</span>
-              <span>2025-08-15</span>
-            </span>
-            <span class="text-xs font-sans text-slate-400 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[14px] text-brand-amber">photo_library</span>
-              <span>1 zdjęć</span>
-            </span>
-          </div>
+        <div class="flex items-center gap-3">
+          
+            <a href="../projekty/okulary-mlodziezowe.html" class="inline-flex items-center gap-1.5 text-brand-violet hover:text-brand-coral font-bold transition-colors shrink-0 text-xs font-sans">
+              <span class="material-symbols-outlined text-[15px]">folder</span>
+              <span>Karta Projektu</span>
+            </a>
+            <span class="text-slate-300">•</span>
+          
+          <a href="../blog.html" class="inline-flex items-center gap-1.5 text-slate-700 hover:text-brand-violet font-bold transition-colors shrink-0 text-xs font-sans">
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span>Wszystkie Aktualności</span>
+          </a>
+        </div>
+      </nav>
 
-          <!-- Article Title -->
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white leading-tight tracking-tight">
-            Zmiany tworzymy razem
-          </h1>
+      <!-- ========================================================
+           2. TWO-COLUMN ARTICLE & PASSPORT SECTION
+      ======================================================== -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 w-full min-w-0">
+        
+        <!-- Main Content Column (Left lg:col-span-8) -->
+        <div class="lg:col-span-8 space-y-10 min-w-0 w-full">
+          
+          <!-- Article Primary Card -->
+          <article class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-8 min-w-0">
+            
+            <!-- Metadata & Header -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 flex-wrap">
+                
+                  <a href="../projekty/okulary-mlodziezowe.html" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-violet hover:bg-[#200045] text-white shadow-xs transition-colors flex items-center gap-1.5" title="Przejdź do karty projektu">
+                    <span class="material-symbols-outlined text-[14px]">folder</span>
+                    <span>Okulary Młodzieżowe</span>
+                  </a>
+                
 
-          <!-- Lead Summary -->
-          <p class="text-base sm:text-xl text-slate-300 font-sans leading-relaxed">
-            Zrób pierwszy krok. Nie czekaj — działaj
-          </p>
+                <span class="text-xs font-sans font-semibold text-slate-500 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px] text-brand-coral">calendar_today</span>
+                  <span>2025-08-15</span>
+                </span>
+                <span class="text-slate-300">•</span>
+                <span class="text-xs font-sans text-slate-500 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">schedule</span>
+                  <span>ok. 1 min czytania</span>
+                </span>
+              </div>
 
-          <!-- Share Toolbar -->
-          <div class="flex items-center justify-between gap-4 pt-4 border-t border-white/10 flex-wrap">
-            <div class="flex items-center gap-2 text-xs font-sans text-slate-400">
-              <span>Autor: <strong class="text-white">Zespół Fundacji ANIMUS</strong></span>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading leading-tight tracking-tight">
+                Zmiany tworzymy razem
+              </h1>
+
+              
+              <p class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed border-l-4 border-brand-violet pl-4 py-1 italic bg-purple-50/40 rounded-r-xl">
+                Zrób pierwszy krok. Nie czekaj — działaj
+              </p>
+              
             </div>
 
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-sans text-slate-400 mr-1">Udostępnij:</span>
-              <button onclick="shareArticle('facebook')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-[#1877F2] text-white flex items-center justify-center transition-colors" title="Facebook">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </button>
-              <button onclick="shareArticle('twitter')" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-sky-500 text-white flex items-center justify-center transition-colors" title="Twitter / X">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </button>
-              <button onclick="copyCurrentLink()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-sans text-xs font-semibold flex items-center gap-1 transition-colors" title="Kopiuj link">
-                <span class="material-symbols-outlined text-[15px]">content_copy</span>
-                <span>Kopiuj</span>
-              </button>
+            <!-- Spotlight Hero Image inside Card -->
+            
+            <div class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 max-h-[500px] shadow-xs relative group cursor-pointer" onclick="openLightbox(0)">
+              <img src="https://animusedu.com/wp-content/uploads/2025/08/9-850x1063.png" alt="Zmiany tworzymy razem" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div class="flex items-center gap-2 text-white text-xs font-semibold bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/20">
+                  <span class="material-symbols-outlined text-sm">zoom_in</span>
+                  <span>Kliknij, aby powiększyć zdjęcie</span>
+                </div>
+              </div>
             </div>
-          </div>
+            
 
-        </div>
-      </div>
-
-      <!-- Main Photo Hero Feature -->
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 relative z-20">
-        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[16/9] sm:aspect-[21/9] relative group">
-          <img src="https://animusedu.com/wp-content/uploads/2025/08/9-850x1063.png" alt="Zmiany tworzymy razem" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
-          
-          <button onclick="openGalleryAt(0)" class="absolute bottom-4 right-4 bg-brand-ink/80 hover:bg-brand-violet text-white text-xs font-sans px-3.5 py-2 rounded-xl backdrop-blur-md flex items-center gap-2 shadow-lg transition-all">
-            <span class="material-symbols-outlined text-[16px]">fullscreen</span>
-            <span>Otwórz pełną galerię w Lightbox</span>
-          </button>
-          
-        </div>
-      </div>
-
-      <!-- Article Content & Bento Gallery Section -->
-      <div class="py-14 sm:py-20 notebook-grid">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          <!-- Article Text Body -->
-          <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-warm-card">
-            <div class="space-y-6 text-slate-800 text-base sm:text-lg font-sans leading-relaxed">
+            <!-- Article Body Text -->
+            <div class="prose prose-lg max-w-none text-slate-800 leading-relaxed font-sans space-y-6 pt-2">
               <p>Zrób pierwszy krok. Nie czekaj — działaj</p>
             </div>
-          </div>
 
+          </article>
+
+          <!-- Visual Documentation Gallery Card (if multiple photos) -->
           
-          <!-- Bento Photo Gallery Grid -->
-          <div class="space-y-4">
-            <div class="flex items-center justify-between gap-4">
+
+          <!-- Project Timeline / Chronicle (Hierarchical Tree of Project Articles) -->
+          
+          <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6 min-w-0">
+            
+            <!-- Tree Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
-                <span class="text-xs font-semibold text-brand-violet uppercase tracking-wider">Galeria Foto & Reportaż</span>
-                <h2 class="text-xl sm:text-2xl font-heading font-extrabold text-slate-900">
-                  Fotorelacja z Działań w Terenie (1 zdjęć)
-                </h2>
-              </div>
-              <span class="text-xs font-sans text-slate-500 font-semibold">
-                Kliknij zdjęcie, aby powiększyć
-              </span>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-              
-                <div onclick="openGalleryAt(0)" class="relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 aspect-[4/3] group cursor-pointer shadow-xs hover:shadow-lg transition-all hover:scale-[1.02]">
-                  <img src="https://animusedu.com/wp-content/uploads/2025/08/9-850x1063.png" alt="Zdjęcie 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
-                  <div class="absolute inset-0 bg-brand-violet/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="w-10 h-10 rounded-full bg-white/90 text-brand-violet flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                      <span class="material-symbols-outlined text-[20px]">zoom_in</span>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="w-2 h-2 rounded-full bg-brand-violet"></span>
+                  <span class="text-[11px] font-sans font-bold uppercase tracking-wider text-brand-violet">
+                    Kronika Działań Projektowych
+                  </span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900">
+                  Okulary Młodzieżowe
+                </h3>
+                <div class="flex flex-wrap items-center gap-2.5 text-xs font-sans text-slate-500 mt-1">
+                  
+                    <span class="flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[14px] text-brand-coral">location_on</span>
+                      <span>Zebrzydowice • Żory • Opole • Śląsk</span>
                     </span>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
-          
-
-          <!-- Project Hierarchy Tree (Sibling articles in this project) -->
-          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-warm-card space-y-6">
-            <div class="flex items-center justify-between gap-4 pb-4 border-b border-slate-100 flex-wrap">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-violet/10 text-brand-violet flex items-center justify-center">
-                  <span class="material-symbols-outlined text-[22px]">account_tree</span>
-                </div>
-                <div>
-                  <span class="text-[11px] font-sans font-bold text-brand-coral uppercase tracking-wider">Kontekst Inicjatywy</span>
-                  <h3 class="text-lg sm:text-xl font-heading font-extrabold text-slate-900">
-                    Pozostałe Etapy i Relacje w Tym Projekcie (30)
-                  </h3>
+                    <span>•</span>
+                  
+                  
+                    <span>2025–2026</span>
+                    <span>•</span>
+                  
+                  <span>30 wpisów w kronice</span>
                 </div>
               </div>
 
-              <a href="../projekty/okulary-mlodziezowe.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-brand-violet hover:text-white font-sans text-xs font-bold text-slate-700 transition-colors shadow-2xs">
-                <span>Karta Projektu: Okulary Młodzieżowe</span>
-                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              <a href="../projekty/okulary-mlodziezowe.html" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-violet hover:bg-[#200045] text-white text-xs font-semibold transition-all shadow-sm shrink-0">
+                <span>Pełna Karta Projektu</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </a>
             </div>
 
-            <!-- Hierarchy Timeline List -->
-            <div class="space-y-3">
+            <!-- Tree Timeline with Vertical Bar -->
+            <div class="relative pl-6 sm:pl-8 before:absolute before:left-3 before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-200 space-y-3">
               
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      01
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/budowanie-mostow-szkolenie-dla-mlodziezy.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Budowanie mostów: szkolenie dla młodzieży
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-09-30</div>
-                    </div>
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/budowanie-mostow-szkolenie-dla-mlodziezy.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-09-30</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Budowanie mostów: szkolenie dla młodzieży
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/budowanie-mostow-szkolenie-dla-mlodziezy.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/konferencja-mlodzi-obywatele-aktywnie-dla-spolecznosci.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-09-27</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Konferencja Młodzi Obywatele – Aktywnie Dla Społeczności
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      02
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/konferencja-mlodzi-obywatele-aktywnie-dla-spolecznosci.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Konferencja Młodzi Obywatele – Aktywnie Dla Społeczności
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-09-27</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/final-trzydniowej-przygody.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-09-23</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Finał Trzydniowej Przygody
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/konferencja-mlodzi-obywatele-aktywnie-dla-spolecznosci.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/drugi-dzien-opconnect-w-opolu.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-09-22</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Drugi Dzień Opconnect w Opolu
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      03
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/final-trzydniowej-przygody.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Finał Trzydniowej Przygody
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-09-23</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/opconnect-project-for-foreign-students-in-opole.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-09-21</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Opconnect – project for foreign students in Opole!
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/final-trzydniowej-przygody.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/auto-event-z-mlodzieza.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-31</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Auto Event z Młodzieżą
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      04
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/drugi-dzien-opconnect-w-opolu.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Drugi Dzień Opconnect w Opolu
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-09-22</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/podsumowanie-kampanii-edukacja-obywatelska.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-16</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Podsumowanie kampanii „Edukacja obywatelska”
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/drugi-dzien-opconnect-w-opolu.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/ja-jestem-zmiana.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-15</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Ja jestem zmianą
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      05
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/opconnect-project-for-foreign-students-in-opole.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Opconnect – project for foreign students in Opole!
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-09-21</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/opconnect-project-for-foreign-students-in-opole.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      06
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/auto-event-z-mlodzieza.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Auto Event z Młodzieżą
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-31</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/auto-event-z-mlodzieza.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      07
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/podsumowanie-kampanii-edukacja-obywatelska.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Podsumowanie kampanii „Edukacja obywatelska”
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-16</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/podsumowanie-kampanii-edukacja-obywatelska.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      08
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/ja-jestem-zmiana.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Ja jestem zmianą
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-15</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/ja-jestem-zmiana.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-brand-violet/10 border-2 border-brand-violet font-bold">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-brand-violet text-white">
-                      09
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/zmiany-tworzymy-razem.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-3.5 h-3.5 rounded-full bg-brand-violet ring-4 ring-purple-100 shadow-xs"></span>
+                    <div class="p-4 sm:p-5 rounded-2xl bg-brand-ink text-white border border-slate-900 shadow-xs">
+                      <div class="flex items-center justify-between gap-3 mb-1">
+                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-sans font-bold uppercase tracking-wider bg-white/15 text-white">
+                          <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse"></span>
+                          TERAZ CZYTASZ
+                        </span>
+                        <span class="text-xs font-sans text-slate-400">2025-08-15</span>
+                      </div>
+                      <h4 class="text-base sm:text-lg font-bold font-heading text-white">
                         Zmiany tworzymy razem
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-15</div>
+                      </h4>
                     </div>
                   </div>
-
-                  <div>
-                    
-                      <span class="px-2.5 py-1 rounded-md bg-brand-violet text-white text-[10px] font-sans font-bold uppercase tracking-wider flex items-center gap-1 shadow-2xs">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>Aktualnie czytasz</span>
-                      </span>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/my-i-oni-jak-rozmawiac-bez-hejtu.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-14</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            My i oni — jak rozmawiać bez hejtu
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      010
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/my-i-oni-jak-rozmawiac-bez-hejtu.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        My i oni — jak rozmawiać bez hejtu
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-14</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/demokracja-to-sluchac-nie-krzyczec.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-14</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Demokracja to słuchać, nie krzyczeć
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/my-i-oni-jak-rozmawiac-bez-hejtu.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/dzialanie-online-to-tez-obywatelskosc.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-13</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Działanie online to też obywatelskość
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      011
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/demokracja-to-sluchac-nie-krzyczec.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Demokracja to słuchać, nie krzyczeć
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-14</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/slad-cyfrowy-to-tez-postawa-obywatelska.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-13</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Ślad cyfrowy to też postawa obywatelska
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/demokracja-to-sluchac-nie-krzyczec.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/kregulcowe-dni-w-jastrzebiu-zdroju.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-12</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Kregulcowe Dni w Jastrzębiu-Zdroju
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      012
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/dzialanie-online-to-tez-obywatelskosc.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Działanie online to też obywatelskość
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-13</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/mity-o-edukacji-obywatelskiej.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-12</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Mity o edukacji obywatelskiej
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/dzialanie-online-to-tez-obywatelskosc.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin-2.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-12</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Edukacja obywatelska — to nie egzamin
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      013
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/slad-cyfrowy-to-tez-postawa-obywatelska.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Ślad cyfrowy to też postawa obywatelska
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-13</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-11</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            5 sposobów na aktywność bez wyborów
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/slad-cyfrowy-to-tez-postawa-obywatelska.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/udzial-to-nie-tylko-urna.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-11</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Udział to nie tylko urna
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      014
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/kregulcowe-dni-w-jastrzebiu-zdroju.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Kregulcowe Dni w Jastrzębiu-Zdroju
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-12</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/mlodzi-i-wybory.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-10</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Młodzi i wybory
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/kregulcowe-dni-w-jastrzebiu-zdroju.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/glos-to-nie-filtr.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-10</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Głos to nie filtr
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      015
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/mity-o-edukacji-obywatelskiej.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Mity o edukacji obywatelskiej
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-12</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/jak-dziala-wladza.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-09</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Jak działa władza?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/mity-o-edukacji-obywatelskiej.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/polityka-to-nie-cos-poza-toba.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-09</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Polityka to nie coś poza tobą
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      016
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin-2.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Edukacja obywatelska — to nie egzamin
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-12</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/obowiazki-po-co-mi-to.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-08</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Obowiązki — po co mi to?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin-2.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/dlaczego-obywatel-ma-nie-tylko-prawa-ale-i-obowiazki.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-08</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Dlaczego obywatel ma nie tylko prawa, ale i obowiązki?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      017
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        5 sposobów na aktywność bez wyborów
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-11</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/czym-jest-edukacja-obywatelska.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-07</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Czym jest edukacja obywatelska?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/edukacja-obywatelska-to-nie-egzamin.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/obywatelskosc-to-nie-teoria-to-codziennosc.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-07</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Obywatelskość to nie teoria — to codzienność!
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      018
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/udzial-to-nie-tylko-urna.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Udział to nie tylko urna
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-11</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/podsumowanie-kampanii-bezpieczny-internet.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-05</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Podsumowanie kampanii „Bezpieczny internet”
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/udzial-to-nie-tylko-urna.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/algorytmy-kto-decyduje-co-widzisz.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-04</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Algorytmy: kto decyduje, co widzisz?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      019
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/mlodzi-i-wybory.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Młodzi i wybory
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-10</div>
-                    </div>
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/kto-kontroluje-twoj-ekran.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-04</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Kto kontroluje twój ekran?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/mlodzi-i-wybory.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
+                  
+                  <div class="relative">
+                    <span class="absolute -left-6 sm:-left-8 top-5 w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-brand-violet transition-colors"></span>
+                    <a href="../aktualnosci/dlaczego-nie-wolno-uzywac-cudzych-zdjec.html" class="group block p-4 rounded-2xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 hover:border-slate-300 transition-all">
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                          <span class="text-xs font-sans text-slate-400 block mb-0.5">2025-08-04</span>
+                          <h4 class="text-sm sm:text-base font-semibold text-slate-800 group-hover:text-brand-violet transition-colors truncate">
+                            Dlaczego nie wolno używać cudzych zdjęć?
+                          </h4>
+                        </div>
+                        <span class="w-8 h-8 rounded-lg bg-white border border-slate-200 group-hover:bg-brand-violet group-hover:text-white group-hover:border-brand-violet text-slate-400 flex items-center justify-center shrink-0 transition-all">
+                          <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                        </span>
+                      </div>
+                    </a>
                   </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      020
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/glos-to-nie-filtr.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Głos to nie filtr
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-10</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/glos-to-nie-filtr.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      021
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/jak-dziala-wladza.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Jak działa władza?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-09</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/jak-dziala-wladza.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      022
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/polityka-to-nie-cos-poza-toba.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Polityka to nie coś poza tobą
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-09</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/polityka-to-nie-cos-poza-toba.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      023
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/obowiazki-po-co-mi-to.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Obowiązki — po co mi to?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-08</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/obowiazki-po-co-mi-to.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      024
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/dlaczego-obywatel-ma-nie-tylko-prawa-ale-i-obowiazki.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Dlaczego obywatel ma nie tylko prawa, ale i obowiązki?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-08</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/dlaczego-obywatel-ma-nie-tylko-prawa-ale-i-obowiazki.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      025
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/czym-jest-edukacja-obywatelska.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Czym jest edukacja obywatelska?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-07</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/czym-jest-edukacja-obywatelska.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      026
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/obywatelskosc-to-nie-teoria-to-codziennosc.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Obywatelskość to nie teoria — to codzienność!
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-07</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/obywatelskosc-to-nie-teoria-to-codziennosc.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      027
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/podsumowanie-kampanii-bezpieczny-internet.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Podsumowanie kampanii „Bezpieczny internet”
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-05</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/podsumowanie-kampanii-bezpieczny-internet.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      028
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/algorytmy-kto-decyduje-co-widzisz.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Algorytmy: kto decyduje, co widzisz?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-04</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/algorytmy-kto-decyduje-co-widzisz.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      029
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/kto-kontroluje-twoj-ekran.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Kto kontroluje twój ekran?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-04</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/kto-kontroluje-twoj-ekran.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
-                <div class="flex items-center justify-between p-3.5 rounded-2xl transition-all bg-slate-50 hover:bg-slate-100 border border-slate-200">
-                  <div class="flex items-center gap-3">
-                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-sans text-xs bg-slate-200 text-slate-700">
-                      030
-                    </div>
-                    <div>
-                      <a href="../aktualnosci/dlaczego-nie-wolno-uzywac-cudzych-zdjec.html" class="text-xs sm:text-sm text-slate-900 hover:text-brand-violet line-clamp-1">
-                        Dlaczego nie wolno używać cudzych zdjęć?
-                      </a>
-                      <div class="text-[11px] font-sans text-slate-500">2025-08-04</div>
-                    </div>
-                  </div>
-
-                  <div>
-                    
-                      <a href="../aktualnosci/dlaczego-nie-wolno-uzywac-cudzych-zdjec.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral flex items-center gap-1">
-                        <span>Przejdź</span>
-                        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                      </a>
-                    
-                  </div>
-                </div>
-                
+                  
             </div>
-          </div>
 
-          <!-- Adjacent Article Navigation -->
-          <div class="flex items-center justify-between gap-4 pt-6 font-sans text-xs font-bold">
-            <a href="../aktualnosci/ja-jestem-zmiana.html" class="px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:text-brand-violet shadow-2xs transition-all flex items-center gap-2">
-              <span class="material-symbols-outlined text-[18px]">chevron_left</span>
-              <span>Poprzednia relacja</span>
-            </a>
-            <a href="../blog.html" class="text-slate-500 hover:text-slate-900 transition-colors hidden sm:inline">
-              Wszystkie relacje (117)
-            </a>
-            <a href="../aktualnosci/my-i-oni-jak-rozmawiac-bez-hejtu.html" class="px-4 py-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-violet hover:text-brand-violet shadow-2xs transition-all flex items-center gap-2">
-              <span>Następna relacja</span>
-              <span class="material-symbols-outlined text-[18px]">chevron_right</span>
-            </a>
-          </div>
+          </section>
+          
 
         </div>
-      </div>
-    </article>
 
+        <!-- Right Sidebar Passport Column (lg:col-span-4 sticky) -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28 min-w-0 w-full">
+          
+          <!-- Article Passport Card -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+              <span class="text-sm font-bold text-slate-800 font-heading">Metryka Artykułu</span>
+              <span class="material-symbols-outlined text-xl text-brand-violet">description</span>
+            </div>
+
+            <!-- Key Metadata Items -->
+            <div class="space-y-4 text-xs">
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Data publikacji</span>
+                <span class="font-bold text-slate-800 text-right font-sans">2025-08-15</span>
+              </div>
+              
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Kategoria</span>
+                <span class="font-bold text-brand-violet text-right">Okulary Młodzieżowe</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Czas lektury</span>
+                <span class="font-bold text-slate-800 text-right font-sans">ok. 1 min</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
+                <span class="text-slate-500 font-sans">Galeria zdjęć</span>
+                <span class="font-bold text-slate-800 text-right font-sans">1 kadrów</span>
+              </div>
+
+              <div class="flex items-start justify-between gap-3">
+                <span class="text-slate-500 font-sans">Wydawca</span>
+                <span class="font-bold text-slate-800 text-right">Fundacja ANIMUS</span>
+              </div>
+            </div>
+
+            <!-- Associated Project Mini-Card -->
+            
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <span class="text-[11px] font-sans text-slate-400 uppercase tracking-wider font-bold block">
+                Powiązany Projekt Flagowy
+              </span>
+              <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl overflow-hidden bg-white border border-slate-200 shrink-0">
+                    <img src="https://animusedu.com/wp-content/uploads/2025/12/556360085_777863461700425_9180504503078992900_n-1-768x576.jpg" alt="Okulary Młodzieżowe" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  </div>
+                  <div class="min-w-0">
+                    <h4 class="text-sm font-bold text-slate-900 truncate font-heading">
+                      Okulary Młodzieżowe
+                    </h4>
+                    
+                      <span class="text-[11px] font-sans text-slate-500 block">2025–2026</span>
+                    
+                  </div>
+                </div>
+                <a href="../projekty/okulary-mlodziezowe.html" class="w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-violet hover:bg-[#200045] text-white text-xs font-semibold transition-all shadow-xs">
+                  <span>Przejdź do karty projektu</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            
+
+            <!-- Foundation Contact Card -->
+            <div class="pt-4 border-t border-slate-200 space-y-3">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 text-xs">
+                <div class="flex items-center gap-2 text-slate-800 font-bold">
+                  <span class="material-symbols-outlined text-base text-brand-coral">verified</span>
+                  <span>Fundacja ANIMUS</span>
+                </div>
+                <p class="text-slate-500 text-[11px] leading-relaxed">
+                  Centrum Edukacyjno-Szkoleniowe aktywne od 2015 roku na Śląsku i w Europie.
+                </p>
+                <div class="pt-2 flex items-center justify-between">
+                  <a href="../contact.html" class="text-brand-coral hover:text-brand-violet font-bold text-xs font-sans inline-flex items-center gap-1 transition-colors">
+                    <span>Kontakt z fundacją</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- ========================================================
+           3. POWIĄZANE ARTYKUŁY (RELACJE Z INNYCH PROJEKTÓW)
+      ======================================================== -->
+      <section class="pt-10 border-t border-slate-200">
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-violet block mb-1">
+              POZNAJ INNE DZIAŁANIA
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
+              Relacje z innych projektów Fundacji
+            </h3>
+          </div>
+          <a href="../blog.html" class="text-xs font-semibold text-brand-violet hover:text-brand-coral transition-colors flex items-center gap-1 shrink-0">
+            <span>Wszystkie aktualności</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+            <a href="../aktualnosci/plugtree-youth-exchange.html" class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 block no-underline text-inherit">
+              <div>
+                <div class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                  <img src="https://animusedu.com/wp-content/uploads/2026/09/726949550_36599849226326635_8358088394579047416_n-850x537.jpg" alt="#PLUGTREE+ Youth Exchange" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                    #PLUGTREE+ Youth Exchange
+                  </span>
+                </div>
+                <div class="p-5 sm:p-6 space-y-2.5">
+                  <div class="text-[11px] font-sans text-slate-500 font-semibold uppercase flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                    <span>2026-08-15</span>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-bold font-heading text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug">
+                    #PLUGTREE+ Youth Exchange
+                  </h4>
+                  
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                    We are pleased to announce that our youth activists had the opportunity to participate in#PLUGTREE+, an Erasmus+ Youth Exchange implemented between 14 and 20 June 2026 in Vatra Dornei, Romania, with the participation of 35 people from Romania, Poland, Lithuania, Latvia, Estonia, Greece and Türkiye.
+                  </p>
+                  
+                </div>
+              </div>
+            </a>
+            
+            <a href="../aktualnosci/training-course-rabbit-on-the-moon.html" class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 block no-underline text-inherit">
+              <div>
+                <div class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                  <img src="https://animusedu.com/wp-content/uploads/2026/02/Rabbit-on-the-moon-infopack.pdf-850x478.png" alt="Training Course &quot;Rabbit on the Moon&quot;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                    Rabbit on the Moon
+                  </span>
+                </div>
+                <div class="p-5 sm:p-6 space-y-2.5">
+                  <div class="text-[11px] font-sans text-slate-500 font-semibold uppercase flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                    <span>2026-02-20</span>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-bold font-heading text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug">
+                    Training Course &quot;Rabbit on the Moon&quot;
+                  </h4>
+                  
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                    We would like to share some exciting news with you – our youth workers are preparing for an upcoming international training course!
+                  </p>
+                  
+                </div>
+              </div>
+            </a>
+            
+            <a href="../aktualnosci/conference-presentation-of-toolkit.html" class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-brand-violet hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 block no-underline text-inherit">
+              <div>
+                <div class="h-48 w-full bg-slate-100 overflow-hidden relative block">
+                  <img src="https://animusedu.com/wp-content/uploads/2025/10/558652917_789390230547748_6390196394423438891_n-850x638.jpg" alt="Conference &amp; Presentation of Toolkit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.onerror=null; this.src='../cropped-Animus-Logo-Horizontal.png'">
+                  <span class="absolute top-3 left-3 bg-brand-violet text-white font-sans text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md font-bold shadow-sm">
+                    Be Active! Citizenship Toolkit
+                  </span>
+                </div>
+                <div class="p-5 sm:p-6 space-y-2.5">
+                  <div class="text-[11px] font-sans text-slate-500 font-semibold uppercase flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px] text-brand-coral">calendar_today</span>
+                    <span>2025-09-09</span>
+                  </div>
+                  <h4 class="text-base sm:text-lg font-bold font-heading text-slate-900 group-hover:text-brand-violet transition-colors line-clamp-2 leading-snug">
+                    Conference &amp; Presentation of Toolkit
+                  </h4>
+                  
+                  <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed font-sans">
+                    📣 On September 8th, within the framework of the Be active project, we held a conference where we presented our guidebook “Citizenship Education Toolkit” 📘✨.
+                  </p>
+                  
+                </div>
+              </div>
+            </a>
+            
+        </div>
+      </section>
+
+    </div>
   </main>
 
   
-  <!-- FULLSCREEN INTERACTIVE PHOTO LIGHTBOX -->
-  <div id="photo-lightbox" class="fixed inset-0 z-[10000] bg-slate-950/95 backdrop-blur-md hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
+  <!-- PREMIUM CINEMA DARKROOM LIGHTBOX -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-[999999] bg-[#0b0f19]/98 backdrop-blur-2xl hidden flex flex-col justify-between p-4 sm:p-6 transition-all duration-300 select-none">
     
     <!-- Top Lightbox Bar -->
     <div class="flex items-center justify-between text-white text-xs font-sans z-20">
       <div class="flex items-center gap-3">
-        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold">
+        <span id="lightbox-counter" class="bg-white/10 px-3 py-1 rounded-md font-bold text-white">
           1 / 1
         </span>
         <span id="lightbox-filename" class="text-slate-400 hidden sm:inline truncate max-w-sm">
-          Fotografia
+          Fotografia archiwalna ANIMUS
         </span>
       </div>
 
@@ -1082,7 +1058,7 @@
   
 
   
-  <!-- HARMONIZED 4-COLUMN FOOTER -->
+  <!-- HARMONIZED 3-COLUMN FOOTER -->
   <footer class="bg-brand-ink text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
       
@@ -1105,7 +1081,7 @@
             <li><a href="../activities.html" class="hover:text-white transition-colors">Nasze działania</a></li>
             <li><a href="../projects.html" class="hover:text-white transition-colors">Projekty</a></li>
             <li><a href="../partners.html" class="hover:text-white transition-colors">Partnerzy</a></li>
-            <li><a href="../blog.html" class="hover:text-white transition-colors">Aktualności (117)</a></li>
+            <li><a href="../blog.html" class="hover:text-white transition-colors">Aktualności</a></li>
           </ul>
         </div>
 
@@ -1139,11 +1115,11 @@
     let currentLightboxIdx = 0;
     let isZoomed = false;
 
-    function openGalleryAt(idx) {
+    function openLightbox(idx) {
       if (!currentGallery || currentGallery.length === 0) return;
       currentLightboxIdx = idx;
       isZoomed = false;
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb) return;
       lb.classList.remove('hidden');
       updateLightboxDisplay();
@@ -1151,7 +1127,7 @@
     }
 
     function closeLightbox() {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (lb) lb.classList.add('hidden');
       document.body.style.overflow = '';
     }
@@ -1199,7 +1175,7 @@
 
       if (thumbsContainer) {
         thumbsContainer.innerHTML = currentGallery.map((t, i) => `
-          <button onclick="openGalleryAt(${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all ${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
+          <button onclick="openLightbox(${i})" class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all ${i === currentLightboxIdx ? 'border-brand-coral scale-110 shadow-lg' : 'border-white/20 opacity-60 hover:opacity-100'}">
             <img src="${t}" alt="thumb" class="w-full h-full object-cover">
           </button>
         `).join('');
@@ -1207,7 +1183,7 @@
     }
 
     window.addEventListener('keydown', (e) => {
-      const lb = document.getElementById('photo-lightbox');
+      const lb = document.getElementById('gallery-lightbox');
       if (!lb || lb.classList.contains('hidden')) return;
 
       if (e.key === 'ArrowRight') nextLightboxImage();
@@ -1218,32 +1194,6 @@
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       if (menu) menu.classList.toggle('hidden');
-    }
-
-    function copyCurrentProjectLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do projektu do schowka!');
-      });
-    }
-
-    function copyCurrentLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('Skopiowano link do relacji do schowka!');
-      });
-    }
-
-    function shareArticle(network) {
-      const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(document.title);
-      let shareUrl = '';
-      if (network === 'facebook') {
-        shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
-      } else if (network === 'twitter') {
-        shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
-      }
-      if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=450');
-      }
     }
 
     function setLanguage(lang) {
